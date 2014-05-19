@@ -41,19 +41,15 @@
 # will give the correct output if it happens to hit that option with
 # that target.
 #
-# The three acronym options also do not behave like the main options,
-# instead they use the the target parameter to look up different
-# definitions.  The acronym1 option displays various definitions of
-# FUCK as an acronym.  The acronym2 option displays various
-# definitions of of FOAD as an acronym.  The acronym3 option is a
-# catchall for other acronyms or points of reference.
+# The acronyms options also does not behave like the main options,
+# instead it uses the the target parameter to look up different
+# definitions.
 #
-# Using each acronym option without a target displays an introduction.
-# Using each acronym with a target not specifically addressed displays
-# the list of target parameters which can be used with that option.
-# Using any of the listed target parameters will display the relevant
-# definition.  There are at least two target parameters per acronym
-# option.
+# Using the acronym option without a target displays an introduction.
+# Using the acronym option with a target not specifically addressed
+# displays the list of target parameters which can be used with that
+# option.  Using any of the listed target parameters will display the
+# relevant definition.
 #
 # There are three options on Latin.  The "priapus" options include
 # translation in the "priapus_trans" options.  The "omnia" and "vvv"
@@ -141,35 +137,21 @@ class fuck:
             msg = "%s, fuckin' A!" % target
         print(msg)
 
-    def acronym1(self):
+    def acronyms(self):
         if lt == 0:
-            msg = "FUCK acronyms and backronyms; use the target parameter to choose which one.  To view the target parameters run: foad.py acronym1 x"
+            msg = "Acronyms and backronyms; use the target parameter to choose which one.  To view the target parameters run: foad.py acronym1 x"
         elif target.lower() == "carnal":
             msg = """FUCK: For Unlawful Carnal Knowledge
       Actually a backronym and urban myth on the origin of the word fuck."""
         elif target.lower() == "bond":
             msg = """FUCK: Freddy Uncle Charlie Katie
       A backronym used by Ian Fleming to avoid censors in one of the James Bond novels."""
-        else:
-            msg = "Target parameters: carnal, bond."
-        print(msg)
-
-    def acronym2(self):
-        if lt == 0:
-            msg = "FOAD acronyms, backronyms and related items; use the target parameter to choose which one.  To view the target parameters run: foad.py acronym2 x"
         elif target.lower() == "die":
             msg = "FOAD: Fuck Off And Die"
         elif target.lower() == "right":
             msg = "FROAD: Fuck Right Off And Die"
         elif target.lower() == "title":
             msg = "FOAD: Fucked Off Adversarial Degenerates"  # Also a backronym.
-        else:
-            msg = "Target parameters: die, right, title."
-        print(msg)
-
-    def acronym3(self):
-        if lt == 0:
-            msg = "Other acronyms or points of reference; use the target parameter to choose which one.  To view the target parameters run: foad.py acronym3 x"
         elif target.lower() == "cunt":
             msg = """CUNT: Caring Understanding Nineties Type
       A response to SNAG."""
@@ -181,7 +163,7 @@ class fuck:
             msg = """SNAG: Sensitive New Age Guy
       See also: CUNT"""
         else:
-            msg = "Target parameters: cunt, foaas, snag."
+            msg = "Target parameters: bond, carnal, cunt, die, foaas, right, snag, title."
         print(msg)
 
     def agree(self):
@@ -1170,9 +1152,7 @@ lc = len(df)
 rf = []
 for x in df:
     rf.append(x)
-rf.remove("acronym1")
-rf.remove("acronym2")
-rf.remove("acronym3")
+rf.remove("acronyms")
 lr = len(rf)
 
 random.seed()
@@ -1208,36 +1188,36 @@ elif l == 2 and wtf == "unittest":
         print("")
 elif l >= 3 and wtf == "unittest":
     if target.lower() == "carnal":
-        print("Command:  "+sys.argv[0]+" acronym1 carnal")
-        exec("fuck().acronym1()")
+        print("Command:  "+sys.argv[0]+" acronyms carnal")
+        exec("fuck().acronyms()")
         print("")
     elif target.lower() == "bond":
-        print("Command:  "+sys.argv[0]+" acronym1 bond")
-        exec("fuck().acronym1()")
+        print("Command:  "+sys.argv[0]+" acronyms bond")
+        exec("fuck().acronyms()")
         print("")
     elif target.lower() == "die":
-        print("Command:  "+sys.argv[0]+" acronym2 die")
-        exec("fuck().acronym2()")
+        print("Command:  "+sys.argv[0]+" acronyms die")
+        exec("fuck().acronyms()")
         print("")
     elif target.lower() == "right":
-        print("Command:  "+sys.argv[0]+" acronym2 right")
-        exec("fuck().acronym2()")
+        print("Command:  "+sys.argv[0]+" acronyms right")
+        exec("fuck().acronyms()")
         print("")
     elif target.lower() == "title":
-        print("Command:  "+sys.argv[0]+" acronym2 title")
-        exec("fuck().acronym2()")
+        print("Command:  "+sys.argv[0]+" acronyms title")
+        exec("fuck().acronyms()")
         print("")
     elif target.lower() == "cunt":
-        print("Command:  "+sys.argv[0]+" acronym2 cunt")
-        exec("fuck().acronym3()")
+        print("Command:  "+sys.argv[0]+" acronyms cunt")
+        exec("fuck().acronyms()")
         print("")
     elif target.lower() == "foaas":
-        print("Command:  "+sys.argv[0]+" acronym2 foaas")
-        exec("fuck().acronym3()")
+        print("Command:  "+sys.argv[0]+" acronyms foaas")
+        exec("fuck().acronyms()")
         print("")
     elif target.lower() == "snag":
-        print("Command:  "+sys.argv[0]+" acronym2 snag")
-        exec("fuck().acronym3()")
+        print("Command:  "+sys.argv[0]+" acronyms snag")
+        exec("fuck().acronyms()")
         print("")
     else:
         print(about)
