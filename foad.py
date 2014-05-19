@@ -7,6 +7,8 @@
 # ben@adversary.org
 # OpenPGP/GPG key:  0x321E4E2373590E5D
 #
+# https://github.com/adversary-org/foad
+#
 # Version:  0.5.2
 #
 # BTC:  1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz
@@ -111,6 +113,8 @@ if l < 2:
 
     To see the defined options run:  foad.py list_options
     For more help run:  pydoc3 foad
+
+    https://github.com/adversary-org/foad
 
     %s
     Bitcoin:  %s
