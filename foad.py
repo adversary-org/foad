@@ -140,6 +140,8 @@ class fuck:
     def acronyms(self):
         if lt == 0:
             msg = "Acronyms and backronyms; use the target parameter to choose which one.  To view the target parameters run: foad.py acronym1 x"
+        elif target.lower() == "fubar":
+            msg = "FUBAR: Fucked Up Beyond All Recognition"
         elif target.lower() == "carnal":
             msg = """FUCK: For Unlawful Carnal Knowledge
       Actually a backronym and urban myth on the origin of the word fuck."""
@@ -162,8 +164,10 @@ class fuck:
         elif target.lower() == "snag":
             msg = """SNAG: Sensitive New Age Guy
       See also: CUNT"""
+        elif target.lower() == "snafu":
+            msg = "SNAFU: Situation Normal: All Fucked Up"
         else:
-            msg = "Target parameters: bond, carnal, cunt, die, foaas, right, snag, title."
+            msg = "Target parameters: bond, carnal, cunt, die, foaas, fubar, right, snag, snafu, title."
         print(msg)
 
     def agree(self):
@@ -1220,6 +1224,14 @@ elif l >= 3 and wtf == "unittest":
         print("")
     elif target.lower() == "snag":
         print("Command:  "+sys.argv[0]+" acronyms snag")
+        exec("fuck().acronyms()")
+        print("")
+    elif target.lower() == "snafu":
+        print("Command:  "+sys.argv[0]+" acronyms snafu")
+        exec("fuck().acronyms()")
+        print("")
+    elif target.lower() == "fubar":
+        print("Command:  "+sys.argv[0]+" acronyms fubar")
         exec("fuck().acronyms()")
         print("")
     else:

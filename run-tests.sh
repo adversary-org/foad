@@ -13,3 +13,5 @@ pydoc3 foad.py
 ./foad.py unittest cunt
 ./foad.py unittest foaas
 ./foad.py unittest snag
+./foad.py unittest snafu
+./foad.py unittest fubar
