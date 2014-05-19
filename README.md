@@ -17,5 +17,7 @@ bash-3.2$ ./foad.py wtfwjd Bob
 Bob, so what the fuck would Jesus do?
 bash-3.2$ ./foad.py wtfwjdrtfm Bob
 Bob, so what the fuck would Jesus do?  Jesus would read the fucking manual!
+bash-3.2$ ./foad.py cunt Tony Abbott
+Fuck you Tony Abbott, you complete and utter fucking cunt!
 bash-3.2$ 
 
