@@ -879,7 +879,10 @@ class fuck:
         print(msg)
 
     def snafu(self):
-        msg = "Situation Normal: All Fucked Up!"
+        if lt == 0:
+            msg = "Situation Normal: All Fucked Up!"
+        else:
+            msg = "%s, it's situation normal: all fucked up!"
         print(msg)
 
     def stfu(self):
