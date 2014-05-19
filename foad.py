@@ -165,13 +165,15 @@ class fuck:
             msg = """FOAAS: Fuck Off As A Service
         The API which led to this script since that API is not consistently
         maintained."""
+        elif target.lower() == "lmfao":
+            msg = "LMFAO: Laughing My Fucking Arse Off"
         elif target.lower() == "snag":
             msg = """SNAG: Sensitive New Age Guy
       See also: CUNT"""
         elif target.lower() == "snafu":
             msg = "SNAFU: Situation Normal: All Fucked Up"
         else:
-            msg = "Target parameters: bond, carnal, cunt, die, foaas, fubar, right, snag, snafu, title."
+            msg = "Target parameters: bond, carnal, cunt, die, foaas, fubar, lmfao, right, snag, snafu, title."
         print(msg)
 
     def agree(self):
@@ -1239,6 +1241,10 @@ elif l >= 3 and wtf == "unittest":
         print("")
     elif target.lower() == "fubar":
         print("Command:  "+sys.argv[0]+" acronyms fubar")
+        exec("fuck().acronyms()")
+        print("")
+    elif target.lower() == "lmfao":
+        print("Command:  "+sys.argv[0]+" acronyms lmfao")
         exec("fuck().acronyms()")
         print("")
     else:
