@@ -9,7 +9,7 @@ To use it run: foad.py option [target]
 
 Examples:
 
-```bash
+```
 bash-3.2$ ./foad.py wtfwjd
 What the fuck would Jesus do?
 bash-3.2$ ./foad.py wtfwjdrtfm
