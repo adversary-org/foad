@@ -7,6 +7,8 @@
 # ben@adversary.org
 # OpenPGP/GPG key:  0x321E4E2373590E5D
 #
+# https://github.com/adversary-org/foad
+#
 # Version:  0.5.2
 #
 # BTC:  1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz
@@ -112,6 +114,8 @@ if l < 2:
     To see the defined options run:  foad.py list_options
     For more help run:  pydoc3 foad
 
+    https://github.com/adversary-org/foad
+
     %s
     Bitcoin:  %s
     """ % (__title__, __copyright__, __bitcoin__))
@@ -161,17 +165,22 @@ class fuck:
             msg = """FOAAS: Fuck Off As A Service
         The API which led to this script since that API is not consistently
         maintained."""
+        elif target.lower() == "lmfao":
+            msg = "LMFAO: Laughing My Fucking Arse Off"
         elif target.lower() == "snag":
             msg = """SNAG: Sensitive New Age Guy
       See also: CUNT"""
         elif target.lower() == "snafu":
             msg = "SNAFU: Situation Normal: All Fucked Up"
         else:
-            msg = "Target parameters: bond, carnal, cunt, die, foaas, fubar, right, snag, snafu, title."
+            msg = "Target parameters: bond, carnal, cunt, die, foaas, fubar, lmfao, right, snag, snafu, title."
         print(msg)
 
     def agree(self):
-        msg = "Abso-fucking-lutely!"
+        if lt == 0:
+            msg = "Abso-fucking-lutely!"
+        else:
+            msg = "Abso-fucking-lutely %s!" % target
         print(msg)
 
     def amaze(self):
@@ -270,7 +279,10 @@ class fuck:
         print(msg)
 
     def disbelief(self):
-        msg = "Un-fucking-believable!"
+        if lt == 0:
+            msg = "Un-fucking-believable!"
+        else:
+            msg = "Un-fucking-believable %s!" % target
         print(msg)
 
     def does(self):
@@ -379,7 +391,7 @@ class fuck:
         if lt == 0:
             msg = "Fucked Up Beyond All Recognition."
         else:
-            msg = "%s, fucked up beyond all recognition."
+            msg = "%s, fucked up beyond all recognition." % target
         print(msg)
 
     def fubaru(self):
@@ -538,7 +550,10 @@ class fuck:
         print(msg)
 
     def incred(self):
-        msg = "In-fucking-credible!"
+        if lt == 0:
+            msg = "In-fucking-credible!"
+        else:
+            msg = "In-fucking-credible %s!" % target
         print(msg)
 
     def jams(self):
@@ -889,7 +904,7 @@ class fuck:
         if lt == 0:
             msg = "Situation Normal: All Fucked Up!"
         else:
-            msg = "%s, it's situation normal: all fucked up!"
+            msg = "%s, it's situation normal: all fucked up!" % target
         print(msg)
 
     def stfu(self):
@@ -1235,6 +1250,10 @@ elif l >= 3 and wtf == "unittest":
         print("")
     elif target.lower() == "fubar":
         print("Command:  "+sys.argv[0]+" acronyms fubar")
+        exec("fuck().acronyms()")
+        print("")
+    elif target.lower() == "lmfao":
+        print("Command:  "+sys.argv[0]+" acronyms lmfao")
         exec("fuck().acronyms()")
         print("")
     else:
