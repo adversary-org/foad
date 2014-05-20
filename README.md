@@ -22,3 +22,6 @@ bash-3.2$ ./foad.py cunt Tony Abbott
 Fuck you Tony Abbott, you complete and utter fucking cunt!
 bash-3.2$ 
 ```
+
+If you find this script of use, a small Bitcoin contribution to
+1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz would be appreciated.
