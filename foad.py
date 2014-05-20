@@ -904,7 +904,7 @@ class fuck:
         if lt == 0:
             msg = "Situation Normal: All Fucked Up!"
         else:
-            msg = "%s, it's situation normal: all fucked up!"
+            msg = "%s, it's situation normal: all fucked up!" % target
         print(msg)
 
     def stfu(self):
