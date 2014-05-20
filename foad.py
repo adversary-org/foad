@@ -54,8 +54,12 @@
 # relevant definition.
 #
 # There are three options on Latin.  The "priapus" options include
-# translation in the "priapus_trans" options.  The "omnia" and "vvv"
-# options include translations in comments in the source code.
+# translation in the "priapus_trans1" and "priapus_trans2" options
+# (priapus_trans2 no target contains the translation for priapus no
+# target and priapus_trans1 contains the best translation for priapus
+# with a target, the other variants are potentially useful).  The
+# "omnia" and "vvv" options include translations in comments in the
+# source code.
 #
 # Usage:  foad.py donut foo
 #         foad.py outside "FirstName LastName"
@@ -812,11 +816,18 @@ class fuck:
             msg = "Obscenis, peream, %s, si non uti me pudet improbisque verbis sed cum tu posito degenerem pudore ostendas mihi coleos patentes cum cunno mihi mentula est vocanda." % target
         print(msg)
 
-    def priapus_trans(self):
+    def priapus_trans1(self):
+        if lt == 0:
+            msg = "I'd rather die than use obscene and improper words; but when you, as a degenerate, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks."
+        else:
+            msg = "I'd rather die than use obscene and improper words; but when you, %s, as a degenerate, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks." % target
+        print(msg)
+
+    def priapus_trans2(self):
         if lt == 0:
             msg = "I'd rather die than use obscene and improper words; but when you, Priapus, as a god, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks."
         else:
-            msg = "I'd rather die than use obscene and improper words; but when you, %s, as a degenerate or inferior, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks." % target
+            msg = "I'd rather die than use obscene and improper words; but when you, %s, as an inferior, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks." % target
         print(msg)
 
     def roff(self):
