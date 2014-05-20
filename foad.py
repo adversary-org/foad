@@ -177,7 +177,10 @@ class fuck:
         print(msg)
 
     def agree(self):
-        msg = "Abso-fucking-lutely!"
+        if lt == 0:
+            msg = "Abso-fucking-lutely!"
+        else:
+            msg = "Abso-fucking-lutely %s!" % target
         print(msg)
 
     def amaze(self):
