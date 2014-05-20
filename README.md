@@ -9,15 +9,16 @@ To use it run: foad.py option [target]
 
 Examples:
 
-bash-3.2$ ./foad.py wtfwjd \n
-What the fuck would Jesus do? \n
-bash-3.2$ ./foad.py wtfwjdrtfm \n
-What the fuck would Jesus do?  Jesus would read the fucking manual! \n
-bash-3.2$ ./foad.py wtfwjd Bob \n
-Bob, so what the fuck would Jesus do? \n
-bash-3.2$ ./foad.py wtfwjdrtfm Bob \n
-Bob, so what the fuck would Jesus do?  Jesus would read the fucking manual! \n
-bash-3.2$ ./foad.py cunt Tony Abbott \n
-Fuck you Tony Abbott, you complete and utter fucking cunt! \n
-bash-3.2$  \n
-
+```bash
+bash-3.2$ ./foad.py wtfwjd
+What the fuck would Jesus do?
+bash-3.2$ ./foad.py wtfwjdrtfm
+What the fuck would Jesus do?  Jesus would read the fucking manual!
+bash-3.2$ ./foad.py wtfwjd Bob
+Bob, so what the fuck would Jesus do?
+bash-3.2$ ./foad.py wtfwjdrtfm Bob
+Bob, so what the fuck would Jesus do?  Jesus would read the fucking manual!
+bash-3.2$ ./foad.py cunt Tony Abbott
+Fuck you Tony Abbott, you complete and utter fucking cunt!
+bash-3.2$ 
+```
