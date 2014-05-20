@@ -611,6 +611,13 @@ class fuck:
             msg = "%s, fucked if I know!" % target
         print(msg)
 
+    def liar(self):
+        if lt == 0:
+            msg = "You're a lying sack of shit!"
+        else:
+            msg = "%s, you're a lying sack of shit!" % target
+        print(msg)
+
     def life(self):
         msg = "Fuck my life!"
         print(msg)
