@@ -240,6 +240,13 @@ class fuck:
             msg = "Fuck you %s, you fucking cocksucker!" % target
         print(msg)
 
+    def compleat(self):
+        if lt == 0:
+            msg = "I might be a cunt, but I'm not a fucking cunt."
+        else:
+            msg = "I might be a cunt, %s, but I'm not a fucking cunt." % target
+        print(msg)
+
     def cracked(self):
         if lt == 0:
             msg = "You are fucking cracked!"
