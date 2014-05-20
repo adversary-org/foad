@@ -148,16 +148,22 @@ class fuck:
     def about(self):
         if lt == 0:
             msg = "Messages and other information to be displayed interactively.  As with the acronym option, the target parameters are used to call each message.  A non-existent target parameter will produce a list of available options."
+        elif target.lower() == "adversary":
+            msg = "http://www.adversary.org/"
         elif target.lower() == "bitcoin":
             msg = __bitcoin__
         elif target.lower() == "copyright":
             msg = __copyright__
+        elif target.lower() == "donations":
+            msg = "If you find this script useful, please donate to the Bitcoin address included."
         elif target.lower() == "email":
             msg = "ben@adversary.org"
         elif target.lower() == "gpg key":
             msg = __openpgp__
         elif target.lower() == "irc":
             msg = "Hasimir on freenode.net"
+        elif target.lower() == "pirate":
+            msg = "http://www.pirateparty.org.au/"
         elif target.lower() == "title":
             msg = __title__
         elif target.lower() == "website":
