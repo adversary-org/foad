@@ -696,6 +696,13 @@ class fuck:
             msg = "%s, I've got no fucking idea!" % target
         print(msg)
 
+    def nfi3(self):
+        if lt == 0:
+            msg = "You've got no fucking idea!"
+        else:
+            msg = "%s, you've clearly got no fucking idea!" % target
+        print(msg)
+
     def nmfp1(self):
         if lt == 0:
             msg = "It's not my fucking problem."
