@@ -162,6 +162,8 @@ class fuck:
             msg = "FROAD: Fuck Right Off And Die"
         elif target.lower() == "title":
             msg = "FOAD: Fucked Off Adversarial Degenerates"  # Also a backronym.
+        elif target.lower() == "figjam":
+            msg = "FIGJAM: Fuck I'm Good, Just Ask Me"
         elif target.lower() == "cunt":
             msg = """CUNT: Caring Understanding Nineties Type
       A response to SNAG."""
@@ -177,7 +179,7 @@ class fuck:
         elif target.lower() == "snafu":
             msg = "SNAFU: Situation Normal: All Fucked Up"
         else:
-            msg = "Target parameters: bond, carnal, cunt, die, foaas, fubar, lmfao, right, snag, snafu, title."
+            msg = "Target parameters: bond, carnal, cunt, die, figjam, foaas, fubar, lmfao, right, snafu, snag, title."
         print(msg)
 
     def agree(self):
@@ -322,7 +324,10 @@ class fuck:
         print(msg)
 
     def duck(self):
-        msg = "Fuck a duck!"
+        if lt == 0:
+            msg = "Fuck a duck!"
+        else:
+            msg = "%s, fuck a duck!" % target
         print(msg)
 
     def every1(self):
@@ -529,7 +534,10 @@ class fuck:
         print(msg)
 
     def holy(self):
-        msg = "Holy fucking shit!"
+        if lt == 0:
+            msg = "Holy fucking shit!"
+        else:
+            msg = "Holy fucking shit, %s!" % target
         print(msg)
 
     def how1(self):
@@ -615,7 +623,10 @@ class fuck:
         print(msg)
 
     def lmfao(self):
-        msg = "Laughing my fucking arse off."
+        if lt == 0:
+            msg = "Laughing my fucking arse off."
+        else:
+            msg = "%s, laughing my fucking arse off." % target
         print(msg)
 
     def madison(self):
@@ -683,6 +694,13 @@ class fuck:
             msg = "I've got no fucking idea!"
         else:
             msg = "%s, I've got no fucking idea!" % target
+        print(msg)
+
+    def nfi3(self):
+        if lt == 0:
+            msg = "You've got no fucking idea!"
+        else:
+            msg = "%s, you've clearly got no fucking idea!" % target
         print(msg)
 
     def nmfp1(self):
