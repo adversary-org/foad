@@ -391,7 +391,7 @@ class fuck:
         if lt == 0:
             msg = "Fucked Up Beyond All Recognition."
         else:
-            msg = "%s, fucked up beyond all recognition."
+            msg = "%s, fucked up beyond all recognition." % target
         print(msg)
 
     def fubaru(self):
