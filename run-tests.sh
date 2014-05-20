@@ -15,3 +15,5 @@ pydoc3 foad.py
 ./foad.py unittest snag
 ./foad.py unittest snafu
 ./foad.py unittest fubar
+./foad.py unittest lmfao
+./foad.py unittest figjam

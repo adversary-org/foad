@@ -1334,6 +1334,10 @@ elif l >= 3 and wtf == "unittest":
         print("Command:  "+sys.argv[0]+" acronym lmfao")
         exec("fuck().acronym()")
         print("")
+    elif target.lower() == "figjam":
+        print("Command:  "+sys.argv[0]+" acronym figjam")
+        exec("fuck().acronym()")
+        print("")
     else:
         print(about)
         print("")
