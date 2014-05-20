@@ -141,7 +141,7 @@ class fuck:
             msg = "%s, fuckin' A!" % target
         print(msg)
 
-    def acronyms(self):
+    def acronym(self):
         if lt == 0:
             msg = "Acronyms and backronyms; use the target parameter to choose which one.  To view the target parameters run: foad.py acronym1 x"
         elif target.lower() == "fubar":
@@ -1177,7 +1177,7 @@ lc = len(df)
 rf = []
 for x in df:
     rf.append(x)
-rf.remove("acronyms")
+rf.remove("acronym")
 lr = len(rf)
 
 random.seed()
@@ -1213,48 +1213,48 @@ elif l == 2 and wtf == "unittest":
         print("")
 elif l >= 3 and wtf == "unittest":
     if target.lower() == "carnal":
-        print("Command:  "+sys.argv[0]+" acronyms carnal")
-        exec("fuck().acronyms()")
+        print("Command:  "+sys.argv[0]+" acronym carnal")
+        exec("fuck().acronym()")
         print("")
     elif target.lower() == "bond":
-        print("Command:  "+sys.argv[0]+" acronyms bond")
-        exec("fuck().acronyms()")
+        print("Command:  "+sys.argv[0]+" acronym bond")
+        exec("fuck().acronym()")
         print("")
     elif target.lower() == "die":
-        print("Command:  "+sys.argv[0]+" acronyms die")
-        exec("fuck().acronyms()")
+        print("Command:  "+sys.argv[0]+" acronym die")
+        exec("fuck().acronym()")
         print("")
     elif target.lower() == "right":
-        print("Command:  "+sys.argv[0]+" acronyms right")
-        exec("fuck().acronyms()")
+        print("Command:  "+sys.argv[0]+" acronym right")
+        exec("fuck().acronym()")
         print("")
     elif target.lower() == "title":
-        print("Command:  "+sys.argv[0]+" acronyms title")
-        exec("fuck().acronyms()")
+        print("Command:  "+sys.argv[0]+" acronym title")
+        exec("fuck().acronym()")
         print("")
     elif target.lower() == "cunt":
-        print("Command:  "+sys.argv[0]+" acronyms cunt")
-        exec("fuck().acronyms()")
+        print("Command:  "+sys.argv[0]+" acronym cunt")
+        exec("fuck().acronym()")
         print("")
     elif target.lower() == "foaas":
-        print("Command:  "+sys.argv[0]+" acronyms foaas")
-        exec("fuck().acronyms()")
+        print("Command:  "+sys.argv[0]+" acronym foaas")
+        exec("fuck().acronym()")
         print("")
     elif target.lower() == "snag":
-        print("Command:  "+sys.argv[0]+" acronyms snag")
-        exec("fuck().acronyms()")
+        print("Command:  "+sys.argv[0]+" acronym snag")
+        exec("fuck().acronym()")
         print("")
     elif target.lower() == "snafu":
-        print("Command:  "+sys.argv[0]+" acronyms snafu")
-        exec("fuck().acronyms()")
+        print("Command:  "+sys.argv[0]+" acronym snafu")
+        exec("fuck().acronym()")
         print("")
     elif target.lower() == "fubar":
-        print("Command:  "+sys.argv[0]+" acronyms fubar")
-        exec("fuck().acronyms()")
+        print("Command:  "+sys.argv[0]+" acronym fubar")
+        exec("fuck().acronym()")
         print("")
     elif target.lower() == "lmfao":
-        print("Command:  "+sys.argv[0]+" acronyms lmfao")
-        exec("fuck().acronyms()")
+        print("Command:  "+sys.argv[0]+" acronym lmfao")
+        exec("fuck().acronym()")
         print("")
     else:
         print(about)

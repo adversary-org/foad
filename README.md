@@ -9,6 +9,7 @@ To use it run: foad.py option [target]
 
 Examples:
 
+```
 bash-3.2$ ./foad.py wtfwjd
 What the fuck would Jesus do?
 bash-3.2$ ./foad.py wtfwjdrtfm
@@ -20,4 +21,4 @@ Bob, so what the fuck would Jesus do?  Jesus would read the fucking manual!
 bash-3.2$ ./foad.py cunt Tony Abbott
 Fuck you Tony Abbott, you complete and utter fucking cunt!
 bash-3.2$ 
-
+```
