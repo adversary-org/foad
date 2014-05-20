@@ -162,6 +162,8 @@ class fuck:
             msg = "FROAD: Fuck Right Off And Die"
         elif target.lower() == "title":
             msg = "FOAD: Fucked Off Adversarial Degenerates"  # Also a backronym.
+        elif target.lower() == "figjam":
+            msg = "FIGJAM: Fuck I'm Good, Just Ask Me"
         elif target.lower() == "cunt":
             msg = """CUNT: Caring Understanding Nineties Type
       A response to SNAG."""
@@ -177,7 +179,7 @@ class fuck:
         elif target.lower() == "snafu":
             msg = "SNAFU: Situation Normal: All Fucked Up"
         else:
-            msg = "Target parameters: bond, carnal, cunt, die, foaas, fubar, lmfao, right, snag, snafu, title."
+            msg = "Target parameters: bond, carnal, cunt, die, figjam, foaas, fubar, lmfao, right, snafu, snag, title."
         print(msg)
 
     def agree(self):
@@ -532,7 +534,10 @@ class fuck:
         print(msg)
 
     def holy(self):
-        msg = "Holy fucking shit!"
+        if lt == 0:
+            msg = "Holy fucking shit!"
+        else:
+            msg = "Holy fucking shit, %s!" % target
         print(msg)
 
     def how1(self):
