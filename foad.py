@@ -550,7 +550,10 @@ class fuck:
         print(msg)
 
     def incred(self):
-        msg = "In-fucking-credible!"
+        if lt == 0:
+            msg = "In-fucking-credible!"
+        else:
+            msg = "In-fucking-credible %s!" % target
         print(msg)
 
     def jams(self):
