@@ -17,3 +17,10 @@ pydoc3 foad.py
 ./foad.py unittest fubar
 ./foad.py unittest lmfao
 ./foad.py unittest figjam
+./foad.py unittest atitle
+./foad.py unittest copyright
+./foad.py unittest website
+./foad.py unittest adversary
+./foad.py unittest domain
+./foad.py unittest donations
+./foad.py unittest bitcoin
