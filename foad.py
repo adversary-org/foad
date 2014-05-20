@@ -322,7 +322,10 @@ class fuck:
         print(msg)
 
     def duck(self):
-        msg = "Fuck a duck!"
+        if lt == 0:
+            msg = "Fuck a duck!"
+        else:
+            msg = "%s, fuck a duck!" % target
         print(msg)
 
     def every1(self):
