@@ -152,12 +152,16 @@ class fuck:
             msg = "http://www.adversary.org/"
         elif target.lower() == "bitcoin":
             msg = __bitcoin__
+        elif target.lower() == "contact":
+            msg = "See the following 'foad.py about' parameters: email, gpg key, irc and adversary."
         elif target.lower() == "copyright":
             msg = __copyright__
         elif target.lower() == "donations":
             msg = "If you find this script useful, please donate to the Bitcoin address included."
         elif target.lower() == "email":
             msg = "ben@adversary.org"
+        elif target.lower() == "encryption":
+            msg = "My GPG key is included for a reason, we should all be encrypting everything all the time."
         elif target.lower() == "gpg key":
             msg = __openpgp__
         elif target.lower() == "irc":
@@ -166,10 +170,14 @@ class fuck:
             msg = "http://www.pirateparty.org.au/"
         elif target.lower() == "title":
             msg = __title__
+        elif target.lower() == "twitter":
+            msg = "Use this script with the Twython Tools scripts or anything which can call it and post the output."
+        elif target.lower() == "Twython Tools":
+            msg = "https://github.com/adversary-org/twython-tools"
         elif target.lower() == "website":
             msg = "https://github.com/adversary-org/foad"
         else:
-            msg = "Target parameters: bitcoin, copyright, email, gpg key, irc, title, website."
+            msg = "Target parameters: adversary, bitcoin, copyright, donations, email, gpg key, irc, pirate, title, website."
         print(msg)
 
     def acronym(self):
