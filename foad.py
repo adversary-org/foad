@@ -279,7 +279,10 @@ class fuck:
         print(msg)
 
     def disbelief(self):
-        msg = "Un-fucking-believable!"
+        if lt == 0:
+            msg = "Un-fucking-believable!"
+        else:
+            msg = "Un-fucking-believable %s!" % target
         print(msg)
 
     def does(self):
