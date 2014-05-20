@@ -855,6 +855,48 @@ class fuck:
             msg = "I'd rather die than use obscene and improper words; but when you, %s, as an inferior, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks." % target
         print(msg)
 
+    def psycho1(self):
+        if lt == 0:
+            msg = "You fucking megalomaniacal, malignantly narcissistic, psychopath!"
+        else:
+            msg = "%s, you fucking megalomaniacal, malignantly narcissistic, psychopath!" % target
+        print(msg)
+
+    def psycho2(self):
+        if lt == 0:
+            msg = "You fucking megalomaniacal, malignantly narcissistic, sociopath!"
+        else:
+            msg = "%s, you fucking megalomaniacal, malignantly narcissistic, sociopath!" % target
+        print(msg)
+
+    def psycho3(self):
+        if lt == 0:
+            msg = "You're a fucking megalomaniacal, malignantly narcissistic, psychopath!"
+        else:
+            msg = "%s, you're a fucking megalomaniacal, malignantly narcissistic, psychopath!" % target
+        print(msg)
+
+    def psycho4(self):
+        if lt == 0:
+            msg = "You're a fucking megalomaniacal, malignantly narcissistic, sociopath!"
+        else:
+            msg = "%s, you're a fucking megalomaniacal, malignantly narcissistic, sociopath!" % target
+        print(msg)
+
+    def psycho5(self):
+        if lt == 0:
+            msg = "You're a fucking megalomaniacal, malignantly narcissistic, psychopathic cunt!"
+        else:
+            msg = "%s, you're a fucking megalomaniacal, malignantly narcissistic, psychopathic cunt!" % target
+        print(msg)
+
+    def psycho6(self):
+        if lt == 0:
+            msg = "You're a fucking megalomaniacal, malignantly narcissistic, sociopathic cunt!"
+        else:
+            msg = "%s, you're a fucking megalomaniacal, malignantly narcissistic, sociopathic cunt!" % target
+        print(msg)
+
     def roff(self):
         if lt == 0:
             msg = "You can fuck right off!"
