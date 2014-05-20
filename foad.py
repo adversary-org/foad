@@ -623,7 +623,10 @@ class fuck:
         print(msg)
 
     def lmfao(self):
-        msg = "Laughing my fucking arse off."
+        if lt == 0:
+            msg = "Laughing my fucking arse off."
+        else:
+            msg = "%s, laughing my fucking arse off." % target
         print(msg)
 
     def madison(self):
