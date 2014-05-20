@@ -145,9 +145,30 @@ class fuck:
             msg = "%s, fuckin' A!" % target
         print(msg)
 
+    def about(self):
+        if lt == 0:
+            msg = "Messages and other information to be displayed interactively.  As with the acronym option, the target parameters are used to call each message.  A non-existent target parameter will produce a list of available options."
+        elif target.lower() == "bitcoin":
+            msg = __bitcoin__
+        elif target.lower() == "copyright":
+            msg = __copyright__
+        elif target.lower() == "email":
+            msg = "ben@adversary.org"
+        elif target.lower() == "gpg key":
+            msg = __openpgp__
+        elif target.lower() == "irc":
+            msg = "Hasimir on freenode.net"
+        elif target.lower() == "title":
+            msg = __title__
+        elif target.lower() == "website":
+            msg = "https://github.com/adversary-org/foad"
+        else:
+            msg = "Target parameters: bitcoin, copyright, email, gpg key, irc, title, website."
+        print(msg)
+
     def acronym(self):
         if lt == 0:
-            msg = "Acronyms and backronyms; use the target parameter to choose which one.  To view the target parameters run: foad.py acronym1 x"
+            msg = "Acronyms and backronyms; use the target parameter to choose which one.  To view the target parameters run: foad.py acronym x"
         elif target.lower() == "fubar":
             msg = "FUBAR: Fucked Up Beyond All Recognition"
         elif target.lower() == "carnal":
@@ -1269,6 +1290,7 @@ lc = len(df)
 rf = []
 for x in df:
     rf.append(x)
+rf.remove("about")
 rf.remove("acronym")
 lr = len(rf)
 
@@ -1304,7 +1326,23 @@ elif l == 2 and wtf == "unittest":
             print("Fuck testing!")
         print("")
 elif l >= 3 and wtf == "unittest":
-    if target.lower() == "carnal":
+    if target.lower() == "title":
+        print("Command:  "+sys.argv[0]+" about title")
+        exec("fuck().about()")
+        print("")
+    elif target.lower() == "copyright":
+        print("Command:  "+sys.argv[0]+" about copyright")
+        exec("fuck().about()")
+        print("")
+    elif target.lower() == "website":
+        print("Command:  "+sys.argv[0]+" about website")
+        exec("fuck().about()")
+        print("")
+    elif target.lower() == "bitcoin":
+        print("Command:  "+sys.argv[0]+" about bitcoin")
+        exec("fuck().about()")
+        print("")
+    elif target.lower() == "carnal":
         print("Command:  "+sys.argv[0]+" acronym carnal")
         exec("fuck().acronym()")
         print("")
