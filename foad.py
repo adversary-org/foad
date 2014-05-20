@@ -9,7 +9,7 @@
 #
 # https://github.com/adversary-org/foad
 #
-# Version:  0.5.2
+# Version:  0.5.5
 #
 # BTC:  1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz
 # License:  GNU Public License version 3 (GPLv3)
@@ -86,7 +86,7 @@ __copyrighta__ = "Copyright (C) Benjamin D. McGinnes, 2013-2014"
 __copyrightu__ = "Copyright \u00a9 Benjamin D. McGinnes, 2013-2014"
 __title__ = "FOAD: Fucked Off Adversarial Degenerates (Fuck Off And Die)"
 __license__ = "GNU Public License version 3 (GPLv3)"
-__version__ = "0.5.2"
+__version__ = "0.5.5"
 __bitcoin__ = "1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz"
 __openpgp__ = "0x321E4E2373590E5D"
 
@@ -148,22 +148,42 @@ class fuck:
     def about(self):
         if lt == 0:
             msg = "Messages and other information to be displayed interactively.  As with the acronym option, the target parameters are used to call each message.  A non-existent target parameter will produce a list of available options."
+        elif target.lower() == "adversary":
+            msg = "Organised Adversary"
+        elif target.lower() == "atitle":
+            msg = __title__
+        elif target.lower() == "author":
+            msg = __author__
         elif target.lower() == "bitcoin":
             msg = __bitcoin__
+        elif target.lower() == "contact":
+            msg = "See the following 'foad.py about' parameters: email, gpg key, irc and domain."
         elif target.lower() == "copyright":
             msg = __copyright__
+        elif target.lower() == "domain":
+            msg = "http://www.adversary.org/"
+        elif target.lower() == "donations":
+            msg = "If you find this script useful, please donate to the Bitcoin address included."
         elif target.lower() == "email":
             msg = "ben@adversary.org"
+        elif target.lower() == "encryption":
+            msg = "My GPG key is included for a reason, we should all be encrypting everything all the time."
         elif target.lower() == "gpg key":
             msg = __openpgp__
         elif target.lower() == "irc":
             msg = "Hasimir on freenode.net"
-        elif target.lower() == "title":
-            msg = __title__
+        elif target.lower() == "pirate":
+            msg = "http://www.pirateparty.org.au/"
+        elif target.lower() == "twitter":
+            msg = "Use this script with the Twython Tools scripts or anything which can call it and post the output."
+        elif target.lower() in "twython tools":
+            msg = "https://github.com/adversary-org/twython-tools"
+        elif target.lower() == "version":
+            msg = __version__
         elif target.lower() == "website":
             msg = "https://github.com/adversary-org/foad"
         else:
-            msg = "Target parameters: bitcoin, copyright, email, gpg key, irc, title, website."
+            msg = "Target parameters: adversary, atitle, author, bitcoin, contact, copyright, domain, donations, email, encryption, gpg key, irc, pirate, twitter, twython, version, website."
         print(msg)
 
     def acronym(self):
@@ -387,7 +407,10 @@ class fuck:
         print(msg)
 
     def figjam(self):
-        msg = "Fuck I'm good, just ask me!"
+        if lt == 0:
+            msg = "Fuck I'm good, just ask me!"
+        else:
+            msg = "Fuck I'm good, %s, just ask me!" % target
         print(msg)
 
     def fire(self):
@@ -1326,8 +1349,8 @@ elif l == 2 and wtf == "unittest":
             print("Fuck testing!")
         print("")
 elif l >= 3 and wtf == "unittest":
-    if target.lower() == "title":
-        print("Command:  "+sys.argv[0]+" about title")
+    if target.lower() == "atitle":
+        print("Command:  "+sys.argv[0]+" about atitle")
         exec("fuck().about()")
         print("")
     elif target.lower() == "copyright":
@@ -1336,6 +1359,18 @@ elif l >= 3 and wtf == "unittest":
         print("")
     elif target.lower() == "website":
         print("Command:  "+sys.argv[0]+" about website")
+        exec("fuck().about()")
+        print("")
+    elif target.lower() == "adversary":
+        print("Command:  "+sys.argv[0]+" about adversary")
+        exec("fuck().about()")
+        print("")
+    elif target.lower() == "domain":
+        print("Command:  "+sys.argv[0]+" about domain")
+        exec("fuck().about()")
+        print("")
+    elif target.lower() == "donations":
+        print("Command:  "+sys.argv[0]+" about donations")
         exec("fuck().about()")
         print("")
     elif target.lower() == "bitcoin":
