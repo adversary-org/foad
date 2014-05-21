@@ -262,6 +262,20 @@ class fuck:
             msg = "Fuck me gently with a chainsaw, %s.  Do I look like Mother Teresa?" % target
         print(msg)
 
+    def chainsawe(self):
+        if lt == 0:
+            msg = "Fuck me gently with a chainsaw!  Do I look like Mother Teresa?!"
+        else:
+            msg = "Fuck me gently with a chainsaw, %s!  Do I look like Mother Teresa?!" % target
+        print(msg)
+
+    def chainsaws(self):
+        if lt == 0:
+            msg = "Fuck me gently with a chainsaw!"
+        else:
+            msg = "Fuck me gently with a chainsaw, %s!" % target
+        print(msg)
+
     def cfm(self):
         if lt == 0:
             msg = "Come fuck me."
@@ -781,6 +795,13 @@ class fuck:
         else:
             msg = "%s, that's none of your fucking business." % target
         print(msg)
+
+    def noreally(self):
+        if lt == 0:
+            msg = "Fuck you. No really, I mean it, go fuck yourselves."
+        else:
+            msg = "Fuck you %s. No really, I mean it most sincerely, please go and fuck yourselves." % target
+            print(msg)
 
     def noshit(self):
         if lt == 0:
