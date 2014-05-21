@@ -9,7 +9,7 @@
 #
 # https://github.com/adversary-org/foad
 #
-# Version:  0.5.5
+# Version:  0.5.5.1
 #
 # BTC:  1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz
 # License:  GNU Public License version 3 (GPLv3)
@@ -86,7 +86,7 @@ __copyrighta__ = "Copyright (C) Benjamin D. McGinnes, 2013-2014"
 __copyrightu__ = "Copyright \u00a9 Benjamin D. McGinnes, 2013-2014"
 __title__ = "FOAD: Fucked Off Adversarial Degenerates (Fuck Off And Die)"
 __license__ = "GNU Public License version 3 (GPLv3)"
-__version__ = "0.5.5"
+__version__ = "0.5.5.1"
 __bitcoin__ = "1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz"
 __openpgp__ = "0x321E4E2373590E5D"
 
@@ -260,6 +260,20 @@ class fuck:
             msg = "Fuck me gently with a chainsaw.  Do I look like Mother Teresa?"
         else:
             msg = "Fuck me gently with a chainsaw, %s.  Do I look like Mother Teresa?" % target
+        print(msg)
+
+    def chainsawe(self):
+        if lt == 0:
+            msg = "Fuck me gently with a chainsaw!  Do I look like Mother Teresa?!"
+        else:
+            msg = "Fuck me gently with a chainsaw, %s!  Do I look like Mother Teresa?!" % target
+        print(msg)
+
+    def chainsaws(self):
+        if lt == 0:
+            msg = "Fuck me gently with a chainsaw!"
+        else:
+            msg = "Fuck me gently with a chainsaw, %s!" % target
         print(msg)
 
     def cfm(self):
@@ -781,6 +795,13 @@ class fuck:
         else:
             msg = "%s, that's none of your fucking business." % target
         print(msg)
+
+    def noreally(self):
+        if lt == 0:
+            msg = "Fuck you. No really, I mean it, go fuck yourselves."
+        else:
+            msg = "Fuck you %s. No really, I mean it most sincerely, please go and fuck yourselves." % target
+            print(msg)
 
     def noshit(self):
         if lt == 0:
