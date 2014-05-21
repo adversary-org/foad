@@ -168,7 +168,7 @@ class fuck:
             msg = "ben@adversary.org"
         elif target.lower() == "encryption":
             msg = "My GPG key is included for a reason, we should all be encrypting everything all the time."
-        elif target.lower() == "gpg key":
+        elif target.lower() in "gpg key":
             msg = __openpgp__
         elif target.lower() == "irc":
             msg = "Hasimir on freenode.net"
