@@ -9,7 +9,7 @@
 #
 # https://github.com/adversary-org/foad
 #
-# Version:  0.5.5.4
+# Version:  0.5.5.6
 #
 # BTC:  1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz
 # License:  GNU Public License version 3 (GPLv3)
@@ -23,6 +23,11 @@
 #
 # Versions up to 0.4.x developed with Python 2.7.x.  Conversion to
 # Python 3 made from version 0.4.2.
+#
+# Previous versions might have worked with Python 3.0 and 3.1 (I don't
+# know for sure, I never checked), but with the inclusion of the
+# argparse module this is now lo longer possible (if it ever was).
+#
 #
 # Options and notes:
 #
@@ -62,8 +67,24 @@
 # "omnia" and "vvv" options include translations in comments in the
 # source code.
 #
+#
+# The script now uses argparse to handle input, which means the order
+# of the input types can be switched around since it is the flag which
+# determines how the input is initially handled and not the order of
+# the arguments.  However, it is now essential when using arguments
+# with two or more words (e.g. names) to place them in quotation marks
+# as in the examples.
+#
 # Usage:  foad.py -f donut -n foo
 #         foad.py -f outside --name "FirstName LastName"
+#         foad.py --fuck king --name "FirstName LastName"
+#         foad.py -n Veronica --fuck chainsaw
+#
+# The old method of calling the script will still work, but only for
+# the argument types available at this point (i.e. --fuck and --name).
+# Any future argument types (e.g. the planned --extra) will not be
+# available through the old method.  When using this old method the
+# order the options are specified is important.
 #
 # Old Usage:  foad.py donut foo
 #             foad.py outside "FirstName LastName"
@@ -82,6 +103,8 @@
 # script).
 #
 # Python Documentation help command: pydoc3 foad
+# Command line help and hints: foad.py -h
+#
 ##
 
 __author__ = "Ben McGinnes <ben@adversary.org>"
@@ -90,7 +113,7 @@ __copyrighta__ = "Copyright (C) Benjamin D. McGinnes, 2013-2014"
 __copyrightu__ = "Copyright \u00a9 Benjamin D. McGinnes, 2013-2014"
 __title__ = "FOAD: Fucked Off Adversarial Degenerates (Fuck Off And Die)"
 __license__ = "GNU Public License version 3 (GPLv3)"
-__version__ = "0.5.5.4"
+__version__ = "0.5.5.6"
 __bitcoin__ = "1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz"
 __openpgp__ = "0x321E4E2373590E5D"
 
@@ -1559,36 +1582,3 @@ elif la >= 5:
                     w.append(str(sys.argv[i + 2]))
             wtfx = " ".join(w)
             print("Fuck %s!" % wtfx)
-
-
-
-#elif args.fuck is not None and args.name is None:
-    #if l == 2:
-    #    print("Fuck %s!" % wtf)
-    #if l >= 2:
-    #    w = []
-    #    for i in range(l - 2):
-    #        w.append(str(sys.argv[i + 2]))
-    #    wtf = " ".join(w)
-    #    try:
-    #        exec("fuck()."+wtf+"()")
-        #print("Fuck %s!" % wtf)
-    #try:
-    #    exec("fuck()."+wtf+"()")
-    #except(AttributeError, NameError):
-    #    w = []
-    #    for i in range(l - 2):
-    #        w.append(str(sys.argv[i + 2]))
-    #    wtf = " ".join(w)
-    #    print("Fuck %s!" % wtf)
-#elif l >=2 and args.fuck is None and args.name is not None:
-#    print("Fuck %s!" % target)
-#else:
-#    try:
-#        exec("fuck()."+wtf+"()")
-#    except(AttributeError, NameError):
-#        w = []
-#        for i in range(l - 1):
-#            w.append(str(sys.argv[i + 1]))
-#        wtf = " ".join(w)
-#        print("Fuck %s!" % wtf)
