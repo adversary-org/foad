@@ -1499,15 +1499,24 @@ elif l >= 2 and wtf == "random":
         exec("fuck()."+rc+"()")
     except(AttributeError, NameError):
         print("Fuck randomness!")
-elif l >= 2 and args.fuck is not None and args.name is None:
-    try:
-        exec("fuck()."+wtf+"()")
-    except(AttributeError, NameError):
-        print("Fuck %s!" % wtf)
+elif l == 2 and args.fuck is not None and args.name is None:
+    print("Fuck %s!" % wtf)
+    #try:
+    #    exec("fuck()."+wtf+"()")
+    #except(AttributeError, NameError):
+    #    w = []
+    #    for i in range(l - 2):
+    #        w.append(str(sys.argv[i + 2]))
+    #    wtf = " ".join(w)
+    #    print("Fuck %s!" % wtf)
 elif l >=2 and args.fuck is None and args.name is not None:
     print("Fuck %s!" % target)
 else:
     try:
         exec("fuck()."+wtf+"()")
     except(AttributeError, NameError):
+        w = []
+        for i in range(l - 1):
+            w.append(str(sys.argv[i + 1]))
+        wtf = " ".join(w)
         print("Fuck %s!" % wtf)
