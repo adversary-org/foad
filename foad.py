@@ -9,7 +9,7 @@
 #
 # https://github.com/adversary-org/foad
 #
-# Version:  0.5.5.1
+# Version:  0.6.0
 #
 # BTC:  1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz
 # License:  GNU Public License version 3 (GPLv3)
@@ -19,9 +19,15 @@
 # Requirements:
 #
 # * Python 3.2 or later (developed with Python 3.4.x)
+# * Python modules: argparse, random, sys, textwrap
 #
 # Versions up to 0.4.x developed with Python 2.7.x.  Conversion to
 # Python 3 made from version 0.4.2.
+#
+# Previous versions might have worked with Python 3.0 and 3.1 (I don't
+# know for sure, I never checked), but with the inclusion of the
+# argparse module this is now lo longer possible (if it ever was).
+#
 #
 # Options and notes:
 #
@@ -61,13 +67,32 @@
 # "omnia" and "vvv" options include translations in comments in the
 # source code.
 #
-# Usage:  foad.py donut foo
-#         foad.py outside "FirstName LastName"
-#         foad.py king FirstName LastName
 #
-# X-Chat/IRC usage:  /exec -o foad.py donut foo
-#                    /exec -o foad.py outside "FirstName LastName"
-#                    /exec -o foad.py king FirstName LastName
+# The script now uses argparse to handle input, which means the order
+# of the input types can be switched around since it is the flag which
+# determines how the input is initially handled and not the order of
+# the arguments.  However, it is now essential when using arguments
+# with two or more words (e.g. names) to place them in quotation marks
+# as in the examples.
+#
+# Usage:  foad.py -f donut -n foo
+#         foad.py -f outside --name "FirstName LastName"
+#         foad.py --fuck king --name "FirstName LastName"
+#         foad.py -n Veronica --fuck chainsaw
+#
+# The old method of calling the script will still work, but only for
+# the argument types available at this point (i.e. --fuck and --name).
+# Any future argument types (e.g. the planned --extra) will not be
+# available through the old method.  When using this old method the
+# order the options are specified is important.
+#
+# Old Usage:  foad.py donut foo
+#             foad.py outside "FirstName LastName"
+#             foad.py king FirstName LastName
+#
+# Old X-Chat/IRC usage:  /exec -o foad.py donut foo
+#                        /exec -o foad.py outside "FirstName LastName"
+#                        /exec -o foad.py king FirstName LastName
 #
 # Calling foad.py in other Python scripts (e.g. Twython for Twitter)
 # should be performed with the subprocess module.  Methods for doing
@@ -78,6 +103,8 @@
 # script).
 #
 # Python Documentation help command: pydoc3 foad
+# Command line help and hints: foad.py -h
+#
 ##
 
 __author__ = "Ben McGinnes <ben@adversary.org>"
@@ -85,10 +112,16 @@ __copyright__ = "Copyright © Benjamin D. McGinnes, 2013-2014"
 __copyrighta__ = "Copyright (C) Benjamin D. McGinnes, 2013-2014"
 __copyrightu__ = "Copyright \u00a9 Benjamin D. McGinnes, 2013-2014"
 __title__ = "FOAD: Fucked Off Adversarial Degenerates (Fuck Off And Die)"
+__stitle__ = "FOAD"
 __license__ = "GNU Public License version 3 (GPLv3)"
-__version__ = "0.5.5.1"
+__version__ = "0.6.0"
 __bitcoin__ = "1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz"
 __openpgp__ = "0x321E4E2373590E5D"
+
+import argparse
+import random
+import sys
+import textwrap
 
 about = """
 %s
@@ -96,43 +129,78 @@ Version %s
 %s
 License:  %s
 
+For instructions run:  %s -h 
+
 Contact:  %s %s
 Bitcoin:  %s
-""" % (__title__, __version__, __copyright__, __license__, __author__, __openpgp__, __bitcoin__)
+""" % (__title__, __version__, __copyright__, __license__, sys.argv[0], __author__, __openpgp__, __bitcoin__)
 
-import random
-import sys
+version = "%s (foad.py) version %s" % (__stitle__, __version__)
 
-l = len(sys.argv)
+lx = len(sys.argv)
 
-if l < 2:
-    print("""
+if lx == 2 and sys.argv[1].startswith("-") is False:
+    sys.argv.insert(1, "-f")
+elif lx == 3 and sys.argv[1].startswith("-") is False and sys.argv[2].startswith("-") is False:
+    sax = []
+    sax.append(sys.argv[0])
+    sax.append("-f")
+    sax.append(sys.argv[1])
+    sax.append("-n")
+    sax.append(sys.argv[2])
+    sys.argv = sax
+elif lx >= 4 and sys.argv[1].startswith("-") is False and sys.argv[2].startswith("-") is False:
+    sax = []
+    sax.append(sys.argv[0])
+    sax.append("-f")
+    sax.append(sys.argv[1])
+    sax.append("-n")
+    sax.append(" ".join(sys.argv[2:lx]))
+    sys.argv = sax
+
+parser = argparse.ArgumentParser(
+    prog="foad.py",
+    formatter_class=argparse.RawDescriptionHelpFormatter,
+    description=__title__, epilog=textwrap.dedent("""\
+        You MUST place any parameter of more than one word in
+        quotation marks.
+
+        For more help run:  pydoc3 foad
+
+        https://github.com/adversary-org/foad
+
+        Bitcoin:  %s
+    
     %s
+    """ % (__bitcoin__, __copyright__)))
+parser.add_argument("-f", "--fuck", help="One word, indicates type of fuck to give, run foad.py -f list_options to see possible flags.", action="store", required=False)
+parser.add_argument("-n", "--name", help="Name of target, more than one word must be in quotation marks.", action="store", required=False)
+#parser.add_argument("-e", "--extra", help="Additional comment to append to output", required=False)
+#parser.add_argument("-v", "--version", help="Print the version number.", action=print(version), required=False)
 
-    You must specify a type of fuck to give.  Target optional.
+if len(sys.argv) > lx:
+    la = len(sys.argv)
+else:
+    la = lx
 
-    To use run:  foad.py <option> [<target>]
-    To test all output run:  foad.py unittest [<target>]
-    For random output run:  foad.py random [<target>]
+sa = []
+for a in sys.argv:
+    if a.startswith("-") is False:  # input can't begin with a hyphen anyway.
+        sa.append(a)
 
-    To see the defined options run:  foad.py list_options
-    For more help run:  pydoc3 foad
+l = len(sa)
 
-    https://github.com/adversary-org/foad
+args = parser.parse_args()
 
-    %s
-    Bitcoin:  %s
-    """ % (__title__, __copyright__, __bitcoin__))
+if args.fuck is None:
+    wtf = ""
+else:
+    wtf = args.fuck.lower()
+
+if args.name is None:
     target = ""
-elif l == 2:
-    wtf = sys.argv[1].lower()
-    target = ""
-elif l >= 3:
-    wtf = sys.argv[1].lower()
-    t = []
-    for i in range(l - 2):
-        t.append(str(sys.argv[i + 2]))
-    target = " ".join(t)
+else:
+    target = args.name
 
 lt = len(target)
 
@@ -147,7 +215,7 @@ class fuck:
 
     def about(self):
         if lt == 0:
-            msg = "Messages and other information to be displayed interactively.  As with the acronym option, the target parameters are used to call each message.  A non-existent target parameter will produce a list of available options."
+            msg = textwrap.fill("Messages and other information to be displayed interactively.  As with the acronym option, the target parameters are used to call each message.  A non-existent target parameter will produce a list of available options.", 72)
         elif target.lower() == "adversary":
             msg = "Organised Adversary"
         elif target.lower() == "atitle":
@@ -183,12 +251,12 @@ class fuck:
         elif target.lower() == "website":
             msg = "https://github.com/adversary-org/foad"
         else:
-            msg = "Target parameters: adversary, atitle, author, bitcoin, contact, copyright, domain, donations, email, encryption, gpg key, irc, pirate, twitter, twython, version, website."
+            msg = textwrap.fill("Target parameters: adversary, atitle, author, bitcoin, contact, copyright, domain, donations, email, encryption, gpg key, irc, pirate, twitter, twython, version, website.", 72)
         print(msg)
 
     def acronym(self):
         if lt == 0:
-            msg = "Acronyms and backronyms; use the target parameter to choose which one.  To view the target parameters run: foad.py acronym x"
+            msg = textwrap.fill("Acronyms and backronyms; use the target parameter to choose which one.  To view the target parameters run: foad.py -f acronym -n x", 72)
         elif target.lower() == "fubar":
             msg = "FUBAR: Fucked Up Beyond All Recognition"
         elif target.lower() == "carnal":
@@ -220,7 +288,7 @@ class fuck:
         elif target.lower() == "snafu":
             msg = "SNAFU: Situation Normal: All Fucked Up"
         else:
-            msg = "Target parameters: bond, carnal, cunt, die, figjam, foaas, fubar, lmfao, right, snafu, snag, title."
+            msg = textwrap.fill("Target parameters: bond, carnal, cunt, die, figjam, foaas, fubar, lmfao, right, snafu, snag, title.", 72)
         print(msg)
 
     def agree(self):
@@ -442,7 +510,7 @@ class fuck:
         print(msg)
 
     def foad(self):
-        if "foad" in sys.argv[0]:
+        if "foad" in sa[0]:
             exec("fuck().foad1()")
         else:
             print("Help guide for foad.py (pydoc3 foad).")
@@ -1342,6 +1410,8 @@ random.seed()
 rc = random.choice(rf)
 
 if l < 2:
+    print(about)
+    print("")
     print("Number of defined options:  %d" % (lc))
     print("")
 elif l == 2 and wtf == "list_options":
@@ -1351,7 +1421,7 @@ elif l == 2 and wtf == "list_options":
     print("")
     print("Number of defined options:  %d" % (lc))
     print("")
-    print("List of defined options:  " + ", ".join(df))
+    print(textwrap.fill("List of defined options:  " + ", ".join(df), 72))
     print("")
     print("Bitcoin:  %s" % __bitcoin__)
     print("")
@@ -1363,7 +1433,7 @@ elif l == 2 and wtf == "unittest":
     print(about)
     print("")
     for i in range(lc):
-        print("Command:  "+sys.argv[0]+" "+df[i])
+        print("Command:  "+sa[0]+" "+df[i])
         try:
             exec("fuck()."+df[i]+"()")
         except(AttributeError, NameError):
@@ -1371,86 +1441,86 @@ elif l == 2 and wtf == "unittest":
         print("")
 elif l >= 3 and wtf == "unittest":
     if target.lower() == "atitle":
-        print("Command:  "+sys.argv[0]+" about atitle")
+        print("Command:  "+sa[0]+" about atitle")
         exec("fuck().about()")
         print("")
     elif target.lower() == "copyright":
-        print("Command:  "+sys.argv[0]+" about copyright")
+        print("Command:  "+sa[0]+" about copyright")
         exec("fuck().about()")
         print("")
     elif target.lower() == "website":
-        print("Command:  "+sys.argv[0]+" about website")
+        print("Command:  "+sa[0]+" about website")
         exec("fuck().about()")
         print("")
     elif target.lower() == "adversary":
-        print("Command:  "+sys.argv[0]+" about adversary")
+        print("Command:  "+sa[0]+" about adversary")
         exec("fuck().about()")
         print("")
     elif target.lower() == "domain":
-        print("Command:  "+sys.argv[0]+" about domain")
+        print("Command:  "+sa[0]+" about domain")
         exec("fuck().about()")
         print("")
     elif target.lower() == "donations":
-        print("Command:  "+sys.argv[0]+" about donations")
+        print("Command:  "+sa[0]+" about donations")
         exec("fuck().about()")
         print("")
     elif target.lower() == "bitcoin":
-        print("Command:  "+sys.argv[0]+" about bitcoin")
+        print("Command:  "+sa[0]+" about bitcoin")
         exec("fuck().about()")
         print("")
     elif target.lower() == "carnal":
-        print("Command:  "+sys.argv[0]+" acronym carnal")
+        print("Command:  "+sa[0]+" acronym carnal")
         exec("fuck().acronym()")
         print("")
     elif target.lower() == "bond":
-        print("Command:  "+sys.argv[0]+" acronym bond")
+        print("Command:  "+sa[0]+" acronym bond")
         exec("fuck().acronym()")
         print("")
     elif target.lower() == "die":
-        print("Command:  "+sys.argv[0]+" acronym die")
+        print("Command:  "+sa[0]+" acronym die")
         exec("fuck().acronym()")
         print("")
     elif target.lower() == "right":
-        print("Command:  "+sys.argv[0]+" acronym right")
+        print("Command:  "+sa[0]+" acronym right")
         exec("fuck().acronym()")
         print("")
     elif target.lower() == "title":
-        print("Command:  "+sys.argv[0]+" acronym title")
+        print("Command:  "+sa[0]+" acronym title")
         exec("fuck().acronym()")
         print("")
     elif target.lower() == "cunt":
-        print("Command:  "+sys.argv[0]+" acronym cunt")
+        print("Command:  "+sa[0]+" acronym cunt")
         exec("fuck().acronym()")
         print("")
     elif target.lower() == "foaas":
-        print("Command:  "+sys.argv[0]+" acronym foaas")
+        print("Command:  "+sa[0]+" acronym foaas")
         exec("fuck().acronym()")
         print("")
     elif target.lower() == "snag":
-        print("Command:  "+sys.argv[0]+" acronym snag")
+        print("Command:  "+sa[0]+" acronym snag")
         exec("fuck().acronym()")
         print("")
     elif target.lower() == "snafu":
-        print("Command:  "+sys.argv[0]+" acronym snafu")
+        print("Command:  "+sa[0]+" acronym snafu")
         exec("fuck().acronym()")
         print("")
     elif target.lower() == "fubar":
-        print("Command:  "+sys.argv[0]+" acronym fubar")
+        print("Command:  "+sa[0]+" acronym fubar")
         exec("fuck().acronym()")
         print("")
     elif target.lower() == "lmfao":
-        print("Command:  "+sys.argv[0]+" acronym lmfao")
+        print("Command:  "+sa[0]+" acronym lmfao")
         exec("fuck().acronym()")
         print("")
     elif target.lower() == "figjam":
-        print("Command:  "+sys.argv[0]+" acronym figjam")
+        print("Command:  "+sa[0]+" acronym figjam")
         exec("fuck().acronym()")
         print("")
     else:
         print(about)
         print("")
         for i in range(lc):
-            print("Command:  "+sys.argv[0]+" "+df[i]+" "+target)
+            print("Command:  "+sa[0]+" "+df[i]+" "+target)
             try:
                 exec("fuck()."+df[i]+"()")
             except(AttributeError, NameError):
@@ -1461,12 +1531,61 @@ elif l >= 2 and wtf == "random":
         exec("fuck()."+rc+"()")
     except(AttributeError, NameError):
         print("Fuck randomness!")
-elif l >= 2:
-    try:
-        exec("fuck()."+wtf+"()")
-    except(AttributeError, NameError):
-        w = []
-        for i in range(l - 1):
-            w.append(str(sys.argv[i + 1]))
-        wtf = " ".join(w)
-        print("Fuck %s!" % wtf)
+elif la == 3:
+    if args.fuck is not None and args.name is None:
+        try:
+            exec("fuck()."+wtf+"()")
+        except(AttributeError, NameError):
+            print("Fuck %s!" % wtf)
+    elif args.fuck is None and args.name is not None:
+        print("Fuck %s!" % target)
+elif la == 4:
+    if args.fuck is not None and args.name is None:
+        try:
+            exec("fuck()."+wtf+"()")
+        except(AttributeError, NameError):
+            w = []
+            for i in range(la - 2):
+                w.append(str(sys.argv[i + 2]))
+            wtf = " ".join(w)
+            print("Fuck %s!" % wtf)
+    elif args.fuck is None and args.name is not None:
+        t = []
+        for i in range(la - 2):
+            t.append(str(sys.argv[i + 2]))
+        target = " ".join(t)
+        print("Fuck %s!" % target)
+    elif args.fuck is not None and args.name is not None:
+        try:
+            exec("fuck()."+wtf+"()")
+        except(AttributeError, NameError):
+            print("Fuck %s!" % wtf)
+    else:
+        pass
+        #print("Fuck Perl!")
+elif la >= 5:
+    if args.fuck is not None and args.name is None:
+        try:
+            exec("fuck()."+wtf+"()")
+        except(AttributeError, NameError):
+            w = []
+            for i in range(la - 2):
+                w.append(str(sys.argv[i + 2]))
+            wtf = " ".join(w)
+            print("Fuck %s!" % wtf)
+    elif args.fuck is None and args.name is not None:
+        t = []
+        for i in range(la - 2):
+            t.append(str(sys.argv[i + 2]))
+        target = " ".join(t)
+        print("Fuck %s!" % target)
+    elif args.fuck is not None and args.name is not None:
+        try:
+            exec("fuck()."+wtf+"()")
+        except(AttributeError, NameError):
+            w = []
+            for i in range(la - 2):
+                if str(sys.argv[i]).startswith("-") is False:
+                    w.append(str(sys.argv[i + 2]))
+            wtfx = " ".join(w)
+            print("Fuck %s!" % wtfx)
