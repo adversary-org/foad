@@ -151,6 +151,8 @@ parser.add_argument("-f", "--fuck", help="One word, indicates type of fuck to gi
 parser.add_argument("-n", "--name", help="Name of target, more than one word must be in quotation marks.", action="store", required=False)
 #parser.add_argument("-e", "--extra", help="Additional comment to append to output", required=False)
 
+la = len(sys.argv)
+
 sa = []
 for a in sys.argv:
     if a.startswith("-") is False:  # input can't begin with a hyphen anyway.
@@ -1499,8 +1501,78 @@ elif l >= 2 and wtf == "random":
         exec("fuck()."+rc+"()")
     except(AttributeError, NameError):
         print("Fuck randomness!")
-elif l == 2 and args.fuck is not None and args.name is None:
-    print("Fuck %s!" % wtf)
+elif la == 3:
+    if args.fuck is not None and args.name is None:
+        try:
+            exec("fuck()."+wtf+"()")
+        except(AttributeError, NameError):
+            print("Fuck %s!" % wtf)
+    elif args.fuck is None and args.name is not None:
+        print("Fuck %s!" % target)
+elif la == 4:
+    if args.fuck is not None and args.name is None:
+        try:
+            exec("fuck()."+wtf+"()")
+        except(AttributeError, NameError):
+            w = []
+            for i in range(la - 2):
+                w.append(str(sys.argv[i + 2]))
+            wtf = " ".join(w)
+            print("Fuck %s!" % wtf)
+    elif args.fuck is None and args.name is not None:
+        t = []
+        for i in range(la - 2):
+            t.append(str(sys.argv[i + 2]))
+        target = " ".join(t)
+        print("Fuck %s!" % target)
+    elif args.fuck is not None and args.name is not None:
+        try:
+            exec("fuck()."+wtf+"()")
+        except(AttributeError, NameError):
+            print("Fuck %s!" % wtf)
+    else:
+        pass
+        #print("Fuck Perl!")
+elif la >= 5:
+    if args.fuck is not None and args.name is None:
+        try:
+            exec("fuck()."+wtf+"()")
+        except(AttributeError, NameError):
+            w = []
+            for i in range(la - 2):
+                w.append(str(sys.argv[i + 2]))
+            wtf = " ".join(w)
+            print("Fuck %s!" % wtf)
+    elif args.fuck is None and args.name is not None:
+        t = []
+        for i in range(la - 2):
+            t.append(str(sys.argv[i + 2]))
+        target = " ".join(t)
+        print("Fuck %s!" % target)
+    elif args.fuck is not None and args.name is not None:
+        try:
+            exec("fuck()."+wtf+"()")
+        except(AttributeError, NameError):
+            w = []
+            for i in range(la - 2):
+                if str(sys.argv[i]).startswith("-") is False:
+                    w.append(str(sys.argv[i + 2]))
+            wtfx = " ".join(w)
+            print("Fuck %s!" % wtfx)
+
+
+
+#elif args.fuck is not None and args.name is None:
+    #if l == 2:
+    #    print("Fuck %s!" % wtf)
+    #if l >= 2:
+    #    w = []
+    #    for i in range(l - 2):
+    #        w.append(str(sys.argv[i + 2]))
+    #    wtf = " ".join(w)
+    #    try:
+    #        exec("fuck()."+wtf+"()")
+        #print("Fuck %s!" % wtf)
     #try:
     #    exec("fuck()."+wtf+"()")
     #except(AttributeError, NameError):
@@ -1509,14 +1581,14 @@ elif l == 2 and args.fuck is not None and args.name is None:
     #        w.append(str(sys.argv[i + 2]))
     #    wtf = " ".join(w)
     #    print("Fuck %s!" % wtf)
-elif l >=2 and args.fuck is None and args.name is not None:
-    print("Fuck %s!" % target)
-else:
-    try:
-        exec("fuck()."+wtf+"()")
-    except(AttributeError, NameError):
-        w = []
-        for i in range(l - 1):
-            w.append(str(sys.argv[i + 1]))
-        wtf = " ".join(w)
-        print("Fuck %s!" % wtf)
+#elif l >=2 and args.fuck is None and args.name is not None:
+#    print("Fuck %s!" % target)
+#else:
+#    try:
+#        exec("fuck()."+wtf+"()")
+#    except(AttributeError, NameError):
+#        w = []
+#        for i in range(l - 1):
+#            w.append(str(sys.argv[i + 1]))
+#        wtf = " ".join(w)
+#        print("Fuck %s!" % wtf)
