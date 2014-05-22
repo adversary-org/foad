@@ -111,6 +111,14 @@ Contact:  %s %s
 Bitcoin:  %s
 """ % (__title__, __version__, __copyright__, __license__, sys.argv[0], __author__, __openpgp__, __bitcoin__)
 
+if len(sys.argv) == 2:
+    if sys.argv[1].startswith("-") is False:
+        sys.argv.insert(1, "-f")
+#elif len(sys.argv) >= 3:
+#    if sys.argv[1].startswith("-") is False and sys.argv[2].startswith("-") is False:
+#        sys.argv.insert(2, "-n")
+#        sys.argv.insert(1, "-f")
+
 parser = argparse.ArgumentParser(
     prog="foad.py",
     formatter_class=argparse.RawDescriptionHelpFormatter,
