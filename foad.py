@@ -147,39 +147,6 @@ if args.name is None:
 else:
     target = args.name
 
-
-# Retaining in comments in case I implement --old-method flag to call
-# functions the old way.
-#
-#if l < 2:
-#    print("""
-#    %s
-#
-#    You must specify a type of fuck to give.  Target optional.
-#
-#    To use run:  foad.py <option> [<target>]
-#    To test all output run:  foad.py unittest [<target>]
-#    For random output run:  foad.py random [<target>]
-#
-#    To see the defined options run:  foad.py list_options
-#    For more help run:  pydoc3 foad
-#
-#    https://github.com/adversary-org/foad
-#
-#    %s
-#    Bitcoin:  %s
-#    """ % (__title__, __copyright__, __bitcoin__))
-#    target = ""
-#elif l == 2:
-#    wtf = sa[1].lower()
-#    target = ""
-#elif l >= 3:
-#    wtf = sa[1].lower()
-#    t = []
-#    for i in range(l - 2):
-#        t.append(str(sa[i + 2]))
-#    target = " ".join(t)
-
 lt = len(target)
 
 
