@@ -105,9 +105,11 @@ Version %s
 %s
 License:  %s
 
+For instructions run:  %s -h 
+
 Contact:  %s %s
 Bitcoin:  %s
-""" % (__title__, __version__, __copyright__, __license__, __author__, __openpgp__, __bitcoin__)
+""" % (__title__, __version__, __copyright__, __license__, sys.argv[0], __author__, __openpgp__, __bitcoin__)
 
 parser = argparse.ArgumentParser(
     prog="foad.py",
@@ -1355,6 +1357,8 @@ random.seed()
 rc = random.choice(rf)
 
 if l < 2:
+    print(about)
+    print("")
     print("Number of defined options:  %d" % (lc))
     print("")
 elif l == 2 and wtf == "list_options":
