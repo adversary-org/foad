@@ -9,7 +9,7 @@
 #
 # https://github.com/adversary-org/foad
 #
-# Version:  0.5.5.2a
+# Version:  0.5.5.3
 #
 # BTC:  1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz
 # License:  GNU Public License version 3 (GPLv3)
@@ -90,7 +90,7 @@ __copyrighta__ = "Copyright (C) Benjamin D. McGinnes, 2013-2014"
 __copyrightu__ = "Copyright \u00a9 Benjamin D. McGinnes, 2013-2014"
 __title__ = "FOAD: Fucked Off Adversarial Degenerates (Fuck Off And Die)"
 __license__ = "GNU Public License version 3 (GPLv3)"
-__version__ = "0.5.5.2a"
+__version__ = "0.5.5.3"
 __bitcoin__ = "1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz"
 __openpgp__ = "0x321E4E2373590E5D"
 
@@ -1376,7 +1376,7 @@ elif l == 2 and wtf == "list_options":
     print("")
     print("Number of defined options:  %d" % (lc))
     print("")
-    print("List of defined options:  " + ", ".join(df))
+    print(textwrap.fill("List of defined options:  " + ", ".join(df), 72))
     print("")
     print("Bitcoin:  %s" % __bitcoin__)
     print("")
