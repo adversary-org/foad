@@ -9,7 +9,7 @@
 #
 # https://github.com/adversary-org/foad
 #
-# Version:  0.5.5.3
+# Version:  0.5.5.4
 #
 # BTC:  1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz
 # License:  GNU Public License version 3 (GPLv3)
@@ -90,7 +90,7 @@ __copyrighta__ = "Copyright (C) Benjamin D. McGinnes, 2013-2014"
 __copyrightu__ = "Copyright \u00a9 Benjamin D. McGinnes, 2013-2014"
 __title__ = "FOAD: Fucked Off Adversarial Degenerates (Fuck Off And Die)"
 __license__ = "GNU Public License version 3 (GPLv3)"
-__version__ = "0.5.5.3"
+__version__ = "0.5.5.4"
 __bitcoin__ = "1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz"
 __openpgp__ = "0x321E4E2373590E5D"
 
@@ -112,8 +112,25 @@ Bitcoin:  %s
 """ % (__title__, __version__, __copyright__, __license__, sys.argv[0], __author__, __openpgp__, __bitcoin__)
 
 lx = len(sys.argv)
+
 if lx == 2 and sys.argv[1].startswith("-") is False:
     sys.argv.insert(1, "-f")
+elif lx == 3 and sys.argv[1].startswith("-") is False and sys.argv[2].startswith("-") is False:
+    sax = []
+    sax.append(sys.argv[0])
+    sax.append("-f")
+    sax.append(sys.argv[1])
+    sax.append("-n")
+    sax.append(sys.argv[2])
+    sys.argv = sax
+elif lx >= 4 and sys.argv[1].startswith("-") is False and sys.argv[2].startswith("-") is False:
+    sax = []
+    sax.append(sys.argv[0])
+    sax.append("-f")
+    sax.append(sys.argv[1])
+    sax.append("-n")
+    sax.append(" ".join(sys.argv[2:lx]))
+    sys.argv = sax
 
 parser = argparse.ArgumentParser(
     prog="foad.py",
