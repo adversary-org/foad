@@ -4,7 +4,7 @@
 ./foad.py -f list_options
 pydoc3 foad.py
 ./foad.py -f unittest
-./foad.py -f unittest -n Bob the Builder
+./foad.py -f unittest -n "Bob the Builder"
 ./foad.py -f unittest -n carnal
 ./foad.py -f unittest -n bond
 ./foad.py -f unittest -n die
