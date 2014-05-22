@@ -111,9 +111,9 @@ Contact:  %s %s
 Bitcoin:  %s
 """ % (__title__, __version__, __copyright__, __license__, sys.argv[0], __author__, __openpgp__, __bitcoin__)
 
-#lx = len(sys.argv)
-#if lx == 2 and sys.argv[1].startswith("-") is False:
-#    sys.argv.insert(1, "-f")
+lx = len(sys.argv)
+if lx == 2 and sys.argv[1].startswith("-") is False:
+    sys.argv.insert(1, "-f")
 
 parser = argparse.ArgumentParser(
     prog="foad.py",
@@ -1489,3 +1489,8 @@ elif l >= 2 and args.fuck is not None and args.name is None:
         print("Fuck %s!" % wtf)
 elif l >=2 and args.fuck is None and args.name is not None:
     print("Fuck %s!" % target)
+else:
+    try:
+        exec("fuck()."+wtf+"()")
+    except(AttributeError, NameError):
+        print("Fuck %s!" % wtf)
