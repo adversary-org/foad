@@ -111,13 +111,9 @@ Contact:  %s %s
 Bitcoin:  %s
 """ % (__title__, __version__, __copyright__, __license__, sys.argv[0], __author__, __openpgp__, __bitcoin__)
 
-if len(sys.argv) == 2:
-    if sys.argv[1].startswith("-") is False:
-        sys.argv.insert(1, "-f")
-#elif len(sys.argv) >= 3:
-#    if sys.argv[1].startswith("-") is False and sys.argv[2].startswith("-") is False:
-#        sys.argv.insert(2, "-n")
-#        sys.argv.insert(1, "-f")
+#lx = len(sys.argv)
+#if lx == 2 and sys.argv[1].startswith("-") is False:
+#    sys.argv.insert(1, "-f")
 
 parser = argparse.ArgumentParser(
     prog="foad.py",
@@ -170,7 +166,7 @@ class fuck:
 
     def about(self):
         if lt == 0:
-            msg = "Messages and other information to be displayed interactively.  As with the acronym option, the target parameters are used to call each message.  A non-existent target parameter will produce a list of available options."
+            msg = textwrap.fill("Messages and other information to be displayed interactively.  As with the acronym option, the target parameters are used to call each message.  A non-existent target parameter will produce a list of available options.", 72)
         elif target.lower() == "adversary":
             msg = "Organised Adversary"
         elif target.lower() == "atitle":
@@ -206,12 +202,12 @@ class fuck:
         elif target.lower() == "website":
             msg = "https://github.com/adversary-org/foad"
         else:
-            msg = "Target parameters: adversary, atitle, author, bitcoin, contact, copyright, domain, donations, email, encryption, gpg key, irc, pirate, twitter, twython, version, website."
+            msg = textwrap.fill("Target parameters: adversary, atitle, author, bitcoin, contact, copyright, domain, donations, email, encryption, gpg key, irc, pirate, twitter, twython, version, website.", 72)
         print(msg)
 
     def acronym(self):
         if lt == 0:
-            msg = "Acronyms and backronyms; use the target parameter to choose which one.  To view the target parameters run: foad.py acronym x"
+            msg = textwrap.fill("Acronyms and backronyms; use the target parameter to choose which one.  To view the target parameters run: foad.py -f acronym -n x", 72)
         elif target.lower() == "fubar":
             msg = "FUBAR: Fucked Up Beyond All Recognition"
         elif target.lower() == "carnal":
@@ -243,7 +239,7 @@ class fuck:
         elif target.lower() == "snafu":
             msg = "SNAFU: Situation Normal: All Fucked Up"
         else:
-            msg = "Target parameters: bond, carnal, cunt, die, figjam, foaas, fubar, lmfao, right, snafu, snag, title."
+            msg = textwrap.fill("Target parameters: bond, carnal, cunt, die, figjam, foaas, fubar, lmfao, right, snafu, snag, title.", 72)
         print(msg)
 
     def agree(self):
