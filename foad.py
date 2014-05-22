@@ -9,7 +9,7 @@
 #
 # https://github.com/adversary-org/foad
 #
-# Version:  0.5.5.6
+# Version:  0.5.5.7
 #
 # BTC:  1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz
 # License:  GNU Public License version 3 (GPLv3)
@@ -112,8 +112,9 @@ __copyright__ = "Copyright © Benjamin D. McGinnes, 2013-2014"
 __copyrighta__ = "Copyright (C) Benjamin D. McGinnes, 2013-2014"
 __copyrightu__ = "Copyright \u00a9 Benjamin D. McGinnes, 2013-2014"
 __title__ = "FOAD: Fucked Off Adversarial Degenerates (Fuck Off And Die)"
+__stitle__ = "FOAD"
 __license__ = "GNU Public License version 3 (GPLv3)"
-__version__ = "0.5.5.6"
+__version__ = "0.5.5.7"
 __bitcoin__ = "1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz"
 __openpgp__ = "0x321E4E2373590E5D"
 
@@ -133,6 +134,8 @@ For instructions run:  %s -h
 Contact:  %s %s
 Bitcoin:  %s
 """ % (__title__, __version__, __copyright__, __license__, sys.argv[0], __author__, __openpgp__, __bitcoin__)
+
+version = "%s (foad.py) version %s" % (__stitle__, __version__)
 
 lx = len(sys.argv)
 
@@ -173,8 +176,12 @@ parser = argparse.ArgumentParser(
 parser.add_argument("-f", "--fuck", help="One word, indicates type of fuck to give, run foad.py -f list_options to see possible flags.", action="store", required=False)
 parser.add_argument("-n", "--name", help="Name of target, more than one word must be in quotation marks.", action="store", required=False)
 #parser.add_argument("-e", "--extra", help="Additional comment to append to output", required=False)
+#parser.add_argument("-v", "--version", help="Print the version number.", action=print(version), required=False)
 
-la = len(sys.argv)
+if len(sys.argv) > lx:
+    la = len(sys.argv)
+else:
+    la = lx
 
 sa = []
 for a in sys.argv:
