@@ -9,7 +9,7 @@
 #
 # https://github.com/adversary-org/foad
 #
-# Version:  0.6.1
+# Version:  0.6.1.1
 #
 # BTC:  1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz
 # License:  GNU Public License version 3 (GPLv3)
@@ -67,6 +67,11 @@
 # "omnia" and "vvv" options include translations in comments in the
 # source code.
 #
+# There are at least two options which depend on the encoding being
+# UTF-8 (those being "omnia" and "linus").  If the copyright symbols
+# peppered throughout the script don't display properly then there's a
+# good chance that those options won't either.
+#
 #
 # The script now uses argparse to handle input, which means the order
 # of the input types can be switched around since it is the flag which
@@ -108,20 +113,34 @@
 ##
 
 __author__ = "Ben McGinnes <ben@adversary.org>"
-__copyright__ = "Copyright © Benjamin D. McGinnes, 2013-2014"
+__copyrightu__ = "Copyright © Benjamin D. McGinnes, 2013-2014"
 __copyrighta__ = "Copyright (C) Benjamin D. McGinnes, 2013-2014"
-__copyrightu__ = "Copyright \u00a9 Benjamin D. McGinnes, 2013-2014"
+__copyrighth__ = "Copyright \u00a9 Benjamin D. McGinnes, 2013-2014"
 __title__ = "FOAD: Fucked Off Adversarial Degenerates (Fuck Off And Die)"
 __stitle__ = "FOAD"
 __license__ = "GNU Public License version 3 (GPLv3)"
-__version__ = "0.6.1"
+__version__ = "0.6.1.1"
 __bitcoin__ = "1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz"
 __openpgp__ = "0x321E4E2373590E5D"
 
 import argparse
+import locale
 import random
 import sys
 import textwrap
+
+if locale.getlocale()[1] == "UTF-8":
+    __copyright__ = __copyrightu__
+elif locale.getdefaultlocale()[1] == "UTF-8":
+    __copyright__ = __copyrightu__
+elif locale.getpreferredencoding() == "UTF-8":
+    __copyright__ = __copyrightu__
+else:
+    try:
+        __copyright__ = __copyrighth__
+    except locale.Error:
+        __copyright__ = __copyrighta__
+    
 
 about = """
 %s
@@ -240,6 +259,8 @@ class fuck:
             msg = __openpgp__
         elif target.lower() == "irc":
             msg = "Hasimir on freenode.net"
+        elif target.lower() == "options":
+            msg = "Number of defined options:  %d" % (lc)
         elif target.lower() == "pirate":
             msg = "http://www.pirateparty.org.au/"
         elif target.lower() == "twitter":
@@ -251,7 +272,7 @@ class fuck:
         elif target.lower() == "website":
             msg = "https://github.com/adversary-org/foad"
         else:
-            msg = textwrap.fill("Target parameters: adversary, atitle, author, bitcoin, contact, copyright, domain, donations, email, encryption, gpg key, irc, pirate, twitter, twython, version, website.", 72)
+            msg = textwrap.fill("Target parameters: adversary, atitle, author, bitcoin, contact, copyright, domain, donations, email, encryption, gpg key, irc, options, pirate, twitter, twython, version, website.", 72)
         print(msg)
 
     def acronym(self):
@@ -1485,6 +1506,10 @@ elif l >= 3 and wtf == "unittest":
         exec("fuck().about()")
         print("")
     elif target.lower() == "gpg key":
+        print("Command:  %s -f about -n %s" % (sa[0], target.lower)) 
+        exec("fuck().about()")
+        print("")
+    elif target.lower() == "options":
         print("Command:  %s -f about -n %s" % (sa[0], target.lower)) 
         exec("fuck().about()")
         print("")
