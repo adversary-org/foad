@@ -1167,6 +1167,13 @@ class fuck:
             msg = "Fuck %s!  Fuck the Church!  Fuck the State!  Fuck you!  Fuck me!  Fuck all these arseholes!" % target
         print(msg)
 
+    def stolen(self):
+        if lt == 0:
+            msg = "I wouldn't fuck you with a stolen dick!"
+        else:
+            msg = "I wouldn't fuck %s with a stolen dick!" % target
+        print(msg)
+
     def tard(self):
         if lt == 0:
             msg = "You complete and utter fucktard!"
