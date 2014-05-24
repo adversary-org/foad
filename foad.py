@@ -140,7 +140,7 @@ else:
         __copyright__ = __copyrighth__
     except locale.Error:
         __copyright__ = __copyrighta__
-    
+
 
 about = """
 %s
@@ -148,7 +148,7 @@ Version %s
 %s
 License:  %s
 
-For instructions run:  %s -h 
+For instructions run:  %s -h
 
 Contact:  %s %s
 Bitcoin:  %s
@@ -189,13 +189,13 @@ parser = argparse.ArgumentParser(
         https://github.com/adversary-org/foad
 
         Bitcoin:  %s
-    
+
     %s
     """ % (__bitcoin__, __copyright__)))
 parser.add_argument("-f", "--fuck", help="One word, indicates type of fuck to give, run foad.py -f list_options to see possible flags.", action="store", required=False)
 parser.add_argument("-n", "--name", help="Name of target, more than one word must be in quotation marks.", action="store", required=False)
-#parser.add_argument("-e", "--extra", help="Additional comment to append to output", required=False)
-#parser.add_argument("-v", "--version", help="Print the version number.", action=print(version), required=False)
+# parser.add_argument("-e", "--extra", help="Additional comment to append to output", action="store", required=False)
+# parser.add_argument("-v", "--version", help="Print the version number.", action=print(version), required=False)
 
 if len(sys.argv) > lx:
     la = len(sys.argv)
@@ -1484,63 +1484,63 @@ elif l >= 3 and wtf == "unittest":
         exec("fuck().about()")
         print("")
     elif target.lower() == "website":
-        print("Command:  %s -f about -n %s" % (sa[0], target.lower)) 
+        print("Command:  %s -f about -n %s" % (sa[0], target.lower))
         exec("fuck().about()")
         print("")
     elif target.lower() == "adversary":
-        print("Command:  %s -f about -n %s" % (sa[0], target.lower)) 
+        print("Command:  %s -f about -n %s" % (sa[0], target.lower))
         exec("fuck().about()")
         print("")
     elif target.lower() == "domain":
-        print("Command:  %s -f about -n %s" % (sa[0], target.lower)) 
+        print("Command:  %s -f about -n %s" % (sa[0], target.lower))
         exec("fuck().about()")
         print("")
     elif target.lower() == "donations":
-        print("Command:  %s -f about -n %s" % (sa[0], target.lower)) 
+        print("Command:  %s -f about -n %s" % (sa[0], target.lower))
         exec("fuck().about()")
         print("")
     elif target.lower() == "bitcoin":
-        print("Command:  %s -f about -n %s" % (sa[0], target.lower)) 
+        print("Command:  %s -f about -n %s" % (sa[0], target.lower))
         exec("fuck().about()")
         print("")
     elif target.lower() == "author":
-        print("Command:  %s -f about -n %s" % (sa[0], target.lower)) 
+        print("Command:  %s -f about -n %s" % (sa[0], target.lower))
         exec("fuck().about()")
         print("")
     elif target.lower() == "contact":
-        print("Command:  %s -f about -n %s" % (sa[0], target.lower)) 
+        print("Command:  %s -f about -n %s" % (sa[0], target.lower))
         exec("fuck().about()")
         print("")
     elif target.lower() == "email":
-        print("Command:  %s -f about -n %s" % (sa[0], target.lower)) 
+        print("Command:  %s -f about -n %s" % (sa[0], target.lower))
         exec("fuck().about()")
         print("")
     elif target.lower() == "encryption":
-        print("Command:  %s -f about -n %s" % (sa[0], target.lower)) 
+        print("Command:  %s -f about -n %s" % (sa[0], target.lower))
         exec("fuck().about()")
         print("")
     elif target.lower() == "gpg key":
-        print("Command:  %s -f about -n %s" % (sa[0], target.lower)) 
+        print("Command:  %s -f about -n %s" % (sa[0], target.lower))
         exec("fuck().about()")
         print("")
     elif target.lower() == "options":
-        print("Command:  %s -f about -n %s" % (sa[0], target.lower)) 
+        print("Command:  %s -f about -n %s" % (sa[0], target.lower))
         exec("fuck().about()")
         print("")
     elif target.lower() == "pirate":
-        print("Command:  %s -f about -n %s" % (sa[0], target.lower)) 
+        print("Command:  %s -f about -n %s" % (sa[0], target.lower))
         exec("fuck().about()")
         print("")
     elif target.lower() == "twitter":
-        print("Command:  %s -f about -n %s" % (sa[0], target.lower)) 
+        print("Command:  %s -f about -n %s" % (sa[0], target.lower))
         exec("fuck().about()")
         print("")
     elif target.lower() == "twython tools":
-        print("Command:  %s -f about -n %s" % (sa[0], target.lower)) 
+        print("Command:  %s -f about -n %s" % (sa[0], target.lower))
         exec("fuck().about()")
         print("")
     elif target.lower() == "version":
-        print("Command:  %s -f about -n %s" % (sa[0], target.lower)) 
+        print("Command:  %s -f about -n %s" % (sa[0], target.lower))
         exec("fuck().about()")
         print("")
     elif target.lower() == "carnal":
@@ -1548,47 +1548,47 @@ elif l >= 3 and wtf == "unittest":
         exec("fuck().acronym()")
         print("")
     elif target.lower() == "bond":
-        print("Command:  %s -f acronym -n %s" % (sa[0], target.lower)) 
+        print("Command:  %s -f acronym -n %s" % (sa[0], target.lower))
         exec("fuck().acronym()")
         print("")
     elif target.lower() == "die":
-        print("Command:  %s -f acronym -n %s" % (sa[0], target.lower)) 
+        print("Command:  %s -f acronym -n %s" % (sa[0], target.lower))
         exec("fuck().acronym()")
         print("")
     elif target.lower() == "right":
-        print("Command:  %s -f acronym -n %s" % (sa[0], target.lower)) 
+        print("Command:  %s -f acronym -n %s" % (sa[0], target.lower))
         exec("fuck().acronym()")
         print("")
     elif target.lower() == "title":
-        print("Command:  %s -f acronym -n %s" % (sa[0], target.lower)) 
+        print("Command:  %s -f acronym -n %s" % (sa[0], target.lower))
         exec("fuck().acronym()")
         print("")
     elif target.lower() == "cunt":
-        print("Command:  %s -f acronym -n %s" % (sa[0], target.lower)) 
+        print("Command:  %s -f acronym -n %s" % (sa[0], target.lower))
         exec("fuck().acronym()")
         print("")
     elif target.lower() == "foaas":
-        print("Command:  %s -f acronym -n %s" % (sa[0], target.lower)) 
+        print("Command:  %s -f acronym -n %s" % (sa[0], target.lower))
         exec("fuck().acronym()")
         print("")
     elif target.lower() == "snag":
-        print("Command:  %s -f acronym -n %s" % (sa[0], target.lower)) 
+        print("Command:  %s -f acronym -n %s" % (sa[0], target.lower))
         exec("fuck().acronym()")
         print("")
     elif target.lower() == "snafu":
-        print("Command:  %s -f acronym -n %s" % (sa[0], target.lower)) 
+        print("Command:  %s -f acronym -n %s" % (sa[0], target.lower))
         exec("fuck().acronym()")
         print("")
     elif target.lower() == "fubar":
-        print("Command:  %s -f acronym -n %s" % (sa[0], target.lower)) 
+        print("Command:  %s -f acronym -n %s" % (sa[0], target.lower))
         exec("fuck().acronym()")
         print("")
     elif target.lower() == "lmfao":
-        print("Command:  %s -f acronym -n %s" % (sa[0], target.lower)) 
+        print("Command:  %s -f acronym -n %s" % (sa[0], target.lower))
         exec("fuck().acronym()")
         print("")
     elif target.lower() == "figjam":
-        print("Command:  %s -f acronym -n %s" % (sa[0], target.lower)) 
+        print("Command:  %s -f acronym -n %s" % (sa[0], target.lower))
         exec("fuck().acronym()")
         print("")
     else:
@@ -1637,7 +1637,7 @@ elif la == 4:
             print("Fuck %s!" % wtf)
     else:
         pass
-        #print("Fuck Perl!")
+        # print("Fuck Perl!")
 elif la >= 5:
     if args.fuck is not None and args.name is None:
         try:
