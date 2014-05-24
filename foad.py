@@ -1174,6 +1174,13 @@ class fuck:
             msg = "I wouldn't fuck %s with a stolen dick!" % target
         print(msg)
 
+    def survey(self):
+        if lt == 0:
+            msg = "Hmm, survey says ... go fuck yourself!"
+        else:
+            msg = "%s, survey says ... go fuck yourself!" % target
+        print(msg)
+
     def tard(self):
         if lt == 0:
             msg = "You complete and utter fucktard!"
