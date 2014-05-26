@@ -1065,6 +1065,13 @@ class fuck:
             msg = "%s, you're a fucking megalomaniacal, malignantly narcissistic, sociopathic cunt!" % target
         print(msg)
 
+    def ratm(self):
+        if lt == 0:
+            msg = "Fuck you! I won't do what you tell me!"
+        else:
+            msg = "Fuck you %s! I won't do what you tell me!" % target
+        print(msg)
+
     def roff(self):
         if lt == 0:
             msg = "You can fuck right off!"
