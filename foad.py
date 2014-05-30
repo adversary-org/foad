@@ -376,7 +376,14 @@ class fuck:
         if lt == 0:
             msg = "It's a total cluster-fuck!"
         else:
-            msg = "%s is a total cluster-fuck!" % target
+            msg = "%s, it's a total cluster-fuck!" % target
+        print(msg)
+
+    def clustera(self):
+        if lt == 0:
+            msg = "It's an almighty cluster-fuck!"
+        else:
+            msg = "%s, it's an almighty cluster-fuck!" % target
         print(msg)
 
     def cocksuck(self):
