@@ -9,7 +9,7 @@
 #
 # https://github.com/adversary-org/foad
 #
-# Version:  0.6.1.1
+# Version:  0.6.1.2
 #
 # BTC:  1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz
 # License:  GNU Public License version 3 (GPLv3)
@@ -119,7 +119,7 @@ __copyrighth__ = "Copyright \u00a9 Benjamin D. McGinnes, 2013-2014"
 __title__ = "FOAD: Fucked Off Adversarial Degenerates (Fuck Off And Die)"
 __stitle__ = "FOAD"
 __license__ = "GNU Public License version 3 (GPLv3)"
-__version__ = "0.6.1.1"
+__version__ = "0.6.1.2"
 __bitcoin__ = "1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz"
 __openpgp__ = "0x321E4E2373590E5D"
 
@@ -376,7 +376,14 @@ class fuck:
         if lt == 0:
             msg = "It's a total cluster-fuck!"
         else:
-            msg = "%s is a total cluster-fuck!" % target
+            msg = "%s, it's a total cluster-fuck!" % target
+        print(msg)
+
+    def clustera(self):
+        if lt == 0:
+            msg = "It's an almighty cluster-fuck!"
+        else:
+            msg = "%s, it's an almighty cluster-fuck!" % target
         print(msg)
 
     def cocksuck(self):
@@ -1270,6 +1277,13 @@ class fuck:
             msg = "You fucktard!"
         else:
             msg = "%s, you fucktard!" % target
+        print(msg)
+
+    def valley(self):
+        if lt == 0:
+            msg = "Yea, though I walk through the shadow of the Valley of Death I shall fear no evil ... for I am the meanest motherfucker in all the land!"
+        else:
+            msg = "Yea, %s, though I walk through the shadow of the Valley of Death I shall fear no evil ... for I am the meanest motherfucker in all the land!" % target
         print(msg)
 
     def vvv(self):
