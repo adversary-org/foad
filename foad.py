@@ -1121,6 +1121,13 @@ class fuck:
             msg = "%s, you're a fucking son of a bitch!" % target
         print(msg)
 
+    def script(self):
+        if lt == 0:
+            msg = "Is this a script?  Of course it's a fucking script?!"
+        else:
+            msg = "Is this a script?  Yes %s, of course it's a fucking script?!" % target
+        print(msg)
+
     def sfa(self):
         if lt == 0:
             msg = "Sweet fuck all."
