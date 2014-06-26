@@ -481,6 +481,13 @@ class fuck:
             msg = "%s, fuck a duck!" % target
         print(msg)
 
+    def english(self):
+        if lt == 0:
+            msg = "English motherfucker!  Do you speak it?!"
+        else:
+            msg = "English motherfucker!  Do you speak it %s?!" % target
+        print(msg)
+
     def every1(self):
         if lt == 0:
             msg = "Everyone's fucked!"
