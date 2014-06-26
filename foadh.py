@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 
 ##
 # FOAD: Fucked Off Adversarial Degenerates (Fuck Off And Die)
@@ -9,7 +9,7 @@
 #
 # https://github.com/adversary-org/foad
 #
-# Version:  0.6.1.2
+# Version:  0.6.1.2h
 #
 # BTC:  1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz
 # License:  GNU Public License version 3 (GPLv3)
@@ -18,15 +18,16 @@
 #
 # Requirements:
 #
-# * Python 3.2 or later (developed with Python 3.4.x)
+# * Python 2.7 or later (hexchat version)
 # * Python modules: argparse, random, sys, textwrap
 #
 # Versions up to 0.4.x developed with Python 2.7.x.  Conversion to
 # Python 3 made from version 0.4.2.
 #
-# Previous versions might have worked with Python 3.0 and 3.1 (I don't
-# know for sure, I never checked), but with the inclusion of the
-# argparse module this is now lo longer possible (if it ever was).
+# This version is a conversion back to Python 2.7.x from the Python
+# 3.2+ version specifically for use with Hexchat and other programs
+# which have trouble calling a Python 3 script.  Some options may be
+# limited as a result.
 #
 #
 # Options and notes:
@@ -67,10 +68,12 @@
 # "omnia" and "vvv" options include translations in comments in the
 # source code.
 #
-# There are at least two options which depend on the encoding being
-# UTF-8 (those being "omnia" and "linus").  If the copyright symbols
-# peppered throughout the script don't display properly then there's a
-# good chance that those options won't either.
+# There are at least two options which depended on the encoding being
+# UTF-8 (those being "omnia" and "linus").  The "linus" option was
+# able to be retained through the old style of encoding, but the
+# "omnia" option has had the Unicode character (0x016b) replaced with
+# an ordinary letter u.  See the regular Python 3 version of the
+# script for correct results.
 #
 #
 # The script now uses argparse to handle input, which means the order
@@ -80,10 +83,11 @@
 # with two or more words (e.g. names) to place them in quotation marks
 # as in the examples.
 #
-# Usage:  foad.py -f donut -n foo
-#         foad.py -f outside --name "FirstName LastName"
-#         foad.py --fuck king --name "FirstName LastName"
-#         foad.py -n Veronica --fuck chainsaw
+# Usage:  foadh.py -f donut -n foo
+#         foadh.py -f outside --name "FirstName LastName"
+#         foadh.py --fuck king --name "FirstName LastName"
+#         foadh.py -n Veronica --fuck chainsaw
+#         /exec -o foadh.py -f outside -n "FirstName LastName"
 #
 # The old method of calling the script will still work, but only for
 # the argument types available at this point (i.e. --fuck and --name).
@@ -91,35 +95,33 @@
 # available through the old method.  When using this old method the
 # order the options are specified is important.
 #
-# Old Usage:  foad.py donut foo
-#             foad.py outside "FirstName LastName"
-#             foad.py king FirstName LastName
+# Old Usage:  foadh.py donut foo
+#             foadh.py outside "FirstName LastName"
+#             foadh.py king FirstName LastName
 #
-# Old X-Chat/IRC usage:  /exec -o foad.py donut foo
-#                        /exec -o foad.py outside "FirstName LastName"
-#                        /exec -o foad.py king FirstName LastName
+# Old X-Chat/IRC usage:  /exec -o foadh.py donut foo
+#                        /exec -o foadh.py outside "FirstName LastName"
+#                        /exec -o foadh.py king FirstName LastName
 #
-# Calling foad.py in other Python scripts (e.g. Twython for Twitter)
+# Calling foadh.py in other Python scripts (e.g. Twython for Twitter)
 # should be performed with the subprocess module.  Methods for doing
 # so are left as an exercise to the reader.
 #
-# If foad.py is added to site-packages, further help can be obtained
-# with pydoc3 (or by running that command in the same directory as the
+# If foadh.py is added to site-packages, further help can be obtained
+# with pydoc (or by running that command in the same directory as the
 # script).
 #
-# Python Documentation help command: pydoc3 foad
-# Command line help and hints: foad.py -h
+# Python Documentation help command: pydoc foad
+# Command line help and hints: foadh.py -h
 #
 ##
 
 __author__ = "Ben McGinnes <ben@adversary.org>"
-__copyrightu__ = "Copyright © Benjamin D. McGinnes, 2013-2014"
-__copyrighta__ = "Copyright (C) Benjamin D. McGinnes, 2013-2014"
-__copyrighth__ = "Copyright \u00a9 Benjamin D. McGinnes, 2013-2014"
+__copyright__ = "Copyright (C) Benjamin D. McGinnes, 2013-2014"
 __title__ = "FOAD: Fucked Off Adversarial Degenerates (Fuck Off And Die)"
 __stitle__ = "FOAD"
 __license__ = "GNU Public License version 3 (GPLv3)"
-__version__ = "0.6.1.2"
+__version__ = "0.6.1.2h"
 __bitcoin__ = "1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz"
 __openpgp__ = "0x321E4E2373590E5D"
 
@@ -128,19 +130,6 @@ import locale
 import random
 import sys
 import textwrap
-
-if locale.getlocale()[1] == "UTF-8":
-    __copyright__ = __copyrightu__
-elif locale.getdefaultlocale()[1] == "UTF-8":
-    __copyright__ = __copyrightu__
-elif locale.getpreferredencoding() == "UTF-8":
-    __copyright__ = __copyrightu__
-else:
-    try:
-        __copyright__ = __copyrighth__
-    except locale.Error:
-        __copyright__ = __copyrighta__
-
 
 about = """
 %s
@@ -154,7 +143,7 @@ Contact:  %s %s
 Bitcoin:  %s
 """ % (__title__, __version__, __copyright__, __license__, sys.argv[0], __author__, __openpgp__, __bitcoin__)
 
-version = "%s (foad.py) version %s" % (__stitle__, __version__)
+version = "%s (foadh.py) version %s" % (__stitle__, __version__)
 
 lx = len(sys.argv)
 
@@ -178,13 +167,13 @@ elif lx >= 4 and sys.argv[1].startswith("-") is False and sys.argv[2].startswith
     sys.argv = sax
 
 parser = argparse.ArgumentParser(
-    prog="foad.py",
+    prog="foadh.py",
     formatter_class=argparse.RawDescriptionHelpFormatter,
     description=__title__, epilog=textwrap.dedent("""\
         You MUST place any parameter of more than one word in
         quotation marks.
 
-        For more help run:  pydoc3 foad
+        For more help run:  pydoc foadh
 
         https://github.com/adversary-org/foad
 
@@ -192,10 +181,8 @@ parser = argparse.ArgumentParser(
 
     %s
     """ % (__bitcoin__, __copyright__)))
-parser.add_argument("-f", "--fuck", help="One word, indicates type of fuck to give, run foad.py -f list_options to see possible flags.", action="store", required=False)
+parser.add_argument("-f", "--fuck", help="One word, indicates type of fuck to give, run foadh.py -f list_options to see possible flags.", action="store", required=False)
 parser.add_argument("-n", "--name", help="Name of target, more than one word must be in quotation marks.", action="store", required=False)
-# parser.add_argument("-e", "--extra", help="Additional comment to append to output", action="store", required=False)
-# parser.add_argument("-v", "--version", help="Print the version number.", action=print(version), required=False)
 
 if len(sys.argv) > lx:
     la = len(sys.argv)
@@ -244,7 +231,7 @@ class fuck:
         elif target.lower() == "bitcoin":
             msg = __bitcoin__
         elif target.lower() == "contact":
-            msg = "See the following 'foad.py about' parameters: email, gpg key, irc and domain."
+            msg = "See the following 'foadh.py about' parameters: email, gpg key, irc and domain."
         elif target.lower() == "copyright":
             msg = __copyright__
         elif target.lower() == "domain":
@@ -277,7 +264,7 @@ class fuck:
 
     def acronym(self):
         if lt == 0:
-            msg = textwrap.fill("Acronyms and backronyms; use the target parameter to choose which one.  To view the target parameters run: foad.py -f acronym -n x", 72)
+            msg = textwrap.fill("Acronyms and backronyms; use the target parameter to choose which one.  To view the target parameters run: foadh.py -f acronym -n x", 72)
         elif target.lower() == "fubar":
             msg = "FUBAR: Fucked Up Beyond All Recognition"
         elif target.lower() == "carnal":
@@ -541,7 +528,7 @@ class fuck:
         if "foad" in sa[0]:
             exec("fuck().foad1()")
         else:
-            print("Help guide for foad.py (pydoc3 foad).")
+            print("Help guide for foadh.py (pydoc foadh).")
 
     def foad1(self):
         if lt == 0:
@@ -785,10 +772,10 @@ class fuck:
 
     def linus(self):
         if lt == 0:
-            msg = "There aren't enough swear-words in the English language, so now I'll have to call you perkeleen vittupää just to express my disgust and frustration with this crap."
+            msg = u"There aren't enough swear-words in the English language, so now I'll have to call you perkeleen vittup\xe4\xe4 just to express my disgust and frustration with this crap."
         else:
-            msg = "%s, there aren't enough swear-words in the English language, so now I'll have to call you perkeleen vittupää just to express my disgust and frustration with this crap." % target
-        print(msg)
+            msg = u"%s, there aren't enough swear-words in the English language, so now I'll have to call you perkeleen vittup\xe4\xe4 just to express my disgust and frustration with this crap." % target
+        print(msg.encode("UTF-8"))
 
     def lmfao(self):
         if lt == 0:
@@ -992,11 +979,11 @@ class fuck:
 
     def omnia(self):
         if lt == 0:
-            msg = "Omnia quia sunt, futūtum sunt."
+            msg = "Omnia quia sunt, fututum sunt."
             # All things that are, are fucked.
         else:
-            msg = "%s, omnia quia sunt, futūtum sunt." % target
-        print(msg)
+            msg = "%s, omnia quia sunt, fututum sunt." % target
+        print(msg.encode("UTF-8"))
 
     def outside(self):
         if lt == 0:
