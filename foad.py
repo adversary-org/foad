@@ -9,7 +9,7 @@
 #
 # https://github.com/adversary-org/foad
 #
-# Version:  0.6.1.3
+# Version:  0.6.1.4
 #
 # BTC:  1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz
 # License:  GNU Public License version 3 (GPLv3)
@@ -119,7 +119,7 @@ __copyrighth__ = "Copyright \u00a9 Benjamin D. McGinnes, 2013-2014"
 __title__ = "FOAD: Fucked Off Adversarial Degenerates (Fuck Off And Die)"
 __stitle__ = "FOAD"
 __license__ = "GNU Public License version 3 (GPLv3)"
-__version__ = "0.6.1.3"
+__version__ = "0.6.1.4"
 __bitcoin__ = "1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz"
 __openpgp__ = "0x321E4E2373590E5D"
 
@@ -771,6 +771,13 @@ class fuck:
             msg = "Oh fuck off, just really fuck off you total dickface.  Christ you are fucking thick!"
         else:
             msg = "Oh fuck off, just really fuck off you total dickface.  Christ %s, you are fucking thick!" % target
+        print(msg)
+
+    def kirsan(self):
+        if lt == 0:
+            msg = "You are as corrupt, delusional, megalomaniacal, vindictive and just as fucking crazy as Kirsan, Ilyumzhinov!"
+        else:
+            msg = "%s, you are as corrupt, delusional, megalomaniacal, vindictive and just as fucking crazy as Kirsan, Ilyumzhinov!" % target
         print(msg)
 
     def know(self):
