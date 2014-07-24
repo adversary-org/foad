@@ -9,7 +9,7 @@
 #
 # https://github.com/adversary-org/foad
 #
-# Version:  0.6.1.2
+# Version:  0.6.1.4
 #
 # BTC:  1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz
 # License:  GNU Public License version 3 (GPLv3)
@@ -59,18 +59,18 @@
 # option.  Using any of the listed target parameters will display the
 # relevant definition.
 #
-# There are three options on Latin.  The "priapus" options include
+# There are four options in Latin.  The "priapus" options include
 # translation in the "priapus_trans1" and "priapus_trans2" options
 # (priapus_trans2 no target contains the translation for priapus no
 # target and priapus_trans1 contains the best translation for priapus
 # with a target, the other variants are potentially useful).  The
-# "omnia" and "vvv" options include translations in comments in the
-# source code.
+# "custode", "omnia" and "vvv" options include translations in
+# comments in the source code.
 #
-# There are at least two options which depend on the encoding being
-# UTF-8 (those being "omnia" and "linus").  If the copyright symbols
-# peppered throughout the script don't display properly then there's a
-# good chance that those options won't either.
+# There are at least three options which depend on the encoding being
+# UTF-8 (those being "custode", "omnia" and "linus").  If the
+# copyright symbols peppered throughout the script don't display
+# properly then there's a good chance that those options won't either.
 #
 #
 # The script now uses argparse to handle input, which means the order
@@ -119,7 +119,7 @@ __copyrighth__ = "Copyright \u00a9 Benjamin D. McGinnes, 2013-2014"
 __title__ = "FOAD: Fucked Off Adversarial Degenerates (Fuck Off And Die)"
 __stitle__ = "FOAD"
 __license__ = "GNU Public License version 3 (GPLv3)"
-__version__ = "0.6.1.2"
+__version__ = "0.6.1.4"
 __bitcoin__ = "1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz"
 __openpgp__ = "0x321E4E2373590E5D"
 
@@ -426,6 +426,14 @@ class fuck:
             msg = "Fuck all those complete and utter fucking cocksuckers and cunts!"
         else:
             msg = "Fuck the %s, they're all complete and utter fucking cocksuckers and cunts!" % target
+        print(msg)
+
+    def custode(self):
+        if lt == 0:
+            msg = "Sed quis custodiet ipsos futūtor?"
+            # But who will guard the fucker(s)?
+        else:
+            msg = "%s, quis custodiet ipsos futūtor?" % target
         print(msg)
 
     def deadwood(self):
@@ -763,6 +771,13 @@ class fuck:
             msg = "Oh fuck off, just really fuck off you total dickface.  Christ you are fucking thick!"
         else:
             msg = "Oh fuck off, just really fuck off you total dickface.  Christ %s, you are fucking thick!" % target
+        print(msg)
+
+    def kirsan(self):
+        if lt == 0:
+            msg = "You are as corrupt, delusional, megalomaniacal, vindictive and just as fucking crazy as Kirsan Ilyumzhinov!"
+        else:
+            msg = "%s, you are as corrupt, delusional, megalomaniacal, vindictive and just as fucking crazy as Kirsan Ilyumzhinov!" % target
         print(msg)
 
     def know(self):
