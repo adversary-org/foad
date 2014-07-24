@@ -775,9 +775,9 @@ class fuck:
 
     def kirsan(self):
         if lt == 0:
-            msg = "You are as corrupt, delusional, megalomaniacal, vindictive and just as fucking crazy as Kirsan, Ilyumzhinov!"
+            msg = "You are as corrupt, delusional, megalomaniacal, vindictive and just as fucking crazy as Kirsan Ilyumzhinov!"
         else:
-            msg = "%s, you are as corrupt, delusional, megalomaniacal, vindictive and just as fucking crazy as Kirsan, Ilyumzhinov!" % target
+            msg = "%s, you are as corrupt, delusional, megalomaniacal, vindictive and just as fucking crazy as Kirsan Ilyumzhinov!" % target
         print(msg)
 
     def know(self):
