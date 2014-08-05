@@ -21,7 +21,7 @@ Tony Abbott, you're a fucking megalomaniacal, malignantly narcissistic, psychopa
 bash-3.2$ 
 ```
 
-There are currently more than 160 options to use with the -f flag and
+There are currently more than 170 options to use with the -f flag and
 the majority of those have two forms, one for naming a subject and a
 more general one.  As well as a couple of special options which are
 more informative than insulting.  The full list of options is visible
