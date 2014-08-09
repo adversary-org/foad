@@ -191,7 +191,8 @@ parser = argparse.ArgumentParser(
         Bitcoin:  %s
 
     %s
-    """ % (__bitcoin__, __copyright__)))
+    %s
+    """ % (__bitcoin__, version, __copyright__)))
 parser.add_argument("-f", "--fuck", help="One word, indicates type of fuck to give, run foad.py -f list_options to see possible flags.", action="store", required=False)
 parser.add_argument("-n", "--name", help="Name of target, more than one word must be in quotation marks.", action="store", required=False)
 # parser.add_argument("-e", "--extra", help="Additional comment to append to output", action="store", required=False)
