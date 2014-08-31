@@ -1528,7 +1528,6 @@ elif l == 2 and wtf == "unittest":
     for i in range(lc):
         print("Command:  {0} -f {1} [-n {2}]".format(sa[0], df[i], "<target>"))
         try:
-            #exec("fuck()."+df[i]+"()")
             exec("fuck().{0}()".format(df[i]))
         except(AttributeError, NameError):
             print("Fuck testing!")
@@ -1656,21 +1655,18 @@ elif l >= 3 and wtf == "unittest":
         for i in range(lc):
             print("Command:  {0} -f {1} [-n {2}]".format(sa[0], df[i], target))
             try:
-                #exec("fuck()."+df[i]+"()")
-                exec("fuck().{0}()".format(df[i]))  # if this works, change the rest.
+                exec("fuck().{0}()".format(df[i]))
             except(AttributeError, NameError):
                 print("Fuck testing!")
             print("")
 elif l >= 2 and wtf == "random":
     try:
-        #exec("fuck()."+rc+"()")
         exec("fuck().{0}()".format(rc))
     except(AttributeError, NameError):
         print("Fuck randomness!")
 elif la == 3:
     if args.fuck is not None and args.name is None:
         try:
-            #exec("fuck()."+wtf+"()")
             exec("fuck().{0}()".format(wtf))
         except(AttributeError, NameError):
             print("Fuck {0}!".format(wtf))
@@ -1679,7 +1675,6 @@ elif la == 3:
 elif la == 4:
     if args.fuck is not None and args.name is None:
         try:
-            #exec("fuck()."+wtf+"()")
             exec("fuck().{0}()".format(wtf))
         except(AttributeError, NameError):
             w = []
@@ -1695,7 +1690,6 @@ elif la == 4:
         print("Fuck {0}!".format(target))
     elif args.fuck is not None and args.name is not None:
         try:
-            #exec("fuck()."+wtf+"()")
             exec("fuck().{0}()".format(wtf))
         except(AttributeError, NameError):
             print("Fuck {0}!".format(wtf))
@@ -1705,7 +1699,6 @@ elif la == 4:
 elif la >= 5:
     if args.fuck is not None and args.name is None:
         try:
-            #exec("fuck()."+wtf+"()")
             exec("fuck().{0}()".format(wtf))
         except(AttributeError, NameError):
             w = []
@@ -1721,7 +1714,6 @@ elif la >= 5:
         print("Fuck {0}!".format(target))
     elif args.fuck is not None and args.name is not None:
         try:
-            #exec("fuck()."+wtf+"()")
             exec("fuck().{0}()".format(wtf))
         except(AttributeError, NameError):
             w = []
