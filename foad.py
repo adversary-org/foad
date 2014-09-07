@@ -9,7 +9,7 @@
 #
 # https://github.com/adversary-org/foad
 #
-# Version:  0.7.0.0-beta
+# Version:  0.7.0.0
 #
 # BTC:  1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz
 # License:  GNU Public License version 3 (GPLv3)
@@ -119,7 +119,7 @@ __copyrighth__ = "Copyright \u00a9 Benjamin D. McGinnes, 2013-2014"
 __title__ = "FOAD: Fucked Off Adversarial Degenerates (Fuck Off And Die)"
 __stitle__ = "FOAD"
 __license__ = "GNU Public License version 3 (GPLv3)"
-__version__ = "0.7.0.0-beta"
+__version__ = "0.7.0.0"
 __bitcoin__ = "1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz"
 __openpgp__ = "0x321E4E2373590E5D"
 
