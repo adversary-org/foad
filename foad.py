@@ -9,7 +9,7 @@
 #
 # https://github.com/adversary-org/foad
 #
-# Version:  0.7.0.2
+# Version:  0.7.0.3
 #
 # BTC:  1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz
 # License:  GNU Public License version 3 (GPLv3)
@@ -119,7 +119,7 @@ __copyrighth__ = "Copyright \u00a9 Benjamin D. McGinnes, 2013-2014"
 __title__ = "FOAD: Fucked Off Adversarial Degenerates (Fuck Off And Die)"
 __stitle__ = "FOAD"
 __license__ = "GNU Public License version 3 (GPLv3)"
-__version__ = "0.7.0.2"
+__version__ = "0.7.0.3"
 __bitcoin__ = "1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz"
 __openpgp__ = "0x321E4E2373590E5D"
 
@@ -1338,7 +1338,14 @@ class fuck:
         if lt == 0:
             msg = "What a fucking waste of time!"
         else:
-            msg = "%, that's a fucking waste of time!"
+            msg = "{0}, that's a fucking waste of time!".format(target)
+        print(msg)
+
+    def wbfu(self):
+        if lt == 0:
+            msg = "Why?  Because fuck you, that's why."
+        else:
+            msg = "Why?  Because fuck you {0}, that's why.".format(target)
         print(msg)
 
     def when1(self):
