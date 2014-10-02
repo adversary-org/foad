@@ -9,7 +9,7 @@
 #
 # https://github.com/adversary-org/foad
 #
-# Version:  0.7.0.4
+# Version:  0.7.1.0
 #
 # BTC:  1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz
 # License:  GNU Public License version 3 (GPLv3)
@@ -119,7 +119,7 @@ __copyrighth__ = "Copyright \u00a9 Benjamin D. McGinnes, 2013-2014"
 __title__ = "FOAD: Fucked Off Adversarial Degenerates (Fuck Off And Die)"
 __stitle__ = "FOAD"
 __license__ = "GNU Public License version 3 (GPLv3)"
-__version__ = "0.7.0.4"
+__version__ = "0.7.1.0"
 __bitcoin__ = "1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz"
 __openpgp__ = "0x321E4E2373590E5D"
 
@@ -184,6 +184,11 @@ parser = argparse.ArgumentParser(
         You MUST place any parameter of more than one word in
         quotation marks.
 
+        Can only be used with the old calling method with the
+        equivalent of -f and -n.  If additional parameters are used
+        (e.g. --extra or --sender), then the current method MUST be
+        used.
+
         For more help run:  pydoc3 foad
 
         https://github.com/adversary-org/foad
@@ -195,10 +200,11 @@ parser = argparse.ArgumentParser(
     """.format(__bitcoin__, version, __copyright__)))
 parser.add_argument("-f", "--fuck", help="One word, indicates type of fuck to give, run foad.py -f list_options to see possible flags.", action="store", required=False)
 parser.add_argument("-n", "--name", help="Name of target, more than one word must be in quotation marks.", action="store", required=False)
-# parser.add_argument("-e", "--extra", help="Additional comment to append to output", action="store", required=False)
-# parser.add_argument("-l", "--list", help="Lists the explicit variations (the same as: -f list_options)", action="store", required=False)
-# parser.add_argument("-s", "--sender", help="Used to specify the sender, usually within the context of some particular phrase (e.g. in the field3 option)", action="store", required=False)
-# parser.add_argument("-v", "--version", help="Print the version number.", action=print(version), required=False)
+parser.add_argument("-s", "--sender", help="Used to specify the sender, usually within the context of some particular phrase, more than one word must be in quotation marks.", action="store", required=False)
+parser.add_argument("-e", "--extra", help="Additional comment to append to output, more than one word must be in quotation marks.", action="store", required=False)
+# The next two can wait as they're already covered by -f and -h, both are causing problems at the moment:
+# parser.add_argument("-l", "--list_options", help="Lists the explicit variations (the same as: -f list_options)", action="store", required=False)
+# parser.add_argument("-V", "--version", help="Print the version number.", action=print(version), required=False)
 
 if len(sys.argv) > lx:
     la = len(sys.argv)
@@ -224,6 +230,16 @@ if args.name is None:
 else:
     target = args.name
 
+if args.sender is None:
+    sender = ""
+else:
+    sender = args.sender
+
+if args.extra is None:
+    extra = ""
+else:
+    extra = args.extra
+
 lt = len(target)
 
 
@@ -231,6 +247,8 @@ class fuck:
     def a(self):
         if lt == 0:
             msg = "Fuckin' A!"
+        elif lt > 0 and args.extra is not None:
+            msg = "{0}, fuckin' A!  {1}".format(target, extra)
         else:
             msg = "{0}, fuckin' A!".format(target)
         print(msg)
@@ -545,11 +563,19 @@ class fuck:
         if lt == 0:
             msg = "And the Lord said unto thee, 'Verily, cast thine eyes upon the field in which I grow my fucks,' and thou gave witness unto the field and saw that it was barren."
         else:
-            msg = "And I said unto {0}, 'Verily, cast thine eyes upon the field in which I grow my fucks,' and {1} gave witness unto the field and saw that it was barren.".format(target, target)
+            msg = "And the Lord said unto {0}, 'Verily, cast thine eyes upon the field in which I grow my fucks,' and {1} gave witness unto the field and saw that it was barren.".format(target, target)
         print(msg)
 
-    # Note, add a third one with specified from in place of I or Lord
-    # with a new flag for that purpose later.
+    def field3(self):
+        if lt == 0:
+            msg = "And {0} said unto thee, 'Verily, cast thine eyes upon the field in which I grow my fucks,' and thou gave witness unto the field and saw that it was barren.".format(sender)
+        elif lt > 0 and args.extra is not None and args.name is None:
+            msg = "And {0} said unto thee, 'Verily, cast thine eyes upon the field in which I grow my fucks,' and thou gave witness unto the field and saw that it was barren.  {1}".format(sender, extra)
+        elif lt > 0 and args.name is not None and args.extra is None:
+            msg = "And {0} said unto {1}, 'Verily, cast thine eyes upon the field in which I grow my fucks,' and {2} gave witness unto the field and saw that it was barren.".format(sender, target, target)
+        else:
+            msg = "And {0} said unto {1}, 'Verily, cast thine eyes upon the field in which I grow my fucks,' and {2} gave witness unto the field and saw that it was barren.  {3}".format(sender, target, target, extra)
+        print(msg)
 
     def figjam(self):
         if lt == 0:
