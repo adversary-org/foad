@@ -244,13 +244,16 @@ else:
     extra = args.extra
 
 lt = len(target)
-
+ls = len(sender)
+le = len(extra)
 
 class fuck:
     def a(self):
         if lt == 0:
             msg = "Fuckin' A!"
-        elif lt > 0 and args.extra is not None:
+        elif lt == 0 and le > 0:
+            msg = "Fuckin' A!  {0}".format(extra)
+        elif lt > 0 and le > 0:
             msg = "{0}, fuckin' A!  {1}".format(target, extra)
         else:
             msg = "{0}, fuckin' A!".format(target)
@@ -339,8 +342,12 @@ class fuck:
     def agree(self):
         if lt == 0:
             msg = "Abso-fucking-lutely!"
-        else:
+        elif lt == 0 and le > 0:
+            msg = "Abso-fucking-lutely!  {0}".format(extra)
+        elif lt > 0 and le == 0:
             msg = "Abso-fucking-lutely {0}!".format(target)
+        elif lt > 0 and le > 0:
+            msg = "Abso-fucking-lutely {0}!  {1}".format(target, extra)
         print(msg)
 
     def amaze(self):
@@ -351,7 +358,10 @@ class fuck:
         print(msg)
 
     def bbm(self):
-        msg = "Big bad motherfucker."
+        if lt == 0:
+            msg = "Big bad motherfucker."
+        elif lt == 0 and ls > 0:
+            msg = "{0} is a big bad motherfucker.".format(sender)
         print(msg)
 
     def cango(self):
@@ -555,28 +565,18 @@ class fuck:
             msg = "For fuck's sake, {0}!".format(target)
         print(msg)
 
-    def field1(self):
-        if lt == 0:
+    def field(self):
+        if lt == 0 and le == 0 and ls == 0:
             msg = "And I said unto thee, 'Verily, cast thine eyes upon the field in which I grow my fucks,' and thou gave witness unto the field and saw that it was barren."
-        else:
+        elif lt > 0 and le == 0 and ls == 0:
             msg = "And I said unto {0}, 'Verily, cast thine eyes upon the field in which I grow my fucks,' and {1} gave witness unto the field and saw that it was barren.".format(target, target)
-        print(msg)
-
-    def field2(self):
-        if lt == 0:
-            msg = "And the Lord said unto thee, 'Verily, cast thine eyes upon the field in which I grow my fucks,' and thou gave witness unto the field and saw that it was barren."
-        else:
-            msg = "And the Lord said unto {0}, 'Verily, cast thine eyes upon the field in which I grow my fucks,' and {1} gave witness unto the field and saw that it was barren.".format(target, target)
-        print(msg)
-
-    def field3(self):
-        if lt == 0:
+        if lt == 0 and le == 0 and ls > 0:
             msg = "And {0} said unto thee, 'Verily, cast thine eyes upon the field in which I grow my fucks,' and thou gave witness unto the field and saw that it was barren.".format(sender)
-        elif lt > 0 and args.extra is not None and args.name is None:
+        elif lt == 0 and le > 0 and ls > 0:
             msg = "And {0} said unto thee, 'Verily, cast thine eyes upon the field in which I grow my fucks,' and thou gave witness unto the field and saw that it was barren.  {1}".format(sender, extra)
-        elif lt > 0 and args.name is not None and args.extra is None:
+        elif lt > 0 and ls > 0 and le == 0:
             msg = "And {0} said unto {1}, 'Verily, cast thine eyes upon the field in which I grow my fucks,' and {2} gave witness unto the field and saw that it was barren.".format(sender, target, target)
-        else:
+        elif lt > 0 and ls > 0 and le > 0:
             msg = "And {0} said unto {1}, 'Verily, cast thine eyes upon the field in which I grow my fucks,' and {2} gave witness unto the field and saw that it was barren.  {3}".format(sender, target, target, extra)
         print(msg)
 
