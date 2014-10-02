@@ -9,7 +9,7 @@
 #
 # https://github.com/adversary-org/foad
 #
-# Version:  0.7.0.4
+# Version:  0.7.1.0
 #
 # BTC:  1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz
 # License:  GNU Public License version 3 (GPLv3)
@@ -119,7 +119,7 @@ __copyrighth__ = "Copyright \u00a9 Benjamin D. McGinnes, 2013-2014"
 __title__ = "FOAD: Fucked Off Adversarial Degenerates (Fuck Off And Die)"
 __stitle__ = "FOAD"
 __license__ = "GNU Public License version 3 (GPLv3)"
-__version__ = "0.7.0.4"
+__version__ = "0.7.1.0"
 __bitcoin__ = "1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz"
 __openpgp__ = "0x321E4E2373590E5D"
 
@@ -202,7 +202,8 @@ parser.add_argument("-f", "--fuck", help="One word, indicates type of fuck to gi
 parser.add_argument("-n", "--name", help="Name of target, more than one word must be in quotation marks.", action="store", required=False)
 parser.add_argument("-s", "--sender", help="Used to specify the sender, usually within the context of some particular phrase, more than one word must be in quotation marks.", action="store", required=False)
 parser.add_argument("-e", "--extra", help="Additional comment to append to output, more than one word must be in quotation marks.", action="store", required=False)
-# parser.add_argument("-l", "--list", help="Lists the explicit variations (the same as: -f list_options)", action="store", required=False)
+# The next two can wait as they're already covered by -f and -h, both are causing problems at the moment:
+# parser.add_argument("-l", "--list_options", help="Lists the explicit variations (the same as: -f list_options)", action="store", required=False)
 # parser.add_argument("-V", "--version", help="Print the version number.", action=print(version), required=False)
 
 if len(sys.argv) > lx:
