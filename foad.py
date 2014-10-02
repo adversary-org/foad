@@ -9,7 +9,7 @@
 #
 # https://github.com/adversary-org/foad
 #
-# Version:  0.7.0.3
+# Version:  0.7.0.4
 #
 # BTC:  1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz
 # License:  GNU Public License version 3 (GPLv3)
@@ -119,7 +119,7 @@ __copyrighth__ = "Copyright \u00a9 Benjamin D. McGinnes, 2013-2014"
 __title__ = "FOAD: Fucked Off Adversarial Degenerates (Fuck Off And Die)"
 __stitle__ = "FOAD"
 __license__ = "GNU Public License version 3 (GPLv3)"
-__version__ = "0.7.0.3"
+__version__ = "0.7.0.4"
 __bitcoin__ = "1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz"
 __openpgp__ = "0x321E4E2373590E5D"
 
@@ -531,6 +531,23 @@ class fuck:
         else:
             msg = "For fuck's sake, {0}!".format(target)
         print(msg)
+
+    def field1(self):
+        if lt == 0:
+            msg = "And I said unto thee, 'Verily, cast thine eyes upon the field in which I grow my fucks,' and thou gave witness unto the field and saw that it was barren."
+        else:
+            msg = "And I said unto {0}, 'Verily, cast thine eyes upon the field in which I grow my fucks,' and {1} gave witness unto the field and saw that it was barren.".format(target, target)
+        print(msg)
+
+    def field2(self):
+        if lt == 0:
+            msg = "And the Lord said unto thee, 'Verily, cast thine eyes upon the field in which I grow my fucks,' and thou gave witness unto the field and saw that it was barren."
+        else:
+            msg = "And I said unto {0}, 'Verily, cast thine eyes upon the field in which I grow my fucks,' and {1} gave witness unto the field and saw that it was barren.".format(target, target)
+        print(msg)
+
+    # Note, add a third one with specified from in place of I or Lord
+    # with a new flag for that purpose later.
 
     def figjam(self):
         if lt == 0:
