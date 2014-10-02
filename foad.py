@@ -196,6 +196,8 @@ parser = argparse.ArgumentParser(
 parser.add_argument("-f", "--fuck", help="One word, indicates type of fuck to give, run foad.py -f list_options to see possible flags.", action="store", required=False)
 parser.add_argument("-n", "--name", help="Name of target, more than one word must be in quotation marks.", action="store", required=False)
 # parser.add_argument("-e", "--extra", help="Additional comment to append to output", action="store", required=False)
+# parser.add_argument("-l", "--list", help="Lists the explicit variations (the same as: -f list_options)", action="store", required=False)
+# parser.add_argument("-s", "--sender", help="Used to specify the sender, usually within the context of some particular phrase (e.g. in the field3 option)", action="store", required=False)
 # parser.add_argument("-v", "--version", help="Print the version number.", action=print(version), required=False)
 
 if len(sys.argv) > lx:
