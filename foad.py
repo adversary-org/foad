@@ -84,12 +84,13 @@
 #         foad.py -f outside --name "FirstName LastName"
 #         foad.py --fuck king --name "FirstName LastName"
 #         foad.py -n Veronica --fuck chainsaw
+#         foad.py -f field3 -n Bob -s Kate -e "Some stuff."
 #
 # The old method of calling the script will still work, but only for
 # the argument types available at this point (i.e. --fuck and --name).
-# Any future argument types (e.g. the planned --extra) will not be
+# Newer argument types (e.g. --extra and --sender) will not be
 # available through the old method.  When using this old method the
-# order the options are specified is important.
+# order in which the options are specified is important.
 #
 # Old Usage:  foad.py donut foo
 #             foad.py outside "FirstName LastName"
@@ -118,7 +119,8 @@ __copyrighta__ = "Copyright (C) Benjamin D. McGinnes, 2013-2014"
 __copyrighth__ = "Copyright \u00a9 Benjamin D. McGinnes, 2013-2014"
 __title__ = "FOAD: Fucked Off Adversarial Degenerates (Fuck Off And Die)"
 __stitle__ = "FOAD"
-__license__ = "GNU Public License version 3 (GPLv3)"
+__license1__ = "GNU General Public License version 3 (GPLv3)"
+__license2__ = "Do What The Fuck You Want To, But It's Not My Fault Public License version 1 (WTFNMFPLv1)"
 __version__ = "0.7.1.0"
 __bitcoin__ = "1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz"
 __openpgp__ = "0x321E4E2373590E5D"
@@ -147,12 +149,13 @@ about = """
 Version {1}
 {2}
 License:  {3}
+          {4}
 
-For instructions run:  {4} -h
+For instructions run:  {5} -h
 
-Contact:  {5} {6}
-Bitcoin:  {7}
-""".format(__title__, __version__, __copyright__, __license__, sys.argv[0], __author__, __openpgp__, __bitcoin__)
+Contact:  {6} {7}
+Bitcoin:  {8}
+""".format(__title__, __version__, __copyright__, __license1__, __license2__, sys.argv[0], __author__, __openpgp__, __bitcoin__)
 
 version = "{0} (foad.py) version {1}".format(__stitle__, __version__)
 
