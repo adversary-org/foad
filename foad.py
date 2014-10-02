@@ -9,7 +9,7 @@
 #
 # https://github.com/adversary-org/foad
 #
-# Version:  0.7.1.0
+# Version:  0.7.1.1
 #
 # BTC:  1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz
 # License:  GNU Public License version 3 (GPLv3)
@@ -84,12 +84,13 @@
 #         foad.py -f outside --name "FirstName LastName"
 #         foad.py --fuck king --name "FirstName LastName"
 #         foad.py -n Veronica --fuck chainsaw
+#         foad.py -f field3 -n Bob -s Kate -e "Some stuff."
 #
 # The old method of calling the script will still work, but only for
 # the argument types available at this point (i.e. --fuck and --name).
-# Any future argument types (e.g. the planned --extra) will not be
+# Newer argument types (e.g. --extra and --sender) will not be
 # available through the old method.  When using this old method the
-# order the options are specified is important.
+# order in which the options are specified is important.
 #
 # Old Usage:  foad.py donut foo
 #             foad.py outside "FirstName LastName"
@@ -118,8 +119,9 @@ __copyrighta__ = "Copyright (C) Benjamin D. McGinnes, 2013-2014"
 __copyrighth__ = "Copyright \u00a9 Benjamin D. McGinnes, 2013-2014"
 __title__ = "FOAD: Fucked Off Adversarial Degenerates (Fuck Off And Die)"
 __stitle__ = "FOAD"
-__license__ = "GNU Public License version 3 (GPLv3)"
-__version__ = "0.7.1.0"
+__license1__ = "GNU General Public License version 3 (GPLv3)"
+__license2__ = "Do What The Fuck You Want To, But It's Not My Fault Public License version 1 (WTFNMFPLv1)"
+__version__ = "0.7.1.1"
 __bitcoin__ = "1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz"
 __openpgp__ = "0x321E4E2373590E5D"
 
@@ -147,12 +149,13 @@ about = """
 Version {1}
 {2}
 License:  {3}
+          {4}
 
-For instructions run:  {4} -h
+For instructions run:  {5} -h
 
-Contact:  {5} {6}
-Bitcoin:  {7}
-""".format(__title__, __version__, __copyright__, __license__, sys.argv[0], __author__, __openpgp__, __bitcoin__)
+Contact:  {6} {7}
+Bitcoin:  {8}
+""".format(__title__, __version__, __copyright__, __license1__, __license2__, sys.argv[0], __author__, __openpgp__, __bitcoin__)
 
 version = "{0} (foad.py) version {1}".format(__stitle__, __version__)
 
@@ -241,13 +244,16 @@ else:
     extra = args.extra
 
 lt = len(target)
-
+ls = len(sender)
+le = len(extra)
 
 class fuck:
     def a(self):
         if lt == 0:
             msg = "Fuckin' A!"
-        elif lt > 0 and args.extra is not None:
+        elif lt == 0 and le > 0:
+            msg = "Fuckin' A!  {0}".format(extra)
+        elif lt > 0 and le > 0:
             msg = "{0}, fuckin' A!  {1}".format(target, extra)
         else:
             msg = "{0}, fuckin' A!".format(target)
@@ -336,8 +342,12 @@ class fuck:
     def agree(self):
         if lt == 0:
             msg = "Abso-fucking-lutely!"
-        else:
+        elif lt == 0 and le > 0:
+            msg = "Abso-fucking-lutely!  {0}".format(extra)
+        elif lt > 0 and le == 0:
             msg = "Abso-fucking-lutely {0}!".format(target)
+        elif lt > 0 and le > 0:
+            msg = "Abso-fucking-lutely {0}!  {1}".format(target, extra)
         print(msg)
 
     def amaze(self):
@@ -348,7 +358,10 @@ class fuck:
         print(msg)
 
     def bbm(self):
-        msg = "Big bad motherfucker."
+        if lt == 0:
+            msg = "Big bad motherfucker."
+        elif lt == 0 and ls > 0:
+            msg = "{0} is a big bad motherfucker.".format(sender)
         print(msg)
 
     def cango(self):
@@ -552,28 +565,18 @@ class fuck:
             msg = "For fuck's sake, {0}!".format(target)
         print(msg)
 
-    def field1(self):
-        if lt == 0:
+    def field(self):
+        if lt == 0 and le == 0 and ls == 0:
             msg = "And I said unto thee, 'Verily, cast thine eyes upon the field in which I grow my fucks,' and thou gave witness unto the field and saw that it was barren."
-        else:
+        elif lt > 0 and le == 0 and ls == 0:
             msg = "And I said unto {0}, 'Verily, cast thine eyes upon the field in which I grow my fucks,' and {1} gave witness unto the field and saw that it was barren.".format(target, target)
-        print(msg)
-
-    def field2(self):
-        if lt == 0:
-            msg = "And the Lord said unto thee, 'Verily, cast thine eyes upon the field in which I grow my fucks,' and thou gave witness unto the field and saw that it was barren."
-        else:
-            msg = "And the Lord said unto {0}, 'Verily, cast thine eyes upon the field in which I grow my fucks,' and {1} gave witness unto the field and saw that it was barren.".format(target, target)
-        print(msg)
-
-    def field3(self):
-        if lt == 0:
+        if lt == 0 and le == 0 and ls > 0:
             msg = "And {0} said unto thee, 'Verily, cast thine eyes upon the field in which I grow my fucks,' and thou gave witness unto the field and saw that it was barren.".format(sender)
-        elif lt > 0 and args.extra is not None and args.name is None:
+        elif lt == 0 and le > 0 and ls > 0:
             msg = "And {0} said unto thee, 'Verily, cast thine eyes upon the field in which I grow my fucks,' and thou gave witness unto the field and saw that it was barren.  {1}".format(sender, extra)
-        elif lt > 0 and args.name is not None and args.extra is None:
+        elif lt > 0 and ls > 0 and le == 0:
             msg = "And {0} said unto {1}, 'Verily, cast thine eyes upon the field in which I grow my fucks,' and {2} gave witness unto the field and saw that it was barren.".format(sender, target, target)
-        else:
+        elif lt > 0 and ls > 0 and le > 0:
             msg = "And {0} said unto {1}, 'Verily, cast thine eyes upon the field in which I grow my fucks,' and {2} gave witness unto the field and saw that it was barren.  {3}".format(sender, target, target, extra)
         print(msg)
 
@@ -820,10 +823,12 @@ class fuck:
         print(msg)
 
     def kirsan(self):
-        if lt == 0:
+        if lt == 0 and le == 0:
             msg = "You are as corrupt, delusional, megalomaniacal, vindictive and just as fucking crazy as that fucktard Kirsan Ilyumzhinov!"
-        else:
+        elif lt > 0 and le == 0:
             msg = "{0}, you are as corrupt, delusional, megalomaniacal, vindictive and just as fucking crazy as that fucktard Kirsan Ilyumzhinov!".format(target)
+        else:
+            msg = "{0}, you are as corrupt, delusional, megalomaniacal, vindictive and just as fucking crazy as that fucktard Kirsan Ilyumzhinov!  {0}".format(target, extra)
         print(msg)
 
     def know(self):
