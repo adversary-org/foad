@@ -357,6 +357,21 @@ class fuck:
             msg = "{0}, that was fucking amazing!".format(target)
         print(msg)
 
+    def ballmer(self):
+        if lt == 0 and le == 0 and ls == 0:
+            msg = "Ballmer Notes: This option requires the first target specified with --name and the second (usually a company or organisation) with --extra (sender optional)."
+        elif lt > 0 and le == 0 and ls == 0:
+            msg = "Fucking {0} is a fucking pussy.  I'm going to bury that guy, I have done it before and I will do it again.  I'm going to fucking kill {1}.".format(target, target)
+        elif lt > 0 and le > 0 and ls == 0:
+            msg = "Fucking {0} is a fucking pussy.  I'm going to bury that guy, I have done it before and I will do it again.  I'm going to fucking kill {1}.".format(target, extra)
+        elif lt > 0 and le == 0 and ls > 0:
+            msg = "Fucking {0} is a fucking pussy.  I'm going to bury that guy, I have done it before and I will do it again.  I'm going to fucking kill {1}.  -- {2}".format(target, target, sender)
+        elif lt > 0 and le > 0 and ls > 0:
+            msg = "Fucking {0} is a fucking pussy.  I'm going to bury that guy, I have done it before and I will do it again.  I'm going to fucking kill {1}.  -- {2}".format(target, extra, sender)
+        print(msg)
+
+    # consider making a female variant of this.
+
     def bbm(self):
         if lt == 0:
             msg = "Big bad motherfucker."
