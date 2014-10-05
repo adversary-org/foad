@@ -9,7 +9,7 @@
 #
 # https://github.com/adversary-org/foad
 #
-# Version:  0.7.1.5
+# Version:  0.7.1.6
 #
 # BTC:  1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz
 # License:  GNU Public License version 3 (GPLv3)
@@ -121,7 +121,7 @@ __title__ = "FOAD: Fucked Off Adversarial Degenerates (Fuck Off And Die)"
 __stitle__ = "FOAD"
 __license1__ = "GNU General Public License version 3 (GPLv3)"
 __license2__ = "Do What The Fuck You Want To, But It's Not My Fault Public License version 1 (WTFNMFPLv1)"
-__version__ = "0.7.1.5"
+__version__ = "0.7.1.6"
 __bitcoin__ = "1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz"
 __openpgp__ = "0x321E4E2373590E5D"
 
@@ -361,7 +361,7 @@ class fuck:
 
     def ballmer(self):
         if lt == 0 and le == 0 and ls == 0:
-            msg = "Ballmer Notes: This option requires the first target specified with --name and the second (usually a company or organisation) with --extra (sender optional)."
+            msg = "Ballmer Notes: This option requires the first target specified with --name and the second (usually a company or organisation) with --extra (sender optional).  For a plural version on --name use ballmers on --fuck."
         elif lt > 0 and le == 0 and ls == 0:
             msg = "Fucking {0} is a fucking pussy.  I'm going to bury that guy, I have done it before and I will do it again.  I'm going to fucking kill {1}.".format(target, target)
         elif lt > 0 and le > 0 and ls == 0:
@@ -373,6 +373,19 @@ class fuck:
         print(msg)
 
     # consider making a female variant of this.
+
+    def ballmers(self):
+        if lt == 0 and le == 0 and ls == 0:
+            msg = "Plural Ballmer Notes: This option requires the first targets specified with --name in quotation marks (e.g. 'name1 and name2' or 'name1, name2 and name3') and the second (usually a company or organisation) with --extra (sender optional)."
+        elif lt > 0 and le == 0 and ls == 0:
+            msg = "Fucking {0} are fucking pussies.  I'm going to bury those guys, I have done it before and I will do it again.  I'm going to fucking kill {1}.".format(target, target)
+        elif lt > 0 and le > 0 and ls == 0:
+            msg = "Fucking {0} are fucking pussies.  I'm going to bury those guys, I have done it before and I will do it again.  I'm going to fucking kill {1}.".format(target, extra)
+        elif lt > 0 and le == 0 and ls > 0:
+            msg = "Fucking {0} are fucking pussies.  I'm going to bury those guys, I have done it before and I will do it again.  I'm going to fucking kill {1}.  -- {2}".format(target, target, sender)
+        elif lt > 0 and le > 0 and ls > 0:
+            msg = "Fucking {0} are fucking pussies.  I'm going to bury those guys, I have done it before and I will do it again.  I'm going to fucking kill {1}.  -- {2}".format(target, extra, sender)
+        print(msg)
 
     def bbm(self):
         if lt == 0:
