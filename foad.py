@@ -1790,28 +1790,28 @@ elif l >= 3 and wtf == "unittest":
                     print("Fuck testing!")
                 print("")
             elif lt > 0 and le == 0 and ls == 0:
-                print("Command:  {0} -f {1} -n {2}".format(sa[0], df[i], target))
+                print("Command:  {0} -f {1} -n \"{2}\"".format(sa[0], df[i], target))
                 try:
                     exec("fuck().{0}()".format(df[i]))
                 except(AttributeError, NameError):
                     print("Fuck testing!")
                 print("")
             elif lt > 0 and le > 0 and ls == 0:
-                print("Command:  {0} -f {1} -n {2} -e {3}".format(sa[0], df[i], target, extra))
+                print("Command:  {0} -f {1} -n \"{2}\" -e \"{3}\"".format(sa[0], df[i], target, extra))
                 try:
                     exec("fuck().{0}()".format(df[i]))
                 except(AttributeError, NameError):
                     print("Fuck testing!")
                 print("")
             elif lt > 0 and le == 0 and ls > 0:
-                print("Command:  {0} -f {1} -n {2} -s {3}".format(sa[0], df[i], target, sender))
+                print("Command:  {0} -f {1} -n \"{2}\" -s \"{3}\"".format(sa[0], df[i], target, sender))
                 try:
                     exec("fuck().{0}()".format(df[i]))
                 except(AttributeError, NameError):
                     print("Fuck testing!")
                 print("")
             elif lt > 0 and le > 0 and ls > 0:
-                print("Command:  {0} -f {1} -n {2} -e {3} -s {4}".format(sa[0], df[i], target, extra, sender))
+                print("Command:  {0} -f {1} -n \"{2}\" -e \"{3}\" -s \"{4}\"".format(sa[0], df[i], target, extra, sender))
                 try:
                     exec("fuck().{0}()".format(df[i]))
                 except(AttributeError, NameError):
