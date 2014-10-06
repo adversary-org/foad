@@ -4,7 +4,6 @@
 ./foad.py -f list_options
 pydoc3 foad.py
 ./foad.py -f unittest
-./foad.py -f unittest -n "Bob the Builder"
 ./foad.py -f unittest -n carnal
 ./foad.py -f unittest -n bond
 ./foad.py -f unittest -n die
@@ -24,3 +23,7 @@ pydoc3 foad.py
 ./foad.py -f unittest -n domain
 ./foad.py -f unittest -n donations
 ./foad.py -f unittest -n bitcoin
+./foad.py -f unittest -n "Bob the Builder"
+./foad.py -f unittest -n "Bob the Builder" -s "Agro the Arbitrator"
+./foad.py -f unittest -n "Bob the Builder" -e "Omerta Construction"
+./foad.py -f unittest -n "Bob the Builder" -e "Omerta Construction" -s "Agro the Arbitrator"

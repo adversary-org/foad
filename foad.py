@@ -9,7 +9,7 @@
 #
 # https://github.com/adversary-org/foad
 #
-# Version:  0.7.1.6
+# Version:  0.7.1.7
 #
 # BTC:  1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz
 # License:  GNU Public License version 3 (GPLv3)
@@ -121,7 +121,7 @@ __title__ = "FOAD: Fucked Off Adversarial Degenerates (Fuck Off And Die)"
 __stitle__ = "FOAD"
 __license1__ = "GNU General Public License version 3 (GPLv3)"
 __license2__ = "Do What The Fuck You Want To, But It's Not My Fault Public License version 1 (WTFNMFPLv1)"
-__version__ = "0.7.1.6"
+__version__ = "0.7.1.7"
 __bitcoin__ = "1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz"
 __openpgp__ = "0x321E4E2373590E5D"
 
@@ -204,7 +204,7 @@ parser = argparse.ArgumentParser(
 parser.add_argument("-f", "--fuck", help="One word, indicates type of fuck to give, run foad.py -f list_options to see possible flags.", action="store", required=False)
 parser.add_argument("-n", "--name", help="Name of target, more than one word must be in quotation marks.", action="store", required=False)
 parser.add_argument("-s", "--sender", help="Used to specify the sender, usually within the context of some particular phrase, more than one word must be in quotation marks.", action="store", required=False)
-parser.add_argument("-e", "--extra", help="Additional comment to append to output, more than one word must be in quotation marks.", action="store", required=False)
+parser.add_argument("-e", "--extra", help="Additional comment to append to output, more than one word must be in quotation marks.  Sometimes used to enhance an existing response rather than append text.", action="store", required=False)
 # The next two can wait as they're already covered by -f and -h, both are causing problems at the moment:
 # parser.add_argument("-l", "--list_options", help="Lists the explicit variations (the same as: -f list_options)", action="store", required=False)
 # parser.add_argument("-V", "--version", help="Print the version number.", action=print(version), required=False)
@@ -249,7 +249,7 @@ le = len(extra)
 
 class fuck:
     def a(self):
-        if lt == 0:
+        if lt == 0 and le == 0:
             msg = "Fuckin' A!"
         elif lt == 0 and le > 0:
             msg = "Fuckin' A!  {0}".format(extra)
@@ -1655,7 +1655,7 @@ elif l == 2 and wtf == "unittest":
     print(about)
     print("")
     for i in range(lc):
-        print("Command:  {0} -f {1} [-n {2}]".format(sa[0], df[i], "<target>"))
+        print("Command:  {0} -f {1} [-n {2} -e {3} -s {4}]".format(sa[0], df[i], "<target>", "<extra>", "<sender>"))
         try:
             exec("fuck().{0}()".format(df[i]))
         except(AttributeError, NameError):
@@ -1782,12 +1782,41 @@ elif l >= 3 and wtf == "unittest":
         print(about)
         print("")
         for i in range(lc):
-            print("Command:  {0} -f {1} [-n {2}]".format(sa[0], df[i], target))
-            try:
-                exec("fuck().{0}()".format(df[i]))
-            except(AttributeError, NameError):
-                print("Fuck testing!")
-            print("")
+            if lt == 0 and le == 0 and ls == 0:
+                print("Command:  {0} -f {1}".format(sa[0], df[i]))
+                try:
+                    exec("fuck().{0}()".format(df[i]))
+                except(AttributeError, NameError):
+                    print("Fuck testing!")
+                print("")
+            elif lt > 0 and le == 0 and ls == 0:
+                print("Command:  {0} -f {1} -n \"{2}\"".format(sa[0], df[i], target))
+                try:
+                    exec("fuck().{0}()".format(df[i]))
+                except(AttributeError, NameError):
+                    print("Fuck testing!")
+                print("")
+            elif lt > 0 and le > 0 and ls == 0:
+                print("Command:  {0} -f {1} -n \"{2}\" -e \"{3}\"".format(sa[0], df[i], target, extra))
+                try:
+                    exec("fuck().{0}()".format(df[i]))
+                except(AttributeError, NameError):
+                    print("Fuck testing!")
+                print("")
+            elif lt > 0 and le == 0 and ls > 0:
+                print("Command:  {0} -f {1} -n \"{2}\" -s \"{3}\"".format(sa[0], df[i], target, sender))
+                try:
+                    exec("fuck().{0}()".format(df[i]))
+                except(AttributeError, NameError):
+                    print("Fuck testing!")
+                print("")
+            elif lt > 0 and le > 0 and ls > 0:
+                print("Command:  {0} -f {1} -n \"{2}\" -e \"{3}\" -s \"{4}\"".format(sa[0], df[i], target, extra, sender))
+                try:
+                    exec("fuck().{0}()".format(df[i]))
+                except(AttributeError, NameError):
+                    print("Fuck testing!")
+                print("")
 elif l >= 2 and wtf == "random":
     try:
         exec("fuck().{0}()".format(rc))
