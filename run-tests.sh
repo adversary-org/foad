@@ -25,5 +25,5 @@ pydoc3 foad.py
 ./foad.py -f unittest -n bitcoin
 ./foad.py -f unittest -n "Bob the Builder"
 ./foad.py -f unittest -n "Bob the Builder" -s "Agro the Arbitrator"
-./foad.py -f unittest -n "Bob the Builder" -e "Omerta Construction: You won't refuse this deal."
-./foad.py -f unittest -n "Bob the Builder" -e "Omerta Construction: The foundations of our deals are better left in peace." -s "Agro the Arbitrator"
+./foad.py -f unittest -n "Bob the Builder" -e "Omerta Construction"
+./foad.py -f unittest -n "Bob the Builder" -e "Omerta Construction" -s "Agro the Arbitrator"
