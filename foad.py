@@ -249,7 +249,7 @@ le = len(extra)
 
 class fuck:
     def a(self):
-        if lt == 0:
+        if lt == 0 and le == 0:
             msg = "Fuckin' A!"
         elif lt == 0 and le > 0:
             msg = "Fuckin' A!  {0}".format(extra)
