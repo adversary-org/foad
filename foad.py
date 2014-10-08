@@ -1090,11 +1090,11 @@ class fuck:
     def nugget(self):
         if lt == 0 and ls == 0 and le == 0:
             msg = "Well, aren't you a shining example of a rancid fuck-nugget."
-        if lt > 0 and ls == 0 and le == 0:
+        elif lt > 0 and ls == 0 and le == 0:
             msg = "Well {0}, aren't you a shining example of a rancid fuck-nugget.".format(target)
-        if lt > 0 and ls > 0 and le == 0:
+        elif lt > 0 and ls > 0 and le == 0:
             msg = "Well {0}, aren't you a shining example of a rancid fuck-nugget.  -- {1}".format(target, sender)
-        if lt > 0 and ls == 0 and le > 0:
+        elif lt > 0 and ls == 0 and le > 0:
             msg = "Well {0}, aren't you a shining example of a rancid fuck-nugget.  {1}".format(target, extra)
         else:
             msg = "Well {0}, aren't you a shining example of a rancid fuck-nugget.  {1}  -- {2}".format(target, extra, sender)
@@ -1537,6 +1537,15 @@ class fuck:
             msg = "It's a waste of fucking time and money."
         else:
             msg = "{0}, it's a waste of fucking time and money.".format(target)
+        print(msg)
+
+    def wtaf(self):
+        if lt == 0:
+            msg = "What the actual fuck?!"
+        elif lt > 0:
+            msg = "What the actual fuck {0}?!".format(target)
+        else:
+            msg = "What the actual fuck {0}?!  {1}".format(target, extra)
         print(msg)
 
     def wtf(self):
