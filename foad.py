@@ -1344,7 +1344,7 @@ class fuck:
             msg = "{0}, fuck you with the fury of a thousand suns.  {1}".format(target, extra)
         else:
             msg = "{0}, fuck you with the fury of a thousand suns.  {1} -- {2}".format(target, extra, sender)
-            print(msg)
+        print(msg)
 
     def survey(self):
         if lt == 0:
