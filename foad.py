@@ -9,7 +9,7 @@
 #
 # https://github.com/adversary-org/foad
 #
-# Version:  0.7.1.8
+# Version:  0.7.1.9
 #
 # BTC:  1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz
 # License:  GNU Public License version 3 (GPLv3)
@@ -121,7 +121,7 @@ __title__ = "FOAD: Fucked Off Adversarial Degenerates (Fuck Off And Die)"
 __stitle__ = "FOAD"
 __license1__ = "GNU General Public License version 3 (GPLv3)"
 __license2__ = "Do What The Fuck You Want To, But It's Not My Fault Public License version 1 (WTFNMFPLv1)"
-__version__ = "0.7.1.8"
+__version__ = "0.7.1.9"
 __bitcoin__ = "1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz"
 __openpgp__ = "0x321E4E2373590E5D"
 
@@ -257,6 +257,8 @@ class fuck:
             msg = "{0}, fuckin' A!".format(target)
         elif lt > 0 and le > 0:
             msg = "{0}, fuckin' A!  {1}".format(target, extra)
+        else:
+            msg = "{0}, fuckin' A!  {1}  -- {2}".format(target, extra, sender)
         print(msg)
 
     def about(self):
@@ -348,6 +350,8 @@ class fuck:
             msg = "Abso-fucking-lutely {0}!".format(target)
         elif lt > 0 and le > 0:
             msg = "Abso-fucking-lutely {0}!  {1}".format(target, extra)
+        else:
+            msg = "Abso-fucking-lutely {0}!  {1}  -- {2}".format(target, extra, sender)
         print(msg)
 
     def amaze(self):
@@ -392,6 +396,10 @@ class fuck:
             msg = "Big bad motherfucker."
         elif lt == 0 and ls > 0:
             msg = "{0} is a big bad motherfucker.".format(sender)
+        elif lt > 0 and ls > 0:
+            msg = "{0}, {1} is a big bad motherfucker.".format(target, sender)
+        else:
+            msg = "{0}, {1} is a big bad motherfucker.  {2}".format(target, sender, extra)
         print(msg)
 
     def caniuse(self):
@@ -468,9 +476,9 @@ class fuck:
 
     def compleat(self):
         if lt == 0:
-            msg = "I might be a cunt, but I'm not a fucking cunt."
+            msg = "I might be a cunt, but I'm not a complete and utter fucking cunt."
         else:
-            msg = "I might be a cunt, {0}, but I'm not a fucking cunt.".format(target)
+            msg = "I might be a cunt, {0}, but I'm not a complete and utter fucking cunt.".format(target)
         print(msg)
 
     def cracked(self):
@@ -1372,6 +1380,13 @@ class fuck:
             msg = "Fuck you very much."
         else:
             msg = "Fuck you very much, {0}.".format(target)
+        print(msg)
+
+    def tism(self):
+        if lt == 0:
+            msg = "I might be a cunt, but I'm not a fucking cunt."
+        else:
+            msg = "I might be a cunt, {0}, but I'm not a fucking cunt.".format(target)
         print(msg)
 
     def totgaf(self):
