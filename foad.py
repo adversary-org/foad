@@ -881,7 +881,7 @@ class fuck:
         elif lt > 0 and le == 0:
             msg = "{0}, you are as corrupt, delusional, megalomaniacal, vindictive and just as fucking crazy as that fucktard Kirsan Ilyumzhinov!".format(target)
         else:
-            msg = "{0}, you are as corrupt, delusional, megalomaniacal, vindictive and just as fucking crazy as that fucktard Kirsan Ilyumzhinov!  {0}".format(target, extra)
+            msg = "{0}, you are as corrupt, delusional, megalomaniacal, vindictive and just as fucking crazy as that fucktard Kirsan Ilyumzhinov!  {1}".format(target, extra)
         print(msg)
 
     def know(self):
