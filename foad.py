@@ -9,7 +9,7 @@
 #
 # https://github.com/adversary-org/foad
 #
-# Version:  0.7.1.10
+# Version:  0.7.1.11
 #
 # BTC:  1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz
 # License:  GNU Public License version 3 (GPLv3)
@@ -121,7 +121,7 @@ __title__ = "FOAD: Fucked Off Adversarial Degenerates (Fuck Off And Die)"
 __stitle__ = "FOAD"
 __license1__ = "GNU General Public License version 3 (GPLv3)"
 __license2__ = "Do What The Fuck You Want To, But It's Not My Fault Public License version 1 (WTFNMFPLv1)"
-__version__ = "0.7.1.10"
+__version__ = "0.7.1.11"
 __bitcoin__ = "1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz"
 __openpgp__ = "0x321E4E2373590E5D"
 
@@ -361,6 +361,19 @@ class fuck:
             msg = "{0}, that was fucking amazing!".format(target)
         else:
             msg = "{0}, that was fucking amazing!  {1}".format(target, extra)
+        print(msg)
+
+    def apple(self):
+        if lt == 0 and le == 0 and ls == 0:
+            msg = "No you fucking can't do it your way!  We don't give a fuck if it's better, you do it our fucking way or you fuck off!"
+        elif lt > 0 and le == 0 and ls == 0:
+            msg = "No {0}, you fucking can't do it your way!  We don't give a fuck if it's better, you do it our fucking way or you fuck off!".format(target)
+        elif lt > 0 and le > 0 and ls == 0:
+            msg = "No {0}, you fucking can't do it your way!  We don't give a fuck if it's better, you do it our fucking way or you fuck off!  {1}".format(target, extra)
+        elif lt > 0 and le == 0 and ls > 0:
+            msg = "No {0}, you fucking can't do it your way!  We don't give a fuck if it's better, you do it our fucking way or you fuck off!  -- {1}".format(target, sender)
+        else:
+            msg = "No {0}, you fucking can't do it your way!  We don't give a fuck if it's better, you do it our fucking way or you fuck off!  {1}  -- {2}".format(target, extra, sender)
         print(msg)
 
     def ballmer(self):
