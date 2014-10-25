@@ -9,7 +9,7 @@
 #
 # https://github.com/adversary-org/foad
 #
-# Version:  0.7.1.11
+# Version:  0.7.1.12
 #
 # BTC:  1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz
 # License:  GNU Public License version 3 (GPLv3)
@@ -121,7 +121,7 @@ __title__ = "FOAD: Fucked Off Adversarial Degenerates (Fuck Off And Die)"
 __stitle__ = "FOAD"
 __license1__ = "GNU General Public License version 3 (GPLv3)"
 __license2__ = "Do What The Fuck You Want To, But It's Not My Fault Public License version 1 (WTFNMFPLv1)"
-__version__ = "0.7.1.11"
+__version__ = "0.7.1.12"
 __bitcoin__ = "1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz"
 __openpgp__ = "0x321E4E2373590E5D"
 
@@ -205,6 +205,7 @@ parser.add_argument("-f", "--fuck", help="One word, indicates type of fuck to gi
 parser.add_argument("-n", "--name", help="Name of target, more than one word must be in quotation marks.", action="store", required=False)
 parser.add_argument("-s", "--sender", help="Used to specify the sender, usually within the context of some particular phrase, more than one word must be in quotation marks.", action="store", required=False)
 parser.add_argument("-e", "--extra", help="Additional comment to append to output, more than one word must be in quotation marks.  Sometimes used to enhance an existing response rather than append text.", action="store", required=False)
+parser.add_argument("-c", "--cite", help="Enter anything here to include a citation if it is relevent.", action="store", required=False)
 # The next two can wait as they're already covered by -f and -h, both are causing problems at the moment:
 # parser.add_argument("-l", "--list_options", help="Lists the explicit variations (the same as: -f list_options)", action="store", required=False)
 # parser.add_argument("-V", "--version", help="Print the version number.", action=print(version), required=False)
@@ -213,6 +214,7 @@ if len(sys.argv) > lx:
     la = len(sys.argv)
 else:
     la = lx
+#la = lx
 
 sa = []
 for a in sys.argv:
@@ -242,6 +244,13 @@ if args.extra is None:
     extra = ""
 else:
     extra = args.extra
+
+if args.cite is None:
+    cite = ""
+#elif args.cite.lower() == "yes" or "y" or "true" or "1":
+#    cite = "citation"
+else:
+    cite = "citation"
 
 lt = len(target)
 ls = len(sender)
@@ -1166,6 +1175,32 @@ class fuck:
 
     def pink(self):
         msg = "Well, fuck me pink!"
+        print(msg)
+
+    def ppdata(self):
+        if lt == 0 and le == 0:
+            msg = "What the fuck kind of variable name is \"data\"?!  You should be incarcerated."
+        elif lt > 0 and le == 0:
+            msg = "What the fuck kind of variable name is \"data\"?!  You should be incarcerated, {0}.".format(target)
+        elif lt > 0 and le > 0:
+            msg = "What the fuck kind of variable name is \"{0}\"?!  You should be incarcerated, {1}.".format(extra, target)
+        elif lt == 0 and le == 0 and len(cite) > 0:
+            msg = "What the fuck kind of variable name is \"data\"?!  You should be incarcerated.  http://theprofoundprogrammer.com/post/25728479232/text-what-the-fuck-kind-of-variable-name-is".format(extra, target)
+        elif lt > 0 and le == 0 and len(cite) > 0:
+            msg = "What the fuck kind of variable name is \"data\"?!  You should be incarcerated, {1}.  http://theprofoundprogrammer.com/post/25728479232/text-what-the-fuck-kind-of-variable-name-is".format(extra, target)
+        elif lt > 0 and le > 0 and len(cite) > 0:
+            msg = "What the fuck kind of variable name is \"{0}\"?!  You should be incarcerated, {1}.  http://theprofoundprogrammer.com/post/25728479232/text-what-the-fuck-kind-of-variable-name-is".format(extra, target)
+        print(msg)
+
+    def ppwrote(self):
+        if lt == 0:
+            msg = "There's no fucking way I wrote this.  This is awful ... what the fuck does this even do?!"
+        elif lt > 0:
+            msg = "There's no fucking way I wrote this, {0}.  This is awful ... what the fuck does this even do?!".format(target)
+        elif lt == 0 and cite is True:
+            msg = "There's no fucking way I wrote this.  This is awful ... what the fuck does this even do?!  http://theprofoundprogrammer.com/post/25728609992/text-theres-no-fucking-way-i-wrote-this-this"
+        elif lt > 0 and cite is True:
+            msg = "There's no fucking way I wrote this, {0}.  This is awful ... what the fuck does this even do?!  http://theprofoundprogrammer.com/post/25728609992/text-theres-no-fucking-way-i-wrote-this-this".format(target)
         print(msg)
 
     def priapus(self):
