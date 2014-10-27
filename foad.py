@@ -9,7 +9,7 @@
 #
 # https://github.com/adversary-org/foad
 #
-# Version:  0.7.1.11
+# Version:  0.7.2.0
 #
 # BTC:  1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz
 # License:  GNU Public License version 3 (GPLv3)
@@ -121,7 +121,7 @@ __title__ = "FOAD: Fucked Off Adversarial Degenerates (Fuck Off And Die)"
 __stitle__ = "FOAD"
 __license1__ = "GNU General Public License version 3 (GPLv3)"
 __license2__ = "Do What The Fuck You Want To, But It's Not My Fault Public License version 1 (WTFNMFPLv1)"
-__version__ = "0.7.1.11"
+__version__ = "0.7.2.0"
 __bitcoin__ = "1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz"
 __openpgp__ = "0x321E4E2373590E5D"
 
@@ -1168,6 +1168,29 @@ class fuck:
         msg = "Well, fuck me pink!"
         print(msg)
 
+# The functions beginning with pp are from The Profound Programmer:
+# http://theprofoundprogrammer.com/post/28088574792/introducing-the-first-profound-programmer-hd
+
+    def ppdata(self):
+        if lt == 0 and le == 0:
+            msg = "What the fuck kind of variable name is \"data\"?!  You should be incarcerated."
+        elif lt > 0 and le == 0:
+            msg = "What the fuck kind of variable name is \"data\"?!  You should be incarcerated, {0}.".format(target)
+        elif lt > 0 and le > 0:
+            msg = "What the fuck kind of variable name is \"{0}\"?!  You should be incarcerated, {1}.".format(extra, target)
+        print(msg)
+
+# See http://theprofoundprogrammer.com/post/25728479232/text-what-the-fuck-kind-of-variable-name-is
+
+    def ppwrote(self):
+        if lt == 0:
+            msg = "There's no fucking way I wrote this.  This is awful ... what the fuck does this even do?!"
+        elif lt > 0:
+            msg = "There's no fucking way I wrote this, {0}.  This is awful ... what the fuck does this even do?!".format(target)
+        print(msg)
+
+# See http://theprofoundprogrammer.com/post/25728609992/text-theres-no-fucking-way-i-wrote-this-this
+
     def priapus(self):
         if lt == 0:
             msg = "Obscenis, peream, Priape, si non uti me pudet improbisque verbis sed cum tu posito deus pudore ostendas mihi coleos patentes cum cunno mihi mentula est vocanda."
@@ -1667,6 +1690,9 @@ class fuck:
             msg = "Fuck you {0}!".format(target)
         print(msg)
 
+fucked = fuck()
+fucker = fuck()
+
 
 df0 = dir(fuck)
 df = []
@@ -1714,126 +1740,126 @@ elif l == 2 and wtf == "unittest":
     for i in range(lc):
         print("Command:  {0} -f {1} [-n {2} -e {3} -s {4}]".format(sa[0], df[i], "<target>", "<extra>", "<sender>"))
         try:
-            exec("fuck().{0}()".format(df[i]))
+            exec("fucker.{0}()".format(df[i]))
         except(AttributeError, NameError):
             print("Fuck testing!")
         print("")
 elif l >= 3 and wtf == "unittest":
     if target.lower() == "atitle":
         print("Command:  {0} -f about -n {1}".format(sa[0], target.lower))
-        exec("fuck().about()")
+        exec("fucker.about()")
         print("")
     elif target.lower() == "copyright":
         print("Command:  {0} -f about -n {1}".format(sa[0], target.lower))
-        exec("fuck().about()")
+        exec("fucker.about()")
         print("")
     elif target.lower() == "website":
         print("Command:  {0} -f about -n {1}".format(sa[0], target.lower))
-        exec("fuck().about()")
+        exec("fucker.about()")
         print("")
     elif target.lower() == "adversary":
         print("Command:  {0} -f about -n {1}".format(sa[0], target.lower))
-        exec("fuck().about()")
+        exec("fucker.about()")
         print("")
     elif target.lower() == "domain":
         print("Command:  {0} -f about -n {1}".format(sa[0], target.lower))
-        exec("fuck().about()")
+        exec("fucker.about()")
         print("")
     elif target.lower() == "donations":
         print("Command:  {0} -f about -n {1}".format(sa[0], target.lower))
-        exec("fuck().about()")
+        exec("fucker.about()")
         print("")
     elif target.lower() == "bitcoin":
         print("Command:  {0} -f about -n {1}".format(sa[0], target.lower))
-        exec("fuck().about()")
+        exec("fucker.about()")
         print("")
     elif target.lower() == "author":
         print("Command:  {0} -f about -n {1}".format(sa[0], target.lower))
-        exec("fuck().about()")
+        exec("fucker.about()")
         print("")
     elif target.lower() == "contact":
         print("Command:  {0} -f about -n {1}".format(sa[0], target.lower))
-        exec("fuck().about()")
+        exec("fucker.about()")
         print("")
     elif target.lower() == "email":
         print("Command:  {0} -f about -n {1}".format(sa[0], target.lower))
-        exec("fuck().about()")
+        exec("fucker.about()")
         print("")
     elif target.lower() == "encryption":
         print("Command:  {0} -f about -n {1}".format(sa[0], target.lower))
-        exec("fuck().about()")
+        exec("fucker.about()")
         print("")
     elif target.lower() == "gpg key":
         print("Command:  {0} -f about -n {1}".format(sa[0], target.lower))
-        exec("fuck().about()")
+        exec("fucker.about()")
         print("")
     elif target.lower() == "options":
         print("Command:  {0} -f about -n {1}".format(sa[0], target.lower))
-        exec("fuck().about()")
+        exec("fucker.about()")
         print("")
     elif target.lower() == "pirate":
         print("Command:  {0} -f about -n {1}".format(sa[0], target.lower))
-        exec("fuck().about()")
+        exec("fucker.about()")
         print("")
     elif target.lower() == "twitter":
         print("Command:  {0} -f about -n {1}".format(sa[0], target.lower))
-        exec("fuck().about()")
+        exec("fucker.about()")
         print("")
     elif target.lower() == "twython tools":
         print("Command:  {0} -f about -n {1}".format(sa[0], target.lower))
-        exec("fuck().about()")
+        exec("fucker.about()")
         print("")
     elif target.lower() == "version":
         print("Command:  {0} -f about -n {1}".format(sa[0], target.lower))
-        exec("fuck().about()")
+        exec("fucker.about()")
         print("")
     elif target.lower() == "carnal":
         print("Command:  {0} -f acronym -n {1}".format(sa[0], target.lower))
-        exec("fuck().acronym()")
+        exec("fucker.acronym()")
         print("")
     elif target.lower() == "bond":
         print("Command:  {0} -f acronym -n {1}".format(sa[0], target.lower))
-        exec("fuck().acronym()")
+        exec("fucker.acronym()")
         print("")
     elif target.lower() == "die":
         print("Command:  {0} -f acronym -n {1}".format(sa[0], target.lower))
-        exec("fuck().acronym()")
+        exec("fucker.acronym()")
         print("")
     elif target.lower() == "right":
         print("Command:  {0} -f acronym -n {1}".format(sa[0], target.lower))
-        exec("fuck().acronym()")
+        exec("fucker.acronym()")
         print("")
     elif target.lower() == "title":
         print("Command:  {0} -f acronym -n {1}".format(sa[0], target.lower))
-        exec("fuck().acronym()")
+        exec("fucker.acronym()")
         print("")
     elif target.lower() == "cunt":
         print("Command:  {0} -f acronym -n {1}".format(sa[0], target.lower))
-        exec("fuck().acronym()")
+        exec("fucker.acronym()")
         print("")
     elif target.lower() == "foaas":
         print("Command:  {0} -f acronym -n {1}".format(sa[0], target.lower))
-        exec("fuck().acronym()")
+        exec("fucker.acronym()")
         print("")
     elif target.lower() == "snag":
         print("Command:  {0} -f acronym -n {1}".format(sa[0], target.lower))
-        exec("fuck().acronym()")
+        exec("fucker.acronym()")
         print("")
     elif target.lower() == "snafu":
         print("Command:  {0} -f acronym -n {1}".format(sa[0], target.lower))
-        exec("fuck().acronym()")
+        exec("fucker.acronym()")
         print("")
     elif target.lower() == "fubar":
         print("Command:  {0} -f acronym -n {1}".format(sa[0], target.lower))
-        exec("fuck().acronym()")
+        exec("fucker.acronym()")
         print("")
     elif target.lower() == "lmfao":
         print("Command:  {0} -f acronym -n {1}".format(sa[0], target.lower))
-        exec("fuck().acronym()")
+        exec("fucker.acronym()")
         print("")
     elif target.lower() == "figjam":
         print("Command:  {0} -f acronym -n {1}".format(sa[0], target.lower))
-        exec("fuck().acronym()")
+        exec("fucker.acronym()")
         print("")
     else:
         print(about)
@@ -1842,47 +1868,47 @@ elif l >= 3 and wtf == "unittest":
             if lt == 0 and le == 0 and ls == 0:
                 print("Command:  {0} -f {1}".format(sa[0], df[i]))
                 try:
-                    exec("fuck().{0}()".format(df[i]))
+                    exec("fucker.{0}()".format(df[i]))
                 except(AttributeError, NameError):
                     print("Fuck testing!")
                 print("")
             elif lt > 0 and le == 0 and ls == 0:
                 print("Command:  {0} -f {1} -n \"{2}\"".format(sa[0], df[i], target))
                 try:
-                    exec("fuck().{0}()".format(df[i]))
+                    exec("fucker.{0}()".format(df[i]))
                 except(AttributeError, NameError):
                     print("Fuck testing!")
                 print("")
             elif lt > 0 and le > 0 and ls == 0:
                 print("Command:  {0} -f {1} -n \"{2}\" -e \"{3}\"".format(sa[0], df[i], target, extra))
                 try:
-                    exec("fuck().{0}()".format(df[i]))
+                    exec("fucker.{0}()".format(df[i]))
                 except(AttributeError, NameError):
                     print("Fuck testing!")
                 print("")
             elif lt > 0 and le == 0 and ls > 0:
                 print("Command:  {0} -f {1} -n \"{2}\" -s \"{3}\"".format(sa[0], df[i], target, sender))
                 try:
-                    exec("fuck().{0}()".format(df[i]))
+                    exec("fucker.{0}()".format(df[i]))
                 except(AttributeError, NameError):
                     print("Fuck testing!")
                 print("")
             elif lt > 0 and le > 0 and ls > 0:
                 print("Command:  {0} -f {1} -n \"{2}\" -e \"{3}\" -s \"{4}\"".format(sa[0], df[i], target, extra, sender))
                 try:
-                    exec("fuck().{0}()".format(df[i]))
+                    exec("fucker.{0}()".format(df[i]))
                 except(AttributeError, NameError):
                     print("Fuck testing!")
                 print("")
 elif l >= 2 and wtf == "random":
     try:
-        exec("fuck().{0}()".format(rc))
+        exec("fucker.{0}()".format(rc))
     except(AttributeError, NameError):
         print("Fuck randomness!")
 elif la == 3:
     if args.fuck is not None and args.name is None:
         try:
-            exec("fuck().{0}()".format(wtf))
+            exec("fucker.{0}()".format(wtf))
         except(AttributeError, NameError):
             print("Fuck {0}!".format(wtf))
     elif args.fuck is None and args.name is not None:
@@ -1890,7 +1916,7 @@ elif la == 3:
 elif la == 4:
     if args.fuck is not None and args.name is None:
         try:
-            exec("fuck().{0}()".format(wtf))
+            exec("fucker.{0}()".format(wtf))
         except(AttributeError, NameError):
             w = []
             for i in range(la - 2):
@@ -1905,7 +1931,7 @@ elif la == 4:
         print("Fuck {0}!".format(target))
     elif args.fuck is not None and args.name is not None:
         try:
-            exec("fuck().{0}()".format(wtf))
+            exec("fucker.{0}()".format(wtf))
         except(AttributeError, NameError):
             print("Fuck {0}!".format(wtf))
     else:
@@ -1914,7 +1940,7 @@ elif la == 4:
 elif la >= 5:
     if args.fuck is not None and args.name is None:
         try:
-            exec("fuck().{0}()".format(wtf))
+            exec("fucker.{0}()".format(wtf))
         except(AttributeError, NameError):
             w = []
             for i in range(la - 2):
@@ -1929,7 +1955,7 @@ elif la >= 5:
         print("Fuck {0}!".format(target))
     elif args.fuck is not None and args.name is not None:
         try:
-            exec("fuck().{0}()".format(wtf))
+            exec("fucker.{0}()".format(wtf))
         except(AttributeError, NameError):
             w = []
             for i in range(la - 2):
