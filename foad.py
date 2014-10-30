@@ -9,7 +9,7 @@
 #
 # https://github.com/adversary-org/foad
 #
-# Version:  0.7.2.0
+# Version:  0.7.2.1
 #
 # BTC:  1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz
 # License:  GNU Public License version 3 (GPLv3)
@@ -121,7 +121,7 @@ __title__ = "FOAD: Fucked Off Adversarial Degenerates (Fuck Off And Die)"
 __stitle__ = "FOAD"
 __license1__ = "GNU General Public License version 3 (GPLv3)"
 __license2__ = "Do What The Fuck You Want To, But It's Not My Fault Public License version 1 (WTFNMFPLv1)"
-__version__ = "0.7.2.0"
+__version__ = "0.7.2.1"
 __bitcoin__ = "1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz"
 __openpgp__ = "0x321E4E2373590E5D"
 
@@ -204,6 +204,7 @@ parser = argparse.ArgumentParser(
 parser.add_argument("-f", "--fuck", help="One word, indicates type of fuck to give, run foad.py -f list_options to see possible flags.", action="store", required=False)
 parser.add_argument("-n", "--name", help="Name of target, more than one word must be in quotation marks.", action="store", required=False)
 parser.add_argument("-s", "--sender", help="Used to specify the sender, usually within the context of some particular phrase, more than one word must be in quotation marks.", action="store", required=False)
+parser.add_argument("-r", "--relay", help="Used to specify a third party to whom a message is to be delivered to the target.", action="store", required=False)
 parser.add_argument("-e", "--extra", help="Additional comment to append to output, more than one word must be in quotation marks.  Sometimes used to enhance an existing response rather than append text.", action="store", required=False)
 # The next two can wait as they're already covered by -f and -h, both are causing problems at the moment:
 # parser.add_argument("-l", "--list_options", help="Lists the explicit variations (the same as: -f list_options)", action="store", required=False)
@@ -243,9 +244,15 @@ if args.extra is None:
 else:
     extra = args.extra
 
+if args.relay is None:
+    relay = ""
+else:
+    relay = args.relay
+
 lt = len(target)
 ls = len(sender)
 le = len(extra)
+lR = len(relay)  # lr is already used for part of the random calls.
 
 class fuck:
     def a(self):
@@ -889,12 +896,18 @@ class fuck:
         print(msg)
 
     def kirsan(self):
-        if lt == 0 and le == 0:
+        if lt == 0 and le == 0 and lR == 0:
             msg = "You are as corrupt, delusional, megalomaniacal, vindictive and just as fucking crazy as that fucktard Kirsan Ilyumzhinov!"
-        elif lt > 0 and le == 0:
+        elif lt == 0 and le == 0 and lR > 0:
+            msg = "Hey {0}, tell them they're as corrupt, delusional, megalomaniacal, vindictive and just as fucking crazy as that fucktard Kirsan Ilyumzhinov!".format(relay)
+        elif lt > 0 and le == 0 and lR == 0:
             msg = "{0}, you are as corrupt, delusional, megalomaniacal, vindictive and just as fucking crazy as that fucktard Kirsan Ilyumzhinov!".format(target)
+        elif lR > 0 and lt > 0 and le == 0:
+            msg = "Hey {0}, tell {1} that they're as corrupt, delusional, megalomaniacal, vindictive and just as fucking crazy as that fucktard Kirsan Ilyumzhinov!".format(relay, target)
+        elif lR > 0 and lt > 0 and le > 0:
+            msg = "Hey {0}, tell {1} that they're as corrupt, delusional, megalomaniacal, vindictive and just as fucking crazy as that fucktard Kirsan Ilyumzhinov! {3}".format(relay, target, extra)
         else:
-            msg = "{0}, you are as corrupt, delusional, megalomaniacal, vindictive and just as fucking crazy as that fucktard Kirsan Ilyumzhinov!  {1}".format(target, extra)
+            msg = "{0}, you are as corrupt, delusional, megalomaniacal, vindictive and just as fucking crazy as that fucktard Kirsan Ilyumzhinov! {1}".format(target, extra)
         print(msg)
 
     def know(self):
