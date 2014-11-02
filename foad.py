@@ -1213,7 +1213,14 @@ class fuck:
         print(msg)
 
     def pink(self):
-        msg = "Well, fuck me pink!"
+        if lt == 0 and le == 0 and lP == 0 and lA == 0:
+            msg = "Well, fuck me pink!"
+        elif lt == 0 and le > 0 and lP == 0 and lA == 0:
+            msg = "Well, fuck me pink! {0}".format(extra)
+        elif lt == 0 and le == 0 and lP == 0 and lA > 0:
+            msg = "Well, fuck me pink! {0}".format(append)
+        elif lt == 0 and le == 0 and lP > 0 and lA == 0:
+            msg = "{0} Well, fuck me pink!".format(prepend)
         print(msg)
 
 # The functions beginning with pp are from The Profound Programmer:
@@ -1479,6 +1486,18 @@ class fuck:
         else:
             msg = "{0}, I'm too old to give a fuck.".format(target)
         print(msg)
+
+    # All the twog quotes are from TheTweetOfGod.
+    # https://twitter.com/TheTweetOfGod
+
+    def twog1(self):
+        if lt == 0:
+            msg = "Seriously, don't dis Me. I am the Lord thy God, King of the Universe. Show some fucking respect."
+        else:
+            msg = "Seriously, {0}, don't dis Me. I am the Lord thy God, King of the Universe. Show some fucking respect.".format(target)
+        print(msg)
+
+    # https://twitter.com/TheTweetOfGod/status/528773043666313216
 
     def ucunt(self):
         if lt == 0:
