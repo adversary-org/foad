@@ -656,6 +656,8 @@ class fuck:
     def fascinating(self):
         if lt == 0:
             msg = "Fascinating story, in what chapter do you shut the fuck up?"
+        elif lt > 0 and la > 0:
+            msg = "Fascinating story, {0}, in what chapter do you shut the fuck up? {1}".format(target, append)
         else:
             msg = "Fascinating story, {0}, in what chapter do you shut the fuck up?".format(target)
         print(msg)
@@ -941,6 +943,8 @@ class fuck:
             msg = "Hey {0}, tell {1} that they're as corrupt, delusional, megalomaniacal, vindictive and just as fucking crazy as that fucktard Kirsan Ilyumzhinov!".format(relay, target)
         elif lR > 0 and lt > 0 and le > 0:
             msg = "Hey {0}, tell {1} that they're as corrupt, delusional, megalomaniacal, vindictive and just as fucking crazy as that fucktard Kirsan Ilyumzhinov! {3}".format(relay, target, extra)
+        elif lR > 0 and lt > 0 and la > 0:
+            msg = "Hey {0}, tell {1} that they're as corrupt, delusional, megalomaniacal, vindictive and just as fucking crazy as that fucktard Kirsan Ilyumzhinov! {3}".format(relay, target, append)
         else:
             msg = "{0}, you are as corrupt, delusional, megalomaniacal, vindictive and just as fucking crazy as that fucktard Kirsan Ilyumzhinov! {1}".format(target, extra)
         print(msg)
