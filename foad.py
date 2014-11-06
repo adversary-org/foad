@@ -9,7 +9,7 @@
 #
 # https://github.com/adversary-org/foad
 #
-# Version:  0.7.2.1
+# Version:  0.7.2.3
 #
 # BTC:  1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz
 # License:  GNU Public License version 3 (GPLv3)
@@ -121,7 +121,7 @@ __title__ = "FOAD: Fucked Off Adversarial Degenerates (Fuck Off And Die)"
 __stitle__ = "FOAD"
 __license1__ = "GNU General Public License version 3 (GPLv3)"
 __license2__ = "Do What The Fuck You Want To, But It's Not My Fault Public License version 1 (WTFNMFPLv1)"
-__version__ = "0.7.2.1"
+__version__ = "0.7.2.3"
 __bitcoin__ = "1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz"
 __openpgp__ = "0x321E4E2373590E5D"
 
@@ -204,11 +204,13 @@ parser = argparse.ArgumentParser(
 parser.add_argument("-f", "--fuck", help="One word, indicates type of fuck to give, run foad.py -f list_options to see possible flags.", action="store", required=False)
 parser.add_argument("-n", "--name", help="Name of target, more than one word must be in quotation marks.", action="store", required=False)
 parser.add_argument("-s", "--sender", help="Used to specify the sender, usually within the context of some particular phrase, more than one word must be in quotation marks.", action="store", required=False)
-parser.add_argument("-r", "--relay", help="Used to specify a third party to whom a message is to be delivered to the target.", action="store", required=False)
+parser.add_argument("-r", "--relay", help="Used to specify a third party to whom a message is to be delivered to by the target.", action="store", required=False)
 parser.add_argument("-e", "--extra", help="Additional comment to append to output, more than one word must be in quotation marks.  Sometimes used to enhance an existing response rather than append text.", action="store", required=False)
-# The next two can wait as they're already covered by -f and -h, both are causing problems at the moment:
-# parser.add_argument("-l", "--list_options", help="Lists the explicit variations (the same as: -f list_options)", action="store", required=False)
-# parser.add_argument("-V", "--version", help="Print the version number.", action=print(version), required=False)
+parser.add_argument("-a", "--append", help="Additional comment to append to output.  Usually only used when extra is used for something else.", action="store", required=False)
+parser.add_argument("-p", "--prepend", help="Additional comment to prepend before the output.  Usually only used when extra is used for something else and/or in conjunction with append.", action="store", required=False)
+# parser.add_argument("-o", "--output", help="Writes output to the specified file instead of stdout.", action="store", required=False)
+parser.add_argument("-O", "--options", help="Lists the explicit variations (the same as: -f list_options), will accept any argument to activate.", action="store", required=False)
+parser.add_argument("-V", "--version", help="Print the version number.", action="store", required=False)
 
 if len(sys.argv) > lx:
     la = len(sys.argv)
@@ -249,23 +251,57 @@ if args.relay is None:
 else:
     relay = args.relay
 
+if args.append is None:
+    append = ""
+else:
+    append = args.append
+
+if args.prepend is None:
+    prepend = ""
+else:
+    prepend = args.prepend
+
+if args.options is None:
+    options = ""
+else:
+    options = args.options
+
+if args.version is None:
+    version = ""
+else:
+    version = args.version
+
 lt = len(target)
 ls = len(sender)
 le = len(extra)
 lR = len(relay)  # lr is already used for part of the random calls.
+lA = len(append)  # la is already used for all of sys.argv.
+lP = len(append)  # I think lp is used for something else as well.
+lO = len(options)
+lV = len(version)
 
 class fuck:
     def a(self):
-        if lt == 0 and le == 0:
+        if lt == 0 and le == 0 and ls == 0 and lA == 0 and lP == 0:
             msg = "Fuckin' A!"
-        elif lt == 0 and le > 0:
+        elif lt == 0 and le > 0 and ls == 0 and lA == 0 and lP == 0:
             msg = "Fuckin' A!  {0}".format(extra)
-        elif lt > 0 and le == 0:
+        elif lt == 0 and le == 0 and ls == 0 and lA == 0 and lP > 0:
+            msg = "{0} Fuckin' A!".format(prepend)
+        elif lt == 0 and le > 0 and ls == 0 and lA == 0 and lP > 0:
+            msg = "{0} Fuckin' A!  {1}".format(prepend, extra)
+        elif lt > 0 and le == 0 and ls == 0 and lA == 0 and lP == 0:
             msg = "{0}, fuckin' A!".format(target)
-        elif lt > 0 and le > 0:
+        elif lt > 0 and le == 0 and ls == 0 and lA == 0 and lP > 0:
+            msg = "{0} {1}, fuckin' A!".format(prepend, target)
+        elif lt > 0 and le > 0 and ls == 0 and lA == 0 and lP > 0:
+            msg = "{0} {1}, fuckin' A!  {2}".format(prepend, target, extra)
+        elif lt > 0 and le > 0 and ls == 0 and lA == 0 and lP == 0:
             msg = "{0}, fuckin' A!  {1}".format(target, extra)
-        else:
+        elif lt > 0 and le > 0 and ls > 0 and lA == 0 and lP == 0:
             msg = "{0}, fuckin' A!  {1}  -- {2}".format(target, extra, sender)
+        elif lt > 0 and le > 0 and ls > 0 and lA == 0 and lP > 0:
+            msg = "{0} {1}, fuckin' A!  {2}  -- {3}".format(prepend, target, extra, sender)
         print(msg)
 
     def about(self):
@@ -621,6 +657,8 @@ class fuck:
     def fascinating(self):
         if lt == 0:
             msg = "Fascinating story, in what chapter do you shut the fuck up?"
+        elif lt > 0 and la > 0:
+            msg = "Fascinating story, {0}, in what chapter do you shut the fuck up? {1}".format(target, append)
         else:
             msg = "Fascinating story, {0}, in what chapter do you shut the fuck up?".format(target)
         print(msg)
@@ -906,6 +944,8 @@ class fuck:
             msg = "Hey {0}, tell {1} that they're as corrupt, delusional, megalomaniacal, vindictive and just as fucking crazy as that fucktard Kirsan Ilyumzhinov!".format(relay, target)
         elif lR > 0 and lt > 0 and le > 0:
             msg = "Hey {0}, tell {1} that they're as corrupt, delusional, megalomaniacal, vindictive and just as fucking crazy as that fucktard Kirsan Ilyumzhinov! {3}".format(relay, target, extra)
+        elif lR > 0 and lt > 0 and la > 0:
+            msg = "Hey {0}, tell {1} that they're as corrupt, delusional, megalomaniacal, vindictive and just as fucking crazy as that fucktard Kirsan Ilyumzhinov! {3}".format(relay, target, append)
         else:
             msg = "{0}, you are as corrupt, delusional, megalomaniacal, vindictive and just as fucking crazy as that fucktard Kirsan Ilyumzhinov! {1}".format(target, extra)
         print(msg)
@@ -1178,7 +1218,14 @@ class fuck:
         print(msg)
 
     def pink(self):
-        msg = "Well, fuck me pink!"
+        if lt == 0 and le == 0 and lP == 0 and lA == 0:
+            msg = "Well, fuck me pink!"
+        elif lt == 0 and le > 0 and lP == 0 and lA == 0:
+            msg = "Well, fuck me pink! {0}".format(extra)
+        elif lt == 0 and le == 0 and lP == 0 and lA > 0:
+            msg = "Well, fuck me pink! {0}".format(append)
+        elif lt == 0 and le == 0 and lP > 0 and lA == 0:
+            msg = "{0} Well, fuck me pink!".format(prepend)
         print(msg)
 
 # The functions beginning with pp are from The Profound Programmer:
@@ -1444,6 +1491,18 @@ class fuck:
         else:
             msg = "{0}, I'm too old to give a fuck.".format(target)
         print(msg)
+
+    # All the twog quotes are from TheTweetOfGod.
+    # https://twitter.com/TheTweetOfGod
+
+    def twog1(self):
+        if lt == 0:
+            msg = "Seriously, don't dis Me. I am the Lord thy God, King of the Universe. Show some fucking respect."
+        else:
+            msg = "Seriously, {0}, don't dis Me. I am the Lord thy God, King of the Universe. Show some fucking respect.".format(target)
+        print(msg)
+
+    # https://twitter.com/TheTweetOfGod/status/528773043666313216
 
     def ucunt(self):
         if lt == 0:
@@ -1732,7 +1791,25 @@ if l < 2:
     print("")
     print("Number of defined options:  {0}".format(lc))
     print("")
+elif lV > 0:
+    print("")
+    print("{0}  {1}".format(__title__, __version__))
+    print(__copyright__)
+    print("")
+    print("Bitcoin:  {0}".format(__bitcoin__))
+    print("")
 elif l == 2 and wtf == "list_options":
+    print("")
+    print("{0}  {1}".format(__title__, __version__))
+    print(__copyright__)
+    print("")
+    print("Number of defined options:  {0}".format(lc))
+    print("")
+    print(textwrap.fill("List of defined options:  " + ", ".join(df), 72))
+    print("")
+    print("Bitcoin:  {0}".format(__bitcoin__))
+    print("")
+elif lO > 0:
     print("")
     print("{0}  {1}".format(__title__, __version__))
     print(__copyright__)
