@@ -828,42 +828,60 @@ class fuck:
         print(msg)
 
     def gtfo2(self):
-        if lt == 0 and le == 0 and lR == 0:
+        if lt == 0 and le == 0 and lR == 0 and lA == 0 and lP == 0:
             msg = "Get the fuck out!"
-        elif lt > 0 and le == 0 and lR == 0:
+        elif lt > 0 and le == 0 and lR == 0 and lA == 0 and lP == 0:
             msg = "{0}, get the fuck out!".format(target)
-        elif lt > 0 and le > 0 and lR == 0:
+        elif lt > 0 and le > 0 and lR == 0 and lA == 0 and lP == 0:
             msg = "{0}, get the fuck out of {1}!".format(target, extra)
-        elif lt > 0 and le == 0 and lR > 0:
+        elif lt > 0 and le == 0 and lR > 0 and lA == 0 and lP == 0:
             msg = "{0}, tell {1} to get the fuck out!".format(relay, target)
-        elif lt > 0 and le > 0 and lR > 0:
+        elif lt > 0 and le > 0 and lR > 0 and lA == 0 and lP == 0:
             msg = "{0}, tell {1} to get the fuck out of {2}!".format(relay, target, extra)
+        elif lt > 0 and le > 0 and lR == 0 and lA == 0 and lP > 0:
+            msg = "{0} {1}, get the fuck out of {2}!".format(prepend, target, extra)
+        elif lt > 0 and le == 0 and lR > 0 and lA == 0 and lP > 0:
+            msg = "{0} {1}, tell {2} to get the fuck out!".format(prepend, relay, target)
+        elif lt > 0 and le > 0 and lR > 0 and lA == 0 and lP > 0:
+            msg = "{0} {1}, tell {2} to get the fuck out of {3}!".format(prepend, relay, target, extra)
         print(msg)
 
     def gtfo3(self):
-        if lt == 0 and le == 0 and lR == 0:
+        if lt == 0 and le == 0 and lR == 0 and lA == 0 and lP == 0:
             msg = "Get the fuck out right now!"
-        elif lt > 0 and le == 0 and lR == 0:
+        elif lt > 0 and le == 0 and lR == 0 and lA == 0 and lP == 0:
             msg = "{0}, get the fuck out right now!".format(target)
-        elif lt > 0 and le > 0 and lR == 0:
+        elif lt > 0 and le > 0 and lR == 0 and lA == 0 and lP == 0:
             msg = "{0}, get the fuck out of {1} right now!".format(target, extra)
-        elif lt > 0 and le == 0 and lR > 0:
+        elif lt > 0 and le == 0 and lR > 0 and lA == 0 and lP == 0:
             msg = "{0}, tell {1} to get the fuck out right now!".format(relay, target)
-        elif lt > 0 and le > 0 and lR > 0:
+        elif lt > 0 and le > 0 and lR > 0 and lA == 0 and lP == 0:
             msg = "{0}, tell {1} to get the fuck out of {2} right now!".format(relay, target, extra)
+        elif lt > 0 and le > 0 and lR == 0 and lA == 0 and lP > 0:
+            msg = "{0} {1}, get the fuck out of {2} right now!".format(prepend, target, extra)
+        elif lt > 0 and le == 0 and lR > 0 and lA == 0 and lP > 0:
+            msg = "{0} {1}, tell {2} to get the fuck out right now!".format(prepend, relay, target)
+        elif lt > 0 and le > 0 and lR > 0 and lA == 0 and lP > 0:
+            msg = "{0} {1}, tell {2} to get the fuck out of {3} right now!".format(prepend, relay, target, extra)
         print(msg)
 
     def gtfo4(self):
-        if lt == 0 and le == 0 and lR == 0:
+        if lt == 0 and le == 0 and lR == 0 and lA == 0 and lP == 0:
             msg = "Get the fuck out right fucking now!"
-        elif lt > 0 and le == 0 and lR == 0:
+        elif lt > 0 and le == 0 and lR == 0 and lA == 0 and lP == 0:
             msg = "{0}, get the fuck out right fucking now!".format(target)
-        elif lt > 0 and le > 0 and lR == 0:
+        elif lt > 0 and le > 0 and lR == 0 and lA == 0 and lP == 0:
             msg = "{0}, get the fuck out of {1} right fucking now!".format(target, extra)
-        elif lt > 0 and le == 0 and lR > 0:
+        elif lt > 0 and le == 0 and lR > 0 and lA == 0 and lP == 0:
             msg = "{0}, tell {1} to get the fuck out right fucking now!".format(relay, target)
-        elif lt > 0 and le > 0 and lR > 0:
+        elif lt > 0 and le > 0 and lR > 0 and lA == 0 and lP == 0:
             msg = "{0}, tell {1} to get the fuck out of {2} right fucking now!".format(relay, target, extra)
+        elif lt > 0 and le > 0 and lR == 0 and lA == 0 and lP > 0:
+            msg = "{0} {1}, get the fuck out of {2} right fucking now!".format(prepend, target, extra)
+        elif lt > 0 and le == 0 and lR > 0 and lA == 0 and lP > 0:
+            msg = "{0} {1}, tell {2} to get the fuck out right fucking now!".format(prepend, relay, target)
+        elif lt > 0 and le > 0 and lR > 0 and lA == 0 and lP > 0:
+            msg = "{0} {1}, tell {2} to get the fuck out of {3} right fucking now!".format(prepend, relay, target, extra)
         print(msg)
 
     def hell(self):
