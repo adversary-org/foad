@@ -9,7 +9,7 @@
 #
 # https://github.com/adversary-org/foad
 #
-# Version:  0.7.2.3
+# Version:  0.7.2.4
 #
 # BTC:  1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz
 # License:  GNU Public License version 3 (GPLv3)
@@ -121,7 +121,7 @@ __title__ = "FOAD: Fucked Off Adversarial Degenerates (Fuck Off And Die)"
 __stitle__ = "FOAD"
 __license1__ = "GNU General Public License version 3 (GPLv3)"
 __license2__ = "Do What The Fuck You Want To, But It's Not My Fault Public License version 1 (WTFNMFPLv1)"
-__version__ = "0.7.2.3"
+__version__ = "0.7.2.4"
 __bitcoin__ = "1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz"
 __openpgp__ = "0x321E4E2373590E5D"
 
@@ -822,16 +822,48 @@ class fuck:
 
     def gtfo1(self):
         if lt == 0:
-            msg = "Get the fuck out!"
-        else:
-            msg = "{0}, get the fuck out!".format(target)
-        print(msg)
-
-    def gtfo2(self):
-        if lt == 0:
             msg = "Let's get the fuck out of here!"
         else:
             msg = "{0}, let's get the fuck out of here!".format(target)
+        print(msg)
+
+    def gtfo2(self):
+        if lt == 0 and le == 0 and lR == 0:
+            msg = "Get the fuck out!"
+        elif lt > 0 and le == 0 and lR == 0:
+            msg = "{0}, get the fuck out!".format(target)
+        elif lt > 0 and le > 0 and lR == 0:
+            msg = "{0}, get the fuck out of {1}!".format(target, extra)
+        elif lt > 0 and le == 0 and lR > 0:
+            msg = "{0}, tell {1} to get the fuck out!".format(relay, target)
+        elif lt > 0 and le > 0 and lR > 0:
+            msg = "{0}, tell {1} to get the fuck out of {2}!".format(relay, target, extra)
+        print(msg)
+
+    def gtfo3(self):
+        if lt == 0 and le == 0 and lR == 0:
+            msg = "Get the fuck out right now!"
+        elif lt > 0 and le == 0 and lR == 0:
+            msg = "{0}, get the fuck out right now!".format(target)
+        elif lt > 0 and le > 0 and lR == 0:
+            msg = "{0}, get the fuck out of {1} right now!".format(target, extra)
+        elif lt > 0 and le == 0 and lR > 0:
+            msg = "{0}, tell {1} to get the fuck out right now!".format(relay, target)
+        elif lt > 0 and le > 0 and lR > 0:
+            msg = "{0}, tell {1} to get the fuck out of {2} right now!".format(relay, target, extra)
+        print(msg)
+
+    def gtfo4(self):
+        if lt == 0 and le == 0 and lR == 0:
+            msg = "Get the fuck out right fucking now!"
+        elif lt > 0 and le == 0 and lR == 0:
+            msg = "{0}, get the fuck out right fucking now!".format(target)
+        elif lt > 0 and le > 0 and lR == 0:
+            msg = "{0}, get the fuck out of {1} right fucking now!".format(target, extra)
+        elif lt > 0 and le == 0 and lR > 0:
+            msg = "{0}, tell {1} to get the fuck out right fucking now!".format(relay, target)
+        elif lt > 0 and le > 0 and lR > 0:
+            msg = "{0}, tell {1} to get the fuck out of {2} right fucking now!".format(relay, target, extra)
         print(msg)
 
     def hell(self):
