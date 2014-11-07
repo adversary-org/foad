@@ -276,7 +276,7 @@ ls = len(sender)
 le = len(extra)
 lR = len(relay)  # lr is already used for part of the random calls.
 lA = len(append)  # la is already used for all of sys.argv.
-lP = len(append)  # I think lp is used for something else as well.
+lP = len(prepend)  # I think lp is used for something else as well.
 lO = len(options)
 lV = len(version)
 
