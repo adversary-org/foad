@@ -9,7 +9,7 @@
 #
 # https://github.com/adversary-org/foad
 #
-# Version:  0.7.2.4
+# Version:  0.7.2.5
 #
 # BTC:  1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz
 # License:  GNU Public License version 3 (GPLv3)
@@ -121,7 +121,7 @@ __title__ = "FOAD: Fucked Off Adversarial Degenerates (Fuck Off And Die)"
 __stitle__ = "FOAD"
 __license1__ = "GNU General Public License version 3 (GPLv3)"
 __license2__ = "Do What The Fuck You Want To, But It's Not My Fault Public License version 1 (WTFNMFPLv1)"
-__version__ = "0.7.2.4"
+__version__ = "0.7.2.5"
 __bitcoin__ = "1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz"
 __openpgp__ = "0x321E4E2373590E5D"
 
@@ -1010,20 +1010,32 @@ class fuck:
         print(msg)
 
     def kirsan(self):
-        if lt == 0 and le == 0 and lR == 0:
+        if lt == 0 and lA == 0 and lP == 0 and lR == 0 and le == 0:
             msg = "You are as corrupt, delusional, megalomaniacal, vindictive and just as fucking crazy as that fucktard Kirsan Ilyumzhinov!"
-        elif lt == 0 and le == 0 and lR > 0:
-            msg = "Hey {0}, tell them they're as corrupt, delusional, megalomaniacal, vindictive and just as fucking crazy as that fucktard Kirsan Ilyumzhinov!".format(relay)
-        elif lt > 0 and le == 0 and lR == 0:
+        elif lt > 0 and lA == 0 and lP == 0 and lR == 0 and le == 0:
             msg = "{0}, you are as corrupt, delusional, megalomaniacal, vindictive and just as fucking crazy as that fucktard Kirsan Ilyumzhinov!".format(target)
-        elif lR > 0 and lt > 0 and le == 0:
-            msg = "Hey {0}, tell {1} that they're as corrupt, delusional, megalomaniacal, vindictive and just as fucking crazy as that fucktard Kirsan Ilyumzhinov!".format(relay, target)
-        elif lR > 0 and lt > 0 and le > 0:
-            msg = "Hey {0}, tell {1} that they're as corrupt, delusional, megalomaniacal, vindictive and just as fucking crazy as that fucktard Kirsan Ilyumzhinov! {3}".format(relay, target, extra)
-        elif lR > 0 and lt > 0 and la > 0:
-            msg = "Hey {0}, tell {1} that they're as corrupt, delusional, megalomaniacal, vindictive and just as fucking crazy as that fucktard Kirsan Ilyumzhinov! {3}".format(relay, target, append)
+        elif lt == 0 and lA == 0 and lP == 0 and lR > 0 and le == 0:
+            msg = "{0}, tell them they're as corrupt, delusional, megalomaniacal, vindictive and just as fucking crazy as that fucktard Kirsan Ilyumzhinov!".format(relay)
+        elif lt == 0 and lA == 0 and lP > 0 and lR > 0 and le == 0:
+            msg = "{0} {1}, tell them they're as corrupt, delusional, megalomaniacal, vindictive and just as fucking crazy as that fucktard Kirsan Ilyumzhinov!".format(prepend, relay)
+        elif lR > 0 and lt > 0 and lA == 0 and lP == 0 and le == 0:
+            msg = "{0}, tell {1} that they're as corrupt, delusional, megalomaniacal, vindictive and just as fucking crazy as that fucktard Kirsan Ilyumzhinov!".format(relay, target)
+        elif lR > 0 and lt > 0 and lA == 0 and le > 0:
+            msg = "{0}, tell {1} that {2} is as corrupt, delusional, megalomaniacal, vindictive and just as fucking crazy as that fucktard Kirsan Ilyumzhinov!".format(relay, target, extra)
+        elif lR > 0 and lt > 0 and lA == 0 and lP > 0 and le == 0:
+            msg = "{0} {1}, tell {2} that they're as corrupt, delusional, megalomaniacal, vindictive and just as fucking crazy as that fucktard Kirsan Ilyumzhinov!".format(prepend, relay, target)
+        elif lR > 0 and lt > 0 and lA == 0 and lP > 0 and le > 0:
+            msg = "{0} {1}, tell {2} that {3} is as corrupt, delusional, megalomaniacal, vindictive and just as fucking crazy as that fucktard Kirsan Ilyumzhinov!".format(prepend, relay, target, extra)
+        elif lR > 0 and lt > 0 and lA > 0 and le == 0:
+            msg = "{0}, tell {1} that they're as corrupt, delusional, megalomaniacal, vindictive and just as fucking crazy as that fucktard Kirsan Ilyumzhinov! {2}".format(relay, target, append)
+        elif lR > 0 and lt > 0 and lA > 0 and le > 0:
+            msg = "{0}, tell {1} that {2} is as corrupt, delusional, megalomaniacal, vindictive and just as fucking crazy as that fucktard Kirsan Ilyumzhinov! {3}".format(relay, target, extra, append)
+        elif lR > 0 and lt > 0 and lA > 0 and lP > 0 and le == 0:
+            msg = "{0} {1}, tell {2} that they're as corrupt, delusional, megalomaniacal, vindictive and just as fucking crazy as that fucktard Kirsan Ilyumzhinov! {3}".format(prepend, relay, target, append)
+        elif lR > 0 and lt > 0 and lA > 0 and lP > 0 and le > 0:
+            msg = "{0} {1}, tell {2} that {3} is as corrupt, delusional, megalomaniacal, vindictive and just as fucking crazy as that fucktard Kirsan Ilyumzhinov! {4}".format(prepend, relay, target, extra, append)
         else:
-            msg = "{0}, you are as corrupt, delusional, megalomaniacal, vindictive and just as fucking crazy as that fucktard Kirsan Ilyumzhinov! {1}".format(target, extra)
+            msg = "{0}, you are as corrupt, delusional, megalomaniacal, vindictive and just as fucking crazy as that fucktard Kirsan Ilyumzhinov!".format(target)
         print(msg)
 
     def know(self):
