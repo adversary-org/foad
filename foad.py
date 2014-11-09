@@ -1020,7 +1020,7 @@ class fuck:
             msg = "{0} {1}, tell them they're as corrupt, delusional, megalomaniacal, vindictive and just as fucking crazy as that fucktard Kirsan Ilyumzhinov!".format(prepend, relay)
         elif lR > 0 and lt > 0 and lA == 0 and lP == 0 and le == 0:
             msg = "{0}, tell {1} that they're as corrupt, delusional, megalomaniacal, vindictive and just as fucking crazy as that fucktard Kirsan Ilyumzhinov!".format(relay, target)
-        elif lR > 0 and lt > 0 and lA == 0 and le > 0:
+        elif lR > 0 and lt > 0 and lA == 0 and lP == 0 and le > 0:
             msg = "{0}, tell {1} that {2} is as corrupt, delusional, megalomaniacal, vindictive and just as fucking crazy as that fucktard Kirsan Ilyumzhinov!".format(relay, target, extra)
         elif lR > 0 and lt > 0 and lA == 0 and lP > 0 and le == 0:
             msg = "{0} {1}, tell {2} that they're as corrupt, delusional, megalomaniacal, vindictive and just as fucking crazy as that fucktard Kirsan Ilyumzhinov!".format(prepend, relay, target)
