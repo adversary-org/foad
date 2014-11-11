@@ -371,14 +371,10 @@ class fuck:
     def agree(self):
         if lt == 0:
             msg = "Abso-fucking-lutely!"
-        elif lt == 0 and le > 0:
-            msg = "Abso-fucking-lutely!  {0}".format(extra)
-        elif lt > 0 and le == 0:
+        elif lt > 0:
             msg = "Abso-fucking-lutely {0}!".format(target)
-        elif lt > 0 and le > 0:
-            msg = "Abso-fucking-lutely {0}!  {1}".format(target, extra)
         else:
-            msg = "Abso-fucking-lutely {0}!  {1}  -- {2}".format(target, extra, sender)
+            msg = "Abso-fucking-lutely {0}!".format(target)
         return msg
 
     def amaze(self):
@@ -387,25 +383,23 @@ class fuck:
         elif lt > 0 and le == 0:
             msg = "{0}, that was fucking amazing!".format(target)
         else:
-            msg = "{0}, that was fucking amazing!  {1}".format(target, extra)
+            msg = "{0}, that was fucking amazing!".format(target)
         return msg
 
     def apple(self):
-        if lt == 0 and le == 0 and ls == 0:
+        if lt == 0 and ls == 0:
             msg = "No you fucking can't do it your way!  We don't give a fuck if it's better, you do it our fucking way or you fuck off!"
-        elif lt > 0 and le == 0 and ls == 0:
+        elif lt > 0 and ls == 0:
             msg = "No {0}, you fucking can't do it your way!  We don't give a fuck if it's better, you do it our fucking way or you fuck off!".format(target)
-        elif lt > 0 and le > 0 and ls == 0:
-            msg = "No {0}, you fucking can't do it your way!  We don't give a fuck if it's better, you do it our fucking way or you fuck off!  {1}".format(target, extra)
-        elif lt > 0 and le == 0 and ls > 0:
+        elif lt > 0 and ls > 0:
             msg = "No {0}, you fucking can't do it your way!  We don't give a fuck if it's better, you do it our fucking way or you fuck off!  -- {1}".format(target, sender)
         else:
-            msg = "No {0}, you fucking can't do it your way!  We don't give a fuck if it's better, you do it our fucking way or you fuck off!  {1}  -- {2}".format(target, extra, sender)
+            msg = "No {0}, you fucking can't do it your way!  We don't give a fuck if it's better, you do it our fucking way or you fuck off!".format(target)
         return msg
 
     def ballmer(self):
         if lt == 0 and le == 0 and ls == 0:
-            msg = "Ballmer Notes: This option requires the first target specified with --name and the second (usually a company or organisation) with --extra (sender optional).  For a plural version on --name use ballmers on --fuck."
+            msg = "Ballmer Notes: This option requires the first target specified with --name and the second (usually a company or organisation) with --extra (sender optional).  For a gender neutral version use ballmerc on --fuck, for a plural version use ballmers on --fuck."
         elif lt > 0 and le == 0 and ls == 0:
             msg = "Fucking {0} is a fucking pussy.  I'm going to bury that guy, I have done it before and I will do it again.  I'm going to fucking kill {1}.".format(target, target)
         elif lt > 0 and le > 0 and ls == 0:
@@ -416,7 +410,18 @@ class fuck:
             msg = "Fucking {0} is a fucking pussy.  I'm going to bury that guy, I have done it before and I will do it again.  I'm going to fucking kill {1}.  -- {2}".format(target, extra, sender)
         return msg
 
-    # consider making a female variant of this.
+    def ballmerc(self):
+        if lt == 0 and le == 0 and ls == 0:
+            msg = "Ballmer Notes: This option requires the first target specified with --name and the second (usually a company or organisation) with --extra (sender optional).  This is the gender neutral (and harsher) version, for a plural version on --name use ballmers on --fuck."
+        elif lt > 0 and le == 0 and ls == 0:
+            msg = "Fucking {0} is a little fucking bitch.  I'm going to bury that cunt, I have done it before and I will do it again.  I'm going to fucking kill {1}.".format(target, target)
+        elif lt > 0 and le > 0 and ls == 0:
+            msg = "Fucking {0} is a little fucking bitch.  I'm going to bury that cunt, I have done it before and I will do it again.  I'm going to fucking kill {1}.".format(target, extra)
+        elif lt > 0 and le == 0 and ls > 0:
+            msg = "Fucking {0} is a little fucking bitch.  I'm going to bury that cunt, I have done it before and I will do it again.  I'm going to fucking kill {1}.  -- {2}".format(target, target, sender)
+        elif lt > 0 and le > 0 and ls > 0:
+            msg = "Fucking {0} is a little fucking bitch.  I'm going to bury that cunt, I have done it before and I will do it again.  I'm going to fucking kill {1}.  -- {2}".format(target, extra, sender)
+        return msg
 
     def ballmers(self):
         if lt == 0 and le == 0 and ls == 0:
@@ -439,7 +444,7 @@ class fuck:
         elif lt > 0 and ls > 0:
             msg = "{0}, {1} is a big bad motherfucker.".format(target, sender)
         else:
-            msg = "{0}, {1} is a big bad motherfucker.  {2}".format(target, sender, extra)
+            msg = "{0}, {1} is a big bad motherfucker.".format(target, sender)
         return msg
 
     def caniuse(self):
@@ -449,13 +454,43 @@ class fuck:
             msg = """{0}, it's {1} here, can I use {2}?  ...  Can you use {3}?  Fuck no, {4}!  You cannot fucking use {5}!""".format(sender, target, extra, extra, target, extra)
         return msg
 
-    def cango(self):
-        if lt == 0:
+    def cango1(self):
+        if lt == 0 and ls == 0 and lR == 0:
             msg = "They can go and fuck themselves."
-        elif lt > 0 and ls > 0:
+        elif lt > 0 and ls > 0 and lR == 0:
             msg = "Tell {0} that {1} said they can go and fuck themselves.".format(target, sender)
+        elif lt > 0 and ls > 0 and lR == 0:
+            msg = "{0}, tell {0} that they can go and fuck themselves.".format(target, sender)
+        elif lt > 0 and ls > 0 and lR > 0:
+            msg = "{0}, tell {1} that {2} said they can go and fuck themselves.".format(relay, target, sender)
         else:
             msg = "{0} can go and fuck themselves.".format(target)
+        return msg
+
+    def cango2(self):
+        if lt == 0 and ls == 0 and lR == 0:
+            msg = "He can go and fuck himself."
+        elif lt > 0 and ls > 0 and lR == 0:
+            msg = "Tell {0} that {1} said he can go and fuck himself.".format(target, sender)
+        elif lt > 0 and ls > 0 and lR == 0:
+            msg = "{0}, tell {0} that he can go and fuck himself.".format(target, sender)
+        elif lt > 0 and ls > 0 and lR > 0:
+            msg = "{0}, tell {1} that {2} said he can go and fuck himself.".format(relay, target, sender)
+        else:
+            msg = "{0} can go and fuck himself.".format(target)
+        return msg
+
+    def cango3(self):
+        if lt == 0 and ls == 0 and lR == 0:
+            msg = "She can go and fuck herself."
+        elif lt > 0 and ls > 0 and lR == 0:
+            msg = "Tell {0} that {1} said she can go and fuck herself.".format(target, sender)
+        elif lt > 0 and ls > 0 and lR == 0:
+            msg = "{0}, tell {0} that she can go and fuck herself.".format(target, sender)
+        elif lt > 0 and ls > 0 and lR > 0:
+            msg = "{0}, tell {1} that {2} said she can go and fuck herself.".format(relay, target, sender)
+        else:
+            msg = "{0} can go and fuck herself.".format(target)
         return msg
 
     def cbf(self):
