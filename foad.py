@@ -9,7 +9,7 @@
 #
 # https://github.com/adversary-org/foad
 #
-# Version:  0.7.3.3
+# Version:  0.7.3.4
 #
 # BTC:  1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz
 # License:  GNU Public License version 3 (GPLv3)
@@ -121,7 +121,7 @@ __title__ = "FOAD: Fucked Off Adversarial Degenerates (Fuck Off And Die)"
 __stitle__ = "FOAD"
 __license1__ = "GNU General Public License version 3 (GPLv3)"
 __license2__ = "Do What The Fuck You Want To, But It's Not My Fault Public License version 1 (WTFNMFPLv1)"
-__version__ = "0.7.3.3"
+__version__ = "0.7.3.4"
 __bitcoin__ = "1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz"
 __openpgp__ = "0x321E4E2373590E5D"
 
@@ -1450,9 +1450,9 @@ class fuck:
 
     def script(self):
         if lt == 0:
-            msg = "Is this a script?  Of course it's a fucking script?!"
+            msg = "Is this a script?  Of course it's a fucking script!"
         else:
-            msg = "Is this a script?  Yes {0}, of course it's a fucking script?!".format(target)
+            msg = "Is this a script?  Yes {0}, of course it's a fucking script!".format(target)
         return msg
 
     def sfa(self):
@@ -1479,6 +1479,8 @@ class fuck:
     def sherlock(self):
         if lt == 0:
             msg = "No shit, Sherlock!"
+        elif lt > 0:
+            msg = "{0}, no shit, Sherlock!".format(target)
         else:
             msg = "{0}, no shit, Sherlock!".format(target)
         return msg
@@ -1527,12 +1529,8 @@ class fuck:
             msg = "Fuck you with the fury of a thousand suns."
         elif lt > 0 and ls == 0 and le == 0:
             msg = "{0}, fuck you with the fury of a thousand suns.".format(target)
-        elif lt > 0 and ls > 0 and le == 0:
-            msg = "{0}, fuck you with the fury of a thousand suns.  -- {1}".format(target, sender)
-        elif lt > 0 and ls == 0 and le > 0:
-            msg = "{0}, fuck you with the fury of a thousand suns.  {1}".format(target, extra)
         else:
-            msg = "{0}, fuck you with the fury of a thousand suns.  {1} -- {2}".format(target, extra, sender)
+            msg = "Fuck you with the fury of a thousand suns!"
         return msg
 
     def survey(self):
@@ -1691,6 +1689,13 @@ class fuck:
             msg = "{0}, when the fuck will we get there?".format(target)
         return msg
 
+    def when3(self):
+        if lt == 0:
+            msg = "When the fuck did that happen?"
+        else:
+            msg = "{0}, when the fuck did that happen?".format(target)
+        return msg
+
     def where1(self):
         if lt == 0:
             msg = "Where the fuck are we?"
@@ -1703,6 +1708,13 @@ class fuck:
             msg = "Where the fuck is it?"
         else:
             msg = "{0}, where the fuck is it?".format(target)
+        return msg
+
+    def where3(self):
+        if lt == 0:
+            msg = "Where the fuck are you?"
+        else:
+            msg = "{0}, where the fuck are you?".format(target)
         return msg
 
     def who1(self):
@@ -1726,7 +1738,7 @@ class fuck:
             msg = "{0}, who the fuck do you think you are?".format(target)
         return msg
 
-    def who3(self):
+    def who4(self):
         if lt == 0:
             msg = "Who the fuck knows?"
         else:
@@ -1738,6 +1750,13 @@ class fuck:
             msg = "Why the fuck should I?"
         else:
             msg = "{0}, why the fuck should I?".format(target)
+        return msg
+
+    def whyk(self):
+        if lt == 0:
+            msg = "Why the fuck should I know?"
+        else:
+            msg = "{0}, why the fuck should I know?".format(target)
         return msg
 
     def wit(self):
@@ -1760,7 +1779,7 @@ class fuck:
         elif lt > 0:
             msg = "What the actual fuck {0}?!".format(target)
         else:
-            msg = "What the actual fuck {0}?!  {1}".format(target, extra)
+            msg = "What the actual fuck {0}?!".format(target)
         return msg
 
     def wtf(self):
