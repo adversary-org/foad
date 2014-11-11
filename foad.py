@@ -465,7 +465,7 @@ class fuck:
         elif lt > 0 and ls > 0 and lR == 0:
             msg = "Tell {0} that {1} said they can go and fuck themselves.".format(target, sender)
         elif lt > 0 and ls == 0 and lR > 0:
-            msg = "{0}, tell {0} that they can go and fuck themselves.".format(relay, target)
+            msg = "{0}, tell {1} that they can go and fuck themselves.".format(relay, target)
         elif lt > 0 and ls > 0 and lR > 0:
             msg = "{0}, tell {1} that {2} said they can go and fuck themselves.".format(relay, target, sender)
         else:
@@ -478,7 +478,7 @@ class fuck:
         elif lt > 0 and ls > 0 and lR == 0:
             msg = "Tell {0} that {1} said he can go and fuck himself.".format(target, sender)
         elif lt > 0 and ls == 0 and lR > 0:
-            msg = "{0}, tell {0} that he can go and fuck himself.".format(relay, target)
+            msg = "{0}, tell {1} that he can go and fuck himself.".format(relay, target)
         elif lt > 0 and ls > 0 and lR > 0:
             msg = "{0}, tell {1} that {2} said he can go and fuck himself.".format(relay, target, sender)
         else:
@@ -491,7 +491,7 @@ class fuck:
         elif lt > 0 and ls > 0 and lR == 0:
             msg = "Tell {0} that {1} said she can go and fuck herself.".format(target, sender)
         elif lt > 0 and ls == 0 and lR > 0:
-            msg = "{0}, tell {0} that she can go and fuck herself.".format(relay, target)
+            msg = "{0}, tell {1} that she can go and fuck herself.".format(relay, target)
         elif lt > 0 and ls > 0 and lR > 0:
             msg = "{0}, tell {1} that {2} said she can go and fuck herself.".format(relay, target, sender)
         else:
