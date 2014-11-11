@@ -9,7 +9,7 @@
 #
 # https://github.com/adversary-org/foad
 #
-# Version:  0.7.2.5
+# Version:  0.7.3.4
 #
 # BTC:  1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz
 # License:  GNU Public License version 3 (GPLv3)
@@ -121,7 +121,7 @@ __title__ = "FOAD: Fucked Off Adversarial Degenerates (Fuck Off And Die)"
 __stitle__ = "FOAD"
 __license1__ = "GNU General Public License version 3 (GPLv3)"
 __license2__ = "Do What The Fuck You Want To, But It's Not My Fault Public License version 1 (WTFNMFPLv1)"
-__version__ = "0.7.2.5"
+__version__ = "0.7.3.4"
 __bitcoin__ = "1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz"
 __openpgp__ = "0x321E4E2373590E5D"
 
@@ -282,27 +282,11 @@ lV = len(version)
 
 class fuck:
     def a(self):
-        if lt == 0 and le == 0 and ls == 0 and lA == 0 and lP == 0:
+        if lt == 0 and le == 0:
             msg = "Fuckin' A!"
-        elif lt == 0 and le > 0 and ls == 0 and lA == 0 and lP == 0:
-            msg = "Fuckin' A!  {0}".format(extra)
-        elif lt == 0 and le == 0 and ls == 0 and lA == 0 and lP > 0:
-            msg = "{0} Fuckin' A!".format(prepend)
-        elif lt == 0 and le > 0 and ls == 0 and lA == 0 and lP > 0:
-            msg = "{0} Fuckin' A!  {1}".format(prepend, extra)
-        elif lt > 0 and le == 0 and ls == 0 and lA == 0 and lP == 0:
+        elif lt > 0 and le == 0:
             msg = "{0}, fuckin' A!".format(target)
-        elif lt > 0 and le == 0 and ls == 0 and lA == 0 and lP > 0:
-            msg = "{0} {1}, fuckin' A!".format(prepend, target)
-        elif lt > 0 and le > 0 and ls == 0 and lA == 0 and lP > 0:
-            msg = "{0} {1}, fuckin' A!  {2}".format(prepend, target, extra)
-        elif lt > 0 and le > 0 and ls == 0 and lA == 0 and lP == 0:
-            msg = "{0}, fuckin' A!  {1}".format(target, extra)
-        elif lt > 0 and le > 0 and ls > 0 and lA == 0 and lP == 0:
-            msg = "{0}, fuckin' A!  {1}  -- {2}".format(target, extra, sender)
-        elif lt > 0 and le > 0 and ls > 0 and lA == 0 and lP > 0:
-            msg = "{0} {1}, fuckin' A!  {2}  -- {3}".format(prepend, target, extra, sender)
-        print(msg)
+        return msg
 
     def about(self):
         if lt == 0:
@@ -345,7 +329,7 @@ class fuck:
             msg = "https://github.com/adversary-org/foad"
         else:
             msg = textwrap.fill("Target parameters: adversary, atitle, author, bitcoin, contact, copyright, domain, donations, email, encryption, gpg key, irc, options, pirate, twitter, twython, version, website.", 72)
-        print(msg)
+        return msg
 
     def acronym(self):
         if lt == 0:
@@ -382,20 +366,16 @@ class fuck:
             msg = "SNAFU: Situation Normal: All Fucked Up"
         else:
             msg = textwrap.fill("Target parameters: bond, carnal, cunt, die, figjam, foaas, fubar, lmfao, right, snafu, snag, title.", 72)
-        print(msg)
+        return msg
 
     def agree(self):
         if lt == 0:
             msg = "Abso-fucking-lutely!"
-        elif lt == 0 and le > 0:
-            msg = "Abso-fucking-lutely!  {0}".format(extra)
-        elif lt > 0 and le == 0:
+        elif lt > 0:
             msg = "Abso-fucking-lutely {0}!".format(target)
-        elif lt > 0 and le > 0:
-            msg = "Abso-fucking-lutely {0}!  {1}".format(target, extra)
         else:
-            msg = "Abso-fucking-lutely {0}!  {1}  -- {2}".format(target, extra, sender)
-        print(msg)
+            msg = "Abso-fucking-lutely {0}!".format(target)
+        return msg
 
     def amaze(self):
         if lt == 0:
@@ -403,25 +383,23 @@ class fuck:
         elif lt > 0 and le == 0:
             msg = "{0}, that was fucking amazing!".format(target)
         else:
-            msg = "{0}, that was fucking amazing!  {1}".format(target, extra)
-        print(msg)
+            msg = "{0}, that was fucking amazing!".format(target)
+        return msg
 
     def apple(self):
-        if lt == 0 and le == 0 and ls == 0:
+        if lt == 0 and ls == 0:
             msg = "No you fucking can't do it your way!  We don't give a fuck if it's better, you do it our fucking way or you fuck off!"
-        elif lt > 0 and le == 0 and ls == 0:
+        elif lt > 0 and ls == 0:
             msg = "No {0}, you fucking can't do it your way!  We don't give a fuck if it's better, you do it our fucking way or you fuck off!".format(target)
-        elif lt > 0 and le > 0 and ls == 0:
-            msg = "No {0}, you fucking can't do it your way!  We don't give a fuck if it's better, you do it our fucking way or you fuck off!  {1}".format(target, extra)
-        elif lt > 0 and le == 0 and ls > 0:
+        elif lt > 0 and ls > 0:
             msg = "No {0}, you fucking can't do it your way!  We don't give a fuck if it's better, you do it our fucking way or you fuck off!  -- {1}".format(target, sender)
         else:
-            msg = "No {0}, you fucking can't do it your way!  We don't give a fuck if it's better, you do it our fucking way or you fuck off!  {1}  -- {2}".format(target, extra, sender)
-        print(msg)
+            msg = "No {0}, you fucking can't do it your way!  We don't give a fuck if it's better, you do it our fucking way or you fuck off!".format(target)
+        return msg
 
     def ballmer(self):
         if lt == 0 and le == 0 and ls == 0:
-            msg = "Ballmer Notes: This option requires the first target specified with --name and the second (usually a company or organisation) with --extra (sender optional).  For a plural version on --name use ballmers on --fuck."
+            msg = "Ballmer Notes: This option requires the first target specified with --name and the second (usually a company or organisation) with --extra (sender optional).  For a gender neutral version use ballmerc on --fuck, for a plural version use ballmers on --fuck."
         elif lt > 0 and le == 0 and ls == 0:
             msg = "Fucking {0} is a fucking pussy.  I'm going to bury that guy, I have done it before and I will do it again.  I'm going to fucking kill {1}.".format(target, target)
         elif lt > 0 and le > 0 and ls == 0:
@@ -430,9 +408,20 @@ class fuck:
             msg = "Fucking {0} is a fucking pussy.  I'm going to bury that guy, I have done it before and I will do it again.  I'm going to fucking kill {1}.  -- {2}".format(target, target, sender)
         elif lt > 0 and le > 0 and ls > 0:
             msg = "Fucking {0} is a fucking pussy.  I'm going to bury that guy, I have done it before and I will do it again.  I'm going to fucking kill {1}.  -- {2}".format(target, extra, sender)
-        print(msg)
+        return msg
 
-    # consider making a female variant of this.
+    def ballmerc(self):
+        if lt == 0 and le == 0 and ls == 0:
+            msg = "Ballmer Notes: This option requires the first target specified with --name and the second (usually a company or organisation) with --extra (sender optional).  This is the gender neutral (and harsher) version, for a plural version on --name use ballmers on --fuck."
+        elif lt > 0 and le == 0 and ls == 0:
+            msg = "Fucking {0} is a little fucking bitch.  I'm going to bury that cunt, I have done it before and I will do it again.  I'm going to fucking kill {1}.".format(target, target)
+        elif lt > 0 and le > 0 and ls == 0:
+            msg = "Fucking {0} is a little fucking bitch.  I'm going to bury that cunt, I have done it before and I will do it again.  I'm going to fucking kill {1}.".format(target, extra)
+        elif lt > 0 and le == 0 and ls > 0:
+            msg = "Fucking {0} is a little fucking bitch.  I'm going to bury that cunt, I have done it before and I will do it again.  I'm going to fucking kill {1}.  -- {2}".format(target, target, sender)
+        elif lt > 0 and le > 0 and ls > 0:
+            msg = "Fucking {0} is a little fucking bitch.  I'm going to bury that cunt, I have done it before and I will do it again.  I'm going to fucking kill {1}.  -- {2}".format(target, extra, sender)
+        return msg
 
     def ballmers(self):
         if lt == 0 and le == 0 and ls == 0:
@@ -445,7 +434,7 @@ class fuck:
             msg = "Fucking {0} are fucking pussies.  I'm going to bury those guys, I have done it before and I will do it again.  I'm going to fucking kill {1}.  -- {2}".format(target, target, sender)
         elif lt > 0 and le > 0 and ls > 0:
             msg = "Fucking {0} are fucking pussies.  I'm going to bury those guys, I have done it before and I will do it again.  I'm going to fucking kill {1}.  -- {2}".format(target, extra, sender)
-        print(msg)
+        return msg
 
     def bbm(self):
         if lt == 0:
@@ -455,115 +444,145 @@ class fuck:
         elif lt > 0 and ls > 0:
             msg = "{0}, {1} is a big bad motherfucker.".format(target, sender)
         else:
-            msg = "{0}, {1} is a big bad motherfucker.  {2}".format(target, sender, extra)
-        print(msg)
+            msg = "{0}, {1} is a big bad motherfucker.".format(target, sender)
+        return msg
 
     def caniuse(self):
         if lt == 0 and ls == 0 and le == 0:
             msg = "Can I Use Notes: This option requires the tool/object be specified with --extra and is a two-parter rolled into one command.  Currently requires --name, --extra and --sender."
         elif lt > 0 and ls > 0 and le > 0:
             msg = """{0}, it's {1} here, can I use {2}?  ...  Can you use {3}?  Fuck no, {4}!  You cannot fucking use {5}!""".format(sender, target, extra, extra, target, extra)
-        print(msg)
+        return msg
 
-    def cango(self):
-        if lt == 0:
+    def cango1(self):
+        if lt == 0 and ls == 0 and lR == 0:
             msg = "They can go and fuck themselves."
-        elif lt > 0 and ls > 0:
+        elif lt > 0 and ls > 0 and lR == 0:
             msg = "Tell {0} that {1} said they can go and fuck themselves.".format(target, sender)
+        elif lt > 0 and ls > 0 and lR == 0:
+            msg = "{0}, tell {0} that they can go and fuck themselves.".format(target, sender)
+        elif lt > 0 and ls > 0 and lR > 0:
+            msg = "{0}, tell {1} that {2} said they can go and fuck themselves.".format(relay, target, sender)
         else:
             msg = "{0} can go and fuck themselves.".format(target)
-        print(msg)
+        return msg
+
+    def cango2(self):
+        if lt == 0 and ls == 0 and lR == 0:
+            msg = "He can go and fuck himself."
+        elif lt > 0 and ls > 0 and lR == 0:
+            msg = "Tell {0} that {1} said he can go and fuck himself.".format(target, sender)
+        elif lt > 0 and ls > 0 and lR == 0:
+            msg = "{0}, tell {0} that he can go and fuck himself.".format(target, sender)
+        elif lt > 0 and ls > 0 and lR > 0:
+            msg = "{0}, tell {1} that {2} said he can go and fuck himself.".format(relay, target, sender)
+        else:
+            msg = "{0} can go and fuck himself.".format(target)
+        return msg
+
+    def cango3(self):
+        if lt == 0 and ls == 0 and lR == 0:
+            msg = "She can go and fuck herself."
+        elif lt > 0 and ls > 0 and lR == 0:
+            msg = "Tell {0} that {1} said she can go and fuck herself.".format(target, sender)
+        elif lt > 0 and ls > 0 and lR == 0:
+            msg = "{0}, tell {0} that she can go and fuck herself.".format(target, sender)
+        elif lt > 0 and ls > 0 and lR > 0:
+            msg = "{0}, tell {1} that {2} said she can go and fuck herself.".format(relay, target, sender)
+        else:
+            msg = "{0} can go and fuck herself.".format(target)
+        return msg
 
     def cbf(self):
         if lt == 0:
             msg = "I can't be fucked!"
         else:
             msg = "{0}, I can't be fucked!".format(target)
-        print(msg)
+        return msg
 
     def chainsaw(self):
         if lt == 0:
             msg = "Fuck me gently with a chainsaw.  Do I look like Mother Teresa?"
         else:
             msg = "Fuck me gently with a chainsaw, {0}.  Do I look like Mother Teresa?".format(target)
-        print(msg)
+        return msg
 
     def chainsawe(self):
         if lt == 0:
             msg = "Fuck me gently with a chainsaw!  Do I look like Mother Teresa?!"
         else:
             msg = "Fuck me gently with a chainsaw, {0}!  Do I look like Mother Teresa?!".format(target)
-        print(msg)
+        return msg
 
     def chainsaws(self):
         if lt == 0:
             msg = "Fuck me gently with a chainsaw!"
         else:
             msg = "Fuck me gently with a chainsaw, {0}!".format(target)
-        print(msg)
+        return msg
 
     def cfm(self):
         if lt == 0:
             msg = "Come fuck me."
         else:
             msg = "{0}, come fuck me.".format(target)
-        print(msg)
+        return msg
 
     def cluster(self):
         if lt == 0:
             msg = "It's a total cluster-fuck!"
         else:
             msg = "{0}, it's a total cluster-fuck!".format(target)
-        print(msg)
+        return msg
 
     def clustera(self):
         if lt == 0:
             msg = "It's an almighty cluster-fuck!"
         else:
             msg = "{0}, it's an almighty cluster-fuck!".format(target)
-        print(msg)
+        return msg
 
     def cocksuck(self):
         if lt == 0:
             msg = "Fuck you, you fucking cocksucker!"
         else:
             msg = "Fuck you {0}, you fucking cocksucker!".format(target)
-        print(msg)
+        return msg
 
     def compleat(self):
         if lt == 0:
             msg = "I might be a cunt, but I'm not a complete and utter fucking cunt."
         else:
             msg = "I might be a cunt, {0}, but I'm not a complete and utter fucking cunt.".format(target)
-        print(msg)
+        return msg
 
     def cracked(self):
         if lt == 0:
             msg = "You are fucking cracked!"
         else:
             msg = "{0}, you are fucking cracked!".format(target)
-        print(msg)
+        return msg
 
     def cunt(self):
         if lt == 0:
             msg = "Fuck you, you complete and utter fucking cunt!"
         else:
             msg = "Fuck you {0}, you complete and utter fucking cunt!".format(target)
-        print(msg)
+        return msg
 
     def cunts(self):
         if lt == 0:
             msg = "Fuck you, you complete and utter fucking cunts!"
         else:
             msg = "Fuck you {0}, you complete and utter fucking cunts!".format(target)
-        print(msg)
+        return msg
 
     def cuntz(self):
         if lt == 0:
             msg = "Fuck all those complete and utter fucking cocksuckers and cunts!"
         else:
-            msg = "Fuck the {0}, they're all complete and utter fucking cocksuckers and cunts!".format(target)
-        print(msg)
+            msg = "Fuck {0}, they're all complete and utter fucking cocksuckers and cunts!".format(target)
+        return msg
 
     def custode(self):
         if lt == 0:
@@ -571,97 +590,95 @@ class fuck:
             # But who will guard the fucker(s)?
         else:
             msg = "{0}, quis custodiet ipsos futūtor?".format(target)
-        print(msg)
+        return msg
 
     def deadwood(self):
         if lt == 0:
             msg = "You fucking cocksucker!"
         else:
             msg = "{0}, you're a fucking cocksucker!".format(target)
-        print(msg)
+        return msg
 
     def denial(self):
         if lt == 0:
             msg = "I didn't fucking do it!"
         else:
             msg = "{0}, I didn't fucking do it!".format(target)
-        print(msg)
+        return msg
 
     def disbelief(self):
         if lt == 0:
             msg = "Un-fucking-believable!"
         else:
             msg = "Un-fucking-believable {0}!".format(target)
-        print(msg)
+        return msg
 
     def does(self):
         if lt == 0:
             msg = "Does it look like I give a fuck?"
         else:
             msg = "{0}, does it look like I give a fuck?".format(target)
-        print(msg)
+        return msg
 
     def donut(self):
         if lt == 0:
             msg = "Go and take a flying fuck at a rolling donut."
         else:
             msg = "{0}, go and take a flying fuck at a rolling donut.".format(target)
-        print(msg)
+        return msg
 
     def doodle(self):
         msg = "Fuck-a-doodle-doo!"
-        print(msg)
+        return msg
 
     def dorothy(self):
         if lt == 0:
             msg = "Too fucking busy and vice versa."  # Dorothy Parker
         else:
             msg = "{0}, I'm too fucking busy and vice versa.".format(target)
-        print(msg)
+        return msg
 
     def duck(self):
         if lt == 0:
             msg = "Fuck a duck!"
         else:
             msg = "{0}, fuck a duck!".format(target)
-        print(msg)
+        return msg
 
     def english(self):
         if lt == 0:
             msg = "English motherfucker!  Do you speak it?!"
         else:
             msg = "English motherfucker!  Do you speak it {0}?!".format(target)
-        print(msg)
+        return msg
 
     def every1(self):
         if lt == 0:
             msg = "Everyone's fucked!"
         else:
             msg = "{0}, everyone's fucked!".format(target)
-        print(msg)
+        return msg
 
     def every2(self):
         if lt == 0:
             msg = "Everything's fucked!"
         else:
             msg = "{0}, everything's fucked!".format(target)
-        print(msg)
+        return msg
 
     def exorcist(self):
         if lt == 0:
             msg = "Your mother sucks cocks in Hell!"
         else:
             msg = "Your mother sucks cocks in Hell, {0}!".format(target)
-        print(msg)
+        return msg
 
     def fascinating(self):
         if lt == 0:
             msg = "Fascinating story, in what chapter do you shut the fuck up?"
-        elif lt > 0 and la > 0:
-            msg = "Fascinating story, {0}, in what chapter do you shut the fuck up? {1}".format(target, append)
         else:
             msg = "Fascinating story, {0}, in what chapter do you shut the fuck up?".format(target)
-        print(msg)
+        return msg
 
     def ffs(self):
         if lt == 0:
@@ -669,44 +686,47 @@ class fuck:
         elif lt > 0 and le == 0:
             msg = "For fuck's sake, {0}!".format(target)
         else:
-            msg = "For fuck's sake, {0}!  {1}".format(target, extra)
-        print(msg)
+            msg = "For fuck's sake!"
+        return msg
 
     def field(self):
-        if lt == 0 and le == 0 and ls == 0:
+        if lt == 0 and ls == 0:
             msg = "And I said unto thee, 'Verily, cast thine eyes upon the field in which I grow my fucks,' and thou gave witness unto the field and saw that it was barren."
-        elif lt > 0 and le == 0 and ls == 0:
+        elif lt > 0 and ls == 0:
             msg = "And I said unto {0}, 'Verily, cast thine eyes upon the field in which I grow my fucks,' and {1} gave witness unto the field and saw that it was barren.".format(target, target)
-        if lt == 0 and le == 0 and ls > 0:
+        if lt == 0 and ls > 0:
             msg = "And {0} said unto thee, 'Verily, cast thine eyes upon the field in which I grow my fucks,' and thou gave witness unto the field and saw that it was barren.".format(sender)
-        elif lt == 0 and le > 0 and ls > 0:
-            msg = "And {0} said unto thee, 'Verily, cast thine eyes upon the field in which I grow my fucks,' and thou gave witness unto the field and saw that it was barren.  {1}".format(sender, extra)
-        elif lt > 0 and ls > 0 and le == 0:
+        elif lt > 0 and ls > 0:
             msg = "And {0} said unto {1}, 'Verily, cast thine eyes upon the field in which I grow my fucks,' and {2} gave witness unto the field and saw that it was barren.".format(sender, target, target)
-        elif lt > 0 and ls > 0 and le > 0:
-            msg = "And {0} said unto {1}, 'Verily, cast thine eyes upon the field in which I grow my fucks,' and {2} gave witness unto the field and saw that it was barren.  {3}".format(sender, target, target, extra)
-        print(msg)
+        return msg
 
     def figjam(self):
         if lt == 0:
             msg = "Fuck I'm good, just ask me!"
         else:
             msg = "Fuck I'm good, {0}, just ask me!".format(target)
-        print(msg)
+        return msg
 
     def fire(self):
         if lt == 0:
             msg = "Die in a fire."
         else:
             msg = "{0}, just fucking die in a fire.".format(target)
-        print(msg)
+        return msg
 
-    def flying(self):
+    def flying1(self):
         if lt == 0:
             msg = "I don't give a flying fuck!"
         else:
+            msg = "{0}, I don't give a flying fuck!".format(target)
+        return msg
+
+    def flying2(self):
+        if lt == 0:
+            msg = "I really don't give a flying fuck!"
+        else:
             msg = "{0}, I really don't give a flying fuck!".format(target)
-        print(msg)
+        return msg
 
     def foad(self):
         if "foad" in sa[0]:
@@ -717,578 +737,524 @@ class fuck:
     def foad1(self):
         if lt == 0:
             msg = "Fuck off and die!"
-        elif lt > 0 and le == 0:
+        elif lt > 0:
             msg = "{0}, fuck off and die!".format(target)
         else:
-            msg = "{0}, fuck off and die!  {1}".format(target, extra)
-        print(msg)
+            msg = "{0}, fuck off and die!".format(target)
+        return msg
 
     def froad(self):
         if lt == 0:
             msg = "Fuck right off and die!"
-        elif lt > 0 and le == 0:
+        elif lt > 0:
             msg = "{0}, fuck right off and die!".format(target)
         else:
-            msg = "{0}, fuck right off and die!  {1}".format(target, extra)
-        print(msg)
+            msg = "{0}, fuck right off and die!".format(target)
+        return msg
 
     def fubar(self):
         if lt == 0:
             msg = "Fucked Up Beyond All Recognition."
         else:
             msg = "{0}, fucked up beyond all recognition.".format(target)
-        print(msg)
+        return msg
 
     def fubaru(self):
         if lt == 0:
             msg = "You're fucked up beyond all recognition."
         else:
             msg = "{0}, you're fucked up beyond all recognition.".format(target)
-        print(msg)
+        return msg
 
     def fucker(self):
         if lt == 0:
             msg = "Fuck that fucking fucker!"
         else:
             msg = "Fuck {0}, that fucking fucker!".format(target)
-        print(msg)
+        return msg
 
     def fuckers(self):
         if lt == 0:
             msg = "Fuck the fucking fuckers!"
         else:
             msg = "Fuck {0}, those fucking fuckers!".format(target)
-        print(msg)
+        return msg
 
     def fuckety(self):
         msg = "Fuckety, fuck, fuck, fuck!"
-        print(msg)
+        return msg
 
     def get(self):
         if lt == 0:
             msg = "Get fucked!"
         else:
             msg = "Get fucked {0}!".format(target)
-        print(msg)
+        return msg
 
     def give(self):
         if lt == 0:
             msg = "I don't give a fuck."
         else:
             msg = "{0}, I really don't give a fuck.".format(target)
-        print(msg)
+        return msg
 
     def gived(self):
         if lt == 0:
             msg = "I really don't give a fuck what they do."
         else:
             msg = "{0}, I really don't give a fuck what you do.".format(target)
-        print(msg)
+        return msg
 
     def gives(self):
         if lt == 0:
             msg = "I really don't give a fuck what they say."
         else:
             msg = "{0}, I really don't give a fuck what you say.".format(target)
-        print(msg)
+        return msg
 
     def givet(self):
         if lt == 0:
             msg = "I really don't give a fuck what they think."
         else:
             msg = "{0}, I really don't give a fuck what you think.".format(target)
-        print(msg)
+        return msg
 
     def givew(self):
         if lt == 0:
             msg = "I really don't give a fuck who they are."
         else:
             msg = "{0}, I really don't give a fuck who you are.".format(target)
-        print(msg)
+        return msg
 
     def go(self):
         if lt == 0:
             msg = "Go fuck yourself."
         else:
             msg = "{0}, go fuck yourself.".format(target)
-        print(msg)
+        return msg
 
     def goget(self):
         if lt == 0:
             msg = "Go and get fucked!"
         else:
             msg = "Go and get fucked {0}!".format(target)
-        print(msg)
+        return msg
 
     def gtfo1(self):
         if lt == 0:
             msg = "Let's get the fuck out of here!"
         else:
             msg = "{0}, let's get the fuck out of here!".format(target)
-        print(msg)
+        return msg
 
     def gtfo2(self):
-        if lt == 0 and le == 0 and lR == 0 and ls == 0 and lA == 0 and lP == 0:
+        if lt == 0 and le == 0 and lR == 0 and ls == 0:
             msg = "Get the fuck out!"
-        elif lt > 0 and le == 0 and lR == 0 and ls == 0 and lA == 0 and lP == 0:
+        elif lt > 0 and le == 0 and lR == 0 and ls == 0:
             msg = "{0}, get the fuck out!".format(target)
-        elif lt > 0 and le == 0 and lR == 0 and ls == 0 and lA == 0 and lP > 0:
-            msg = "{0} {1}, get the fuck out!".format(prepend, target)
-        elif lt > 0 and le > 0 and lR == 0 and ls == 0 and lA == 0 and lP == 0:
-            msg = "{0}, get the fuck out of {1}!".format(target, extra)
-        elif lt > 0 and le > 0 and lR == 0 and ls == 0 and lA == 0 and lP > 0:
-            msg = "{0} {1}, get the fuck out of {2}!".format(prepend, target, extra)
-        elif lt > 0 and le == 0 and lR > 0 and ls == 0 and lA == 0 and lP == 0:
+        elif lt > 0 and le == 0 and lR > 0 and ls == 0:
             msg = "{0}, tell {1} to get the fuck out!".format(relay, target)
-        elif lt > 0 and le > 0 and lR > 0 and ls == 0 and lA == 0 and lP == 0:
+        elif lt > 0 and le > 0 and lR > 0 and ls == 0:
             msg = "{0}, tell {1} to get the fuck out of {2}!".format(relay, target, extra)
-        elif lt > 0 and le == 0 and lR > 0 and ls == 0 and lA == 0 and lP > 0:
-            msg = "{0} {1}, tell {2} to get the fuck out!".format(prepend, relay, target)
-        elif lt > 0 and le > 0 and lR > 0 and ls == 0 and lA == 0 and lP > 0:
-            msg = "{0} {1}, tell {2} to get the fuck out of {3}!".format(prepend, relay, target, extra)
-        elif lt > 0 and le == 0 and lR == 0 and ls > 0 and lA == 0 and lP == 0:
+        elif lt > 0 and le == 0 and lR == 0 and ls > 0:
             msg = "{0}, {1} asked me to tell you to get the fuck out!".format(target, sender)
-        elif lt > 0 and le > 0 and lR == 0 and ls > 0 and lA == 0 and lP == 0:
+        elif lt > 0 and le > 0 and lR == 0 and ls > 0:
             msg = "{0}, {1} asked me to tell you to get the fuck out of {2}!".format(target, sender, extra)
-        elif lt > 0 and le == 0 and lR == 0 and ls > 0 and lA == 0 and lP > 0:
-            msg = "{0} {1}, {2} asked me to tell you to get the fuck out!".format(prepend, target, sender)
-        elif lt > 0 and le > 0 and lR == 0 and ls > 0 and lA == 0 and lP > 0:
-            msg = "{0} {1}, {2} asked me to tell you to get the fuck out of {3}!".format(prepend, target, sender, extra)
-        print(msg)
+        return msg
 
     def gtfo3(self):
-        if lt == 0 and le == 0 and lR == 0 and ls == 0 and lA == 0 and lP == 0:
+        if lt == 0 and le == 0 and lR == 0 and ls == 0:
             msg = "Get the fuck out right now!"
-        elif lt > 0 and le == 0 and lR == 0 and ls == 0 and lA == 0 and lP == 0:
+        elif lt > 0 and le == 0 and lR == 0 and ls == 0:
             msg = "{0}, get the fuck out right now!".format(target)
-        elif lt > 0 and le > 0 and lR == 0 and ls == 0 and lA == 0 and lP == 0:
+        elif lt > 0 and le > 0 and lR == 0 and ls == 0:
             msg = "{0}, get the fuck out of {1} right now!".format(target, extra)
-        elif lt > 0 and le == 0 and lR > 0 and ls == 0 and lA == 0 and lP == 0:
+        elif lt > 0 and le == 0 and lR > 0 and ls == 0:
             msg = "{0}, tell {1} to get the fuck out right now!".format(relay, target)
-        elif lt > 0 and le > 0 and lR > 0 and ls == 0 and lA == 0 and lP == 0:
+        elif lt > 0 and le > 0 and lR > 0 and ls == 0:
             msg = "{0}, tell {1} to get the fuck out of {2} right now!".format(relay, target, extra)
-        elif lt > 0 and le > 0 and lR == 0 and ls == 0 and lA == 0 and lP > 0:
-            msg = "{0} {1}, get the fuck out of {2} right now!".format(prepend, target, extra)
-        elif lt > 0 and le == 0 and lR > 0 and ls == 0 and lA == 0 and lP > 0:
-            msg = "{0} {1}, tell {2} to get the fuck out right now!".format(prepend, relay, target)
-        elif lt > 0 and le > 0 and lR > 0 and ls == 0 and lA == 0 and lP > 0:
-            msg = "{0} {1}, tell {2} to get the fuck out of {3} right now!".format(prepend, relay, target, extra)
-        elif lt > 0 and le == 0 and lR == 0 and ls > 0 and lA == 0 and lP == 0:
+        elif lt > 0 and le == 0 and lR == 0 and ls > 0:
             msg = "{0}, {1} asked me to tell you to get the fuck out right now!".format(target, sender)
-        elif lt > 0 and le > 0 and lR == 0 and ls > 0 and lA == 0 and lP == 0:
+        elif lt > 0 and le > 0 and lR == 0 and ls > 0:
             msg = "{0}, {1} asked me to tell you to get the fuck out of {2} right now!".format(target, sender, extra)
-        elif lt > 0 and le == 0 and lR == 0 and ls > 0 and lA == 0 and lP > 0:
-            msg = "{0} {1}, {2} asked me to tell you to get the fuck out right now!".format(prepend, target, sender)
-        elif lt > 0 and le > 0 and lR == 0 and ls > 0 and lA == 0 and lP > 0:
-            msg = "{0} {1}, {2} asked me to tell you to get the fuck out of {3} right now!".format(prepend, target, sender, extra)
-        print(msg)
+        return msg
 
     def gtfo4(self):
-        if lt == 0 and le == 0 and lR == 0 and ls == 0 and lA == 0 and lP == 0:
+        if lt == 0 and le == 0 and lR == 0 and ls == 0:
             msg = "Get the fuck out right fucking now!"
-        elif lt > 0 and le == 0 and lR == 0 and ls == 0 and lA == 0 and lP == 0:
+        elif lt > 0 and le == 0 and lR == 0 and ls == 0:
             msg = "{0}, get the fuck out right fucking now!".format(target)
-        elif lt > 0 and le > 0 and lR == 0 and ls == 0 and lA == 0 and lP == 0:
+        elif lt > 0 and le > 0 and lR == 0 and ls == 0:
             msg = "{0}, get the fuck out of {1} right fucking now!".format(target, extra)
-        elif lt > 0 and le == 0 and lR > 0 and ls == 0 and lA == 0 and lP == 0:
+        elif lt > 0 and le == 0 and lR > 0 and ls == 0:
             msg = "{0}, tell {1} to get the fuck out right fucking now!".format(relay, target)
-        elif lt > 0 and le > 0 and lR > 0 and ls == 0 and lA == 0 and lP == 0:
+        elif lt > 0 and le > 0 and lR > 0 and ls == 0:
             msg = "{0}, tell {1} to get the fuck out of {2} right fucking now!".format(relay, target, extra)
-        elif lt > 0 and le > 0 and lR == 0 and ls == 0 and lA == 0 and lP > 0:
-            msg = "{0} {1}, get the fuck out of {2} right fucking now!".format(prepend, target, extra)
-        elif lt > 0 and le == 0 and lR > 0 and ls == 0 and lA == 0 and lP > 0:
-            msg = "{0} {1}, tell {2} to get the fuck out right fucking now!".format(prepend, relay, target)
-        elif lt > 0 and le > 0 and lR > 0 and ls == 0 and lA == 0 and lP > 0:
-            msg = "{0} {1}, tell {2} to get the fuck out of {3} right fucking now!".format(prepend, relay, target, extra)
-        elif lt > 0 and le == 0 and lR == 0 and ls > 0 and lA == 0 and lP == 0:
+        elif lt > 0 and le == 0 and lR == 0 and ls > 0:
             msg = "{0}, {1} asked me to tell you to get the fuck out right fucking now!".format(target, sender)
-        elif lt > 0 and le > 0 and lR == 0 and ls > 0 and lA == 0 and lP == 0:
+        elif lt > 0 and le > 0 and lR == 0 and ls > 0:
             msg = "{0}, {1} asked me to tell you to get the fuck out of {2} right fucking now!".format(target, sender, extra)
-        elif lt > 0 and le == 0 and lR == 0 and ls > 0 and lA == 0 and lP > 0:
-            msg = "{0} {1}, {2} asked me to tell you to get the fuck out right fucking now!".format(prepend, target, sender)
-        elif lt > 0 and le > 0 and lR == 0 and ls > 0 and lA == 0 and lP > 0:
-            msg = "{0} {1}, {2} asked me to tell you to get the fuck out of {3} right fucking now!".format(prepend, target, sender, extra)
-        print(msg)
+        return msg
 
     def hell(self):
         if lt == 0:
             msg = "Fucking Hell!"
         else:
             msg = "Fucking Hell, {0}!".format(target)
-        print(msg)
+        return msg
 
     def hellf(self):
         if lt == 0:
             msg = "Hell will freeze before that happens."
         else:
             msg = "{0}, Hell will freeze before that happens.".format(target)
-        print(msg)
+        return msg
 
     def hellfif(self):
         if lt == 0:
             msg = "Hell will freeze before I fuck you."
         else:
             msg = "{0}, Hell will freeze before I fuck you.".format(target)
-        print(msg)
+        return msg
 
     def heygo(self):
         if lt == 0:
             msg = "Go and fuck yourself!"
         else:
             msg = "Hey {0}, go fuck yourself!".format(target)
-        print(msg)
+        return msg
 
     def holy(self):
         if lt == 0:
             msg = "Holy fucking shit!"
         else:
             msg = "Holy fucking shit, {0}!".format(target)
-        print(msg)
+        return msg
 
     def how1(self):
         if lt == 0:
             msg = "How the fuck did that happen?"
         else:
             msg = "{0}, how the fuck did that happen?".format(target)
-        print(msg)
+        return msg
 
     def how2(self):
         if lt == 0:
             msg = "How the fuck does that work?"
         else:
             msg = "{0}, how the fuck does that work?".format(target)
-        print(msg)
+        return msg
 
     def htfu(self):
         if lt == 0:
             msg = "Harden the fuck up!"
         else:
             msg = "{0}, harden the fuck up!".format(target)
-        print(msg)
+        return msg
 
     def it(self):
         if lt == 0:
             msg = "Fuck it."
         else:
             msg = "{0}, fuck it.".format(target)
-        print(msg)
+        return msg
 
     def incred(self):
         if lt == 0:
             msg = "In-fucking-credible!"
         else:
             msg = "In-fucking-credible {0}!".format(target)
-        print(msg)
+        return msg
 
     def jams(self):
         msg = "Kick out the Jams, motherfucker!"
-        print(msg)
+        return msg
 
     def jesus(self):
         msg = "Jesus Fucking Christ!"
-        print(msg)
+        return msg
 
     def jfgi(self):
         if lt == 0:
             msg = "Just fucking Google it."
         else:
             msg = "{0}, just fucking Google it.".format(target)
-        print(msg)
+        return msg
 
     def kidding(self):
         if lt == 0:
             msg = "Are you fucking kidding me?"
         else:
             msg = "{0}, are you fucking kidding me?".format(target)
-        print(msg)
+        return msg
 
     def king(self):
         if lt == 0:
             msg = "Oh fuck off, just really fuck off you total dickface.  Christ you are fucking thick!"
         else:
             msg = "Oh fuck off, just really fuck off you total dickface.  Christ {0}, you are fucking thick!".format(target)
-        print(msg)
+        return msg
 
     def kirsan(self):
-        if lt == 0 and lA == 0 and lP == 0 and lR == 0 and le == 0:
+        if lt == 0 and lR == 0 and le == 0:
             msg = "You are as corrupt, delusional, megalomaniacal, vindictive and just as fucking crazy as that fucktard Kirsan Ilyumzhinov!"
-        elif lt > 0 and lA == 0 and lP == 0 and lR == 0 and le == 0:
+        elif lt > 0 and lR == 0 and le == 0:
             msg = "{0}, you are as corrupt, delusional, megalomaniacal, vindictive and just as fucking crazy as that fucktard Kirsan Ilyumzhinov!".format(target)
-        elif lt == 0 and lA == 0 and lP == 0 and lR > 0 and le == 0:
+        elif lt == 0 and lR > 0 and le == 0:
             msg = "{0}, tell them they're as corrupt, delusional, megalomaniacal, vindictive and just as fucking crazy as that fucktard Kirsan Ilyumzhinov!".format(relay)
-        elif lt == 0 and lA == 0 and lP > 0 and lR > 0 and le == 0:
-            msg = "{0} {1}, tell them they're as corrupt, delusional, megalomaniacal, vindictive and just as fucking crazy as that fucktard Kirsan Ilyumzhinov!".format(prepend, relay)
-        elif lR > 0 and lt > 0 and lA == 0 and lP == 0 and le == 0:
+        elif lR > 0 and lt > 0 and le == 0:
             msg = "{0}, tell {1} that they're as corrupt, delusional, megalomaniacal, vindictive and just as fucking crazy as that fucktard Kirsan Ilyumzhinov!".format(relay, target)
-        elif lR > 0 and lt > 0 and lA == 0 and lP == 0 and le > 0:
+        elif lR > 0 and lt > 0 and le > 0:
             msg = "{0}, tell {1} that {2} is as corrupt, delusional, megalomaniacal, vindictive and just as fucking crazy as that fucktard Kirsan Ilyumzhinov!".format(relay, target, extra)
-        elif lR > 0 and lt > 0 and lA == 0 and lP > 0 and le == 0:
-            msg = "{0} {1}, tell {2} that they're as corrupt, delusional, megalomaniacal, vindictive and just as fucking crazy as that fucktard Kirsan Ilyumzhinov!".format(prepend, relay, target)
-        elif lR > 0 and lt > 0 and lA == 0 and lP > 0 and le > 0:
-            msg = "{0} {1}, tell {2} that {3} is as corrupt, delusional, megalomaniacal, vindictive and just as fucking crazy as that fucktard Kirsan Ilyumzhinov!".format(prepend, relay, target, extra)
-        elif lR > 0 and lt > 0 and lA > 0 and le == 0:
-            msg = "{0}, tell {1} that they're as corrupt, delusional, megalomaniacal, vindictive and just as fucking crazy as that fucktard Kirsan Ilyumzhinov! {2}".format(relay, target, append)
-        elif lR > 0 and lt > 0 and lA > 0 and le > 0:
-            msg = "{0}, tell {1} that {2} is as corrupt, delusional, megalomaniacal, vindictive and just as fucking crazy as that fucktard Kirsan Ilyumzhinov! {3}".format(relay, target, extra, append)
-        elif lR > 0 and lt > 0 and lA > 0 and lP > 0 and le == 0:
-            msg = "{0} {1}, tell {2} that they're as corrupt, delusional, megalomaniacal, vindictive and just as fucking crazy as that fucktard Kirsan Ilyumzhinov! {3}".format(prepend, relay, target, append)
-        elif lR > 0 and lt > 0 and lA > 0 and lP > 0 and le > 0:
-            msg = "{0} {1}, tell {2} that {3} is as corrupt, delusional, megalomaniacal, vindictive and just as fucking crazy as that fucktard Kirsan Ilyumzhinov! {4}".format(prepend, relay, target, extra, append)
         else:
             msg = "{0}, you are as corrupt, delusional, megalomaniacal, vindictive and just as fucking crazy as that fucktard Kirsan Ilyumzhinov!".format(target)
-        print(msg)
+        return msg
 
     def know(self):
         if lt == 0:
             msg = "Fucked if I know!"
         else:
             msg = "{0}, fucked if I know!".format(target)
-        print(msg)
+        return msg
 
     def liar(self):
         if lt == 0:
             msg = "You're a lying sack of shit!"
         else:
             msg = "{0}, you're a lying sack of shit!".format(target)
-        print(msg)
+        return msg
 
     def liarf(self):
         if lt == 0:
             msg = "You're such a fucking liar, just so full of shit!"
         else:
             msg = "You're such a fucking liar, {0}, just so full of shit!".format(target)
-        print(msg)
+        return msg
 
     def life(self):
         msg = "Fuck my life!"
-        print(msg)
+        return msg
 
     def linus(self):
         if lt == 0:
             msg = "There aren't enough swear-words in the English language, so now I'll have to call you perkeleen vittupää just to express my disgust and frustration with this crap."
         else:
             msg = "{0}, there aren't enough swear-words in the English language, so now I'll have to call you perkeleen vittupää just to express my disgust and frustration with this crap.".format(target)
-        print(msg)
+        return msg
 
     def lmfao(self):
         if lt == 0:
             msg = "Laughing my fucking arse off."
         else:
             msg = "{0}, laughing my fucking arse off.".format(target)
-        print(msg)
+        return msg
 
     def madison(self):
         if lt == 0:
             msg = "What you've just said is one of the most insanely idiotic things I have ever heard.  At no point in your rambling, incoherent response were you even close to anything that could be considered a rational thought.  Everyone in this room is now dumber for having listened to it.  I award you no points."
         else:
             msg = "What you've just said is one of the most insanely idiotic things I have ever heard, {0}.  At no point in your rambling, incoherent response were you even close to anything that could be considered a rational thought.  Everyone in this room is now dumber for having listened to it.  I award you no points {1}, and may God have mercy on your soul because no one here will.".format(target, target)
-        print(msg)
+        return msg
 
     def me(self):
         msg = "Fuck me!"
-        print(msg)
+        return msg
 
     def mental(self):
         if lt == 0:
             msg = "You are fucking mental!"
         else:
             msg = "{0}, you are fucking mental!".format(target)
-        print(msg)
+        return msg
 
     def mind(self):
         if lt == 0:
             msg = "Are you out of your fucking mind?!"
         else:
             msg = "{0}, are you out of your fucking mind?!".format(target)
-        print(msg)
+        return msg
 
     def mofo(self):
         if lt == 0:
             msg = "Motherfucker!"
         else:
             msg = "{0}, you motherfucker!".format(target)
-        print(msg)
+        return msg
 
     def mofos(self):
         if lt == 0:
             msg = "Motherfuckers!"
         else:
             msg = "{0}, you motherfuckers!".format(target)
-        print(msg)
+        return msg
 
     def money1(self):
         if lt == 0:
             msg = "Show me the fucking money?!"
         else:
             msg = "{0}, show me the fucking money?!".format(target)
-        print(msg)
+        return msg
 
     def money2(self):
         if lt == 0:
             msg = "Where's my fucking money?!"
         else:
             msg = "{0}, where's my fucking money?!".format(target)
-        print(msg)
+        return msg
 
     def nfcd(self):
         if lt == 0:
             msg = "Not fucking cool, dude."
         else:
             msg = "Not fucking cool, {0}.".format(target)
-        print(msg)
+        return msg
 
     def nfi1(self):
         if lt == 0:
             msg = "No fucking idea!"
         else:
             msg = "{0}, do you have any fucking idea?".format(target)
-        print(msg)
+        return msg
 
     def nfi2(self):
         if lt == 0:
             msg = "I've got no fucking idea!"
         else:
             msg = "{0}, I've got no fucking idea!".format(target)
-        print(msg)
+        return msg
 
     def nfi3(self):
         if lt == 0:
             msg = "You've got no fucking idea!"
         else:
             msg = "{0}, you've clearly got no fucking idea!".format(target)
-        print(msg)
+        return msg
 
     def nmfp1(self):
         if lt == 0:
             msg = "It's not my fucking problem."
         else:
             msg = "{0}, it's not my fucking problem.".format(target)
-        print(msg)
+        return msg
 
     def nmfp2(self):
         if lt == 0:
             msg = "That's not my fucking problem."
         else:
             msg = "{0}, that's not my fucking problem.".format(target)
-        print(msg)
+        return msg
 
     def nonbiz(self):
         if lt == 0:
             msg = "That's none of your fucking business."
         else:
             msg = "{0}, that's none of your fucking business.".format(target)
-        print(msg)
+        return msg
 
     def noreally(self):
         if lt == 0:
             msg = "Fuck you. No really, I mean it, go fuck yourselves."
         else:
             msg = "Fuck you {0}. No really, I mean it most sincerely, please go and fuck yourselves.".format(target)
-            print(msg)
+            return msg
 
     def noshit(self):
         if lt == 0:
             msg = "No shit!"
         else:
             msg = "{0}, no shit!".format(target)
-        print(msg)
+        return msg
 
     def noshitf(self):
         if lt == 0:
             msg = "No fucking shit!"
         else:
             msg = "{0}, no fucking shit!".format(target)
-        print(msg)
+        return msg
 
     def noshitfq(self):
         if lt == 0:
             msg = "No fucking shit?!"
         else:
             msg = "{0}, no fucking shit?!".format(target)
-        print(msg)
+        return msg
 
     def noshitq(self):
         if lt == 0:
             msg = "No shit?"
         else:
             msg = "{0}, no shit?".format(target)
-        print(msg)
+        return msg
 
     def noway(self):
         if lt == 0:
             msg = "No fucking way!"
         else:
             msg = "{0}, there's no fucking way!".format(target)
-        print(msg)
+        return msg
 
     def nsfch(self):
         if lt == 0:
             msg = "Not a snowflake's fucking chance in Hell!"
         else:
             msg = "{0}, there's not a snowflake's fucking chance in Hell!".format(target)
-        print(msg)
+        return msg
 
     def nsfcht(self):
         if lt == 0:
             msg = "There's not a snowflake's fucking chance in Hell of that!"
         else:
             msg = "{0}, there's not a snowflake's fucking chance in Hell of that!".format(target)
-        print(msg)
+        return msg
 
     def nsfh(self):
         if lt == 0:
             msg = "Not a snowflake's chance in Hell!"
         else:
             msg = "{0}, there's not a snowflake's chance in Hell!".format(target)
-        print(msg)
+        return msg
 
     def nsfw(self):
         if lt == 0:
             msg = "Not safe for work?  Of course it's not fucking safe for work!"
         else:
             msg = "Not safe for work?  {0}, of course it's not fucking safe for work!".format(target)
-        print(msg)
+        return msg
 
     def nugget(self):
-        if lt == 0 and ls == 0 and le == 0:
+        if lt == 0:
             msg = "Well, aren't you a shining example of a rancid fuck-nugget."
-        elif lt > 0 and ls == 0 and le == 0:
+        elif lt > 0:
             msg = "Well {0}, aren't you a shining example of a rancid fuck-nugget.".format(target)
-        elif lt > 0 and ls > 0 and le == 0:
-            msg = "Well {0}, aren't you a shining example of a rancid fuck-nugget.  -- {1}".format(target, sender)
-        elif lt > 0 and ls == 0 and le > 0:
-            msg = "Well {0}, aren't you a shining example of a rancid fuck-nugget.  {1}".format(target, extra)
-        else:
-            msg = "Well {0}, aren't you a shining example of a rancid fuck-nugget.  {1}  -- {2}".format(target, extra, sender)
-        print(msg)
+        return msg
 
     def oath1(self):
         if lt == 0:
             msg = "Fuck oath!"
         else:
             msg = "{0}, fuck oath!".format(target)
-        print(msg)
+        return msg
 
     def oath2(self):
         if lt == 0:
             msg = "Fucking oath!"
         else:
             msg = "{0}, fucking oath!".format(target)
-        print(msg)
+        return msg
 
     def oath3(self):
         if lt == 0:
             msg = "Fuckin' oath!"
         else:
             msg = "{0}, fuckin' oath!".format(target)
-        print(msg)
+        return msg
 
     def off(self):
         if lt == 0:
             msg = "Fuck off!"
         else:
             msg = "Fuck off {0}!".format(target)
-        print(msg)
+        return msg
 
     def omnia(self):
         if lt == 0:
@@ -1296,25 +1262,28 @@ class fuck:
             # All things that are, are fucked.
         else:
             msg = "{0}, omnia quia sunt, futūtum sunt.".format(target)
-        print(msg)
+        return msg
 
     def outside(self):
         if lt == 0:
             msg = "Why don't you go outside and play hide-and-go-fuck-yourself?"
         else:
             msg = "{0}, why don't you go outside and play hide-and-go-fuck-yourself?".format(target)
-        print(msg)
+        return msg
+
+    def outsides(self):
+        if lt == 0:
+            msg = "Why don't you go outside and play hide-and-go-fuck-yourselves?"
+        else:
+            msg = "{0}, why don't you go outside and play hide-and-go-fuck-yourselves?".format(target)
+        return msg
 
     def pink(self):
-        if lt == 0 and le == 0 and lP == 0 and lA == 0:
+        if lt == 0:
             msg = "Well, fuck me pink!"
-        elif lt == 0 and le > 0 and lP == 0 and lA == 0:
-            msg = "Well, fuck me pink! {0}".format(extra)
-        elif lt == 0 and le == 0 and lP == 0 and lA > 0:
-            msg = "Well, fuck me pink! {0}".format(append)
-        elif lt == 0 and le == 0 and lP > 0 and lA == 0:
-            msg = "{0} Well, fuck me pink!".format(prepend)
-        print(msg)
+        elif lt > 0:
+            msg = "Well, fuck me pink {0}!".format(target)
+        return msg
 
 # The functions beginning with pp are from The Profound Programmer:
 # http://theprofoundprogrammer.com/post/28088574792/introducing-the-first-profound-programmer-hd
@@ -1326,7 +1295,7 @@ class fuck:
             msg = "What the fuck kind of variable name is \"data\"?!  You should be incarcerated, {0}.".format(target)
         elif lt > 0 and le > 0:
             msg = "What the fuck kind of variable name is \"{0}\"?!  You should be incarcerated, {1}.".format(extra, target)
-        print(msg)
+        return msg
 
 # See http://theprofoundprogrammer.com/post/25728479232/text-what-the-fuck-kind-of-variable-name-is
 
@@ -1335,7 +1304,7 @@ class fuck:
             msg = "There's no fucking way I wrote this.  This is awful ... what the fuck does this even do?!"
         elif lt > 0:
             msg = "There's no fucking way I wrote this, {0}.  This is awful ... what the fuck does this even do?!".format(target)
-        print(msg)
+        return msg
 
 # See http://theprofoundprogrammer.com/post/25728609992/text-theres-no-fucking-way-i-wrote-this-this
 
@@ -1344,241 +1313,267 @@ class fuck:
             msg = "Obscenis, peream, Priape, si non uti me pudet improbisque verbis sed cum tu posito deus pudore ostendas mihi coleos patentes cum cunno mihi mentula est vocanda."
         else:
             msg = "Obscenis, peream, {0}, si non uti me pudet improbisque verbis sed cum tu posito degenerem pudore ostendas mihi coleos patentes cum cunno mihi mentula est vocanda.".format(target)
-        print(msg)
+        return msg
+
+    def priapus1(self):
+        if lt == 0:
+            msg = "Obscenis, peream, si non uti me pudet improbisque verbis sed cum tu posito degenerem pudore ostendas mihi coleos patentes cum cunno mihi mentula est vocanda."
+        else:
+            msg = "Obscenis, peream, {0}, si non uti me pudet improbisque verbis sed cum tu posito degenerem pudore ostendas mihi coleos patentes cum cunno mihi mentula est vocanda.".format(target)
+        return msg
+
+    def priapus2(self):
+        if lt == 0:
+            msg = "Obscenis, peream, si non uti me pudet improbisque verbis sed cum tu posito deus pudore ostendas mihi coleos patentes cum cunno mihi mentula est vocanda."
+        else:
+            msg = "Obscenis, peream, {0}, si non uti me pudet improbisque verbis sed cum tu posito deus pudore ostendas mihi coleos patentes cum cunno mihi mentula est vocanda.".format(target)
+        return msg
 
     def priapus_trans1(self):
         if lt == 0:
             msg = "I'd rather die than use obscene and improper words; but when you, as a degenerate, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks."
         else:
             msg = "I'd rather die than use obscene and improper words; but when you, {0}, as a degenerate, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks.".format(target)
-        print(msg)
+        return msg
 
     def priapus_trans2(self):
         if lt == 0:
-            msg = "I'd rather die than use obscene and improper words; but when you, Priapus, as a god, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks."
+            msg = "I'd rather die than use obscene and improper words; but when you, as an inferior, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks."
         else:
             msg = "I'd rather die than use obscene and improper words; but when you, {0}, as an inferior, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks.".format(target)
-        print(msg)
+        return msg
+
+    def priapus_trans3a(self):
+        if lt == 0:
+            msg = "I'd rather die than use obscene and improper words; but when you, Priape, as a god, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks."
+        else:
+            msg = "I'd rather die than use obscene and improper words; but when you, {0}, as a god, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks.".format(target)
+        return msg
+
+    def priapus_trans3b(self):
+        if lt == 0:
+            msg = "I'd rather die than use obscene and improper words; but when you, as a god, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks."
+        else:
+            msg = "I'd rather die than use obscene and improper words; but when you, {0}, as a god, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks.".format(target)
+        return msg
 
     def psycho1(self):
         if lt == 0:
             msg = "You fucking megalomaniacal, malignantly narcissistic, psychopath!"
         else:
             msg = "{0}, you fucking megalomaniacal, malignantly narcissistic, psychopath!".format(target)
-        print(msg)
+        return msg
 
     def psycho2(self):
         if lt == 0:
             msg = "You fucking megalomaniacal, malignantly narcissistic, sociopath!"
         else:
             msg = "{0}, you fucking megalomaniacal, malignantly narcissistic, sociopath!".format(target)
-        print(msg)
+        return msg
 
     def psycho3(self):
         if lt == 0:
             msg = "You're a fucking megalomaniacal, malignantly narcissistic, psychopath!"
         else:
             msg = "{0}, you're a fucking megalomaniacal, malignantly narcissistic, psychopath!".format(target)
-        print(msg)
+        return msg
 
     def psycho4(self):
         if lt == 0:
             msg = "You're a fucking megalomaniacal, malignantly narcissistic, sociopath!"
         else:
             msg = "{0}, you're a fucking megalomaniacal, malignantly narcissistic, sociopath!".format(target)
-        print(msg)
+        return msg
 
     def psycho5(self):
         if lt == 0:
             msg = "You're a fucking megalomaniacal, malignantly narcissistic, psychopathic cunt!"
         else:
             msg = "{0}, you're a fucking megalomaniacal, malignantly narcissistic, psychopathic cunt!".format(target)
-        print(msg)
+        return msg
 
     def psycho6(self):
         if lt == 0:
             msg = "You're a fucking megalomaniacal, malignantly narcissistic, sociopathic cunt!"
         else:
             msg = "{0}, you're a fucking megalomaniacal, malignantly narcissistic, sociopathic cunt!".format(target)
-        print(msg)
+        return msg
 
     def ratm(self):
         if lt == 0:
             msg = "Fuck you! I won't do what you tell me!"
         else:
             msg = "Fuck you {0}! I won't do what you tell me!".format(target)
-        print(msg)
+        return msg
 
     def roff(self):
         if lt == 0:
             msg = "You can fuck right off!"
         else:
             msg = "{0}, you can fuck right off!".format(target)
-        print(msg)
+        return msg
 
     def royal(self):
         if lt == 0:
             msg = "It's right royally fucked!"
         else:
             msg = "{0}, it's right royally fucked!".format(target)
-        print(msg)
+        return msg
 
     def royalwe(self):
         if lt == 0:
             msg = "We're right royally fucked!"
         else:
             msg = "{0}, we're right royally fucked!".format(target)
-        print(msg)
+        return msg
 
     def rtfm(self):
         if lt == 0:
             msg = "Read the fucking manual!"
         else:
             msg = "{0}, read the fucking manual!".format(target)
-        print(msg)
+        return msg
 
     def sb1(self):
         if lt == 0:
             msg = "You fucking son of a bitch!"
         else:
             msg = "{0}, you fucking son of a bitch!".format(target)
-        print(msg)
+        return msg
 
     def sb2(self):
         if lt == 0:
             msg = "You're a fucking son of a bitch!"
         else:
             msg = "{0}, you're a fucking son of a bitch!".format(target)
-        print(msg)
+        return msg
 
     def script(self):
         if lt == 0:
-            msg = "Is this a script?  Of course it's a fucking script?!"
+            msg = "Is this a script?  Of course it's a fucking script!"
         else:
-            msg = "Is this a script?  Yes {0}, of course it's a fucking script?!".format(target)
-        print(msg)
+            msg = "Is this a script?  Yes {0}, of course it's a fucking script!".format(target)
+        return msg
 
     def sfa(self):
         if lt == 0:
             msg = "Sweet fuck all."
         else:
             msg = "{0}, sweet fuck all.".format(target)
-        print(msg)
+        return msg
 
     def sfac(self):
         if lt == 0:
             msg = "The chances of that are about three fifths of sweet fuck all."
         else:
             msg = "{0}, the chances of that are about three fifths of sweet fuck all.".format(target)
-        print(msg)
+        return msg
 
     def shakespeare(self):
         if lt == 0:
             msg = "Thou clay-brained guts, thou knotty-pated fool, thou whoreson obscene greasy tallow-catch!"
         else:
             msg = "{0}, thou clay-brained guts, thou knotty-pated fool, thou whoreson obscene greasy tallow-catch!".format(target)
-        print(msg)
+        return msg
 
     def sherlock(self):
         if lt == 0:
             msg = "No shit, Sherlock!"
+        elif lt > 0:
+            msg = "{0}, no shit, Sherlock!".format(target)
         else:
             msg = "{0}, no shit, Sherlock!".format(target)
-        print(msg)
+        return msg
 
     def shit(self):
         if lt == 0:
             msg = "Fuck this shit!"
         else:
             msg = "{0}, fuck your shit!".format(target)
-        print(msg)
+        return msg
 
     def sideways(self):
         msg = "Well, fuck me sideways!"
-        print(msg)
+        return msg
 
     def snafu(self):
         if lt == 0:
             msg = "Situation Normal: All Fucked Up!"
         else:
             msg = "{0}, it's situation normal: all fucked up!".format(target)
-        print(msg)
+        return msg
 
     def stfu(self):
         if lt == 0:
             msg = "Shut the fuck up!"
         else:
             msg = "{0}, shut the fuck up!".format(target)
-        print(msg)
+        return msg
 
     def stigmata(self):
         if lt == 0:
             msg = "Fuck the Church!  Fuck the State!  Fuck you!  Fuck me!  Fuck all these arseholes!"
         else:
             msg = "Fuck {0}!  Fuck the Church!  Fuck the State!  Fuck you!  Fuck me!  Fuck all these arseholes!".format(target)
-        print(msg)
+        return msg
 
     def stolen(self):
         if lt == 0:
             msg = "I wouldn't fuck you with a stolen dick!"
         else:
             msg = "I wouldn't fuck {0} with a stolen dick!".format(target)
-        print(msg)
+        return msg
 
     def suns(self):
         if lt == 0 and ls == 0 and le == 0:
             msg = "Fuck you with the fury of a thousand suns."
         elif lt > 0 and ls == 0 and le == 0:
             msg = "{0}, fuck you with the fury of a thousand suns.".format(target)
-        elif lt > 0 and ls > 0 and le == 0:
-            msg = "{0}, fuck you with the fury of a thousand suns.  -- {1}".format(target, sender)
-        elif lt > 0 and ls == 0 and le > 0:
-            msg = "{0}, fuck you with the fury of a thousand suns.  {1}".format(target, extra)
         else:
-            msg = "{0}, fuck you with the fury of a thousand suns.  {1} -- {2}".format(target, extra, sender)
-        print(msg)
+            msg = "Fuck you with the fury of a thousand suns!"
+        return msg
 
     def survey(self):
         if lt == 0:
             msg = "Hmm, survey says ... go fuck yourself!"
         else:
             msg = "{0}, survey says ... go fuck yourself!".format(target)
-        print(msg)
+        return msg
 
     def tard(self):
         if lt == 0:
             msg = "You complete and utter fucktard!"
         else:
             msg = "{0}, you are a complete and utter fucktard!".format(target)
-        print(msg)
+        return msg
 
     def tfwo(self):
         if lt == 0:
             msg = "I'm totally fucking weirded out by that."
         else:
             msg = "{0}, you're totally fucking weirding me out.".format(target)
-        print(msg)
+        return msg
 
     def thanks(self):
         if lt == 0:
             msg = "Fuck you very much."
         else:
             msg = "Fuck you very much, {0}.".format(target)
-        print(msg)
+        return msg
 
     def tism(self):
         if lt == 0:
             msg = "I might be a cunt, but I'm not a fucking cunt."
         else:
             msg = "I might be a cunt, {0}, but I'm not a fucking cunt.".format(target)
-        print(msg)
+        return msg
 
     def totgaf(self):
         if lt == 0:
             msg = "I'm too old to give a fuck."
         else:
             msg = "{0}, I'm too old to give a fuck.".format(target)
-        print(msg)
+        return msg
 
     # All the twog quotes are from TheTweetOfGod.
     # https://twitter.com/TheTweetOfGod
@@ -1588,7 +1583,7 @@ class fuck:
             msg = "Seriously, don't dis Me. I am the Lord thy God, King of the Universe. Show some fucking respect."
         else:
             msg = "Seriously, {0}, don't dis Me. I am the Lord thy God, King of the Universe. Show some fucking respect.".format(target)
-        print(msg)
+        return msg
 
     # https://twitter.com/TheTweetOfGod/status/528773043666313216
 
@@ -1597,165 +1592,186 @@ class fuck:
             msg = "You cunt!"
         else:
             msg = "{0}, you cunt!".format(target)
-        print(msg)
+        return msg
 
     def up1(self):
         if lt == 0:
             msg = "I'm gonna fuck you up!"
         else:
             msg = "{0}, I'm gonna fuck you up!".format(target)
-        print(msg)
+        return msg
 
     def up2(self):
         if lt == 0:
             msg = "I'm all fucked up!"
         else:
             msg = "{0}, I'm all fucked up!".format(target)
-        print(msg)
+        return msg
 
     def up3(self):
         if lt == 0:
             msg = "I'm completely fucked up!"
         else:
             msg = "{0}, I'm completely fucked up!".format(target)
-        print(msg)
+        return msg
 
     def urcunt(self):
         if lt == 0:
             msg = "You're a cunt!"
         else:
             msg = "{0}, you're a cunt!".format(target)
-        print(msg)
+        return msg
 
     def urfcunt(self):
         if lt == 0:
             msg = "You're a fucking cunt!"
         else:
             msg = "{0}, you're a fucking cunt!".format(target)
-        print(msg)
+        return msg
 
     def urso1(self):
         if lt == 0:
             msg = "You are so fucked."
         else:
             msg = "You are so fucked, {0}.".format(target)
-        print(msg)
+        return msg
 
     def urso2(self):
         if lt == 0:
             msg = "You are so fucked, so fucking fucked!"
         else:
             msg = "You are so fucked, {0}, so fucking fucked!".format(target)
-        print(msg)
+        return msg
 
     def utard(self):
         if lt == 0:
             msg = "You fucktard!"
         else:
             msg = "{0}, you fucktard!".format(target)
-        print(msg)
+        return msg
 
     def valley(self):
         if lt == 0:
             msg = "Yea, though I walk through the shadow of the Valley of Death I shall fear no evil ... for I am the meanest motherfucker in all the land!"
         else:
             msg = "Yea, {0}, though I walk through the shadow of the Valley of Death I shall fear no evil ... for I am the meanest motherfucker in all the land!".format(target)
-        print(msg)
+        return msg
 
     def vvv(self):
         msg = "Vidi, vici, veni."  # "I saw, I conquered, I came"
-        print(msg)
+        return msg
 
     def wafwot(self):
         if lt == 0:
             msg = "What a fucking waste of time!"
         else:
             msg = "{0}, that's a fucking waste of time!".format(target)
-        print(msg)
+        return msg
 
     def wbfu(self):
         if lt == 0:
             msg = "Why?  Because fuck you, that's why."
         else:
             msg = "Why?  Because fuck you {0}, that's why.".format(target)
-        print(msg)
+        return msg
 
     def when1(self):
         if lt == 0:
             msg = "When the fuck will that happen?"
         else:
             msg = "{0}, when the fuck will that happen?".format(target)
-        print(msg)
+        return msg
 
     def when2(self):
         if lt == 0:
             msg = "When the fuck will we get there?"
         else:
             msg = "{0}, when the fuck will we get there?".format(target)
-        print(msg)
+        return msg
+
+    def when3(self):
+        if lt == 0:
+            msg = "When the fuck did that happen?"
+        else:
+            msg = "{0}, when the fuck did that happen?".format(target)
+        return msg
 
     def where1(self):
         if lt == 0:
             msg = "Where the fuck are we?"
         else:
             msg = "{0}, where the fuck are we?".format(target)
-        print(msg)
+        return msg
 
     def where2(self):
         if lt == 0:
             msg = "Where the fuck is it?"
         else:
             msg = "{0}, where the fuck is it?".format(target)
-        print(msg)
+        return msg
+
+    def where3(self):
+        if lt == 0:
+            msg = "Where the fuck are you?"
+        else:
+            msg = "{0}, where the fuck are you?".format(target)
+        return msg
 
     def who1(self):
         if lt == 0:
             msg = "Who the fuck do they think they are?"
         else:
             msg = "{0}, who the fuck do they think they are?".format(target)
-        print(msg)
+        return msg
 
     def who2(self):
         if lt == 0:
             msg = "Who the fuck do they think you are?"
         else:
             msg = "{0}, who the fuck do they think you are?".format(target)
-        print(msg)
+        return msg
 
     def who3(self):
         if lt == 0:
             msg = "Who the fuck do you think you are?"
         else:
             msg = "{0}, who the fuck do you think you are?".format(target)
-        print(msg)
+        return msg
 
-    def who3(self):
+    def who4(self):
         if lt == 0:
             msg = "Who the fuck knows?"
         else:
             msg = "{0}, who the fuck knows?".format(target)
-        print(msg)
+        return msg
 
     def why(self):
         if lt == 0:
             msg = "Why the fuck should I?"
         else:
             msg = "{0}, why the fuck should I?".format(target)
-        print(msg)
+        return msg
+
+    def whyk(self):
+        if lt == 0:
+            msg = "Why the fuck should I know?"
+        else:
+            msg = "{0}, why the fuck should I know?".format(target)
+        return msg
 
     def wit(self):
         if lt == 0:
             msg = "You fuckwit!"
         else:
             msg = "{0}, you fuckwit!".format(target)
-        print(msg)
+        return msg
 
     def woftam(self):
         if lt == 0:
             msg = "It's a waste of fucking time and money."
         else:
             msg = "{0}, it's a waste of fucking time and money.".format(target)
-        print(msg)
+        return msg
 
     def wtaf(self):
         if lt == 0:
@@ -1763,92 +1779,92 @@ class fuck:
         elif lt > 0:
             msg = "What the actual fuck {0}?!".format(target)
         else:
-            msg = "What the actual fuck {0}?!  {1}".format(target, extra)
-        print(msg)
+            msg = "What the actual fuck {0}?!".format(target)
+        return msg
 
     def wtf(self):
         if lt == 0:
             msg = "What the fuck?!"
         else:
             msg = "{0}, what the fuck?!".format(target)
-        print(msg)
+        return msg
 
     def wtfc(self):
         if lt == 0:
             msg = "What fucking crack are you smoking?!"
         else:
             msg = "{0}, what fucking crack are you smoking?!".format(target)
-        print(msg)
+        return msg
 
     def wtfd(self):
         if lt == 0:
             msg = "What the fuck are you doing?!"
         else:
             msg = "{0}, what the fuck are you doing?!".format(target)
-        print(msg)
+        return msg
 
     def wtfg(self):
         if lt == 0:
             msg = "What the fuck is going on?!"
         else:
             msg = "{0}, what the fuck is going on?!".format(target)
-        print(msg)
+        return msg
 
     def wtfgh(self):
         if lt == 0:
             msg = "What the fuck is going on here?!"
         else:
             msg = "{0}, what the fuck is going on here?!".format(target)
-        print(msg)
+        return msg
 
     def wtfo(self):
         if lt == 0:
             msg = "What the fuck are you on?!"
         else:
             msg = "{0}, what the fuck are you on?!".format(target)
-        print(msg)
+        return msg
 
     def wtft(self):
         if lt == 0:
             msg = "What the fuck is that?"
         else:
             msg = "{0}, what the fuck is that?".format(target)
-        print(msg)
+        return msg
 
     def wtfta(self):
         if lt == 0:
             msg = "What the fuck are you talking about?!"
         else:
             msg = "{0}, what the fuck are you talking about?!".format(target)
-        print(msg)
+        return msg
 
     def wtfu(self):
         if lt == 0:
             msg = "What the unutterable fuck?!"
         else:
             msg = "{0}, what the unutterable fuck?!".format(target)
-        print(msg)
+        return msg
 
     def wtfwjd(self):
         if lt == 0:
             msg = "What the fuck would Jesus do?"
         else:
             msg = "{0}, so what the fuck would Jesus do?".format(target)
-        print(msg)
+        return msg
 
     def wtfwjdrtfm(self):
         if lt == 0:
             msg = "What the fuck would Jesus do?  Jesus would read the fucking manual!"
         else:
             msg = "{0}, so what the fuck would Jesus do?  Jesus would read the fucking manual!".format(target)
-        print(msg)
+        return msg
 
     def you(self):
         if lt == 0:
             msg = "Fuck you!"
         else:
             msg = "Fuck you {0}!".format(target)
-        print(msg)
+        return msg
 
 fucked = fuck()
 fucker = fuck()
@@ -1908,10 +1924,22 @@ elif lO > 0:
     print("")
     print("Bitcoin:  {0}".format(__bitcoin__))
     print("")
-elif l >= 3 and wtf == "sherlock" and target.lower()[0:8] == "sherlock":
+elif l >= 3 and wtf == "sherlock" and target.lower()[0:8] == "sherlock" and lP == 0 and lA == 0:
     print("No shit, Sherlock!")
-elif l >= 3 and wtf == "random" and rc == "sherlock" and target.lower()[0:8] == "sherlock":
+elif l >= 3 and wtf == "sherlock" and target.lower()[0:8] == "sherlock" and lP > 0 and lA == 0:
+    print("{0} no shit, Sherlock!".format(prepend))
+elif l >= 3 and wtf == "sherlock" and target.lower()[0:8] == "sherlock" and lP == 0 and lA > 0:
+    print("No shit, Sherlock! {0}".format(append))
+elif l >= 3 and wtf == "sherlock" and target.lower()[0:8] == "sherlock" and lP > 0 and lA > 0:
+    print("{0} no shit, Sherlock! {1}".format(prepend, append))
+elif l >= 3 and wtf == "random" and rc == "sherlock" and target.lower()[0:8] == "sherlock" and lP == 0 and lA == 0:
     print("No shit, Sherlock!")
+elif l >= 3 and wtf == "random" and rc == "sherlock" and target.lower()[0:8] == "sherlock" and lP > 0 and lA == 0:
+    print("{0} no shit, Sherlock!".format(prepend))
+elif l >= 3 and wtf == "random" and rc == "sherlock" and target.lower()[0:8] == "sherlock" and lP == 0 and lA > 0:
+    print("No shit, Sherlock! {0}".format(append))
+elif l >= 3 and wtf == "random" and rc == "sherlock" and target.lower()[0:8] == "sherlock" and lP > 0 and lA > 0:
+    print("{0} no shit, Sherlock! {1}".format(prepend, append))
 elif l == 2 and wtf == "unittest":
     print(about)
     print("")
@@ -2079,65 +2107,249 @@ elif l >= 3 and wtf == "unittest":
                     print("Fuck testing!")
                 print("")
 elif l >= 2 and wtf == "random":
-    try:
-        exec("fucker.{0}()".format(rc))
-    except(AttributeError, NameError):
+    if lP == 0 and lA == 0:
+        print("{0}".format(getattr(fucker, rc)()))
+    elif lP > 0 and lA == 0:
+        print("{0} {1}".format(prepend, getattr(fucker, rc)()))
+    elif lP == 0 and lA > 0:
+        print("{0} {1}".format(getattr(fucker, rc)(), append))
+    elif lP > 0 and lA > 0:
+        print("{0} {1} {2}".format(prepend, getattr(fucker, rc)(), append))
+    else:
         print("Fuck randomness!")
 elif la == 3:
     if args.fuck is not None and args.name is None:
-        try:
-            exec("fucker.{0}()".format(wtf))
-        except(AttributeError, NameError):
-            print("Fuck {0}!".format(wtf))
+        if lP == 0 and lA == 0:
+            if wtf in dir(fucker):
+                print("{0}".format(getattr(fucker, wtf)()))
+            else:
+                print("Fuck {0}!".format(wtf))
+        elif lP > 0 and lA == 0:
+            if wtf in dir(fucker):
+                print("{0} {1}".format(prepend, getattr(fucker, wtf)()))
+            else:
+                print("{0} Fuck {1}!".format(prepend, wtf))
+        elif lP == 0 and lA > 0:
+            if wtf in dir(fucker):
+                print("{0} {1}".format(getattr(fucker, wtf)(), append))
+            else:
+                print("Fuck {0}! {1}".format(wtf, append))
+        elif lP > 0 and lA > 0:
+            if wtf in dir(fucker):
+                print("{0} {1} {2}".format(prepend, getattr(fucker, wtf)(), append))
+            else:
+                print("{0} Fuck {1}! {2}".format(prepend, wtf, append))
+        else:
+            if wtf in dir(fucker):
+                print("{0}".format(getattr(fucker, wtf)()))
+            else:
+                print("Fuck {0}!".format(wtf))
     elif args.fuck is None and args.name is not None:
-        print("Fuck {0}!".format(target))
+        if lP == 0 and lA == 0:
+            if target in dir(fucker):
+                print("{0}".format(getattr(fucker, target)()))
+            else:
+                print("Fuck {0}!".format(target))
+        elif lP > 0 and lA == 0:
+            if target in dir(fucker):
+                print("{0} {1}".format(prepend, getattr(fucker, target)()))
+            else:
+                print("{0} Fuck {1}!".format(prepend, target))
+        elif lP == 0 and lA > 0:
+            if target in dir(fucker):
+                print("{0} {1}".format(getattr(fucker, target)(), append))
+            else:
+                print("Fuck {0}! {1}".format(target, append))
+        elif lP > 0 and lA > 0:
+            if target in dir(fucker):
+                print("{0} {1} {2}".format(prepend, getattr(fucker, target)(), append))
+            else:
+                print("{0} Fuck {1}! {2}".format(prepend, target, append))
+        else:
+            if target in dir(fucker):
+                print("{0}".format(getattr(fucker, target)()))
+            else:
+                print("Fuck {0}!".format(target))
 elif la == 4:
     if args.fuck is not None and args.name is None:
-        try:
-            exec("fucker.{0}()".format(wtf))
-        except(AttributeError, NameError):
+        if lP == 0 and lA == 0:
+            if wtf in dir(fucker):
+                print("{0}".format(getattr(fucker, wtf)()))
+            else:
+                print("Fuck {0}!".format(wtf))
+        elif lP > 0 and lA == 0:
+            if wtf in dir(fucker):
+                print("{0} {1}".format(prepend, getattr(fucker, wtf)()))
+            else:
+                print("{0} Fuck {1}!".format(prepend, wtf))
+        elif lP == 0 and lA > 0:
+            if wtf in dir(fucker):
+                print("{0} {1}".format(getattr(fucker, wtf)(), append))
+            else:
+                print("Fuck {0}! {1}".format(wtf, append))
+        elif lP > 0 and lA > 0:
+            if wtf in dir(fucker):
+                print("{0} {1} {2}".format(prepend, getattr(fucker, wtf)(), append))
+            else:
+                print("{0} Fuck {1}! {2}".format(prepend, wtf, append))
+        else:
             w = []
             for i in range(la - 2):
                 w.append(str(sys.argv[i + 2]))
             wtf = " ".join(w)
-            print("Fuck {0}!".format(wtf))
+            if wtf in dir(fucker):
+                print("{0}".format(getattr(fucker, wtf)()))
+            else:
+                print("Fuck {0}!".format(wtf))
     elif args.fuck is None and args.name is not None:
-        t = []
-        for i in range(la - 2):
-            t.append(str(sys.argv[i + 2]))
-        target = " ".join(t)
-        print("Fuck {0}!".format(target))
+        if lP == 0 and lA == 0:
+            if target in dir(fucker):
+                print("{0}".format(getattr(fucker, target)()))
+            else:
+                print("Fuck {0}!".format(target))
+        elif lP > 0 and lA == 0:
+            if target in dir(fucker):
+                print("{0} {1}".format(prepend, getattr(fucker, target)()))
+            else:
+                print("{0} Fuck {1}!".format(prepend, target))
+        elif lP == 0 and lA > 0:
+            if target in dir(fucker):
+                print("{0} {1}".format(getattr(fucker, target)(), append))
+            else:
+                print("Fuck {0}! {1}".format(target, append))
+        elif lP > 0 and lA > 0:
+            if target in dir(fucker):
+                print("{0} {1} {2}".format(prepend, getattr(fucker, target)(), append))
+            else:
+                print("{0} Fuck {1}! {2}".format(prepend, target, append))
+        else:
+            t = []
+            for i in range(la - 2):
+                t.append(str(sys.argv[i + 2]))
+            target = " ".join(t)
+            if target in dir(fucker):
+                print("{0}".format(getattr(fucker, target)()))
+            else:
+                print("Fuck {0}!".format(target))
+
     elif args.fuck is not None and args.name is not None:
-        try:
-            exec("fucker.{0}()".format(wtf))
-        except(AttributeError, NameError):
-            print("Fuck {0}!".format(wtf))
+        if lP == 0 and lA == 0:
+            if wtf in dir(fucker):
+                print("{0}".format(getattr(fucker, wtf)()))
+            else:
+                print("Fuck {0}!".format(wtf))
+        elif lP > 0 and lA == 0:
+            if wtf in dir(fucker):
+                print("{0} {1}".format(prepend, getattr(fucker, wtf)()))
+            else:
+                print("{0} Fuck {1}!".format(prepend, wtf))
+        elif lP == 0 and lA > 0:
+            if wtf in dir(fucker):
+                print("{0} {1}".format(getattr(fucker, wtf)(), append))
+            else:
+                print("Fuck {0}! {1}".format(wtf, append))
+        elif lP > 0 and lA > 0:
+            if wtf in dir(fucker):
+                print("{0} {1} {2}".format(prepend, getattr(fucker, wtf)(), append))
+            else:
+                print("{0} Fuck {1}! {2}".format(prepend, wtf, append))
+        else:
+            if wtf in dir(fucker):
+                print("{0}".format(getattr(fucker, wtf)()))
+            else:
+                print("Fuck {0}!".format(wtf))
     else:
         pass
         # print("Fuck Perl!")
 elif la >= 5:
     if args.fuck is not None and args.name is None:
-        try:
-            exec("fucker.{0}()".format(wtf))
-        except(AttributeError, NameError):
+        if lP == 0 and lA == 0:
+            if wtf in dir(fucker):
+                print("{0}".format(getattr(fucker, wtf)()))
+            else:
+                print("Fuck {0}!".format(wtf))
+        elif lP > 0 and lA == 0:
+            if wtf in dir(fucker):
+                print("{0} {1}".format(prepend, getattr(fucker, wtf)()))
+            else:
+                print("{0} Fuck {1}!".format(prepend, wtf))
+        elif lP == 0 and lA > 0:
+            if wtf in dir(fucker):
+                print("{0} {1}".format(getattr(fucker, wtf)(), append))
+            else:
+                print("Fuck {0}! {1}".format(wtf, append))
+        elif lP > 0 and lA > 0:
+            if wtf in dir(fucker):
+                print("{0} {1} {2}".format(prepend, getattr(fucker, wtf)(), append))
+            else:
+                print("{0} Fuck {1}! {2}".format(prepend, wtf, append))
+        else:
             w = []
             for i in range(la - 2):
                 w.append(str(sys.argv[i + 2]))
             wtf = " ".join(w)
-            print("Fuck {0}!".format(wtf))
+            if wtf in dir(fucker):
+                print("{0}".format(getattr(fucker, wtf)()))
+            else:
+                print("Fuck {0}!".format(wtf))
     elif args.fuck is None and args.name is not None:
-        t = []
-        for i in range(la - 2):
-            t.append(str(sys.argv[i + 2]))
-        target = " ".join(t)
-        print("Fuck {0}!".format(target))
+        if lP == 0 and lA == 0:
+            if target in dir(fucker):
+                print("{0}".format(getattr(fucker, target)()))
+            else:
+                print("Fuck {0}!".format(target))
+        elif lP > 0 and lA == 0:
+            if target in dir(fucker):
+                print("{0} {1}".format(prepend, getattr(fucker, target)()))
+            else:
+                print("{0} Fuck {1}!".format(prepend, target))
+        elif lP == 0 and lA > 0:
+            if target in dir(fucker):
+                print("{0} {1}".format(getattr(fucker, target)(), append))
+            else:
+                print("Fuck {0}! {1}".format(target, append))
+        elif lP > 0 and lA > 0:
+            if target in dir(fucker):
+                print("{0} {1} {2}".format(prepend, getattr(fucker, target)(), append))
+            else:
+                print("{0} Fuck {1}! {2}".format(prepend, target, append))
+        else:
+            t = []
+            for i in range(la - 2):
+                t.append(str(sys.argv[i + 2]))
+            target = " ".join(t)
+            if target in dir(fucker):
+                print("{0}".format(getattr(fucker, target)()))
+            else:
+                print("Fuck {0}!".format(target))
     elif args.fuck is not None and args.name is not None:
-        try:
-            exec("fucker.{0}()".format(wtf))
-        except(AttributeError, NameError):
+        if lP == 0 and lA == 0:
+            if wtf in dir(fucker):
+                print("{0}".format(getattr(fucker, wtf)()))
+            else:
+                print("Fuck {0}!".format(wtf))
+        elif lP > 0 and lA == 0:
+            if wtf in dir(fucker):
+                print("{0} {1}".format(prepend, getattr(fucker, wtf)()))
+            else:
+                print("{0} Fuck {1}!".format(prepend, wtf))
+        elif lP == 0 and lA > 0:
+            if wtf in dir(fucker):
+                print("{0} {1}".format(getattr(fucker, wtf)(), append))
+            else:
+                print("Fuck {0}! {1}".format(wtf, append))
+        elif lP > 0 and lA > 0:
+            if wtf in dir(fucker):
+                print("{0} {1} {2}".format(prepend, getattr(fucker, wtf)(), append))
+            else:
+                print("{0} Fuck {1}! {2}".format(prepend, wtf, append))
+        else:
             w = []
             for i in range(la - 2):
                 if str(sys.argv[i]).startswith("-") is False:
                     w.append(str(sys.argv[i + 2]))
             wtfx = " ".join(w)
-            print("Fuck {0}!".format(wtfx))
+            if wtfx in dir(fucker):
+                print("{0}".format(getattr(fucker, wtf)()))
+            else:
+                print("Fuck {0}!".format(wtf))
