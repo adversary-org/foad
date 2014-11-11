@@ -9,7 +9,7 @@
 #
 # https://github.com/adversary-org/foad
 #
-# Version:  0.7.3.0
+# Version:  0.7.3.2
 #
 # BTC:  1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz
 # License:  GNU Public License version 3 (GPLv3)
@@ -121,7 +121,7 @@ __title__ = "FOAD: Fucked Off Adversarial Degenerates (Fuck Off And Die)"
 __stitle__ = "FOAD"
 __license1__ = "GNU General Public License version 3 (GPLv3)"
 __license2__ = "Do What The Fuck You Want To, But It's Not My Fault Public License version 1 (WTFNMFPLv1)"
-__version__ = "0.7.3.0"
+__version__ = "0.7.3.2"
 __bitcoin__ = "1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz"
 __openpgp__ = "0x321E4E2373590E5D"
 
@@ -581,7 +581,7 @@ class fuck:
         if lt == 0:
             msg = "Fuck all those complete and utter fucking cocksuckers and cunts!"
         else:
-            msg = "Fuck the {0}, they're all complete and utter fucking cocksuckers and cunts!".format(target)
+            msg = "Fuck {0}, they're all complete and utter fucking cocksuckers and cunts!".format(target)
         return msg
 
     def custode(self):
@@ -676,8 +676,6 @@ class fuck:
     def fascinating(self):
         if lt == 0:
             msg = "Fascinating story, in what chapter do you shut the fuck up?"
-        elif lt > 0 and la > 0:
-            msg = "Fascinating story, {0}, in what chapter do you shut the fuck up? {1}".format(target, append)
         else:
             msg = "Fascinating story, {0}, in what chapter do you shut the fuck up?".format(target)
         return msg
@@ -688,22 +686,18 @@ class fuck:
         elif lt > 0 and le == 0:
             msg = "For fuck's sake, {0}!".format(target)
         else:
-            msg = "For fuck's sake, {0}!  {1}".format(target, extra)
+            msg = "For fuck's sake!"
         return msg
 
     def field(self):
-        if lt == 0 and le == 0 and ls == 0:
+        if lt == 0 and ls == 0:
             msg = "And I said unto thee, 'Verily, cast thine eyes upon the field in which I grow my fucks,' and thou gave witness unto the field and saw that it was barren."
-        elif lt > 0 and le == 0 and ls == 0:
+        elif lt > 0 and ls == 0:
             msg = "And I said unto {0}, 'Verily, cast thine eyes upon the field in which I grow my fucks,' and {1} gave witness unto the field and saw that it was barren.".format(target, target)
-        if lt == 0 and le == 0 and ls > 0:
+        if lt == 0 and ls > 0:
             msg = "And {0} said unto thee, 'Verily, cast thine eyes upon the field in which I grow my fucks,' and thou gave witness unto the field and saw that it was barren.".format(sender)
-        elif lt == 0 and le > 0 and ls > 0:
-            msg = "And {0} said unto thee, 'Verily, cast thine eyes upon the field in which I grow my fucks,' and thou gave witness unto the field and saw that it was barren.  {1}".format(sender, extra)
-        elif lt > 0 and ls > 0 and le == 0:
+        elif lt > 0 and ls > 0:
             msg = "And {0} said unto {1}, 'Verily, cast thine eyes upon the field in which I grow my fucks,' and {2} gave witness unto the field and saw that it was barren.".format(sender, target, target)
-        elif lt > 0 and ls > 0 and le > 0:
-            msg = "And {0} said unto {1}, 'Verily, cast thine eyes upon the field in which I grow my fucks,' and {2} gave witness unto the field and saw that it was barren.  {3}".format(sender, target, target, extra)
         return msg
 
     def figjam(self):
@@ -720,9 +714,16 @@ class fuck:
             msg = "{0}, just fucking die in a fire.".format(target)
         return msg
 
-    def flying(self):
+    def flying1(self):
         if lt == 0:
             msg = "I don't give a flying fuck!"
+        else:
+            msg = "{0}, I don't give a flying fuck!".format(target)
+        return msg
+
+    def flying2(self):
+        if lt == 0:
+            msg = "I really don't give a flying fuck!"
         else:
             msg = "{0}, I really don't give a flying fuck!".format(target)
         return msg
@@ -736,19 +737,19 @@ class fuck:
     def foad1(self):
         if lt == 0:
             msg = "Fuck off and die!"
-        elif lt > 0 and le == 0:
+        elif lt > 0:
             msg = "{0}, fuck off and die!".format(target)
         else:
-            msg = "{0}, fuck off and die!  {1}".format(target, extra)
+            msg = "{0}, fuck off and die!".format(target)
         return msg
 
     def froad(self):
         if lt == 0:
             msg = "Fuck right off and die!"
-        elif lt > 0 and le == 0:
+        elif lt > 0:
             msg = "{0}, fuck right off and die!".format(target)
         else:
-            msg = "{0}, fuck right off and die!  {1}".format(target, extra)
+            msg = "{0}, fuck right off and die!".format(target)
         return msg
 
     def fubar(self):
@@ -847,86 +848,52 @@ class fuck:
         return msg
 
     def gtfo2(self):
-        if lt == 0 and le == 0 and lR == 0 and ls == 0 and lA == 0 and lP == 0:
+        if lt == 0 and le == 0 and lR == 0 and ls == 0:
             msg = "Get the fuck out!"
-        elif lt > 0 and le == 0 and lR == 0 and ls == 0 and lA == 0 and lP == 0:
+        elif lt > 0 and le == 0 and lR == 0 and ls == 0:
             msg = "{0}, get the fuck out!".format(target)
-        elif lt > 0 and le == 0 and lR == 0 and ls == 0 and lA == 0 and lP > 0:
-            msg = "{0} {1}, get the fuck out!".format(prepend, target)
-        elif lt > 0 and le > 0 and lR == 0 and ls == 0 and lA == 0 and lP == 0:
-            msg = "{0}, get the fuck out of {1}!".format(target, extra)
-        elif lt > 0 and le > 0 and lR == 0 and ls == 0 and lA == 0 and lP > 0:
-            msg = "{0} {1}, get the fuck out of {2}!".format(prepend, target, extra)
-        elif lt > 0 and le == 0 and lR > 0 and ls == 0 and lA == 0 and lP == 0:
+        elif lt > 0 and le == 0 and lR > 0 and ls == 0:
             msg = "{0}, tell {1} to get the fuck out!".format(relay, target)
-        elif lt > 0 and le > 0 and lR > 0 and ls == 0 and lA == 0 and lP == 0:
+        elif lt > 0 and le > 0 and lR > 0 and ls == 0:
             msg = "{0}, tell {1} to get the fuck out of {2}!".format(relay, target, extra)
-        elif lt > 0 and le == 0 and lR > 0 and ls == 0 and lA == 0 and lP > 0:
-            msg = "{0} {1}, tell {2} to get the fuck out!".format(prepend, relay, target)
-        elif lt > 0 and le > 0 and lR > 0 and ls == 0 and lA == 0 and lP > 0:
-            msg = "{0} {1}, tell {2} to get the fuck out of {3}!".format(prepend, relay, target, extra)
-        elif lt > 0 and le == 0 and lR == 0 and ls > 0 and lA == 0 and lP == 0:
+        elif lt > 0 and le == 0 and lR == 0 and ls > 0:
             msg = "{0}, {1} asked me to tell you to get the fuck out!".format(target, sender)
-        elif lt > 0 and le > 0 and lR == 0 and ls > 0 and lA == 0 and lP == 0:
+        elif lt > 0 and le > 0 and lR == 0 and ls > 0:
             msg = "{0}, {1} asked me to tell you to get the fuck out of {2}!".format(target, sender, extra)
-        elif lt > 0 and le == 0 and lR == 0 and ls > 0 and lA == 0 and lP > 0:
-            msg = "{0} {1}, {2} asked me to tell you to get the fuck out!".format(prepend, target, sender)
-        elif lt > 0 and le > 0 and lR == 0 and ls > 0 and lA == 0 and lP > 0:
-            msg = "{0} {1}, {2} asked me to tell you to get the fuck out of {3}!".format(prepend, target, sender, extra)
         return msg
 
     def gtfo3(self):
-        if lt == 0 and le == 0 and lR == 0 and ls == 0 and lA == 0 and lP == 0:
+        if lt == 0 and le == 0 and lR == 0 and ls == 0:
             msg = "Get the fuck out right now!"
-        elif lt > 0 and le == 0 and lR == 0 and ls == 0 and lA == 0 and lP == 0:
+        elif lt > 0 and le == 0 and lR == 0 and ls == 0:
             msg = "{0}, get the fuck out right now!".format(target)
-        elif lt > 0 and le > 0 and lR == 0 and ls == 0 and lA == 0 and lP == 0:
+        elif lt > 0 and le > 0 and lR == 0 and ls == 0:
             msg = "{0}, get the fuck out of {1} right now!".format(target, extra)
-        elif lt > 0 and le == 0 and lR > 0 and ls == 0 and lA == 0 and lP == 0:
+        elif lt > 0 and le == 0 and lR > 0 and ls == 0:
             msg = "{0}, tell {1} to get the fuck out right now!".format(relay, target)
-        elif lt > 0 and le > 0 and lR > 0 and ls == 0 and lA == 0 and lP == 0:
+        elif lt > 0 and le > 0 and lR > 0 and ls == 0:
             msg = "{0}, tell {1} to get the fuck out of {2} right now!".format(relay, target, extra)
-        elif lt > 0 and le > 0 and lR == 0 and ls == 0 and lA == 0 and lP > 0:
-            msg = "{0} {1}, get the fuck out of {2} right now!".format(prepend, target, extra)
-        elif lt > 0 and le == 0 and lR > 0 and ls == 0 and lA == 0 and lP > 0:
-            msg = "{0} {1}, tell {2} to get the fuck out right now!".format(prepend, relay, target)
-        elif lt > 0 and le > 0 and lR > 0 and ls == 0 and lA == 0 and lP > 0:
-            msg = "{0} {1}, tell {2} to get the fuck out of {3} right now!".format(prepend, relay, target, extra)
-        elif lt > 0 and le == 0 and lR == 0 and ls > 0 and lA == 0 and lP == 0:
+        elif lt > 0 and le == 0 and lR == 0 and ls > 0:
             msg = "{0}, {1} asked me to tell you to get the fuck out right now!".format(target, sender)
-        elif lt > 0 and le > 0 and lR == 0 and ls > 0 and lA == 0 and lP == 0:
+        elif lt > 0 and le > 0 and lR == 0 and ls > 0:
             msg = "{0}, {1} asked me to tell you to get the fuck out of {2} right now!".format(target, sender, extra)
-        elif lt > 0 and le == 0 and lR == 0 and ls > 0 and lA == 0 and lP > 0:
-            msg = "{0} {1}, {2} asked me to tell you to get the fuck out right now!".format(prepend, target, sender)
-        elif lt > 0 and le > 0 and lR == 0 and ls > 0 and lA == 0 and lP > 0:
-            msg = "{0} {1}, {2} asked me to tell you to get the fuck out of {3} right now!".format(prepend, target, sender, extra)
         return msg
 
     def gtfo4(self):
-        if lt == 0 and le == 0 and lR == 0 and ls == 0 and lA == 0 and lP == 0:
+        if lt == 0 and le == 0 and lR == 0 and ls == 0:
             msg = "Get the fuck out right fucking now!"
-        elif lt > 0 and le == 0 and lR == 0 and ls == 0 and lA == 0 and lP == 0:
+        elif lt > 0 and le == 0 and lR == 0 and ls == 0:
             msg = "{0}, get the fuck out right fucking now!".format(target)
-        elif lt > 0 and le > 0 and lR == 0 and ls == 0 and lA == 0 and lP == 0:
+        elif lt > 0 and le > 0 and lR == 0 and ls == 0:
             msg = "{0}, get the fuck out of {1} right fucking now!".format(target, extra)
-        elif lt > 0 and le == 0 and lR > 0 and ls == 0 and lA == 0 and lP == 0:
+        elif lt > 0 and le == 0 and lR > 0 and ls == 0:
             msg = "{0}, tell {1} to get the fuck out right fucking now!".format(relay, target)
-        elif lt > 0 and le > 0 and lR > 0 and ls == 0 and lA == 0 and lP == 0:
+        elif lt > 0 and le > 0 and lR > 0 and ls == 0:
             msg = "{0}, tell {1} to get the fuck out of {2} right fucking now!".format(relay, target, extra)
-        elif lt > 0 and le > 0 and lR == 0 and ls == 0 and lA == 0 and lP > 0:
-            msg = "{0} {1}, get the fuck out of {2} right fucking now!".format(prepend, target, extra)
-        elif lt > 0 and le == 0 and lR > 0 and ls == 0 and lA == 0 and lP > 0:
-            msg = "{0} {1}, tell {2} to get the fuck out right fucking now!".format(prepend, relay, target)
-        elif lt > 0 and le > 0 and lR > 0 and ls == 0 and lA == 0 and lP > 0:
-            msg = "{0} {1}, tell {2} to get the fuck out of {3} right fucking now!".format(prepend, relay, target, extra)
-        elif lt > 0 and le == 0 and lR == 0 and ls > 0 and lA == 0 and lP == 0:
+        elif lt > 0 and le == 0 and lR == 0 and ls > 0:
             msg = "{0}, {1} asked me to tell you to get the fuck out right fucking now!".format(target, sender)
-        elif lt > 0 and le > 0 and lR == 0 and ls > 0 and lA == 0 and lP == 0:
+        elif lt > 0 and le > 0 and lR == 0 and ls > 0:
             msg = "{0}, {1} asked me to tell you to get the fuck out of {2} right fucking now!".format(target, sender, extra)
-        elif lt > 0 and le == 0 and lR == 0 and ls > 0 and lA == 0 and lP > 0:
-            msg = "{0} {1}, {2} asked me to tell you to get the fuck out right fucking now!".format(prepend, target, sender)
-        elif lt > 0 and le > 0 and lR == 0 and ls > 0 and lA == 0 and lP > 0:
-            msg = "{0} {1}, {2} asked me to tell you to get the fuck out of {3} right fucking now!".format(prepend, target, sender, extra)
         return msg
 
     def hell(self):
@@ -1029,30 +996,16 @@ class fuck:
         return msg
 
     def kirsan(self):
-        if lt == 0 and lA == 0 and lP == 0 and lR == 0 and le == 0:
+        if lt == 0 and lR == 0 and le == 0:
             msg = "You are as corrupt, delusional, megalomaniacal, vindictive and just as fucking crazy as that fucktard Kirsan Ilyumzhinov!"
-        elif lt > 0 and lA == 0 and lP == 0 and lR == 0 and le == 0:
+        elif lt > 0 and lR == 0 and le == 0:
             msg = "{0}, you are as corrupt, delusional, megalomaniacal, vindictive and just as fucking crazy as that fucktard Kirsan Ilyumzhinov!".format(target)
-        elif lt == 0 and lA == 0 and lP == 0 and lR > 0 and le == 0:
+        elif lt == 0 and lR > 0 and le == 0:
             msg = "{0}, tell them they're as corrupt, delusional, megalomaniacal, vindictive and just as fucking crazy as that fucktard Kirsan Ilyumzhinov!".format(relay)
-        elif lt == 0 and lA == 0 and lP > 0 and lR > 0 and le == 0:
-            msg = "{0} {1}, tell them they're as corrupt, delusional, megalomaniacal, vindictive and just as fucking crazy as that fucktard Kirsan Ilyumzhinov!".format(prepend, relay)
-        elif lR > 0 and lt > 0 and lA == 0 and lP == 0 and le == 0:
+        elif lR > 0 and lt > 0 and le == 0:
             msg = "{0}, tell {1} that they're as corrupt, delusional, megalomaniacal, vindictive and just as fucking crazy as that fucktard Kirsan Ilyumzhinov!".format(relay, target)
-        elif lR > 0 and lt > 0 and lA == 0 and lP == 0 and le > 0:
+        elif lR > 0 and lt > 0 and le > 0:
             msg = "{0}, tell {1} that {2} is as corrupt, delusional, megalomaniacal, vindictive and just as fucking crazy as that fucktard Kirsan Ilyumzhinov!".format(relay, target, extra)
-        elif lR > 0 and lt > 0 and lA == 0 and lP > 0 and le == 0:
-            msg = "{0} {1}, tell {2} that they're as corrupt, delusional, megalomaniacal, vindictive and just as fucking crazy as that fucktard Kirsan Ilyumzhinov!".format(prepend, relay, target)
-        elif lR > 0 and lt > 0 and lA == 0 and lP > 0 and le > 0:
-            msg = "{0} {1}, tell {2} that {3} is as corrupt, delusional, megalomaniacal, vindictive and just as fucking crazy as that fucktard Kirsan Ilyumzhinov!".format(prepend, relay, target, extra)
-        elif lR > 0 and lt > 0 and lA > 0 and le == 0:
-            msg = "{0}, tell {1} that they're as corrupt, delusional, megalomaniacal, vindictive and just as fucking crazy as that fucktard Kirsan Ilyumzhinov! {2}".format(relay, target, append)
-        elif lR > 0 and lt > 0 and lA > 0 and le > 0:
-            msg = "{0}, tell {1} that {2} is as corrupt, delusional, megalomaniacal, vindictive and just as fucking crazy as that fucktard Kirsan Ilyumzhinov! {3}".format(relay, target, extra, append)
-        elif lR > 0 and lt > 0 and lA > 0 and lP > 0 and le == 0:
-            msg = "{0} {1}, tell {2} that they're as corrupt, delusional, megalomaniacal, vindictive and just as fucking crazy as that fucktard Kirsan Ilyumzhinov! {3}".format(prepend, relay, target, append)
-        elif lR > 0 and lt > 0 and lA > 0 and lP > 0 and le > 0:
-            msg = "{0} {1}, tell {2} that {3} is as corrupt, delusional, megalomaniacal, vindictive and just as fucking crazy as that fucktard Kirsan Ilyumzhinov! {4}".format(prepend, relay, target, extra, append)
         else:
             msg = "{0}, you are as corrupt, delusional, megalomaniacal, vindictive and just as fucking crazy as that fucktard Kirsan Ilyumzhinov!".format(target)
         return msg
