@@ -9,7 +9,7 @@
 #
 # https://github.com/adversary-org/foad
 #
-# Version:  0.7.3.2
+# Version:  0.7.3.3
 #
 # BTC:  1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz
 # License:  GNU Public License version 3 (GPLv3)
@@ -121,7 +121,7 @@ __title__ = "FOAD: Fucked Off Adversarial Degenerates (Fuck Off And Die)"
 __stitle__ = "FOAD"
 __license1__ = "GNU General Public License version 3 (GPLv3)"
 __license2__ = "Do What The Fuck You Want To, But It's Not My Fault Public License version 1 (WTFNMFPLv1)"
-__version__ = "0.7.3.2"
+__version__ = "0.7.3.3"
 __bitcoin__ = "1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz"
 __openpgp__ = "0x321E4E2373590E5D"
 
@@ -1222,16 +1222,10 @@ class fuck:
         return msg
 
     def nugget(self):
-        if lt == 0 and ls == 0 and le == 0:
+        if lt == 0:
             msg = "Well, aren't you a shining example of a rancid fuck-nugget."
-        elif lt > 0 and ls == 0 and le == 0:
+        elif lt > 0:
             msg = "Well {0}, aren't you a shining example of a rancid fuck-nugget.".format(target)
-        elif lt > 0 and ls > 0 and le == 0:
-            msg = "Well {0}, aren't you a shining example of a rancid fuck-nugget.  -- {1}".format(target, sender)
-        elif lt > 0 and ls == 0 and le > 0:
-            msg = "Well {0}, aren't you a shining example of a rancid fuck-nugget.  {1}".format(target, extra)
-        else:
-            msg = "Well {0}, aren't you a shining example of a rancid fuck-nugget.  {1}  -- {2}".format(target, extra, sender)
         return msg
 
     def oath1(self):
@@ -1277,15 +1271,18 @@ class fuck:
             msg = "{0}, why don't you go outside and play hide-and-go-fuck-yourself?".format(target)
         return msg
 
+    def outsides(self):
+        if lt == 0:
+            msg = "Why don't you go outside and play hide-and-go-fuck-yourselves?"
+        else:
+            msg = "{0}, why don't you go outside and play hide-and-go-fuck-yourselves?".format(target)
+        return msg
+
     def pink(self):
-        if lt == 0 and le == 0 and lP == 0 and lA == 0:
+        if lt == 0:
             msg = "Well, fuck me pink!"
-        elif lt == 0 and le > 0 and lP == 0 and lA == 0:
-            msg = "Well, fuck me pink! {0}".format(extra)
-        elif lt == 0 and le == 0 and lP == 0 and lA > 0:
-            msg = "Well, fuck me pink! {0}".format(append)
-        elif lt == 0 and le == 0 and lP > 0 and lA == 0:
-            msg = "{0} Well, fuck me pink!".format(prepend)
+        elif lt > 0:
+            msg = "Well, fuck me pink {0}!".format(target)
         return msg
 
 # The functions beginning with pp are from The Profound Programmer:
@@ -1318,6 +1315,20 @@ class fuck:
             msg = "Obscenis, peream, {0}, si non uti me pudet improbisque verbis sed cum tu posito degenerem pudore ostendas mihi coleos patentes cum cunno mihi mentula est vocanda.".format(target)
         return msg
 
+    def priapus1(self):
+        if lt == 0:
+            msg = "Obscenis, peream, si non uti me pudet improbisque verbis sed cum tu posito degenerem pudore ostendas mihi coleos patentes cum cunno mihi mentula est vocanda."
+        else:
+            msg = "Obscenis, peream, {0}, si non uti me pudet improbisque verbis sed cum tu posito degenerem pudore ostendas mihi coleos patentes cum cunno mihi mentula est vocanda.".format(target)
+        return msg
+
+    def priapus2(self):
+        if lt == 0:
+            msg = "Obscenis, peream, si non uti me pudet improbisque verbis sed cum tu posito deus pudore ostendas mihi coleos patentes cum cunno mihi mentula est vocanda."
+        else:
+            msg = "Obscenis, peream, {0}, si non uti me pudet improbisque verbis sed cum tu posito deus pudore ostendas mihi coleos patentes cum cunno mihi mentula est vocanda.".format(target)
+        return msg
+
     def priapus_trans1(self):
         if lt == 0:
             msg = "I'd rather die than use obscene and improper words; but when you, as a degenerate, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks."
@@ -1327,9 +1338,23 @@ class fuck:
 
     def priapus_trans2(self):
         if lt == 0:
-            msg = "I'd rather die than use obscene and improper words; but when you, Priapus, as a god, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks."
+            msg = "I'd rather die than use obscene and improper words; but when you, as an inferior, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks."
         else:
             msg = "I'd rather die than use obscene and improper words; but when you, {0}, as an inferior, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks.".format(target)
+        return msg
+
+    def priapus_trans3a(self):
+        if lt == 0:
+            msg = "I'd rather die than use obscene and improper words; but when you, Priape, as a god, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks."
+        else:
+            msg = "I'd rather die than use obscene and improper words; but when you, {0}, as a god, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks.".format(target)
+        return msg
+
+    def priapus_trans3b(self):
+        if lt == 0:
+            msg = "I'd rather die than use obscene and improper words; but when you, as a god, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks."
+        else:
+            msg = "I'd rather die than use obscene and improper words; but when you, {0}, as a god, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks.".format(target)
         return msg
 
     def psycho1(self):
