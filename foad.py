@@ -9,7 +9,7 @@
 #
 # https://github.com/adversary-org/foad
 #
-# Version:  0.7.3.6
+# Version:  0.7.3.7
 #
 # BTC:  1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz
 # License:  GNU Public License version 3 (GPLv3)
@@ -121,7 +121,7 @@ __title__ = "FOAD: Fucked Off Adversarial Degenerates (Fuck Off And Die)"
 __stitle__ = "FOAD"
 __license1__ = "GNU General Public License version 3 (GPLv3)"
 __license2__ = "Do What The Fuck You Want To, But It's Not My Fault Public License version 1 (WTFNMFPLv1)"
-__version__ = "0.7.3.6"
+__version__ = "0.7.3.7"
 __bitcoin__ = "1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz"
 __openpgp__ = "0x321E4E2373590E5D"
 
@@ -464,8 +464,8 @@ class fuck:
             msg = "They can go and fuck themselves."
         elif lt > 0 and ls > 0 and lR == 0:
             msg = "Tell {0} that {1} said they can go and fuck themselves.".format(target, sender)
-        elif lt > 0 and ls > 0 and lR == 0:
-            msg = "{0}, tell {0} that they can go and fuck themselves.".format(target, sender)
+        elif lt > 0 and ls == 0 and lR > 0:
+            msg = "{0}, tell {0} that they can go and fuck themselves.".format(relay, target)
         elif lt > 0 and ls > 0 and lR > 0:
             msg = "{0}, tell {1} that {2} said they can go and fuck themselves.".format(relay, target, sender)
         else:
@@ -477,8 +477,8 @@ class fuck:
             msg = "He can go and fuck himself."
         elif lt > 0 and ls > 0 and lR == 0:
             msg = "Tell {0} that {1} said he can go and fuck himself.".format(target, sender)
-        elif lt > 0 and ls > 0 and lR == 0:
-            msg = "{0}, tell {0} that he can go and fuck himself.".format(target, sender)
+        elif lt > 0 and ls == 0 and lR > 0:
+            msg = "{0}, tell {0} that he can go and fuck himself.".format(relay, target)
         elif lt > 0 and ls > 0 and lR > 0:
             msg = "{0}, tell {1} that {2} said he can go and fuck himself.".format(relay, target, sender)
         else:
@@ -490,8 +490,8 @@ class fuck:
             msg = "She can go and fuck herself."
         elif lt > 0 and ls > 0 and lR == 0:
             msg = "Tell {0} that {1} said she can go and fuck herself.".format(target, sender)
-        elif lt > 0 and ls > 0 and lR == 0:
-            msg = "{0}, tell {0} that she can go and fuck herself.".format(target, sender)
+        elif lt > 0 and ls == 0 and lR > 0:
+            msg = "{0}, tell {0} that she can go and fuck herself.".format(relay, target)
         elif lt > 0 and ls > 0 and lR > 0:
             msg = "{0}, tell {1} that {2} said she can go and fuck herself.".format(relay, target, sender)
         else:
