@@ -9,7 +9,7 @@
 #
 # https://github.com/adversary-org/foad
 #
-# Version:  0.7.3.8
+# Version:  0.7.3.9
 #
 # BTC:  1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz
 # License:  GNU Public License version 3 (GPLv3)
@@ -121,7 +121,7 @@ __title__ = "FOAD: Fucked Off Adversarial Degenerates (Fuck Off And Die)"
 __stitle__ = "FOAD"
 __license1__ = "GNU General Public License version 3 (GPLv3)"
 __license2__ = "Do What The Fuck You Want To, But It's Not My Fault Public License version 1 (WTFNMFPLv1)"
-__version__ = "0.7.3.8"
+__version__ = "0.7.3.9"
 __bitcoin__ = "1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz"
 __openpgp__ = "0x321E4E2373590E5D"
 
@@ -1098,6 +1098,15 @@ class fuck:
             msg = "Are you out of your fucking mind?!"
         else:
             msg = "{0}, are you out of your fucking mind?!".format(target)
+        return msg
+
+    def miscarried(self):
+        if lt == 0 and le == 0 and ls == 0:
+            msg = "Uses target/name, extra and sender in non-standard ways."
+        elif lt > 0 and le > 0 and ls > 0:
+            msg = "It's like someone forced {0} and {1} to fuck and {2} is what they miscarried.".format(target, sender, extra)
+        else:
+            msg = "It's like someone forced {0} and {1} to fuck and this is what they miscarried.".format(target, sender)
         return msg
 
     def mofo(self):
