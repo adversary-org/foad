@@ -733,6 +733,13 @@ class fuck:
             msg = "{0}, just fucking die in a fire.".format(target)
         return msg
 
+    def flying(self):
+        if lt == 0:
+            msg = "I don't give a flying fuck!"
+        else:
+            msg = "{0}, I really don't give a flying fuck!".format(target)
+        return msg
+
     def flying1(self):
         if lt == 0:
             msg = "I don't give a flying fuck!"
