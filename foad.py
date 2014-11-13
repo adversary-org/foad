@@ -9,7 +9,7 @@
 #
 # https://github.com/adversary-org/foad
 #
-# Version:  0.7.3.9
+# Version:  0.7.4.0
 #
 # BTC:  1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz
 # License:  GNU Public License version 3 (GPLv3)
@@ -121,7 +121,7 @@ __title__ = "FOAD: Fucked Off Adversarial Degenerates (Fuck Off And Die)"
 __stitle__ = "FOAD"
 __license1__ = "GNU General Public License version 3 (GPLv3)"
 __license2__ = "Do What The Fuck You Want To, But It's Not My Fault Public License version 1 (WTFNMFPLv1)"
-__version__ = "0.7.3.9"
+__version__ = "0.7.4.0"
 __bitcoin__ = "1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz"
 __openpgp__ = "0x321E4E2373590E5D"
 
@@ -206,8 +206,8 @@ parser.add_argument("-n", "--name", help="Name of target, more than one word mus
 parser.add_argument("-s", "--sender", help="Used to specify the sender, usually within the context of some particular phrase, more than one word must be in quotation marks.", action="store", required=False)
 parser.add_argument("-r", "--relay", help="Used to specify a third party to whom a message is to be delivered to by the target.", action="store", required=False)
 parser.add_argument("-e", "--extra", help="Additional comment to insert into output, more than one word must be in quotation marks.  Used to enhance an existing response rather than append text (use -a/--append for that).", action="store", required=False)
-parser.add_argument("-a", "--append", help="Additional comment to append to output.  Usually only used when extra is used for something else.", action="store", required=False)
-parser.add_argument("-p", "--prepend", help="Additional comment to prepend before the output.  Usually only used when extra is used for something else and/or in conjunction with append.", action="store", required=False)
+parser.add_argument("-a", "--append", help="Additional comment to append to output.  Now works with all options.", action="store", required=False)
+parser.add_argument("-p", "--prepend", help="Additional comment to prepend before the output.  Now works with all options.", action="store", required=False)
 # parser.add_argument("-o", "--output", help="Writes output to the specified file instead of stdout.", action="store", required=False)
 parser.add_argument("-O", "--options", help="Lists the explicit variations (the same as: -f list_options), will accept any argument to activate.", action="store", required=False)
 parser.add_argument("-V", "--version", help="Print the version number.", action="store", required=False)
@@ -731,6 +731,13 @@ class fuck:
             msg = "Die in a fire."
         else:
             msg = "{0}, just fucking die in a fire.".format(target)
+        return msg
+
+    def flying(self):
+        if lt == 0:
+            msg = "I don't give a flying fuck!"
+        else:
+            msg = "{0}, I really don't give a flying fuck!".format(target)
         return msg
 
     def flying1(self):
