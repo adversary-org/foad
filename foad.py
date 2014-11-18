@@ -9,7 +9,7 @@
 #
 # https://github.com/adversary-org/foad
 #
-# Version:  0.7.4.1
+# Version:  0.7.4.2
 #
 # BTC:  1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz
 # License:  GNU Public License version 3 (GPLv3)
@@ -121,7 +121,7 @@ __title__ = "FOAD: Fucked Off Adversarial Degenerates (Fuck Off And Die)"
 __stitle__ = "FOAD"
 __license1__ = "GNU General Public License version 3 (GPLv3)"
 __license2__ = "Do What The Fuck You Want To, But It's Not My Fault Public License version 1 (WTFNMFPLv1)"
-__version__ = "0.7.4.1"
+__version__ = "0.7.4.2"
 __bitcoin__ = "1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz"
 __openpgp__ = "0x321E4E2373590E5D"
 
@@ -697,6 +697,33 @@ class fuck:
             msg = "Fascinating story, in what chapter do you shut the fuck up?"
         else:
             msg = "Fascinating story, {0}, in what chapter do you shut the fuck up?".format(target)
+        return msg
+
+    def fascist(self):  # sender and relay used in non-standard ways.
+        if lt == 0 and ls == 0 and lR == 0 and le == 0:
+            msg = "Fuck off, I don't speak fascist."
+        elif lt > 0 and ls == 0 and lR == 0 and le == 0:
+            msg = "Fuck off {0}, I don't speak fascist.".format(target)
+        elif lt == 0 and ls > 0 and lR == 0 and le == 0:
+            msg = "I'm sorry, I don't speak fascist."
+        elif lt > 0 and ls > 0 and lR == 0 and le == 0:
+            msg = "I'm sorry {0}, I don't speak fascist.".format(target)
+        elif lt == 0 and ls > 0 and lR == 0 and le > 0:
+            msg = "{0}, I don't speak fascist.".format(extra)
+        elif lt > 0 and ls > 0 and lR == 0 and le > 0:
+            msg = "{0} {1}, I don't speak fascist.".format(extra, target)
+        elif lt == 0 and ls == 0 and lR > 0 and le == 0:
+            msg = "Fuck off, I don't speak to fascists."
+        elif lt > 0 and ls == 0 and lR > 0 and le == 0:
+            msg = "Fuck off {0}, I don't speak to fascists.".format(target)
+        elif lt == 0 and ls > 0 and lR > 0 and le == 0:
+            msg = "I'm sorry, I don't speak to fascists."
+        elif lt > 0 and ls > 0 and lR > 0 and le == 0:
+            msg = "I'm sorry {0}, I don't speak to fascists.".format(target)
+        elif lt == 0 and ls > 0 and lR > 0 and le > 0:
+            msg = "{0}, I don't speak to fascists.".format(extra)
+        elif lt > 0 and ls > 0 and lR > 0 and le > 0:
+            msg = "{0} {1}, I don't speak to fascists.".format(extra, target)
         return msg
 
     def ffs(self):
