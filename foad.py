@@ -9,7 +9,7 @@
 #
 # https://github.com/adversary-org/foad
 #
-# Version:  0.7.4.1
+# Version:  0.7.5.0
 #
 # BTC:  1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz
 # License:  GNU Public License version 3 (GPLv3)
@@ -121,7 +121,7 @@ __title__ = "FOAD: Fucked Off Adversarial Degenerates (Fuck Off And Die)"
 __stitle__ = "FOAD"
 __license1__ = "GNU General Public License version 3 (GPLv3)"
 __license2__ = "Do What The Fuck You Want To, But It's Not My Fault Public License version 1 (WTFNMFPLv1)"
-__version__ = "0.7.4.1"
+__version__ = "0.7.5.0"
 __bitcoin__ = "1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz"
 __openpgp__ = "0x321E4E2373590E5D"
 
@@ -697,6 +697,33 @@ class fuck:
             msg = "Fascinating story, in what chapter do you shut the fuck up?"
         else:
             msg = "Fascinating story, {0}, in what chapter do you shut the fuck up?".format(target)
+        return msg
+
+    def fascist(self):  # sender and relay used in non-standard ways.
+        if lt == 0 and ls == 0 and lR == 0 and le == 0:
+            msg = "Fuck off, I don't speak fascist."
+        elif lt > 0 and ls == 0 and lR == 0 and le == 0:
+            msg = "Fuck off {0}, I don't speak fascist.".format(target)
+        elif lt == 0 and ls > 0 and lR == 0 and le == 0:
+            msg = "I'm sorry, I don't speak fascist."
+        elif lt > 0 and ls > 0 and lR == 0 and le == 0:
+            msg = "I'm sorry {0}, I don't speak fascist.".format(target)
+        elif lt == 0 and ls > 0 and lR == 0 and le > 0:
+            msg = "{0}, I don't speak fascist.".format(extra)
+        elif lt > 0 and ls > 0 and lR == 0 and le > 0:
+            msg = "{0} {1}, I don't speak fascist.".format(extra, target)
+        elif lt == 0 and ls == 0 and lR > 0 and le == 0:
+            msg = "Fuck off, I don't speak to fascists."
+        elif lt > 0 and ls == 0 and lR > 0 and le == 0:
+            msg = "Fuck off {0}, I don't speak to fascists.".format(target)
+        elif lt == 0 and ls > 0 and lR > 0 and le == 0:
+            msg = "I'm sorry, I don't speak to fascists."
+        elif lt > 0 and ls > 0 and lR > 0 and le == 0:
+            msg = "I'm sorry {0}, I don't speak to fascists.".format(target)
+        elif lt == 0 and ls > 0 and lR > 0 and le > 0:
+            msg = "{0}, I don't speak to fascists.".format(extra)
+        elif lt > 0 and ls > 0 and lR > 0 and le > 0:
+            msg = "{0} {1}, I don't speak to fascists.".format(extra, target)
         return msg
 
     def ffs(self):
@@ -1937,466 +1964,467 @@ lr = len(rf)
 random.seed()
 rc = random.choice(rf)
 
-if l < 2:
-    print(about)
-    print("")
-    print("Number of defined options:  {0}".format(lc))
-    print("")
-elif lV > 0:
-    print("")
-    print("{0}  {1}".format(__title__, __version__))
-    print(__copyright__)
-    print("")
-    print("Bitcoin:  {0}".format(__bitcoin__))
-    print("")
-elif l == 2 and wtf == "list_options":
-    print("")
-    print("{0}  {1}".format(__title__, __version__))
-    print(__copyright__)
-    print("")
-    print("Number of defined options:  {0}".format(lc))
-    print("")
-    print(textwrap.fill("List of defined options:  " + ", ".join(df), 72))
-    print("")
-    print("Bitcoin:  {0}".format(__bitcoin__))
-    print("")
-elif lO > 0:
-    print("")
-    print("{0}  {1}".format(__title__, __version__))
-    print(__copyright__)
-    print("")
-    print("Number of defined options:  {0}".format(lc))
-    print("")
-    print(textwrap.fill("List of defined options:  " + ", ".join(df), 72))
-    print("")
-    print("Bitcoin:  {0}".format(__bitcoin__))
-    print("")
-elif l >= 3 and wtf == "sherlock" and target.lower()[0:8] == "sherlock" and lP == 0 and lA == 0:
-    print("No shit, Sherlock!")
-elif l >= 3 and wtf == "sherlock" and target.lower()[0:8] == "sherlock" and lP > 0 and lA == 0:
-    print("{0} no shit, Sherlock!".format(prepend))
-elif l >= 3 and wtf == "sherlock" and target.lower()[0:8] == "sherlock" and lP == 0 and lA > 0:
-    print("No shit, Sherlock! {0}".format(append))
-elif l >= 3 and wtf == "sherlock" and target.lower()[0:8] == "sherlock" and lP > 0 and lA > 0:
-    print("{0} no shit, Sherlock! {1}".format(prepend, append))
-elif l >= 3 and wtf == "random" and rc == "sherlock" and target.lower()[0:8] == "sherlock" and lP == 0 and lA == 0:
-    print("No shit, Sherlock!")
-elif l >= 3 and wtf == "random" and rc == "sherlock" and target.lower()[0:8] == "sherlock" and lP > 0 and lA == 0:
-    print("{0} no shit, Sherlock!".format(prepend))
-elif l >= 3 and wtf == "random" and rc == "sherlock" and target.lower()[0:8] == "sherlock" and lP == 0 and lA > 0:
-    print("No shit, Sherlock! {0}".format(append))
-elif l >= 3 and wtf == "random" and rc == "sherlock" and target.lower()[0:8] == "sherlock" and lP > 0 and lA > 0:
-    print("{0} no shit, Sherlock! {1}".format(prepend, append))
-elif l == 2 and wtf == "unittest":
-    print(about)
-    print("")
-    for i in range(lc):
-        print("Command:  {0} -f {1} [-n {2} -e {3} -s {4}]".format(sa[0], df[i], "<target>", "<extra>", "<sender>"))
-        try:
-            exec("fucker.{0}()".format(df[i]))
-        except(AttributeError, NameError):
-            print("Fuck testing!")
+if __name__ == "__main__":
+    if l < 2:
+        print(about)
         print("")
-elif l >= 3 and wtf == "unittest":
-    if target.lower() == "atitle":
-        print("Command:  {0} -f about -n {1}".format(sa[0], target.lower))
-        exec("fucker.about()")
+        print("Number of defined options:  {0}".format(lc))
         print("")
-    elif target.lower() == "copyright":
-        print("Command:  {0} -f about -n {1}".format(sa[0], target.lower))
-        exec("fucker.about()")
+    elif lV > 0:
         print("")
-    elif target.lower() == "website":
-        print("Command:  {0} -f about -n {1}".format(sa[0], target.lower))
-        exec("fucker.about()")
+        print("{0}  {1}".format(__title__, __version__))
+        print(__copyright__)
         print("")
-    elif target.lower() == "adversary":
-        print("Command:  {0} -f about -n {1}".format(sa[0], target.lower))
-        exec("fucker.about()")
+        print("Bitcoin:  {0}".format(__bitcoin__))
         print("")
-    elif target.lower() == "domain":
-        print("Command:  {0} -f about -n {1}".format(sa[0], target.lower))
-        exec("fucker.about()")
+    elif l == 2 and wtf == "list_options":
         print("")
-    elif target.lower() == "donations":
-        print("Command:  {0} -f about -n {1}".format(sa[0], target.lower))
-        exec("fucker.about()")
+        print("{0}  {1}".format(__title__, __version__))
+        print(__copyright__)
         print("")
-    elif target.lower() == "bitcoin":
-        print("Command:  {0} -f about -n {1}".format(sa[0], target.lower))
-        exec("fucker.about()")
+        print("Number of defined options:  {0}".format(lc))
         print("")
-    elif target.lower() == "author":
-        print("Command:  {0} -f about -n {1}".format(sa[0], target.lower))
-        exec("fucker.about()")
+        print(textwrap.fill("List of defined options:  " + ", ".join(df), 72))
         print("")
-    elif target.lower() == "contact":
-        print("Command:  {0} -f about -n {1}".format(sa[0], target.lower))
-        exec("fucker.about()")
+        print("Bitcoin:  {0}".format(__bitcoin__))
         print("")
-    elif target.lower() == "email":
-        print("Command:  {0} -f about -n {1}".format(sa[0], target.lower))
-        exec("fucker.about()")
+    elif lO > 0:
         print("")
-    elif target.lower() == "encryption":
-        print("Command:  {0} -f about -n {1}".format(sa[0], target.lower))
-        exec("fucker.about()")
+        print("{0}  {1}".format(__title__, __version__))
+        print(__copyright__)
         print("")
-    elif target.lower() == "gpg key":
-        print("Command:  {0} -f about -n {1}".format(sa[0], target.lower))
-        exec("fucker.about()")
+        print("Number of defined options:  {0}".format(lc))
         print("")
-    elif target.lower() == "options":
-        print("Command:  {0} -f about -n {1}".format(sa[0], target.lower))
-        exec("fucker.about()")
+        print(textwrap.fill("List of defined options:  " + ", ".join(df), 72))
         print("")
-    elif target.lower() == "pirate":
-        print("Command:  {0} -f about -n {1}".format(sa[0], target.lower))
-        exec("fucker.about()")
+        print("Bitcoin:  {0}".format(__bitcoin__))
         print("")
-    elif target.lower() == "twitter":
-        print("Command:  {0} -f about -n {1}".format(sa[0], target.lower))
-        exec("fucker.about()")
-        print("")
-    elif target.lower() == "twython tools":
-        print("Command:  {0} -f about -n {1}".format(sa[0], target.lower))
-        exec("fucker.about()")
-        print("")
-    elif target.lower() == "version":
-        print("Command:  {0} -f about -n {1}".format(sa[0], target.lower))
-        exec("fucker.about()")
-        print("")
-    elif target.lower() == "carnal":
-        print("Command:  {0} -f acronym -n {1}".format(sa[0], target.lower))
-        exec("fucker.acronym()")
-        print("")
-    elif target.lower() == "bond":
-        print("Command:  {0} -f acronym -n {1}".format(sa[0], target.lower))
-        exec("fucker.acronym()")
-        print("")
-    elif target.lower() == "die":
-        print("Command:  {0} -f acronym -n {1}".format(sa[0], target.lower))
-        exec("fucker.acronym()")
-        print("")
-    elif target.lower() == "right":
-        print("Command:  {0} -f acronym -n {1}".format(sa[0], target.lower))
-        exec("fucker.acronym()")
-        print("")
-    elif target.lower() == "title":
-        print("Command:  {0} -f acronym -n {1}".format(sa[0], target.lower))
-        exec("fucker.acronym()")
-        print("")
-    elif target.lower() == "cunt":
-        print("Command:  {0} -f acronym -n {1}".format(sa[0], target.lower))
-        exec("fucker.acronym()")
-        print("")
-    elif target.lower() == "foaas":
-        print("Command:  {0} -f acronym -n {1}".format(sa[0], target.lower))
-        exec("fucker.acronym()")
-        print("")
-    elif target.lower() == "snag":
-        print("Command:  {0} -f acronym -n {1}".format(sa[0], target.lower))
-        exec("fucker.acronym()")
-        print("")
-    elif target.lower() == "snafu":
-        print("Command:  {0} -f acronym -n {1}".format(sa[0], target.lower))
-        exec("fucker.acronym()")
-        print("")
-    elif target.lower() == "fubar":
-        print("Command:  {0} -f acronym -n {1}".format(sa[0], target.lower))
-        exec("fucker.acronym()")
-        print("")
-    elif target.lower() == "lmfao":
-        print("Command:  {0} -f acronym -n {1}".format(sa[0], target.lower))
-        exec("fucker.acronym()")
-        print("")
-    elif target.lower() == "figjam":
-        print("Command:  {0} -f acronym -n {1}".format(sa[0], target.lower))
-        exec("fucker.acronym()")
-        print("")
-    else:
+    elif l >= 3 and wtf == "sherlock" and target.lower()[0:8] == "sherlock" and lP == 0 and lA == 0:
+        print("No shit, Sherlock!")
+    elif l >= 3 and wtf == "sherlock" and target.lower()[0:8] == "sherlock" and lP > 0 and lA == 0:
+        print("{0} no shit, Sherlock!".format(prepend))
+    elif l >= 3 and wtf == "sherlock" and target.lower()[0:8] == "sherlock" and lP == 0 and lA > 0:
+        print("No shit, Sherlock! {0}".format(append))
+    elif l >= 3 and wtf == "sherlock" and target.lower()[0:8] == "sherlock" and lP > 0 and lA > 0:
+        print("{0} no shit, Sherlock! {1}".format(prepend, append))
+    elif l >= 3 and wtf == "random" and rc == "sherlock" and target.lower()[0:8] == "sherlock" and lP == 0 and lA == 0:
+        print("No shit, Sherlock!")
+    elif l >= 3 and wtf == "random" and rc == "sherlock" and target.lower()[0:8] == "sherlock" and lP > 0 and lA == 0:
+        print("{0} no shit, Sherlock!".format(prepend))
+    elif l >= 3 and wtf == "random" and rc == "sherlock" and target.lower()[0:8] == "sherlock" and lP == 0 and lA > 0:
+        print("No shit, Sherlock! {0}".format(append))
+    elif l >= 3 and wtf == "random" and rc == "sherlock" and target.lower()[0:8] == "sherlock" and lP > 0 and lA > 0:
+        print("{0} no shit, Sherlock! {1}".format(prepend, append))
+    elif l == 2 and wtf == "unittest":
         print(about)
         print("")
         for i in range(lc):
-            if lt == 0 and le == 0 and ls == 0:
-                print("Command:  {0} -f {1}".format(sa[0], df[i]))
-                try:
-                    exec("fucker.{0}()".format(df[i]))
-                except(AttributeError, NameError):
-                    print("Fuck testing!")
-                print("")
-            elif lt > 0 and le == 0 and ls == 0:
-                print("Command:  {0} -f {1} -n \"{2}\"".format(sa[0], df[i], target))
-                try:
-                    exec("fucker.{0}()".format(df[i]))
-                except(AttributeError, NameError):
-                    print("Fuck testing!")
-                print("")
-            elif lt > 0 and le > 0 and ls == 0:
-                print("Command:  {0} -f {1} -n \"{2}\" -e \"{3}\"".format(sa[0], df[i], target, extra))
-                try:
-                    exec("fucker.{0}()".format(df[i]))
-                except(AttributeError, NameError):
-                    print("Fuck testing!")
-                print("")
-            elif lt > 0 and le == 0 and ls > 0:
-                print("Command:  {0} -f {1} -n \"{2}\" -s \"{3}\"".format(sa[0], df[i], target, sender))
-                try:
-                    exec("fucker.{0}()".format(df[i]))
-                except(AttributeError, NameError):
-                    print("Fuck testing!")
-                print("")
-            elif lt > 0 and le > 0 and ls > 0:
-                print("Command:  {0} -f {1} -n \"{2}\" -e \"{3}\" -s \"{4}\"".format(sa[0], df[i], target, extra, sender))
-                try:
-                    exec("fucker.{0}()".format(df[i]))
-                except(AttributeError, NameError):
-                    print("Fuck testing!")
-                print("")
-elif l >= 2 and wtf == "random":
-    if lP == 0 and lA == 0:
-        print("{0}".format(getattr(fucker, rc)()))
-    elif lP > 0 and lA == 0:
-        print("{0} {1}".format(prepend, getattr(fucker, rc)()))
-    elif lP == 0 and lA > 0:
-        print("{0} {1}".format(getattr(fucker, rc)(), append))
-    elif lP > 0 and lA > 0:
-        print("{0} {1} {2}".format(prepend, getattr(fucker, rc)(), append))
-    else:
-        print("Fuck randomness!")
-elif la == 3:
-    if args.fuck is not None and args.name is None:
-        if lP == 0 and lA == 0:
-            if wtf in dir(fucker):
-                print("{0}".format(getattr(fucker, wtf)()))
-            else:
-                print("Fuck {0}!".format(wtf))
-        elif lP > 0 and lA == 0:
-            if wtf in dir(fucker):
-                print("{0} {1}".format(prepend, getattr(fucker, wtf)()))
-            else:
-                print("{0} Fuck {1}!".format(prepend, wtf))
-        elif lP == 0 and lA > 0:
-            if wtf in dir(fucker):
-                print("{0} {1}".format(getattr(fucker, wtf)(), append))
-            else:
-                print("Fuck {0}! {1}".format(wtf, append))
-        elif lP > 0 and lA > 0:
-            if wtf in dir(fucker):
-                print("{0} {1} {2}".format(prepend, getattr(fucker, wtf)(), append))
-            else:
-                print("{0} Fuck {1}! {2}".format(prepend, wtf, append))
+            print("Command:  {0} -f {1} [-n {2} -e {3} -s {4}]".format(sa[0], df[i], "<target>", "<extra>", "<sender>"))
+            try:
+                exec("fucker.{0}()".format(df[i]))
+            except(AttributeError, NameError):
+                print("Fuck testing!")
+            print("")
+    elif l >= 3 and wtf == "unittest":
+        if target.lower() == "atitle":
+            print("Command:  {0} -f about -n {1}".format(sa[0], target.lower))
+            exec("fucker.about()")
+            print("")
+        elif target.lower() == "copyright":
+            print("Command:  {0} -f about -n {1}".format(sa[0], target.lower))
+            exec("fucker.about()")
+            print("")
+        elif target.lower() == "website":
+            print("Command:  {0} -f about -n {1}".format(sa[0], target.lower))
+            exec("fucker.about()")
+            print("")
+        elif target.lower() == "adversary":
+            print("Command:  {0} -f about -n {1}".format(sa[0], target.lower))
+            exec("fucker.about()")
+            print("")
+        elif target.lower() == "domain":
+            print("Command:  {0} -f about -n {1}".format(sa[0], target.lower))
+            exec("fucker.about()")
+            print("")
+        elif target.lower() == "donations":
+            print("Command:  {0} -f about -n {1}".format(sa[0], target.lower))
+            exec("fucker.about()")
+            print("")
+        elif target.lower() == "bitcoin":
+            print("Command:  {0} -f about -n {1}".format(sa[0], target.lower))
+            exec("fucker.about()")
+            print("")
+        elif target.lower() == "author":
+            print("Command:  {0} -f about -n {1}".format(sa[0], target.lower))
+            exec("fucker.about()")
+            print("")
+        elif target.lower() == "contact":
+            print("Command:  {0} -f about -n {1}".format(sa[0], target.lower))
+            exec("fucker.about()")
+            print("")
+        elif target.lower() == "email":
+            print("Command:  {0} -f about -n {1}".format(sa[0], target.lower))
+            exec("fucker.about()")
+            print("")
+        elif target.lower() == "encryption":
+            print("Command:  {0} -f about -n {1}".format(sa[0], target.lower))
+            exec("fucker.about()")
+            print("")
+        elif target.lower() == "gpg key":
+            print("Command:  {0} -f about -n {1}".format(sa[0], target.lower))
+            exec("fucker.about()")
+            print("")
+        elif target.lower() == "options":
+            print("Command:  {0} -f about -n {1}".format(sa[0], target.lower))
+            exec("fucker.about()")
+            print("")
+        elif target.lower() == "pirate":
+            print("Command:  {0} -f about -n {1}".format(sa[0], target.lower))
+            exec("fucker.about()")
+            print("")
+        elif target.lower() == "twitter":
+            print("Command:  {0} -f about -n {1}".format(sa[0], target.lower))
+            exec("fucker.about()")
+            print("")
+        elif target.lower() == "twython tools":
+            print("Command:  {0} -f about -n {1}".format(sa[0], target.lower))
+            exec("fucker.about()")
+            print("")
+        elif target.lower() == "version":
+            print("Command:  {0} -f about -n {1}".format(sa[0], target.lower))
+            exec("fucker.about()")
+            print("")
+        elif target.lower() == "carnal":
+            print("Command:  {0} -f acronym -n {1}".format(sa[0], target.lower))
+            exec("fucker.acronym()")
+            print("")
+        elif target.lower() == "bond":
+            print("Command:  {0} -f acronym -n {1}".format(sa[0], target.lower))
+            exec("fucker.acronym()")
+            print("")
+        elif target.lower() == "die":
+            print("Command:  {0} -f acronym -n {1}".format(sa[0], target.lower))
+            exec("fucker.acronym()")
+            print("")
+        elif target.lower() == "right":
+            print("Command:  {0} -f acronym -n {1}".format(sa[0], target.lower))
+            exec("fucker.acronym()")
+            print("")
+        elif target.lower() == "title":
+            print("Command:  {0} -f acronym -n {1}".format(sa[0], target.lower))
+            exec("fucker.acronym()")
+            print("")
+        elif target.lower() == "cunt":
+            print("Command:  {0} -f acronym -n {1}".format(sa[0], target.lower))
+            exec("fucker.acronym()")
+            print("")
+        elif target.lower() == "foaas":
+            print("Command:  {0} -f acronym -n {1}".format(sa[0], target.lower))
+            exec("fucker.acronym()")
+            print("")
+        elif target.lower() == "snag":
+            print("Command:  {0} -f acronym -n {1}".format(sa[0], target.lower))
+            exec("fucker.acronym()")
+            print("")
+        elif target.lower() == "snafu":
+            print("Command:  {0} -f acronym -n {1}".format(sa[0], target.lower))
+            exec("fucker.acronym()")
+            print("")
+        elif target.lower() == "fubar":
+            print("Command:  {0} -f acronym -n {1}".format(sa[0], target.lower))
+            exec("fucker.acronym()")
+            print("")
+        elif target.lower() == "lmfao":
+            print("Command:  {0} -f acronym -n {1}".format(sa[0], target.lower))
+            exec("fucker.acronym()")
+            print("")
+        elif target.lower() == "figjam":
+            print("Command:  {0} -f acronym -n {1}".format(sa[0], target.lower))
+            exec("fucker.acronym()")
+            print("")
         else:
-            if wtf in dir(fucker):
-                print("{0}".format(getattr(fucker, wtf)()))
-            else:
-                print("Fuck {0}!".format(wtf))
-    elif args.fuck is None and args.name is not None:
+            print(about)
+            print("")
+            for i in range(lc):
+                if lt == 0 and le == 0 and ls == 0:
+                    print("Command:  {0} -f {1}".format(sa[0], df[i]))
+                    try:
+                        exec("fucker.{0}()".format(df[i]))
+                    except(AttributeError, NameError):
+                        print("Fuck testing!")
+                    print("")
+                elif lt > 0 and le == 0 and ls == 0:
+                    print("Command:  {0} -f {1} -n \"{2}\"".format(sa[0], df[i], target))
+                    try:
+                        exec("fucker.{0}()".format(df[i]))
+                    except(AttributeError, NameError):
+                        print("Fuck testing!")
+                    print("")
+                elif lt > 0 and le > 0 and ls == 0:
+                    print("Command:  {0} -f {1} -n \"{2}\" -e \"{3}\"".format(sa[0], df[i], target, extra))
+                    try:
+                        exec("fucker.{0}()".format(df[i]))
+                    except(AttributeError, NameError):
+                        print("Fuck testing!")
+                    print("")
+                elif lt > 0 and le == 0 and ls > 0:
+                    print("Command:  {0} -f {1} -n \"{2}\" -s \"{3}\"".format(sa[0], df[i], target, sender))
+                    try:
+                        exec("fucker.{0}()".format(df[i]))
+                    except(AttributeError, NameError):
+                        print("Fuck testing!")
+                    print("")
+                elif lt > 0 and le > 0 and ls > 0:
+                    print("Command:  {0} -f {1} -n \"{2}\" -e \"{3}\" -s \"{4}\"".format(sa[0], df[i], target, extra, sender))
+                    try:
+                        exec("fucker.{0}()".format(df[i]))
+                    except(AttributeError, NameError):
+                        print("Fuck testing!")
+                    print("")
+    elif l >= 2 and wtf == "random":
         if lP == 0 and lA == 0:
-            if target in dir(fucker):
-                print("{0}".format(getattr(fucker, target)()))
-            else:
-                print("Fuck {0}!".format(target))
+            print("{0}".format(getattr(fucker, rc)()))
         elif lP > 0 and lA == 0:
-            if target in dir(fucker):
-                print("{0} {1}".format(prepend, getattr(fucker, target)()))
-            else:
-                print("{0} Fuck {1}!".format(prepend, target))
+            print("{0} {1}".format(prepend, getattr(fucker, rc)()))
         elif lP == 0 and lA > 0:
-            if target in dir(fucker):
-                print("{0} {1}".format(getattr(fucker, target)(), append))
-            else:
-                print("Fuck {0}! {1}".format(target, append))
+            print("{0} {1}".format(getattr(fucker, rc)(), append))
         elif lP > 0 and lA > 0:
-            if target in dir(fucker):
-                print("{0} {1} {2}".format(prepend, getattr(fucker, target)(), append))
-            else:
-                print("{0} Fuck {1}! {2}".format(prepend, target, append))
+            print("{0} {1} {2}".format(prepend, getattr(fucker, rc)(), append))
         else:
-            if target in dir(fucker):
-                print("{0}".format(getattr(fucker, target)()))
+            print("Fuck randomness!")
+    elif la == 3:
+        if args.fuck is not None and args.name is None:
+            if lP == 0 and lA == 0:
+                if wtf in dir(fucker):
+                    print("{0}".format(getattr(fucker, wtf)()))
+                else:
+                    print("Fuck {0}!".format(wtf))
+            elif lP > 0 and lA == 0:
+                if wtf in dir(fucker):
+                    print("{0} {1}".format(prepend, getattr(fucker, wtf)()))
+                else:
+                    print("{0} Fuck {1}!".format(prepend, wtf))
+            elif lP == 0 and lA > 0:
+                if wtf in dir(fucker):
+                    print("{0} {1}".format(getattr(fucker, wtf)(), append))
+                else:
+                    print("Fuck {0}! {1}".format(wtf, append))
+            elif lP > 0 and lA > 0:
+                if wtf in dir(fucker):
+                    print("{0} {1} {2}".format(prepend, getattr(fucker, wtf)(), append))
+                else:
+                    print("{0} Fuck {1}! {2}".format(prepend, wtf, append))
             else:
-                print("Fuck {0}!".format(target))
-elif la == 4:
-    if args.fuck is not None and args.name is None:
-        if lP == 0 and lA == 0:
-            if wtf in dir(fucker):
-                print("{0}".format(getattr(fucker, wtf)()))
+                if wtf in dir(fucker):
+                    print("{0}".format(getattr(fucker, wtf)()))
+                else:
+                    print("Fuck {0}!".format(wtf))
+        elif args.fuck is None and args.name is not None:
+            if lP == 0 and lA == 0:
+                if target in dir(fucker):
+                    print("{0}".format(getattr(fucker, target)()))
+                else:
+                    print("Fuck {0}!".format(target))
+            elif lP > 0 and lA == 0:
+                if target in dir(fucker):
+                    print("{0} {1}".format(prepend, getattr(fucker, target)()))
+                else:
+                    print("{0} Fuck {1}!".format(prepend, target))
+            elif lP == 0 and lA > 0:
+                if target in dir(fucker):
+                    print("{0} {1}".format(getattr(fucker, target)(), append))
+                else:
+                    print("Fuck {0}! {1}".format(target, append))
+            elif lP > 0 and lA > 0:
+                if target in dir(fucker):
+                    print("{0} {1} {2}".format(prepend, getattr(fucker, target)(), append))
+                else:
+                    print("{0} Fuck {1}! {2}".format(prepend, target, append))
             else:
-                print("Fuck {0}!".format(wtf))
-        elif lP > 0 and lA == 0:
-            if wtf in dir(fucker):
-                print("{0} {1}".format(prepend, getattr(fucker, wtf)()))
+                if target in dir(fucker):
+                    print("{0}".format(getattr(fucker, target)()))
+                else:
+                    print("Fuck {0}!".format(target))
+    elif la == 4:
+        if args.fuck is not None and args.name is None:
+            if lP == 0 and lA == 0:
+                if wtf in dir(fucker):
+                    print("{0}".format(getattr(fucker, wtf)()))
+                else:
+                    print("Fuck {0}!".format(wtf))
+            elif lP > 0 and lA == 0:
+                if wtf in dir(fucker):
+                    print("{0} {1}".format(prepend, getattr(fucker, wtf)()))
+                else:
+                    print("{0} Fuck {1}!".format(prepend, wtf))
+            elif lP == 0 and lA > 0:
+                if wtf in dir(fucker):
+                    print("{0} {1}".format(getattr(fucker, wtf)(), append))
+                else:
+                    print("Fuck {0}! {1}".format(wtf, append))
+            elif lP > 0 and lA > 0:
+                if wtf in dir(fucker):
+                    print("{0} {1} {2}".format(prepend, getattr(fucker, wtf)(), append))
+                else:
+                    print("{0} Fuck {1}! {2}".format(prepend, wtf, append))
             else:
-                print("{0} Fuck {1}!".format(prepend, wtf))
-        elif lP == 0 and lA > 0:
-            if wtf in dir(fucker):
-                print("{0} {1}".format(getattr(fucker, wtf)(), append))
-            else:
-                print("Fuck {0}! {1}".format(wtf, append))
-        elif lP > 0 and lA > 0:
-            if wtf in dir(fucker):
-                print("{0} {1} {2}".format(prepend, getattr(fucker, wtf)(), append))
-            else:
-                print("{0} Fuck {1}! {2}".format(prepend, wtf, append))
-        else:
-            w = []
-            for i in range(la - 2):
-                w.append(str(sys.argv[i + 2]))
-            wtf = " ".join(w)
-            if wtf in dir(fucker):
-                print("{0}".format(getattr(fucker, wtf)()))
-            else:
-                print("Fuck {0}!".format(wtf))
-    elif args.fuck is None and args.name is not None:
-        if lP == 0 and lA == 0:
-            if target in dir(fucker):
-                print("{0}".format(getattr(fucker, target)()))
-            else:
-                print("Fuck {0}!".format(target))
-        elif lP > 0 and lA == 0:
-            if target in dir(fucker):
-                print("{0} {1}".format(prepend, getattr(fucker, target)()))
-            else:
-                print("{0} Fuck {1}!".format(prepend, target))
-        elif lP == 0 and lA > 0:
-            if target in dir(fucker):
-                print("{0} {1}".format(getattr(fucker, target)(), append))
-            else:
-                print("Fuck {0}! {1}".format(target, append))
-        elif lP > 0 and lA > 0:
-            if target in dir(fucker):
-                print("{0} {1} {2}".format(prepend, getattr(fucker, target)(), append))
-            else:
-                print("{0} Fuck {1}! {2}".format(prepend, target, append))
-        else:
-            t = []
-            for i in range(la - 2):
-                t.append(str(sys.argv[i + 2]))
-            target = " ".join(t)
-            if target in dir(fucker):
-                print("{0}".format(getattr(fucker, target)()))
-            else:
-                print("Fuck {0}!".format(target))
-
-    elif args.fuck is not None and args.name is not None:
-        if lP == 0 and lA == 0:
-            if wtf in dir(fucker):
-                print("{0}".format(getattr(fucker, wtf)()))
-            else:
-                print("Fuck {0}!".format(wtf))
-        elif lP > 0 and lA == 0:
-            if wtf in dir(fucker):
-                print("{0} {1}".format(prepend, getattr(fucker, wtf)()))
-            else:
-                print("{0} Fuck {1}!".format(prepend, wtf))
-        elif lP == 0 and lA > 0:
-            if wtf in dir(fucker):
-                print("{0} {1}".format(getattr(fucker, wtf)(), append))
-            else:
-                print("Fuck {0}! {1}".format(wtf, append))
-        elif lP > 0 and lA > 0:
-            if wtf in dir(fucker):
-                print("{0} {1} {2}".format(prepend, getattr(fucker, wtf)(), append))
-            else:
-                print("{0} Fuck {1}! {2}".format(prepend, wtf, append))
-        else:
-            if wtf in dir(fucker):
-                print("{0}".format(getattr(fucker, wtf)()))
-            else:
-                print("Fuck {0}!".format(wtf))
-    else:
-        pass
-        # print("Fuck Perl!")
-elif la >= 5:
-    if args.fuck is not None and args.name is None:
-        if lP == 0 and lA == 0:
-            if wtf in dir(fucker):
-                print("{0}".format(getattr(fucker, wtf)()))
-            else:
-                print("Fuck {0}!".format(wtf))
-        elif lP > 0 and lA == 0:
-            if wtf in dir(fucker):
-                print("{0} {1}".format(prepend, getattr(fucker, wtf)()))
-            else:
-                print("{0} Fuck {1}!".format(prepend, wtf))
-        elif lP == 0 and lA > 0:
-            if wtf in dir(fucker):
-                print("{0} {1}".format(getattr(fucker, wtf)(), append))
-            else:
-                print("Fuck {0}! {1}".format(wtf, append))
-        elif lP > 0 and lA > 0:
-            if wtf in dir(fucker):
-                print("{0} {1} {2}".format(prepend, getattr(fucker, wtf)(), append))
-            else:
-                print("{0} Fuck {1}! {2}".format(prepend, wtf, append))
-        else:
-            w = []
-            for i in range(la - 2):
-                w.append(str(sys.argv[i + 2]))
-            wtf = " ".join(w)
-            if wtf in dir(fucker):
-                print("{0}".format(getattr(fucker, wtf)()))
-            else:
-                print("Fuck {0}!".format(wtf))
-    elif args.fuck is None and args.name is not None:
-        if lP == 0 and lA == 0:
-            if target in dir(fucker):
-                print("{0}".format(getattr(fucker, target)()))
-            else:
-                print("Fuck {0}!".format(target))
-        elif lP > 0 and lA == 0:
-            if target in dir(fucker):
-                print("{0} {1}".format(prepend, getattr(fucker, target)()))
-            else:
-                print("{0} Fuck {1}!".format(prepend, target))
-        elif lP == 0 and lA > 0:
-            if target in dir(fucker):
-                print("{0} {1}".format(getattr(fucker, target)(), append))
-            else:
-                print("Fuck {0}! {1}".format(target, append))
-        elif lP > 0 and lA > 0:
-            if target in dir(fucker):
-                print("{0} {1} {2}".format(prepend, getattr(fucker, target)(), append))
-            else:
-                print("{0} Fuck {1}! {2}".format(prepend, target, append))
-        else:
-            t = []
-            for i in range(la - 2):
-                t.append(str(sys.argv[i + 2]))
-            target = " ".join(t)
-            if target in dir(fucker):
-                print("{0}".format(getattr(fucker, target)()))
-            else:
-                print("Fuck {0}!".format(target))
-    elif args.fuck is not None and args.name is not None:
-        if lP == 0 and lA == 0:
-            if wtf in dir(fucker):
-                print("{0}".format(getattr(fucker, wtf)()))
-            else:
-                print("Fuck {0}!".format(wtf))
-        elif lP > 0 and lA == 0:
-            if wtf in dir(fucker):
-                print("{0} {1}".format(prepend, getattr(fucker, wtf)()))
-            else:
-                print("{0} Fuck {1}!".format(prepend, wtf))
-        elif lP == 0 and lA > 0:
-            if wtf in dir(fucker):
-                print("{0} {1}".format(getattr(fucker, wtf)(), append))
-            else:
-                print("Fuck {0}! {1}".format(wtf, append))
-        elif lP > 0 and lA > 0:
-            if wtf in dir(fucker):
-                print("{0} {1} {2}".format(prepend, getattr(fucker, wtf)(), append))
-            else:
-                print("{0} Fuck {1}! {2}".format(prepend, wtf, append))
-        else:
-            w = []
-            for i in range(la - 2):
-                if str(sys.argv[i]).startswith("-") is False:
+                w = []
+                for i in range(la - 2):
                     w.append(str(sys.argv[i + 2]))
-            wtfx = " ".join(w)
-            if wtfx in dir(fucker):
-                print("{0}".format(getattr(fucker, wtf)()))
+                wtf = " ".join(w)
+                if wtf in dir(fucker):
+                    print("{0}".format(getattr(fucker, wtf)()))
+                else:
+                    print("Fuck {0}!".format(wtf))
+        elif args.fuck is None and args.name is not None:
+            if lP == 0 and lA == 0:
+                if target in dir(fucker):
+                    print("{0}".format(getattr(fucker, target)()))
+                else:
+                    print("Fuck {0}!".format(target))
+            elif lP > 0 and lA == 0:
+                if target in dir(fucker):
+                    print("{0} {1}".format(prepend, getattr(fucker, target)()))
+                else:
+                    print("{0} Fuck {1}!".format(prepend, target))
+            elif lP == 0 and lA > 0:
+                if target in dir(fucker):
+                    print("{0} {1}".format(getattr(fucker, target)(), append))
+                else:
+                    print("Fuck {0}! {1}".format(target, append))
+            elif lP > 0 and lA > 0:
+                if target in dir(fucker):
+                    print("{0} {1} {2}".format(prepend, getattr(fucker, target)(), append))
+                else:
+                    print("{0} Fuck {1}! {2}".format(prepend, target, append))
             else:
-                print("Fuck {0}!".format(wtf))
+                t = []
+                for i in range(la - 2):
+                    t.append(str(sys.argv[i + 2]))
+                target = " ".join(t)
+                if target in dir(fucker):
+                    print("{0}".format(getattr(fucker, target)()))
+                else:
+                    print("Fuck {0}!".format(target))
+
+        elif args.fuck is not None and args.name is not None:
+            if lP == 0 and lA == 0:
+                if wtf in dir(fucker):
+                    print("{0}".format(getattr(fucker, wtf)()))
+                else:
+                    print("Fuck {0}!".format(wtf))
+            elif lP > 0 and lA == 0:
+                if wtf in dir(fucker):
+                    print("{0} {1}".format(prepend, getattr(fucker, wtf)()))
+                else:
+                    print("{0} Fuck {1}!".format(prepend, wtf))
+            elif lP == 0 and lA > 0:
+                if wtf in dir(fucker):
+                    print("{0} {1}".format(getattr(fucker, wtf)(), append))
+                else:
+                    print("Fuck {0}! {1}".format(wtf, append))
+            elif lP > 0 and lA > 0:
+                if wtf in dir(fucker):
+                    print("{0} {1} {2}".format(prepend, getattr(fucker, wtf)(), append))
+                else:
+                    print("{0} Fuck {1}! {2}".format(prepend, wtf, append))
+            else:
+                if wtf in dir(fucker):
+                    print("{0}".format(getattr(fucker, wtf)()))
+                else:
+                    print("Fuck {0}!".format(wtf))
+        else:
+            pass
+            # print("Fuck Perl!")
+    elif la >= 5:
+        if args.fuck is not None and args.name is None:
+            if lP == 0 and lA == 0:
+                if wtf in dir(fucker):
+                    print("{0}".format(getattr(fucker, wtf)()))
+                else:
+                    print("Fuck {0}!".format(wtf))
+            elif lP > 0 and lA == 0:
+                if wtf in dir(fucker):
+                    print("{0} {1}".format(prepend, getattr(fucker, wtf)()))
+                else:
+                    print("{0} Fuck {1}!".format(prepend, wtf))
+            elif lP == 0 and lA > 0:
+                if wtf in dir(fucker):
+                    print("{0} {1}".format(getattr(fucker, wtf)(), append))
+                else:
+                    print("Fuck {0}! {1}".format(wtf, append))
+            elif lP > 0 and lA > 0:
+                if wtf in dir(fucker):
+                    print("{0} {1} {2}".format(prepend, getattr(fucker, wtf)(), append))
+                else:
+                    print("{0} Fuck {1}! {2}".format(prepend, wtf, append))
+            else:
+                w = []
+                for i in range(la - 2):
+                    w.append(str(sys.argv[i + 2]))
+                wtf = " ".join(w)
+                if wtf in dir(fucker):
+                    print("{0}".format(getattr(fucker, wtf)()))
+                else:
+                    print("Fuck {0}!".format(wtf))
+        elif args.fuck is None and args.name is not None:
+            if lP == 0 and lA == 0:
+                if target in dir(fucker):
+                    print("{0}".format(getattr(fucker, target)()))
+                else:
+                    print("Fuck {0}!".format(target))
+            elif lP > 0 and lA == 0:
+                if target in dir(fucker):
+                    print("{0} {1}".format(prepend, getattr(fucker, target)()))
+                else:
+                    print("{0} Fuck {1}!".format(prepend, target))
+            elif lP == 0 and lA > 0:
+                if target in dir(fucker):
+                    print("{0} {1}".format(getattr(fucker, target)(), append))
+                else:
+                    print("Fuck {0}! {1}".format(target, append))
+            elif lP > 0 and lA > 0:
+                if target in dir(fucker):
+                    print("{0} {1} {2}".format(prepend, getattr(fucker, target)(), append))
+                else:
+                    print("{0} Fuck {1}! {2}".format(prepend, target, append))
+            else:
+                t = []
+                for i in range(la - 2):
+                    t.append(str(sys.argv[i + 2]))
+                target = " ".join(t)
+                if target in dir(fucker):
+                    print("{0}".format(getattr(fucker, target)()))
+                else:
+                    print("Fuck {0}!".format(target))
+        elif args.fuck is not None and args.name is not None:
+            if lP == 0 and lA == 0:
+                if wtf in dir(fucker):
+                    print("{0}".format(getattr(fucker, wtf)()))
+                else:
+                    print("Fuck {0}!".format(wtf))
+            elif lP > 0 and lA == 0:
+                if wtf in dir(fucker):
+                    print("{0} {1}".format(prepend, getattr(fucker, wtf)()))
+                else:
+                    print("{0} Fuck {1}!".format(prepend, wtf))
+            elif lP == 0 and lA > 0:
+                if wtf in dir(fucker):
+                    print("{0} {1}".format(getattr(fucker, wtf)(), append))
+                else:
+                    print("Fuck {0}! {1}".format(wtf, append))
+            elif lP > 0 and lA > 0:
+                if wtf in dir(fucker):
+                    print("{0} {1} {2}".format(prepend, getattr(fucker, wtf)(), append))
+                else:
+                    print("{0} Fuck {1}! {2}".format(prepend, wtf, append))
+            else:
+                w = []
+                for i in range(la - 2):
+                    if str(sys.argv[i]).startswith("-") is False:
+                        w.append(str(sys.argv[i + 2]))
+                    wtfx = " ".join(w)
+                if wtfx in dir(fucker):
+                    print("{0}".format(getattr(fucker, wtf)()))
+                else:
+                    print("Fuck {0}!".format(wtf))
