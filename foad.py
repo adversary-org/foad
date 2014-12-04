@@ -607,8 +607,12 @@ class fuck:
         return msg
 
     def cuntz(self):
-        if lt == 0:
+        if lt == 0 and le == 0:
             msg = "Fuck all those complete and utter fucking cocksuckers and cunts!"
+        elif lt == 0 and le > 0:
+          msg = "Fuck them, they're all complete and utter fucking cocksuckers and cunts!".format(target)  
+        elif lt > 0 and le == 0:
+            msg = "Fuck {0}, they're all complete and utter fucking cunts!".format(target)
         else:
             msg = "Fuck {0}, they're all complete and utter fucking cocksuckers and cunts!".format(target)
         return msg
