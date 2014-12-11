@@ -9,7 +9,7 @@
 #
 # https://github.com/adversary-org/foad
 #
-# Version:  0.7.5.0
+# Version:  0.7.5.2
 #
 # BTC:  1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz
 # License:  GNU Public License version 3 (GPLv3)
@@ -121,7 +121,7 @@ __title__ = "FOAD: Fucked Off Adversarial Degenerates (Fuck Off And Die)"
 __stitle__ = "FOAD"
 __license1__ = "GNU General Public License version 3 (GPLv3)"
 __license2__ = "Do What The Fuck You Want To, But It's Not My Fault Public License version 1 (WTFNMFPLv1)"
-__version__ = "0.7.5.0"
+__version__ = "0.7.5.2"
 __bitcoin__ = "1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz"
 __openpgp__ = "0x321E4E2373590E5D"
 
@@ -405,6 +405,16 @@ class fuck:
             msg = "Of all my relations I like sex the best and {0} the least.".format(target)
         return msg
 
+    def amber2(self):
+        # The original quote: "I walked among Shadows, and found a race of furry creatures, dark and clawed and fanged, reasonably manlike, and about as intelligent as a freshman in the high school of your choice—sorry, kids, but what I mean is they were loyal, devoted, honest, and too easily screwed by bastards like me and my brother. I felt like the dee-jay of your choice."
+        if lt == 0 and ls == 0:
+            msg = "You're about as intelligent as a freshman in the high school of your choice; sorry, but what I mean is you're loyal, devoted, honest, and too easily screwed over by bastards."
+        elif lt > 0 and ls == 0:  # include is/are in target/name.
+            msg = "{0} about as intelligent as a freshman in the high school of your choice; loyal, devoted, honest, and too easily screwed over by bastards.".format(target)
+        elif lt > 0 and ls > 0:  # include is/are in target/name.
+            msg = "{0} about as intelligent as a freshman in the high school of your choice; loyal, devoted, honest, and too easily screwed over by bastards like {1}.".format(target, sender)
+        return msg
+
     def apple(self):
         if lt == 0 and ls == 0:
             msg = "No you fucking can't do it your way!  We don't give a fuck if it's better, you do it our fucking way or you fuck off!"
@@ -597,8 +607,12 @@ class fuck:
         return msg
 
     def cuntz(self):
-        if lt == 0:
+        if lt == 0 and le == 0:
             msg = "Fuck all those complete and utter fucking cocksuckers and cunts!"
+        elif lt == 0 and le > 0:
+          msg = "Fuck them, they're all complete and utter fucking cocksuckers and cunts!".format(target)  
+        elif lt > 0 and le == 0:
+            msg = "Fuck {0}, they're all complete and utter fucking cunts!".format(target)
         else:
             msg = "Fuck {0}, they're all complete and utter fucking cocksuckers and cunts!".format(target)
         return msg
@@ -1339,8 +1353,14 @@ class fuck:
         return msg
 
     def outside(self):
-        if lt == 0:
+        if lt == 0 and lR == 0 and le == 0:
             msg = "Why don't you go outside and play hide-and-go-fuck-yourself?"
+        elif lt > 0 and lR == 0 and le == 0:
+            msg = "{0}, why don't you go outside and play hide-and-go-fuck-yourself?".format(target)
+        elif lt > 0 and lR > 0 and le == 0:
+            msg = "{0}, tell {1} that he can go outside and play hide-and-go-fuck-himself.".format(relay, target)
+        elif lt > 0 and lR > 0 and le > 0:
+            msg = "{0}, tell {1} that she can go outside and play hide-and-go-fuck-herself.".format(relay, target)
         else:
             msg = "{0}, why don't you go outside and play hide-and-go-fuck-yourself?".format(target)
         return msg
@@ -1348,6 +1368,10 @@ class fuck:
     def outsides(self):
         if lt == 0:
             msg = "Why don't you go outside and play hide-and-go-fuck-yourselves?"
+        elif lt == 0 and lR > 0:
+            msg = "{0}, tell them that they can go outside and play hide-and-go-fuck-themselves.".format(relay)
+        elif lt > 0 and lR > 0:
+            msg = "{0}, tell {1} that they can go outside and play hide-and-go-fuck-themselves.".format(relay, target)
         else:
             msg = "{0}, why don't you go outside and play hide-and-go-fuck-yourselves?".format(target)
         return msg
