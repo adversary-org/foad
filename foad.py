@@ -1947,14 +1947,14 @@ class fuck:
         if lt == 0:
             msg = "What the fuck would Jesus do?"
         else:
-            msg = "{0}, so what the fuck would Jesus do?".format(target)
+            msg = "What the fuck would Jesus do, {0}?".format(target)
         return msg
 
     def wtfwjdrtfm(self):
         if lt == 0:
             msg = "What the fuck would Jesus do?  Jesus would read the fucking manual!"
         else:
-            msg = "{0}, so what the fuck would Jesus do?  Jesus would read the fucking manual!".format(target)
+            msg = "So {0}, what the fuck would Jesus do?  Jesus would read the fucking manual!".format(target)
         return msg
 
     def you(self):
