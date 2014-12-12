@@ -1990,18 +1990,18 @@ class fuck:
         return msg
 
     def you(self):  # non-standard use of relay flag.
-        if lt == 0 and le == 0 and lR == 0:
+        if lt == 0 and le == 0 and ls == 0:
             msg = "Fuck you!"
-        elif lt > 0 and le == 0 and lR == 0:
+        elif lt > 0 and le == 0 and ls == 0:
             msg = "Fuck you {0}!".format(target)
-        elif lt == 0 and le > 0 and lR == 0:
+        elif lt == 0 and le > 0 and ls == 0:
             msg = "Fuck you and fuck {0}!".format(extra)
-        elif lt > 0 and le > 0 and lR == 0:
+        elif lt > 0 and le > 0 and ls == 0:
             msg = "Fuck you {0} and fuck {1}!".format(target, extra)
-        elif lt == 0 and le > 0 and lR > 0:
-            msg = "Fuck you, fuck your {0} and fuck {1}!".format(relay, extra)
-        elif lt > 0 and le > 0 and lR > 0:
-            msg = "Fuck you {0}, fuck your {1} and fuck {2}!".format(target, relay, extra)
+        elif lt == 0 and le > 0 and ls > 0:
+            msg = "Fuck you, fuck your {0} and fuck {1}!".format(sender, extra)
+        elif lt > 0 and le > 0 and ls > 0:
+            msg = "Fuck you {0}, fuck your {1} and fuck {2}!".format(sender, relay, extra)
         return msg
 
 fucked = fuck()
