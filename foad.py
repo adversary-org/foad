@@ -1885,6 +1885,13 @@ class fuck:
             msg = "{0}, why the fuck should I know?".format(target)
         return msg
 
+    def whynot(self):
+        if lt == 0:
+            msg = "Why the fuck not?!"
+        elif lt > 0:
+            msg = "Why the fuck not, {0}?!".format(target)
+        return msg
+
     def wit(self):
         if lt == 0:
             msg = "You fuckwit!"
