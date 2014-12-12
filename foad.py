@@ -478,9 +478,9 @@ class fuck:
 
     def because(self):
         if lt == 0:
-            msg = "Why?  Because fuck you, that's why."
+            msg = "Why?  Because fuck you, that's why!"
         elif lt > 0:
-            msg = "Why?  Because fuck you {0}, that's why.".format(target)
+            msg = "Why?  Because fuck you {0}, that's why!".format(target)
         return msg
 
     def bus(self):
