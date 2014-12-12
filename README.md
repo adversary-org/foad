@@ -23,12 +23,13 @@ bash$
 
 There are currently more than 200 options to use with the -f flag and
 the majority of those have two or more forms, one for naming a
-subject, a more general one and occasionally a sender or extra text
-appended.  As well as a couple of special options which are more
-informative than insulting.  The full list of options is visible on
-the command line by running "foad.py -f list_options" and the test
-script will generate most of the possible output.  All options and the
-generic catchall can now be used with --prepend and/or --append.
+subject, a more general one and occasionally a sender or extra text or
+other parameter included.  As well as a couple of special options
+which are more informative than insulting.  The full list of options
+is visible on the command line by running "foad.py -f list_options"
+and the test script will generate most of the possible output.  All
+options and the generic catchall can now be used with --prepend and/or
+--append.
 
 If you find this script of use or even just amusing, a small Bitcoin
 contribution to 1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz would be

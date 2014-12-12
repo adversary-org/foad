@@ -9,7 +9,7 @@
 #
 # https://github.com/adversary-org/foad
 #
-# Version:  0.7.5.2
+# Version:  0.7.5.3
 #
 # BTC:  1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz
 # License:  GNU Public License version 3 (GPLv3)
@@ -121,7 +121,7 @@ __title__ = "FOAD: Fucked Off Adversarial Degenerates (Fuck Off And Die)"
 __stitle__ = "FOAD"
 __license1__ = "GNU General Public License version 3 (GPLv3)"
 __license2__ = "Do What The Fuck You Want To, But It's Not My Fault Public License version 1 (WTFNMFPLv1)"
-__version__ = "0.7.5.2"
+__version__ = "0.7.5.3"
 __bitcoin__ = "1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz"
 __openpgp__ = "0x321E4E2373590E5D"
 
@@ -476,6 +476,20 @@ class fuck:
             msg = "{0}, {1} is a big bad motherfucker.".format(target, sender)
         return msg
 
+    def bus(self):
+        if lt == 0:
+            msg = "Christ on a bendy-bus, don't be such a fucking faff-arse."
+        elif lt > 0:
+            msg = "Christ on a bendy-bus, {0}, don't be such a fucking faff-arse.".format(target)
+        return msg
+
+    def bye(self):
+        if lt == 0:
+            msg = "Fuckity bye!"
+        elif lt > 0:
+            msg = "Fuckity bye {0}!".format(target)
+        return msg
+
     def caniuse(self):
         if lt == 0 and ls == 0 and le == 0:
             msg = "Can I Use Notes: This option requires the tool/object be specified with --extra and is a two-parter rolled into one command.  Currently requires --name, --extra and --sender."
@@ -637,6 +651,13 @@ class fuck:
             msg = "I didn't fucking do it!"
         else:
             msg = "{0}, I didn't fucking do it!".format(target)
+        return msg
+
+    def diabetes(self):
+        if lt == 0:
+            msg = "I'd love to stop and chat to you but I'd rather have type 2 diabetes."
+        elif lt > 0:
+            msg = "I'd love to stop and chat to you, {0}, but I'd rather have type 2 diabetes.".format(target)
         return msg
 
     def disbelief(self):
