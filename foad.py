@@ -1989,7 +1989,7 @@ class fuck:
             msg = "Go fuck yourself, you must, {0}.".format(target)
         return msg
 
-    def you(self):  # non-standard use of relay.
+    def you(self):  # non-standard use of relay flag.
         if lt == 0 and le == 0 and lR == 0:
             msg = "Fuck you!"
         elif lt > 0 and le == 0 and lR == 0:
