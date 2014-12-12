@@ -476,6 +476,13 @@ class fuck:
             msg = "{0}, {1} is a big bad motherfucker.".format(target, sender)
         return msg
 
+    def because(self):
+        if lt == 0:
+            msg = "Why?  Because fuck you, that's why."
+        elif lt > 0:
+            msg = "Why?  Because fuck you {0}, that's why.".format(target)
+        return msg
+
     def bus(self):
         if lt == 0:
             msg = "Christ on a bendy-bus, don't be such a fucking faff-arse."
