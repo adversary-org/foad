@@ -1978,6 +1978,17 @@ class fuck:
             msg = "So {0}, what the fuck would Jesus do?  Jesus would read the fucking manual!".format(target)
         return msg
 
+    def yoda(self):
+        if lt == 0 and le == 0:
+            msg = "Fuck off, you must."
+        elif lt > 0 and le == 0:
+            msg = "Fuck off, you must, {0}.".format(target)
+        elif lt == 0 and le > 0:
+            msg = "Go fuck yourself, you must."
+        elif lt > 0 and le > 0:
+            msg = "Go fuck yourself, you must, {0}.".format(target)
+        return msg
+
     def you(self):
         if lt == 0:
             msg = "Fuck you!"
