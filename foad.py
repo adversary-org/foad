@@ -1900,10 +1900,14 @@ class fuck:
         return msg
 
     def woftam(self):
-        if lt == 0:
+        if lt == 0 and le == 0:
             msg = "It's a waste of fucking time and money."
-        else:
+        elif lt > 0 and le == 0:
             msg = "{0}, it's a waste of fucking time and money.".format(target)
+        elif lt == 0 and le > 0:
+            msg = "{0} is a waste of fucking time and money.".format(extra)
+        elif lt > 0 and le > 0:
+            msg = "{0}, {1} is a waste of fucking time and money.".format(target, extra)
         return msg
 
     def wtaf(self):
