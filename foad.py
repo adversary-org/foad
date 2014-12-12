@@ -476,7 +476,7 @@ class fuck:
             msg = "{0}, {1} is a big bad motherfucker.".format(target, sender)
         return msg
 
-    def because(self):
+    def because(self):  # wbfu option uses full stops, otherwise the same.
         if lt == 0:
             msg = "Why?  Because fuck you, that's why!"
         elif lt > 0:
@@ -1794,7 +1794,7 @@ class fuck:
             msg = "{0}, that's a fucking waste of time!".format(target)
         return msg
 
-    def wbfu(self):
+    def wbfu(self):  # because uses exclamation marks, otherwise the same.
         if lt == 0:
             msg = "Why?  Because fuck you, that's why."
         else:
