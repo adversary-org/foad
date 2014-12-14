@@ -415,6 +415,17 @@ class fuck:
             msg = "{0} about as intelligent as a freshman in the high school of your choice; loyal, devoted, honest, and too easily screwed over by bastards like {1}.".format(target, sender)
         return msg
 
+    def amber3(self):
+        if lt == 0 and le == 0:
+            msg = "Talk is cheap, whiskey costs money."
+        elif lt > 0 and le == 0:
+            msg = "Talk is cheap, {0}, whiskey costs money.".format(target)
+        elif lt == 0 and le > 0:
+            msg = "Talk is fucking cheap, whiskey costs money."
+        elif lt > 0 and le > 0:
+            msg = "Talk is fucking cheap, {0}, whiskey costs money.".format(target)
+        return msg
+
     def apple(self):
         if lt == 0 and ls == 0:
             msg = "No you fucking can't do it your way!  We don't give a fuck if it's better, you do it our fucking way or you fuck off!"
