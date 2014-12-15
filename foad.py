@@ -2026,7 +2026,7 @@ class fuck:
         if lt == 0 and le == 0 and ls == 0 and lR == 0:
             msg = "Fuck you!"
         elif lt > 0 and le == 0 and ls == 0 and lR == 0:
-            msg = "Fuck you {0}!".format(target)
+            msg = "Fuck you, {0}!".format(target)
         elif lt == 0 and le > 0 and ls == 0 and lR == 0:
             msg = "Fuck you and fuck {0}!".format(extra)
         elif lt > 0 and le > 0 and ls == 0 and lR == 0:
