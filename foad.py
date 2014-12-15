@@ -890,6 +890,10 @@ class fuck:
         msg = "Fuckety, fuck, fuck, fuck!"
         return msg
 
+    def fuckity(self):
+        msg = "Fuckity, fuck, fuck, fuck!"
+        return msg
+
     def get(self):
         if lt == 0:
             msg = "Get fucked!"
