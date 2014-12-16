@@ -721,7 +721,7 @@ class fuck:
         if lt == 0:
             msg = "English motherfucker!  Do you speak it?!"
         else:
-            msg = "English motherfucker!  Do you speak it {0}?!".format(target)
+            msg = "English motherfucker!  Do you speak it, {0}?!".format(target)
         return msg
 
     def every1(self):
