@@ -204,7 +204,7 @@ parser = argparse.ArgumentParser(
 parser.add_argument("-f", "--fuck", help="One word, indicates type of fuck to give, run foad.py -f list_options to see possible flags.", action="store", required=False)
 parser.add_argument("-n", "--name", help="Name of target, more than one word must be in quotation marks.", action="store", required=False)
 parser.add_argument("-s", "--sender", help="Used to specify the sender, usually within the context of some particular phrase, more than one word must be in quotation marks.", action="store", required=False)
-parser.add_argument("-r", "--relay", help="Used to specify a third party to whom a message is to be delivered to by the target.", action="store", required=False)
+parser.add_argument("-r", "--relay", help="Used to specify a third party to whom a message is to be delivered to in order to pass message to the target.", action="store", required=False)
 parser.add_argument("-e", "--extra", help="Additional comment to insert into output, more than one word must be in quotation marks.  Used to enhance an existing response rather than append text (use -a/--append for that).", action="store", required=False)
 parser.add_argument("-a", "--append", help="Additional comment to append to output.  Now works with all options.", action="store", required=False)
 parser.add_argument("-p", "--prepend", help="Additional comment to prepend before the output.  Now works with all options.", action="store", required=False)
