@@ -2060,6 +2060,10 @@ for x in df:
     rf.append(x)
 rf.remove("about")
 rf.remove("acronym")
+rf.remove("miscarried")
+rf.remove("ballmer")
+rf.remove("ballmerc")
+rf.remove("ballmers")
 lr = len(rf)
 
 random.seed()
