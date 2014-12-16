@@ -9,7 +9,7 @@
 #
 # https://github.com/adversary-org/foad
 #
-# Version:  0.7.5.3
+# Version:  0.7.5.4
 #
 # BTC:  1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz
 # License:  GNU Public License version 3 (GPLv3)
@@ -121,7 +121,7 @@ __title__ = "FOAD: Fucked Off Adversarial Degenerates (Fuck Off And Die)"
 __stitle__ = "FOAD"
 __license1__ = "GNU General Public License version 3 (GPLv3)"
 __license2__ = "Do What The Fuck You Want To, But It's Not My Fault Public License version 1 (WTFNMFPLv1)"
-__version__ = "0.7.5.3"
+__version__ = "0.7.5.4"
 __bitcoin__ = "1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz"
 __openpgp__ = "0x321E4E2373590E5D"
 
@@ -415,6 +415,17 @@ class fuck:
             msg = "{0} about as intelligent as a freshman in the high school of your choice; loyal, devoted, honest, and too easily screwed over by bastards like {1}.".format(target, sender)
         return msg
 
+    def amber3(self):
+        if lt == 0 and le == 0:
+            msg = "Talk is cheap, whiskey costs money."
+        elif lt > 0 and le == 0:
+            msg = "Talk is cheap, {0}, whiskey costs money.".format(target)
+        elif lt == 0 and le > 0:
+            msg = "Talk is fucking cheap, whiskey costs money."
+        elif lt > 0 and le > 0:
+            msg = "Talk is fucking cheap, {0}, whiskey costs money.".format(target)
+        return msg
+
     def apple(self):
         if lt == 0 and ls == 0:
             msg = "No you fucking can't do it your way!  We don't give a fuck if it's better, you do it our fucking way or you fuck off!"
@@ -474,6 +485,13 @@ class fuck:
             msg = "{0}, {1} is a big bad motherfucker.".format(target, sender)
         else:
             msg = "{0}, {1} is a big bad motherfucker.".format(target, sender)
+        return msg
+
+    def because(self):  # wbfu option uses full stops, otherwise the same.
+        if lt == 0:
+            msg = "Because fuck you, that's why!"
+        elif lt > 0:
+            msg = "Because fuck you {0}, that's why!".format(target)
         return msg
 
     def bus(self):
@@ -870,6 +888,10 @@ class fuck:
 
     def fuckety(self):
         msg = "Fuckety, fuck, fuck, fuck!"
+        return msg
+
+    def fuckity(self):
+        msg = "Fuckity, fuck, fuck, fuck!"
         return msg
 
     def get(self):
@@ -1787,7 +1809,7 @@ class fuck:
             msg = "{0}, that's a fucking waste of time!".format(target)
         return msg
 
-    def wbfu(self):
+    def wbfu(self):  # because uses exclamation marks, otherwise the same.
         if lt == 0:
             msg = "Why?  Because fuck you, that's why."
         else:
@@ -1878,6 +1900,13 @@ class fuck:
             msg = "{0}, why the fuck should I know?".format(target)
         return msg
 
+    def whynot(self):
+        if lt == 0:
+            msg = "Why the fuck not?!"
+        elif lt > 0:
+            msg = "Why the fuck not, {0}?!".format(target)
+        return msg
+
     def wit(self):
         if lt == 0:
             msg = "You fuckwit!"
@@ -1886,10 +1915,14 @@ class fuck:
         return msg
 
     def woftam(self):
-        if lt == 0:
+        if lt == 0 and le == 0:
             msg = "It's a waste of fucking time and money."
-        else:
+        elif lt > 0 and le == 0:
             msg = "{0}, it's a waste of fucking time and money.".format(target)
+        elif lt == 0 and le > 0:
+            msg = "{0} is a waste of fucking time and money.".format(extra)
+        elif lt > 0 and le > 0:
+            msg = "{0}, {1} is a waste of fucking time and money.".format(target, extra)
         return msg
 
     def wtaf(self):
@@ -1978,11 +2011,34 @@ class fuck:
             msg = "So {0}, what the fuck would Jesus do?  Jesus would read the fucking manual!".format(target)
         return msg
 
-    def you(self):
-        if lt == 0:
+    def yoda(self):
+        if lt == 0 and le == 0:
+            msg = "Fuck off, you must."
+        elif lt > 0 and le == 0:
+            msg = "Fuck off, you must, {0}.".format(target)
+        elif lt == 0 and le > 0:
+            msg = "Go fuck yourself, you must."
+        elif lt > 0 and le > 0:
+            msg = "Go fuck yourself, you must, {0}.".format(target)
+        return msg
+
+    def you(self):  # non-standard use of relay flag.
+        if lt == 0 and le == 0 and ls == 0 and lR == 0:
             msg = "Fuck you!"
-        else:
-            msg = "Fuck you {0}!".format(target)
+        elif lt > 0 and le == 0 and ls == 0 and lR == 0:
+            msg = "Fuck you, {0}!".format(target)
+        elif lt == 0 and le > 0 and ls == 0 and lR == 0:
+            msg = "Fuck you and fuck {0}!".format(extra)
+        elif lt > 0 and le > 0 and ls == 0 and lR == 0:
+            msg = "Fuck you {0} and fuck {1}!".format(target, extra)
+        elif lt == 0 and le > 0 and ls > 0 and lR == 0:
+            msg = "Fuck you, fuck your {0} and fuck {1}!".format(sender, extra)
+        elif lt == 0 and le > 0 and ls > 0 and lR > 0:
+            msg = "{0}, tell them: fuck you, fuck your {1} and fuck {2}!".format(relay, sender, extra)
+        elif lt > 0 and le > 0 and ls > 0 and lR == 0:
+            msg = "Fuck you {0}, fuck your {1} and fuck {2}!".format(target, sender, extra)
+        elif lt > 0 and le > 0 and ls > 0 and lR > 0:
+            msg = "{0}, tell {1}: fuck you {2}, fuck your {3} and fuck {4}!".format(relay, target, target, sender, extra)
         return msg
 
 fucked = fuck()
