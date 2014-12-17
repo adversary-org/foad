@@ -9,7 +9,7 @@
 #
 # https://github.com/adversary-org/foad
 #
-# Version:  0.7.5.4
+# Version:  0.7.5.5
 #
 # BTC:  1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz
 # License:  GNU Public License version 3 (GPLv3)
@@ -121,7 +121,7 @@ __title__ = "FOAD: Fucked Off Adversarial Degenerates (Fuck Off And Die)"
 __stitle__ = "FOAD"
 __license1__ = "GNU General Public License version 3 (GPLv3)"
 __license2__ = "Do What The Fuck You Want To, But It's Not My Fault Public License version 1 (WTFNMFPLv1)"
-__version__ = "0.7.5.4"
+__version__ = "0.7.5.5"
 __bitcoin__ = "1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz"
 __openpgp__ = "0x321E4E2373590E5D"
 
@@ -913,6 +913,13 @@ class fuck:
             msg = "I really don't give a fuck what they do."
         else:
             msg = "{0}, I really don't give a fuck what you do.".format(target)
+        return msg
+
+    def giveh(self):
+        if lt == 0:
+            msg = "I really don't give a fuck what they hear."
+        else:
+            msg = "{0}, I really don't give a fuck what you hear.".format(target)
         return msg
 
     def gives(self):
