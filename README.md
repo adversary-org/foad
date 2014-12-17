@@ -13,7 +13,7 @@ Examples:
 bash$ ./foad.py -f wtfwjd
 What the fuck would Jesus do?
 bash$ ./foad.py -f wtfwjdrtfm -n Bob
-Bob, so what the fuck would Jesus do?  Jesus would read the fucking manual!
+So Bob, what the fuck would Jesus do?  Jesus would read the fucking manual!
 bash$ ./foad.py -f mind -n "Joe Biden"
 Joe Biden, are you out of your fucking mind?!
 bash$ foad -f psycho3 -n "Tony Abbott"
@@ -34,6 +34,20 @@ options and the generic catchall can now be used with --prepend and/or
 If you find this script of use or even just amusing, a small Bitcoin
 contribution to 1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz would be
 appreciated.
+
+
+## Installing
+
+All you need to do to install this script is download foad.py and move
+it to somewhere in your path.  See the Requirements section for the
+version of Python required.  To import it as a module in Python it
+needs to be in your Python path (e.g. site-packages).  I usually just
+leave it in /usr/local/bin or $HOME/bin with an appropriately adjusted
+.bashrc or .bash_profile configuration.
+
+The script should be obtained from here:
+
+https://github.com/adversary-org/foad
 
 
 ## Requirements

@@ -9,7 +9,7 @@
 #
 # https://github.com/adversary-org/foad
 #
-# Version:  0.7.5.4
+# Version:  0.7.5.5
 #
 # BTC:  1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz
 # License:  GNU Public License version 3 (GPLv3)
@@ -121,7 +121,7 @@ __title__ = "FOAD: Fucked Off Adversarial Degenerates (Fuck Off And Die)"
 __stitle__ = "FOAD"
 __license1__ = "GNU General Public License version 3 (GPLv3)"
 __license2__ = "Do What The Fuck You Want To, But It's Not My Fault Public License version 1 (WTFNMFPLv1)"
-__version__ = "0.7.5.4"
+__version__ = "0.7.5.5"
 __bitcoin__ = "1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz"
 __openpgp__ = "0x321E4E2373590E5D"
 
@@ -204,7 +204,7 @@ parser = argparse.ArgumentParser(
 parser.add_argument("-f", "--fuck", help="One word, indicates type of fuck to give, run foad.py -f list_options to see possible flags.", action="store", required=False)
 parser.add_argument("-n", "--name", help="Name of target, more than one word must be in quotation marks.", action="store", required=False)
 parser.add_argument("-s", "--sender", help="Used to specify the sender, usually within the context of some particular phrase, more than one word must be in quotation marks.", action="store", required=False)
-parser.add_argument("-r", "--relay", help="Used to specify a third party to whom a message is to be delivered to by the target.", action="store", required=False)
+parser.add_argument("-r", "--relay", help="Used to specify a third party to whom a message is to be delivered to in order to pass message to the target.", action="store", required=False)
 parser.add_argument("-e", "--extra", help="Additional comment to insert into output, more than one word must be in quotation marks.  Used to enhance an existing response rather than append text (use -a/--append for that).", action="store", required=False)
 parser.add_argument("-a", "--append", help="Additional comment to append to output.  Now works with all options.", action="store", required=False)
 parser.add_argument("-p", "--prepend", help="Additional comment to prepend before the output.  Now works with all options.", action="store", required=False)
@@ -721,7 +721,7 @@ class fuck:
         if lt == 0:
             msg = "English motherfucker!  Do you speak it?!"
         else:
-            msg = "English motherfucker!  Do you speak it {0}?!".format(target)
+            msg = "English motherfucker!  Do you speak it, {0}?!".format(target)
         return msg
 
     def every1(self):
@@ -913,6 +913,13 @@ class fuck:
             msg = "I really don't give a fuck what they do."
         else:
             msg = "{0}, I really don't give a fuck what you do.".format(target)
+        return msg
+
+    def giveh(self):
+        if lt == 0:
+            msg = "I really don't give a fuck what they hear."
+        else:
+            msg = "{0}, I really don't give a fuck what you hear.".format(target)
         return msg
 
     def gives(self):
@@ -2060,6 +2067,10 @@ for x in df:
     rf.append(x)
 rf.remove("about")
 rf.remove("acronym")
+rf.remove("miscarried")
+rf.remove("ballmer")
+rf.remove("ballmerc")
+rf.remove("ballmers")
 lr = len(rf)
 
 random.seed()
