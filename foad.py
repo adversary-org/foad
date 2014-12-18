@@ -9,7 +9,7 @@
 #
 # https://github.com/adversary-org/foad
 #
-# Version:  0.7.5.5
+# Version:  0.7.5.6
 #
 # BTC:  1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz
 # License:  GNU Public License version 3 (GPLv3)
@@ -121,7 +121,7 @@ __title__ = "FOAD: Fucked Off Adversarial Degenerates (Fuck Off And Die)"
 __stitle__ = "FOAD"
 __license1__ = "GNU General Public License version 3 (GPLv3)"
 __license2__ = "Do What The Fuck You Want To, But It's Not My Fault Public License version 1 (WTFNMFPLv1)"
-__version__ = "0.7.5.5"
+__version__ = "0.7.5.6"
 __bitcoin__ = "1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz"
 __openpgp__ = "0x321E4E2373590E5D"
 
@@ -1931,6 +1931,20 @@ class fuck:
         elif lt > 0 and le > 0:
             msg = "{0}, {1} is a waste of fucking time and money.".format(target, extra)
         return msg
+
+    def wsb1(self):
+        if lt == 0 and le == 0 and lR == 0:
+            msg = "Do not offer sympathy to the mentally ill, tell them firmly: I am not paid to listen to this drivel, you are a terminal fool."
+        elif lt == 0 and le == 0 and lR > 0:
+            msg = "{0}, do not offer sympathy to the mentally ill, tell them firmly: I am not paid to listen to this drivel, you are a terminal fool.".format(relay)
+        elif lt > 0 and le == 0 and lR == 0:
+            msg = "{0}, I do not offer sympathy to the mentally ill, I tell them firmly: I am not paid to listen to this drivel, {1}, you are a terminal fool.".format(target, target)
+        elif lt > 0 and le == 0 and lR > 0:
+            msg = "{0}, do not offer sympathy to the mentally ill, tell {1} firmly: I am not paid to listen to this drivel, you are a terminal fool.".format(relay, target)
+        elif lt > 0 and le > 0 and lR == 0:
+            msg = "I am not paid to listen to this drivel, {0}, you are a terminal fool.".format(target)
+        else:
+            msg = "I am not paid to listen to this drivel, you are a terminal fool."
 
     def wtaf(self):
         if lt == 0:
