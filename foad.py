@@ -116,7 +116,6 @@
 __author__ = "Ben McGinnes <ben@adversary.org>"
 __copyrightu__ = "Copyright © Benjamin D. McGinnes, 2013-2014"
 __copyrighta__ = "Copyright (C) Benjamin D. McGinnes, 2013-2014"
-__copyrighth__ = "Copyright \u00a9 Benjamin D. McGinnes, 2013-2014"
 __title__ = "FOAD: Fucked Off Adversarial Degenerates (Fuck Off And Die)"
 __stitle__ = "FOAD"
 __license1__ = "GNU General Public License version 3 (GPLv3)"
@@ -139,7 +138,7 @@ elif locale.getpreferredencoding() == "UTF-8":
     __copyright__ = __copyrightu__
 else:
     try:
-        __copyright__ = __copyrighth__
+        __copyright__ = __copyrightu__
     except locale.Error:
         __copyright__ = __copyrighta__
 
@@ -2097,6 +2096,7 @@ rf.remove("miscarried")
 rf.remove("ballmer")
 rf.remove("ballmerc")
 rf.remove("ballmers")
+rf.remove("xyz")
 lr = len(rf)
 
 random.seed()
