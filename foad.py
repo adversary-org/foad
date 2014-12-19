@@ -19,7 +19,7 @@
 # Requirements:
 #
 # * Python 3.2 or later (developed with Python 3.4.x)
-# * Python modules: argparse, random, sys, textwrap
+# * Python modules: argparse, locale, random, sys, textwrap
 #
 # Versions up to 0.4.x developed with Python 2.7.x.  Conversion to
 # Python 3 made from version 0.4.2.
@@ -120,7 +120,7 @@ __title__ = "FOAD: Fucked Off Adversarial Degenerates (Fuck Off And Die)"
 __stitle__ = "FOAD"
 __license1__ = "GNU General Public License version 3 (GPLv3)"
 __license2__ = "Do What The Fuck You Want To, But It's Not My Fault Public License version 1 (WTFNMFPLv1)"
-__version__ = "0.7.6.1"
+__version__ = "0.7.6.2"
 __bitcoin__ = "1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz"
 __openpgp__ = "0x321E4E2373590E5D"
 
@@ -836,7 +836,10 @@ class fuck:
 
     def foad(self):
         if "foad" in sa[0]:
-            exec("fuck().foad1()")
+            try:
+                exec("fuck().foad1()")
+            except:
+                exec("foad.fuck().foad1()")
         else:
             print("Help guide for foad.py (pydoc3 foad).")
 
@@ -2084,7 +2087,7 @@ for x in df0:
         df.append(x)
 del(df0)
 del(x)
-df.remove("foad1")
+df.remove("foad")
 lc = len(df)
 
 rf = []
