@@ -9,7 +9,7 @@
 #
 # https://github.com/adversary-org/foad
 #
-# Version:  0.7.6.0
+# Version:  0.7.6.1
 #
 # BTC:  1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz
 # License:  GNU Public License version 3 (GPLv3)
@@ -121,7 +121,7 @@ __title__ = "FOAD: Fucked Off Adversarial Degenerates (Fuck Off And Die)"
 __stitle__ = "FOAD"
 __license1__ = "GNU General Public License version 3 (GPLv3)"
 __license2__ = "Do What The Fuck You Want To, But It's Not My Fault Public License version 1 (WTFNMFPLv1)"
-__version__ = "0.7.6.0"
+__version__ = "0.7.6.1"
 __bitcoin__ = "1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz"
 __openpgp__ = "0x321E4E2373590E5D"
 
@@ -2031,6 +2031,17 @@ class fuck:
             msg = "What the fuck would Jesus do?  Jesus would read the fucking manual!"
         else:
             msg = "So {0}, what the fuck would Jesus do?  Jesus would read the fucking manual!".format(target)
+        return msg
+
+    def xyz(self):
+        if lt == 0 and le == 0 and ls == 0 and lR == 0:
+            msg = "XYZ usage: uses cadence for fuck this [name], fuck that [extra] and fuck the other [sender]. The name is normally the first and the target, but sometimes the real target is set by relay, will oftem be similar to the you options.  The latter variation can readily be used with prepend for preceding greetings like Hey [relay] or whatever."
+        elif lt > 0 and le > 0 and ls > 0 and lR == 0:
+            msg = "Fuck {0}, fuck {1} and fuck {2}!".format(target, extra, sender)
+        elif lt > 0 and le > 0 and ls > 0 and lR > 0:
+            msg = "{0}, fuck {1}, fuck {2} and fuck {2}!".format(relay, target, extra, sender)
+        else:
+            msg = "Invoke without options to see usage format. Must use --name, --extra and --sender. Optional use of --relay and/or --prepend."
         return msg
 
     def yoda(self):
