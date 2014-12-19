@@ -2039,7 +2039,7 @@ class fuck:
         elif lt > 0 and le > 0 and ls > 0 and lR == 0:
             msg = "Fuck {0}, fuck {1} and fuck {2}!".format(target, extra, sender)
         elif lt > 0 and le > 0 and ls > 0 and lR > 0:
-            msg = "{0}, fuck {1}, fuck {2} and fuck {2}!".format(relay, target, extra, sender)
+            msg = "{0}, fuck {1}, fuck {2} and fuck {3}!".format(relay, target, extra, sender)
         else:
             msg = "Invoke without options to see usage format. Must use --name, --extra and --sender. Optional use of --relay and/or --prepend."
         return msg
