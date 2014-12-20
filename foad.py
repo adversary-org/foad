@@ -9,7 +9,7 @@
 #
 # https://github.com/adversary-org/foad
 #
-# Version:  0.7.6.3
+# Version:  0.7.6.4
 #
 # BTC:  1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz
 # License:  GNU Public License version 3 (GPLv3)
@@ -120,7 +120,7 @@ __title__ = "FOAD: Fucked Off Adversarial Degenerates (Fuck Off And Die)"
 __stitle__ = "FOAD"
 __license1__ = "GNU General Public License version 3 (GPLv3)"
 __license2__ = "Do What The Fuck You Want To, But It's Not My Fault Public License version 1 (WTFNMFPLv1)"
-__version__ = "0.7.6.3"
+__version__ = "0.7.6.4"
 __bitcoin__ = "1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz"
 __openpgp__ = "0x321E4E2373590E5D"
 
@@ -624,6 +624,15 @@ class fuck:
             msg = "{0}, you are fucking cracked!".format(target)
         return msg
 
+    def cthulhu(self):
+        if lt == 0:
+            msg = "Ph'nglui mglw'nafh Cthulhu R'lyeh wgah'nagl fhtagn!"
+        elif lt > 0:
+            msg = "Campus crusade for Cthulhu; if your god is dead, blame ours."
+        else:
+            msg = "Ph'nglui mglw'nafh Cthulhu R'lyeh wgah'nagl fhtagn!"
+        return msg
+
     def cunt(self):
         if lt == 0:
             msg = "Fuck you, you complete and utter fucking cunt!"
@@ -655,6 +664,23 @@ class fuck:
             # But who will guard the fucker(s)?
         else:
             msg = "{0}, quis custodiet ipsos futūtor?".format(target)
+        return msg
+
+    def damage(self):
+        if lt == 0 and le == 0 and lR == 0:
+            msg = "What is your fucking damage?"
+        elif lt == 0 and le > 0 and lR == 0:
+            msg = "What is {0} fucking damage?".format(extra)
+        elif lt > 0 and le == 0 and lR == 0:
+            msg = "{0}, what is your fucking damage?".format(target)
+        elif lt > 0 and le > 0 and lR == 0:
+            msg = "{0}, what is {1} fucking damage?".format(target, extra)
+        elif lt > 0 and le == 0 and lR > 0:
+            msg = "{0}, with {1}, what is their fucking damage?".format(relay, target)
+        elif lt > 0 and le > 0 and lR > 0:
+            msg = "{0}, with {1}, what is {2} fucking damage?".format(relay, target, extra)
+        else:
+            msg = "What is your fucking damage?"
         return msg
 
     def deadwood(self):
