@@ -84,7 +84,7 @@ Twython is one of, if not the, best Pythonic solutions for dealing
 with Twitter.  I already use it extensively as the section on Twython
 Tools below indicates.
 
-See the `Twython GitHub site <https://github.com/ryanmcgrath/twython>`_ or the `Twython documentation <https://twython.readthedocs.org/en/latest/>`_ for more
+See the `Twython repository <https://github.com/ryanmcgrath/twython>`__ or the `Twython documentation <https://twython.readthedocs.org/en/latest/>`__ for more
 details.
 
 
@@ -123,4 +123,4 @@ This would send a tweet which said:
 
 One thing to be careful of here, however, is that some output exceeds the 140 character limit on Twitter and the basic script does not include message length checks.  Note that there is an archive which includes scripts specifically designed for use with foad.py, these functions will be returned as part of the switch to using argparse.
 
-See the `Twython Tools GitHub site <https://github.com/adversary-org/twython-tools>`_ for more details.
+See the `Twython Tools repository <https://github.com/adversary-org/twython-tools>`__ on GitHub for more details.
