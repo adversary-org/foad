@@ -9,7 +9,7 @@
 #
 # https://github.com/adversary-org/foad
 #
-# Version:  0.7.6.4
+# Version:  0.7.6.5
 #
 # BTC:  1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz
 # License:  GNU Public License version 3 (GPLv3)
@@ -120,7 +120,7 @@ __title__ = "FOAD: Fucked Off Adversarial Degenerates (Fuck Off And Die)"
 __stitle__ = "FOAD"
 __license1__ = "GNU General Public License version 3 (GPLv3)"
 __license2__ = "Do What The Fuck You Want To, But It's Not My Fault Public License version 1 (WTFNMFPLv1)"
-__version__ = "0.7.6.4"
+__version__ = "0.7.6.5"
 __bitcoin__ = "1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz"
 __openpgp__ = "0x321E4E2373590E5D"
 
@@ -869,22 +869,17 @@ class fuck:
         else:
             print("Help guide for foad.py (pydoc3 foad).")
 
-    def foad1(self):
-        if lt == 0:
-            msg = "Fuck off and die!"
-        elif lt > 0:
-            msg = "{0}, fuck off and die!".format(target)
-        else:
-            msg = "{0}, fuck off and die!".format(target)
-        return msg
-
     def froad(self):
-        if lt == 0:
+        if lt == 0 and le == 0:
+            msg = "Fuck off and die!"
+        elif lt == 0 and le > 0:
             msg = "Fuck right off and die!"
-        elif lt > 0:
+        elif lt > 0 and le == 0:
+            msg = "{0}, fuck off and die!".format(target)
+        elif lt > 0 and le > 0:
             msg = "{0}, fuck right off and die!".format(target)
         else:
-            msg = "{0}, fuck right off and die!".format(target)
+            msg = "Fuck off and die!"
         return msg
 
     def fubar(self):
