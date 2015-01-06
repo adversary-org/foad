@@ -9,12 +9,16 @@
 #
 # https://github.com/adversary-org/foad
 #
-# Version:  0.7.6.5
+# Version:  0.7.7.0
 #
 # BTC:  1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz
-# License:  GNU Public License version 3 (GPLv3)
+# Licenses:  GNU Public License version 3 (GPLv3)
+#            Do What The Fuck You Want But It's Not My Fault (WTFNMFv1)
+#            BSD 3-Clause License (BSD)
 #
 # https://www.gnu.org/copyleft/gpl.html
+# https://github.com/adversary-org/wtfnmf
+# 
 #
 # Requirements:
 #
@@ -120,7 +124,8 @@ __title__ = "FOAD: Fucked Off Adversarial Degenerates (Fuck Off And Die)"
 __stitle__ = "FOAD"
 __license1__ = "GNU General Public License version 3 (GPLv3)"
 __license2__ = "Do What The Fuck You Want To, But It's Not My Fault Public License version 1 (WTFNMFPLv1)"
-__version__ = "0.7.6.5"
+__license3__ = "New BSD (3 clause) type"
+__version__ = "0.7.7.0"
 __bitcoin__ = "1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz"
 __openpgp__ = "0x321E4E2373590E5D"
 
