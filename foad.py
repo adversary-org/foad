@@ -3,7 +3,7 @@
 ##
 # FOAD: Fucked Off Adversarial Degenerates (Fuck Off And Die)
 #
-# Copyright (C) Ben McGinnes, 2013-2014
+# Copyright (C) Ben McGinnes, 2013-2015
 # ben@adversary.org
 # OpenPGP/GPG key:  0x321E4E2373590E5D
 #
@@ -114,8 +114,8 @@
 ##
 
 __author__ = "Ben McGinnes <ben@adversary.org>"
-__copyrightu__ = "Copyright © Benjamin D. McGinnes, 2013-2014"
-__copyrighta__ = "Copyright (C) Benjamin D. McGinnes, 2013-2014"
+__copyrightu__ = "Copyright © Benjamin D. McGinnes, 2013-2015"
+__copyrighta__ = "Copyright (C) Benjamin D. McGinnes, 2013-2015"
 __title__ = "FOAD: Fucked Off Adversarial Degenerates (Fuck Off And Die)"
 __stitle__ = "FOAD"
 __license1__ = "GNU General Public License version 3 (GPLv3)"
