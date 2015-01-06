@@ -1403,6 +1403,19 @@ class fuck:
             msg = "Well {0}, aren't you a shining example of a rancid fuck-nugget.".format(target)
         return msg
 
+    def nunnery(self):
+        if lt == 0 and le == 0:
+            msg = "Fuck off to a nunnery."
+        elif lt > 0 and le == 0:
+            msg = "{0}, fuck off to a nunnery.".format(target)
+        elif lt == 0 and le > 0:
+            msg = "Fuck off to a nunnery!"
+        elif lt > 0 and le > 0:
+            msg = "{0}, fuck off to a nunnery!".format(target)
+        else:
+            msg = "Fuck off to a nunnery."
+        return msg
+
     def oath1(self):
         if lt == 0:
             msg = "Fuck oath!"
