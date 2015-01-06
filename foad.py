@@ -3,18 +3,22 @@
 ##
 # FOAD: Fucked Off Adversarial Degenerates (Fuck Off And Die)
 #
-# Copyright (C) Ben McGinnes, 2013-2014
+# Copyright (C) Ben McGinnes, 2013-2015
 # ben@adversary.org
 # OpenPGP/GPG key:  0x321E4E2373590E5D
 #
 # https://github.com/adversary-org/foad
 #
-# Version:  0.7.6.5
+# Version:  0.7.7.0
 #
 # BTC:  1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz
-# License:  GNU Public License version 3 (GPLv3)
+# Licenses:  GNU Public License version 3 (GPLv3)
+#            Do What The Fuck You Want But It's Not My Fault (WTFNMFv1)
+#            BSD 3-Clause License (BSD)
 #
 # https://www.gnu.org/copyleft/gpl.html
+# https://github.com/adversary-org/wtfnmf
+# 
 #
 # Requirements:
 #
@@ -114,13 +118,14 @@
 ##
 
 __author__ = "Ben McGinnes <ben@adversary.org>"
-__copyrightu__ = "Copyright © Benjamin D. McGinnes, 2013-2014"
-__copyrighta__ = "Copyright (C) Benjamin D. McGinnes, 2013-2014"
+__copyrightu__ = "Copyright © Benjamin D. McGinnes, 2013-2015"
+__copyrighta__ = "Copyright (C) Benjamin D. McGinnes, 2013-2015"
 __title__ = "FOAD: Fucked Off Adversarial Degenerates (Fuck Off And Die)"
 __stitle__ = "FOAD"
 __license1__ = "GNU General Public License version 3 (GPLv3)"
 __license2__ = "Do What The Fuck You Want To, But It's Not My Fault Public License version 1 (WTFNMFPLv1)"
-__version__ = "0.7.6.5"
+__license3__ = "New BSD (3 clause) type"
+__version__ = "0.7.7.0"
 __bitcoin__ = "1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz"
 __openpgp__ = "0x321E4E2373590E5D"
 
@@ -1401,6 +1406,19 @@ class fuck:
             msg = "Well, aren't you a shining example of a rancid fuck-nugget."
         elif lt > 0:
             msg = "Well {0}, aren't you a shining example of a rancid fuck-nugget.".format(target)
+        return msg
+
+    def nunnery(self):
+        if lt == 0 and le == 0:
+            msg = "Fuck off to a nunnery."
+        elif lt > 0 and le == 0:
+            msg = "{0}, fuck off to a nunnery.".format(target)
+        elif lt == 0 and le > 0:
+            msg = "Fuck off to a nunnery!"
+        elif lt > 0 and le > 0:
+            msg = "{0}, fuck off to a nunnery!".format(target)
+        else:
+            msg = "Fuck off to a nunnery."
         return msg
 
     def oath1(self):
