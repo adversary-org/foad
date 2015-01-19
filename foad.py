@@ -616,10 +616,14 @@ class fuck:
         return msg
 
     def compleat(self):
-        if lt == 0:
+        if lt == 0 and le == 0:
             msg = "I might be a cunt, but I'm not a complete and utter fucking cunt."
-        else:
+        elif lt > 0 and le == 0:
             msg = "I might be a cunt, {0}, but I'm not a complete and utter fucking cunt.".format(target)
+        elif lt == 0 and le > 0:
+            msg = "I might be a {0}, but I'm not a complete and utter fucking {1}!".format(extra, extra)
+        elif lt > 0 and le > 0:
+            msg = "I might be a {0}, {1}, but I'm not a complete and utter fucking {2}!".format(extra, target, extra)
         return msg
 
     def cracked(self):
@@ -1779,10 +1783,14 @@ class fuck:
         return msg
 
     def tism(self):
-        if lt == 0:
+        if lt == 0 and le == 0:
             msg = "I might be a cunt, but I'm not a fucking cunt."
-        else:
+        elif lt > 0 and le == 0:
             msg = "I might be a cunt, {0}, but I'm not a fucking cunt.".format(target)
+        elif lt == 0 and le > 0:
+            msg = "I might be a {0}, but I'm not a fucking {1}.".format(extra, extra)
+        elif lt > 0 and le > 0:
+            msg = "I might be a {0}, {1}, but I'm not a fucking {2}.".format(extra, target, extra)
         return msg
 
     def totgaf(self):
