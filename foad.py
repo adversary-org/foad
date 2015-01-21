@@ -9,7 +9,7 @@
 #
 # https://github.com/adversary-org/foad
 #
-# Version:  0.7.7.2
+# Version:  0.7.7.3
 #
 # BTC:  1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz
 # Licenses:  GNU Public License version 3 (GPLv3)
@@ -125,7 +125,7 @@ __stitle__ = "FOAD"
 __license1__ = "GNU General Public License version 3 (GPLv3)"
 __license2__ = "Do What The Fuck You Want To, But It's Not My Fault Public License version 1 (WTFNMFPLv1)"
 __license3__ = "New BSD (3 clause) type"
-__version__ = "0.7.7.2"
+__version__ = "0.7.7.3"
 __bitcoin__ = "1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz"
 __openpgp__ = "0x321E4E2373590E5D"
 
@@ -215,6 +215,9 @@ parser.add_argument("-p", "--prepend", help="Additional comment to prepend befor
 # parser.add_argument("-o", "--output", help="Writes output to the specified file instead of stdout.", action="store", required=False)
 parser.add_argument("-O", "--options", help="Lists the explicit variations (the same as: -f list_options), will accept any argument to activate.", action="store", required=False)
 parser.add_argument("-V", "--version", help="Print the version number.", action="store", required=False)
+
+# This, in conjunction with lx above is what allows the old style
+# usage to continue working:
 
 if len(sys.argv) > lx:
     la = len(sys.argv)
@@ -496,7 +499,7 @@ class fuck:
         if lt == 0:
             msg = "Because fuck you, that's why!"
         elif lt > 0:
-            msg = "Because fuck you {0}, that's why!".format(target)
+            msg = "Because fuck you, {0}, that's why!".format(target)
         return msg
 
     def bus(self):
@@ -616,10 +619,14 @@ class fuck:
         return msg
 
     def compleat(self):
-        if lt == 0:
+        if lt == 0 and le == 0:
             msg = "I might be a cunt, but I'm not a complete and utter fucking cunt."
-        else:
+        elif lt > 0 and le == 0:
             msg = "I might be a cunt, {0}, but I'm not a complete and utter fucking cunt.".format(target)
+        elif lt == 0 and le > 0:
+            msg = "I might be a {0}, but I'm not a complete and utter fucking {1}!".format(extra, extra)
+        elif lt > 0 and le > 0:
+            msg = "I might be a {0}, {1}, but I'm not a complete and utter fucking {2}!".format(extra, target, extra)
         return msg
 
     def cracked(self):
@@ -1779,10 +1786,14 @@ class fuck:
         return msg
 
     def tism(self):
-        if lt == 0:
+        if lt == 0 and le == 0:
             msg = "I might be a cunt, but I'm not a fucking cunt."
-        else:
+        elif lt > 0 and le == 0:
             msg = "I might be a cunt, {0}, but I'm not a fucking cunt.".format(target)
+        elif lt == 0 and le > 0:
+            msg = "I might be a {0}, but I'm not a fucking {1}.".format(extra, extra)
+        elif lt > 0 and le > 0:
+            msg = "I might be a {0}, {1}, but I'm not a fucking {2}.".format(extra, target, extra)
         return msg
 
     def totgaf(self):
