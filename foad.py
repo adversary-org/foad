@@ -9,7 +9,7 @@
 #
 # https://github.com/adversary-org/foad
 #
-# Version:  0.7.7.3
+# Version:  0.7.7.4
 #
 # BTC:  1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz
 # Licenses:  GNU Public License version 3 (GPLv3)
@@ -125,7 +125,7 @@ __stitle__ = "FOAD"
 __license1__ = "GNU General Public License version 3 (GPLv3)"
 __license2__ = "Do What The Fuck You Want To, But It's Not My Fault Public License version 1 (WTFNMFPLv1)"
 __license3__ = "New BSD (3 clause) type"
-__version__ = "0.7.7.3"
+__version__ = "0.7.7.4"
 __bitcoin__ = "1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz"
 __openpgp__ = "0x321E4E2373590E5D"
 
@@ -1579,6 +1579,23 @@ class fuck:
             msg = "I'd rather die than use obscene and improper words; but when you, as a god, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks."
         else:
             msg = "I'd rather die than use obscene and improper words; but when you, {0}, as a god, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks.".format(target)
+        return msg
+
+    def problem(self):
+        if lt == 0 and le == 0 and lR == 0:
+            msg = "What is your fucking problem?"
+        elif lt == 0 and le > 0 and lR == 0:
+            msg = "What is {0} fucking problem?".format(extra)
+        elif lt > 0 and le == 0 and lR == 0:
+            msg = "{0}, what is your fucking problem?".format(target)
+        elif lt > 0 and le > 0 and lR == 0:
+            msg = "{0}, what is {1} fucking problem?".format(target, extra)
+        elif lt > 0 and le == 0 and lR > 0:
+            msg = "{0}, with {1}, what is their fucking problem?".format(relay, target)
+        elif lt > 0 and le > 0 and lR > 0:
+            msg = "{0}, with {1}, what is {2} fucking problem?".format(relay, target, extra)
+        else:
+            msg = "What is the fucking problem?"
         return msg
 
     def psycho1(self):
