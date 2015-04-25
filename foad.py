@@ -9,12 +9,13 @@
 #
 # https://github.com/adversary-org/foad
 #
-# Version:  0.7.7.5
+# Version:  0.7.7.6
 #
 # BTC:  1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz
 # Licenses:  GNU Public License version 3 (GPLv3)
 #            Do What The Fuck You Want But It's Not My Fault (WTFNMFv1)
 #            BSD 3-Clause License (BSD)
+#            Apache 2.0
 #
 # https://www.gnu.org/copyleft/gpl.html
 # https://github.com/adversary-org/wtfnmf
@@ -125,7 +126,8 @@ __stitle__ = "FOAD"
 __license1__ = "GNU General Public License version 3 (GPLv3)"
 __license2__ = "Do What The Fuck You Want To, But It's Not My Fault Public License version 1 (WTFNMFPLv1)"
 __license3__ = "New BSD (3 clause) type"
-__version__ = "0.7.7.5"
+__license4__ = "Apache 2.0"
+__version__ = "0.7.7.6"
 __bitcoin__ = "1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz"
 __openpgp__ = "0x321E4E2373590E5D"
 
@@ -1143,7 +1145,14 @@ class fuck:
         return msg
 
     def jesus(self):
-        msg = "Jesus Fucking Christ!"
+        if lt == 0 and le == 0:
+            msg = "Jesus Fucking Christ!"
+        elif lt > 0 and le == 0:
+            msg = "Jesus Fucking Christ, {0}!".format(target)
+        elif lt > 0 and le > 0:
+            msg = "Jesus {0}-Fucking Christ, {1}!".format(extra, target)
+        else:
+            msg = "Jesus {0}-Fucking Christ!".format(extra)
         return msg
 
     def jfgi(self):
@@ -1151,6 +1160,16 @@ class fuck:
             msg = "Just fucking Google it."
         else:
             msg = "{0}, just fucking Google it.".format(target)
+        return msg
+
+    # Ref. Tamah Jada Clark's epic legal rant.  To be expanded upon in
+    # the not too distant future, probably with extracts from the
+    # brief.
+    def justice(self):
+        if lt == 0:
+            msg = "Fuck this court, I am Justice!"
+        else:
+            msg = "Fuck {0}, I am Justice!".format(target)
         return msg
 
     def kent(self):
