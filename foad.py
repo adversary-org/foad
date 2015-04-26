@@ -447,6 +447,18 @@ class fuck:
             msg = "No {0}, you fucking can't do it your way!  We don't give a fuck if it's better, you do it our fucking way or you fuck off!".format(target)
         return msg
 
+    # From _Drive Angry_ (2011):
+    def badge(self):
+        if lt == 0 and le == 0:
+            msg = "You know what this badge means? Federal Bureau of get the fuck outta my way!"
+        if lt > 0 and le == 0:
+            msg = "You know what this badge means, {0}? Federal Bureau of get the fuck outta my way!".format(target)
+        if lt > 0 and le > 0:
+            msg = "You know what this badge means, {0}? {1} of get the fuck outta my way!".format(target, extra)
+        else:
+            msg = "You know what this badge means? Federal Bureau of get the fuck outta my way!"
+        return msg
+
     def ballmer(self):
         if lt == 0 and le == 0 and ls == 0:
             msg = "Ballmer Notes: This option requires the first target specified with --name and the second (usually a company or organisation) with --extra (sender optional).  For a gender neutral version use ballmerc on --fuck, for a plural version use ballmers on --fuck."
