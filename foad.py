@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+from __future__ import unicode_literals
 
 ##
 # FOAD: Fucked Off Adversarial Degenerates (Fuck Off And Die)
@@ -9,7 +12,7 @@
 #
 # https://github.com/adversary-org/foad
 #
-# Version:  0.7.7.7
+# Version:  0.8.0.0
 #
 # BTC:  1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz
 # Licenses:  GNU Public License version 3 (GPLv3)
@@ -25,13 +28,23 @@
 #
 # * Python 3.2 or later (developed with Python 3.4.x)
 # * Python modules: argparse, locale, random, sys, textwrap
+# * Python 2.7 supported from version 0.8 onward.
 #
 # Versions up to 0.4.x developed with Python 2.7.x.  Conversion to
-# Python 3 made from version 0.4.2.
+# Python 3 made from version 0.4.2.  Support for any Python 2 series
+# was removed from version 0.4.2 through to the end of the 0.7
+# releases.  Support was restored for Python 2.7 with version 0.8, but
+# only checked against 2.7.9 and requires manually editing the first
+# line on *nix systems to point to python or python2.  It cannot work
+# with Python 2.6 or earlier due to the use of argparse (and possibly
+# other things).
 #
 # Previous versions might have worked with Python 3.0 and 3.1 (I don't
 # know for sure, I never checked), but with the inclusion of the
 # argparse module this is now lo longer possible (if it ever was).
+#
+# If there is any future conflict between the Python 3 requirements
+# and Python 2, the development will *always* favour Python 3.
 #
 #
 # Options and notes:
@@ -127,7 +140,7 @@ __license1__ = "GNU General Public License version 3 (GPLv3)"
 __license2__ = "Do What The Fuck You Want To, But It's Not My Fault Public License version 1 (WTFNMFPLv1)"
 __license3__ = "New BSD (3 clause) type"
 __license4__ = "Apache 2.0"
-__version__ = "0.7.7.7"
+__version__ = "0.8.0.0"
 __bitcoin__ = "1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz"
 __openpgp__ = "0x321E4E2373590E5D"
 

@@ -52,8 +52,20 @@ https://github.com/adversary-org/foad
 Requirements
 ------------
 
--  Python 3.2 and above.
+-  Python 3.2 and above by default (see below).
 -  Only utilises standard modules (argparse, sys, random and a couple of
    others).
 -  Utilises the new standard for string formatting as of version 0.7.
 
+Optional Python 2.7 Support
+---------------------------
+
+- From Version 0.8 support for Python 2.7 has been restored.
+- Will not work with Python 2.6 or earlier.
+- Requires changing the first line to call python2 or python
+  (depending on the platform) instead of python3.
+- Operation ought to match the existing methods.
+- If there is ever some kind of conflict between Python 2 and Python
+  3, any changes made will favour Python 3.  If it is necessary to
+  disable this (by removing the "from __future__" import) then that
+  will be done.
