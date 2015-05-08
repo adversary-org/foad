@@ -9,7 +9,7 @@
 #
 # https://github.com/adversary-org/foad
 #
-# Version:  0.7.7.6
+# Version:  0.7.7.7
 #
 # BTC:  1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz
 # Licenses:  GNU Public License version 3 (GPLv3)
@@ -127,7 +127,7 @@ __license1__ = "GNU General Public License version 3 (GPLv3)"
 __license2__ = "Do What The Fuck You Want To, But It's Not My Fault Public License version 1 (WTFNMFPLv1)"
 __license3__ = "New BSD (3 clause) type"
 __license4__ = "Apache 2.0"
-__version__ = "0.7.7.6"
+__version__ = "0.7.7.7"
 __bitcoin__ = "1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz"
 __openpgp__ = "0x321E4E2373590E5D"
 
@@ -445,6 +445,18 @@ class fuck:
             msg = "No {0}, you fucking can't do it your way!  We don't give a fuck if it's better, you do it our fucking way or you fuck off!  -- {1}".format(target, sender)
         else:
             msg = "No {0}, you fucking can't do it your way!  We don't give a fuck if it's better, you do it our fucking way or you fuck off!".format(target)
+        return msg
+
+    # From _Drive Angry_ (2011):
+    def badge(self):
+        if lt == 0 and le == 0:
+            msg = "You know what this badge means? Federal Bureau of get the fuck outta my way!"
+        if lt > 0 and le == 0:
+            msg = "You know what this badge means, {0}? Federal Bureau of get the fuck outta my way!".format(target)
+        if lt > 0 and le > 0:
+            msg = "You know what this badge means, {0}? {1} of get the fuck outta my way!".format(target, extra)
+        else:
+            msg = "You know what this badge means? Federal Bureau of get the fuck outta my way!"
         return msg
 
     def ballmer(self):
