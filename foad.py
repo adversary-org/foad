@@ -1,14 +1,7 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-import sys
-
-if sys.version_info.major < 2:
-    sys.exit()
-elif sys.version_info.major == 2:
-    from __future__ import unicode_literals
-else:
-    pass
+from __future__ import unicode_literals
 
 ##
 # FOAD: Fucked Off Adversarial Degenerates (Fuck Off And Die)
@@ -19,7 +12,7 @@ else:
 #
 # https://github.com/adversary-org/foad
 #
-# Version:  0.7.8.1
+# Version:  0.7.8.2
 #
 # BTC:  1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz
 # Licenses:  GNU Public License version 3 (GPLv3)
@@ -137,13 +130,14 @@ __license1__ = "GNU General Public License version 3 (GPLv3)"
 __license2__ = "Do What The Fuck You Want To, But It's Not My Fault Public License version 1 (WTFNMFPLv1)"
 __license3__ = "New BSD (3 clause) type"
 __license4__ = "Apache 2.0"
-__version__ = "0.7.8.1"
+__version__ = "0.7.8.2"
 __bitcoin__ = "1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz"
 __openpgp__ = "0x321E4E2373590E5D"
 
 import argparse
 import locale
 import random
+import sys
 import textwrap
 
 if locale.getlocale()[1] == "UTF-8":
