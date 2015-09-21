@@ -13,7 +13,7 @@ from __future__ import unicode_literals
 #
 # https://github.com/adversary-org/foad
 #
-# Version:  0.8.0.1
+# Version:  0.8.0.2
 #
 # BTC:  1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz
 # Licenses:  GNU Public License version 3 (GPLv3)
@@ -141,7 +141,7 @@ __license1__ = "GNU General Public License version 3 (GPLv3)"
 __license2__ = "Do What The Fuck You Want To, But It's Not My Fault Public License version 1 (WTFNMFPLv1)"
 __license3__ = "New BSD (3 clause) type"
 __license4__ = "Apache 2.0"
-__version__ = "0.8.0.1"
+__version__ = "0.8.0.2"
 __bitcoin__ = "1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz"
 __openpgp__ = "0x321E4E2373590E5D"
 
@@ -2175,11 +2175,24 @@ class fuck:
             msg = "What the fuck would Jesus do, {0}?".format(target)
         return msg
 
+    def wtfwjdgtfo1(self):
+        if lt == 0 and le == 0:
+            msg = "What the fuck would Jesus do? Jesus would kick you the fuck out right now!"
+        elif lt > 0 and le == 0:
+            msg = "What the fuck would Jesus do? Jesus would kick {0} the fuck out right now!".format(target)
+        elif lt == 0 and le > 0:
+            msg = "What the fuck would Jesus do? Jesus would kick the fuck out {0}".format(extra)
+        elif lt > 0 and le > 0:
+            msg = "What the fuck would Jesus do? Jesus would kick {0} the fuck out {1}".format(target, extra)
+        else:
+            msg = "What the fuck would Jesus do? Jesus would kick you the fuck out of here right now!"
+        return msg
+
     def wtfwjdrtfm(self):
         if lt == 0:
-            msg = "What the fuck would Jesus do?  Jesus would read the fucking manual!"
+            msg = "What the fuck would Jesus do? Jesus would read the fucking manual!"
         else:
-            msg = "So {0}, what the fuck would Jesus do?  Jesus would read the fucking manual!".format(target)
+            msg = "So {0}, what the fuck would Jesus do? Jesus would read the fucking manual!".format(target)
         return msg
 
     def xyz(self):
