@@ -13,7 +13,7 @@ from __future__ import unicode_literals
 #
 # https://github.com/adversary-org/foad
 #
-# Version:  0.8.0.2
+# Version:  0.8.0.3
 #
 # BTC:  1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz
 # Licenses:  GNU Public License version 3 (GPLv3)
@@ -141,7 +141,7 @@ __license1__ = "GNU General Public License version 3 (GPLv3)"
 __license2__ = "Do What The Fuck You Want To, But It's Not My Fault Public License version 1 (WTFNMFPLv1)"
 __license3__ = "New BSD (3 clause) type"
 __license4__ = "Apache 2.0"
-__version__ = "0.8.0.2"
+__version__ = "0.8.0.3"
 __bitcoin__ = "1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz"
 __openpgp__ = "0x321E4E2373590E5D"
 
@@ -315,6 +315,33 @@ class fuck:
             msg = "Fuckin' A!"
         elif lt > 0 and le == 0:
             msg = "{0}, fuckin' A!".format(target)
+        return msg
+
+    def abortion(self):
+        if lt == 0 and le == 0 and ls == 0:
+            msg = "You should have been aborted!"
+        elif lt > 0 and le == 0 and ls == 0:
+            msg = "{0}, you should have been aborted!".format(target)
+        elif lt == 0 and le > 0 and ls == 0:
+            msg = "{0} should've been aborted!".format(extra)
+        elif lt > 0 and le > 0 and ls == 0:
+            msg = "{0}, you and {1} should've been aborted!".format(target, target)
+        elif lt == 0 and le == 0 and ls > 0 and sender == "retro":
+            msg = "You should be retroactively aborted!"
+        elif lt > 0 and le == 0 and ls > 0 and sender == "retro":
+            msg = "{0}, you should be retroactively aborted!".format(target)
+        elif lt == 0 and le > 0 and ls > 0 and sender == "retro":
+            msg = "{0} should be retroactively aborted!".format(extra)
+        elif lt > 1 and le > 0 and ls > 0 and sender == "retro":
+            msg = "{0}, you and {1} should be retroactively aborted!".format(target, extra)
+        elif lt == 0 and le == 0 and ls > 0 and sender == "candid":
+            msg = "Not only should you have been aborted, but you're a candidate for retroactive abortion!"
+        elif lt > 0 and le == 0 and ls > 0 and sender == "candid":
+            msg = "Not only should you have been aborted, {0}, but you're a candidate for retroactive abortion!".format(target)
+        elif lt == 0 and le > 0 and ls > 0 and sender == "candid":
+            msg = "Not only should {0} have been aborted, but they're a candidate for retroactive abortion!".format(extra)
+        elif lt > 0 and le > 0 and ls > 0 and sender == "candid":
+            msg = "Not only should {0} have been aborted, but {1} a candidate for retroactive abortion!".format(target, extra)
         return msg
 
     def about(self):
