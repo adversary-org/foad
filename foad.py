@@ -2175,7 +2175,7 @@ class fuck:
             msg = "What the fuck would Jesus do, {0}?".format(target)
         return msg
 
-    def wtfjdgtfo1(self):
+    def wtfwjdgtfo1(self):
         if lt == 0 and le == 0:
             msg = "What the fuck would Jesus do? Jesus would kick you the fuck out right now!"
         elif lt > 0 and le == 0:
