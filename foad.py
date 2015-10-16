@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 from __future__ import unicode_literals
+from __future__ import division
 
 ##
 # FOAD: Fucked Off Adversarial Degenerates (Fuck Off And Die)
@@ -13,7 +14,7 @@ from __future__ import unicode_literals
 #
 # https://github.com/adversary-org/foad
 #
-# Version:  0.8.0.4
+# Version:  0.8.0.5
 #
 # BTC:  1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz
 # Licenses:  GNU Public License version 3 (GPLv3)
@@ -141,7 +142,7 @@ __license1__ = "GNU General Public License version 3 (GPLv3)"
 __license2__ = "Do What The Fuck You Want To, But It's Not My Fault Public License version 1 (WTFNMFPLv1)"
 __license3__ = "New BSD (3 clause) type"
 __license4__ = "Apache 2.0"
-__version__ = "0.8.0.4"
+__version__ = "0.8.0.5"
 __bitcoin__ = "1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz"
 __openpgp__ = "0x321E4E2373590E5D"
 
@@ -1002,6 +1003,36 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
         else:
             msg = "If I wanted to know your future, I'd read it in your entrails."
         return msg
+
+    # def fx0(self):  # extra is required
+    #     if lt == 0 and ls == 0 and lr == 0:
+    #         msg = "You fuck{0}!".format(extra)
+    #     elif lt > 0 and ls == 0 and lr == 0:
+    #         msg = "{0}, you fuck{1}!".format(target, extra)
+    #     elif lt == 0 and ls == 0 and lr > 0:
+    #         msg = "You complete and utter fuck{0}!".format(extra)
+    #     elif lt > 0 and ls == 0 and lr > 0:
+    #         msg = "{0}, you complete and utter fuck{1}!".format(target, extra)
+    #     elif lt == 0 and ls > 0 and lr == 0:
+    #         msg = "You {0}{1}!".format(sender, extra)
+    #     elif lt > 0 and ls > 0 and lr == 0:
+    #         msg = "{0}, you {0}{1}!".format(target, sender, extra)
+    #     elif lt == 0 and ls > 0 and lr > 0:
+    #         msg = "You and {0} are {1}{2}!".format(relay, sender, extra)
+    #     elif lt > 0 and ls > 0 and lr > 0:
+    #         msg = "{0}, you and {1} are {2}{3}!".format(target, relay, sender, extra)
+    #     return(msg)
+
+    # def fx1(self):  # extra is required
+    #     if lt == 0 and ls == 0:
+    #         msg = "You complete and utter fuck{0}!".format(extra)
+    #     elif lt > 0 and ls == 0:
+    #         msg = "{0}, you complete and utter fuck{1}!".format(target, extra)
+    #     elif lt == 0 and ls > 0:
+    #         msg = "You {0} and {1}!".format(sender, extra)
+    #     elif lt > 0 and ls > 0:
+    #         msg = "{0}, you {1} and {1}!".format(target, sender, extra)
+    #     return(msg)
 
     def get(self):
         if lt == 0:
@@ -1866,7 +1897,7 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
         else:
             msg = "{0}, you are a complete and utter fucktard!".format(target)
         return msg
-
+    
     def tfwo(self):
         if lt == 0:
             msg = "I'm totally fucking weirded out by that."
