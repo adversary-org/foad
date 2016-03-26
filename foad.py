@@ -14,7 +14,7 @@ from __future__ import division
 #
 # https://github.com/adversary-org/foad
 #
-# Version:  0.8.0.5
+# Version:  0.8.0.6
 #
 # BTC:  1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz
 # Licenses:  GNU Public License version 3 (GPLv3)
@@ -142,7 +142,7 @@ __license1__ = "GNU General Public License version 3 (GPLv3)"
 __license2__ = "Do What The Fuck You Want To, But It's Not My Fault Public License version 1 (WTFNMFPLv1)"
 __license3__ = "New BSD (3 clause) type"
 __license4__ = "Apache 2.0"
-__version__ = "0.8.0.5"
+__version__ = "0.8.0.6"
 __bitcoin__ = "1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz"
 __openpgp__ = "0x321E4E2373590E5D"
 
@@ -1002,6 +1002,45 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
             msg = "{0}, tell {1} that if I wanted to know {2} future, I'd read it in {3} entrails.".format(relay, target, extra, extra)
         else:
             msg = "If I wanted to know your future, I'd read it in your entrails."
+        return msg
+
+    def futuref1(self):
+        if lt == 0 and lR == 0 and le == 0:
+            msg = "If I wanted to know your future, I'd read it in your fucking entrails."
+        elif lt > 0 and lR == 0 and le == 0:
+            msg = "If I wanted to know your future, {0}, I'd read it in your fucking entrails.".format(target)
+        elif lt > 0 and lR > 0 and le == 0:
+            msg = "{0}, tell {1} that if I wanted to know their future, I'd read it in their fucking entrails.".format(relay, target)
+        elif lt > 0 and lR > 0 and le > 0:
+            msg = "{0}, tell {1} that if I wanted to know {2} future, I'd read it in {3} fucking entrails.".format(relay, target, extra, extra)
+        else:
+            msg = "If I wanted to know your future, I'd read it in your fucking entrails!"
+        return msg
+
+    def futuref2(self):
+        if lt == 0 and lR == 0 and le == 0:
+            msg = "If I wanted to know your fucking future, I'd read it in your entrails."
+        elif lt > 0 and lR == 0 and le == 0:
+            msg = "If I wanted to know your fucking future, {0}, I'd read it in your entrails.".format(target)
+        elif lt > 0 and lR > 0 and le == 0:
+            msg = "{0}, tell {1} that if I wanted to know their fucking future, I'd read it in their entrails.".format(relay, target)
+        elif lt > 0 and lR > 0 and le > 0:
+            msg = "{0}, tell {1} that if I wanted to know {2} fucking future, I'd read it in {3} entrails.".format(relay, target, extra, extra)
+        else:
+            msg = "If I wanted to know your fucking future, I'd read it in your entrails!"
+        return msg
+
+    def futuref3(self):
+        if lt == 0 and lR == 0 and le == 0:
+            msg = "If I wanted to know your fucking future, I'd read it in your fucking entrails."
+        elif lt > 0 and lR == 0 and le == 0:
+            msg = "If I wanted to know your fucking future, {0}, I'd read it in your fucking entrails.".format(target)
+        elif lt > 0 and lR > 0 and le == 0:
+            msg = "{0}, tell {1} that if I wanted to know their fucking future, I'd read it in their fucking entrails.".format(relay, target)
+        elif lt > 0 and lR > 0 and le > 0:
+            msg = "{0}, tell {1} that if I wanted to know {2} fucking future, I'd read it in {3} fucking entrails.".format(relay, target, extra, extra)
+        else:
+            msg = "If I wanted to know your fucking future, I'd read it in your fucking entrails!"
         return msg
 
     # def fx0(self):  # extra is required
@@ -2098,6 +2137,17 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
             msg = "Who the fuck knows?"
         else:
             msg = "{0}, who the fuck knows?".format(target)
+        return msg
+
+    def who5(self):
+        if lt == 0 and le == 0:
+            msg = "Who the fuck are you?"
+        elif lt > 0 and le == 0:  # target should not be a name.
+            msg = "{0}, who the fuck are you?".format(target)
+        elif lt > 0 and le > 0:
+            msg = "{0}, who the fuck are you anyway?".format(target)
+        else:
+            msg = "Who the fuck are you anyway?"
         return msg
 
     def why(self):
