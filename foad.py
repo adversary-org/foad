@@ -14,7 +14,7 @@ from __future__ import division
 #
 # https://github.com/adversary-org/foad
 #
-# Version:  0.8.0.6
+# Version:  0.8.0.7
 #
 # BTC:  1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz
 # Licenses:  GNU Public License version 3 (GPLv3)
@@ -142,7 +142,7 @@ __license1__ = "GNU General Public License version 3 (GPLv3)"
 __license2__ = "Do What The Fuck You Want To, But It's Not My Fault Public License version 1 (WTFNMFPLv1)"
 __license3__ = "New BSD (3 clause) type"
 __license4__ = "Apache 2.0"
-__version__ = "0.8.0.6"
+__version__ = "0.8.0.7"
 __bitcoin__ = "1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz"
 __openpgp__ = "0x321E4E2373590E5D"
 
@@ -2031,8 +2031,14 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
         return msg
 
     def urso2(self):
-        if lt == 0:
+        if lt == 0 and le == 0:
             msg = "You are so fucked, so fucking fucked!"
+        elif lt > 0 and le == 0:
+            msg = "You are so fucked, {0}, so fucking fucked!".format(target)
+        elif lt == 0 and le > 0 and extra == "yeah":
+            msg = "You are so fucked, so fucking fucked! Yeah, yeah, yeah!"
+        elif lt > 0 and le > 0 and extra == "yeah":
+            msg = "You are so fucked, {0}, so fucking fucked! Yeah, yeah, yeah!".format(target)
         else:
             msg = "You are so fucked, {0}, so fucking fucked!".format(target)
         return msg
