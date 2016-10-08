@@ -14,7 +14,7 @@ from __future__ import division
 #
 # https://github.com/adversary-org/foad
 #
-# Version:  0.8.0.8
+# Version:  0.8.0.9
 #
 # BTC:  1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz
 # Licenses:  GNU Public License version 3 (GPLv3)
@@ -142,7 +142,7 @@ __license1__ = "GNU General Public License version 3 (GPLv3)"
 __license2__ = "Do What The Fuck You Want To, But It's Not My Fault Public License version 1 (WTFNMFPLv1)"
 __license3__ = "New BSD (3 clause) type"
 __license4__ = "Apache 2.0"
-__version__ = "0.8.0.8"
+__version__ = "0.8.0.9"
 __bitcoin__ = "1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz"
 __openpgp__ = "0x321E4E2373590E5D"
 
@@ -169,14 +169,16 @@ about = """
 {0}
 Version {1}
 {2}
-License:  {3}
-          {4}
+Licenses:  {3}
+           {4}
+           {5}
+           {6}
 
-For instructions run:  {5} -h
+For instructions run:  {7} -h
 
-Contact:  {6} {7}
-Bitcoin:  {8}
-""".format(__title__, __version__, __copyright__, __license1__, __license2__, sys.argv[0], __author__, __openpgp__, __bitcoin__)
+Contact:  {8} {9}
+Bitcoin:  {10}
+""".format(__title__, __version__, __copyright__, __license1__, __license2__, __license3__, __license4__, sys.argv[0], __author__, __openpgp__, __bitcoin__)
 
 version = "{0} (foad.py) version {1}".format(__stitle__, __version__)
 
@@ -326,7 +328,7 @@ class fuck:
         elif lt == 0 and le > 0 and ls == 0:
             msg = "{0} should've been aborted!".format(extra)
         elif lt > 0 and le > 0 and ls == 0:
-            msg = "{0}, you and {1} should've been aborted!".format(target, target)
+            msg = "{0}, you and {1} should've been aborted!".format(target, extra)
         elif lt == 0 and le == 0 and ls > 0 and sender == "retro":
             msg = "You should be retroactively aborted!"
         elif lt > 0 and le == 0 and ls > 0 and sender == "retro":
@@ -342,7 +344,7 @@ class fuck:
         elif lt == 0 and le > 0 and ls > 0 and sender == "candid":
             msg = "Not only should {0} have been aborted, but they're a candidate for retroactive abortion!".format(extra)
         elif lt > 0 and le > 0 and ls > 0 and sender == "candid":
-            msg = "Not only should {0} have been aborted, but {1} a candidate for retroactive abortion!".format(target, extra)
+            msg = "{0}, not only should you and {1} have been aborted, you're candidates for retroactive abortion!".format(target, extra)
         return msg
 
     def about(self):
@@ -693,10 +695,14 @@ class fuck:
         return msg
 
     def cthulhu(self):
-        if lt == 0:
+        if lt == 0 and le == 0:
             msg = "Ph'nglui mglw'nafh Cthulhu R'lyeh wgah'nagl fhtagn!"
-        elif lt > 0:
+        elif lt >= 0 and le > 0 and extra.lower() == "campus":
             msg = "Campus crusade for Cthulhu; if your god is dead, blame ours."
+        elif lt == 0 and le > 0 and extra.lower() == "vote":
+            msg = "Vote for Cthulhu! Why vote for the lesser of two evils?"
+        elif lt > 0 and le > 0 and extra.lower() == "vote":
+            msg = "Cthulhu for {0}! Why vote for the lesser of two evils?".format(target)
         else:
             msg = "Ph'nglui mglw'nafh Cthulhu R'lyeh wgah'nagl fhtagn!"
         return msg
