@@ -1992,6 +1992,17 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
             msg = "{0}, I'm too old to give a fuck.".format(target)
         return msg
 
+    def trump1(self):
+        if lt == 0 and le == 0:
+            msg = "You are as malignantly narcissistic, irrevocably misogynistic, thoroughly corrupt and utterly treasonous as Donald Trump."
+        elif lt > 0 and le == 0:
+            msg = "{0} you are as malignantly narcissistic, irrevocably misogynistic, thoroughly corrupt and utterly treasonous as Donald Trump.".format(target)
+        elif lt > 0 and le > 0:
+            msg = "{0} you are as malignantly narcissistic, irrevocably misogynistic, thoroughly corrupt and utterly treasonous as Donald Trump!".format(target)
+        else:
+            msg = "You are as malignantly narcissistic, irrevocably misogynistic, thoroughly corrupt and utterly treasonous as Donald Trump!"
+        return msg)
+
     # All the twog quotes are from TheTweetOfGod.
     # https://twitter.com/TheTweetOfGod
 
