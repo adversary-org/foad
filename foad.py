@@ -2001,7 +2001,7 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
             msg = "{0} you are as malignantly narcissistic, irrevocably misogynistic, thoroughly corrupt and utterly treasonous as Donald Trump!".format(target)
         else:
             msg = "You are as malignantly narcissistic, irrevocably misogynistic, thoroughly corrupt and utterly treasonous as Donald Trump!"
-        return msg)
+        return msg
 
     # All the twog quotes are from TheTweetOfGod.
     # https://twitter.com/TheTweetOfGod
