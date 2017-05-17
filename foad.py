@@ -14,7 +14,7 @@ from __future__ import division
 #
 # https://github.com/adversary-org/foad
 #
-# Version:  0.8.0.10
+# Version:  0.8.0.11
 #
 # BTC:  1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz
 # Licenses:  GNU Public License version 3 (GPLv3)
@@ -142,7 +142,7 @@ __license1__ = "GNU General Public License version 3 (GPLv3)"
 __license2__ = "Do What The Fuck You Want To, But It's Not My Fault Public License version 1 (WTFNMFPLv1)"
 __license3__ = "New BSD (3 clause) type"
 __license4__ = "Apache 2.0"
-__version__ = "0.8.0.10"
+__version__ = "0.8.0.11"
 __bitcoin__ = "1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz"
 __openpgp__ = "0x321E4E2373590E5D"
 
@@ -1996,9 +1996,9 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
         if lt == 0 and le == 0:
             msg = "You are as malignantly narcissistic, irrevocably misogynistic, thoroughly corrupt and utterly treasonous as Donald Trump."
         elif lt > 0 and le == 0:
-            msg = "{0} you are as malignantly narcissistic, irrevocably misogynistic, thoroughly corrupt and utterly treasonous as Donald Trump.".format(target)
+            msg = "{0}, you are as malignantly narcissistic, irrevocably misogynistic, thoroughly corrupt and utterly treasonous as Donald Trump.".format(target)
         elif lt > 0 and le > 0:
-            msg = "{0} you are as malignantly narcissistic, irrevocably misogynistic, thoroughly corrupt and utterly treasonous as Donald Trump!".format(target)
+            msg = "{0}, you are as malignantly narcissistic, irrevocably misogynistic, thoroughly corrupt and utterly treasonous as Donald Trump!".format(target)
         else:
             msg = "You are as malignantly narcissistic, irrevocably misogynistic, thoroughly corrupt and utterly treasonous as Donald Trump!"
         return msg
