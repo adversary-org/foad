@@ -80,12 +80,9 @@ from __future__ import division
 # relevant definition.
 #
 # There are four options in Latin.  The "priapus" options include
-# translation in the "priapus_trans1" and "priapus_trans2" options
-# (priapus_trans2 no target contains the translation for priapus no
-# target and priapus_trans1 contains the best translation for priapus
-# with a target, the other variants are potentially useful).  The
-# "custode", "omnia" and "vvv" options include translations in
-# comments in the source code.
+# translation in each option and accessed via the --extra flag.  The
+# "custode", "omnia" and "vvv" options include translations in comments
+# in the source code.
 #
 # There are at least three options which depend on the encoding being
 # UTF-8 (those being "custode", "omnia" and "linus").  If the
