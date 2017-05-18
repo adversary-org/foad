@@ -14,7 +14,7 @@ from __future__ import division
 #
 # https://github.com/adversary-org/foad
 #
-# Version:  0.8.0.11
+# Version:  0.8.0.12
 #
 # BTC:  1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz
 # Licenses:  GNU Public License version 3 (GPLv3)
@@ -142,7 +142,7 @@ __license1__ = "GNU General Public License version 3 (GPLv3)"
 __license2__ = "Do What The Fuck You Want To, But It's Not My Fault Public License version 1 (WTFNMFPLv1)"
 __license3__ = "New BSD (3 clause) type"
 __license4__ = "Apache 2.0"
-__version__ = "0.8.0.11"
+__version__ = "0.8.0.12"
 __bitcoin__ = "1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz"
 __openpgp__ = "0x321E4E2373590E5D"
 
@@ -1705,52 +1705,55 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
 # See http://theprofoundprogrammer.com/post/25728609992/text-theres-no-fucking-way-i-wrote-this-this
 
     def priapus(self):
-        if lt == 0:
-            msg = "Obscenis, peream, Priape, si non uti me pudet improbisque verbis sed cum tu posito deus pudore ostendas mihi coleos patentes cum cunno mihi mentula est vocanda."
+        if lt == 0 and le == 0:
+            msg = "Obscenis, peream, si non uti me pudet improbisque verbis sed cum tu posito degenerem pudore ostendas mihi coleos patentes cum cunno mihi mentula est vocanda."
+        elif lt > 0 and le == 0:
+            msg = "Obscenis, peream, {0}, si non uti me pudet improbisque verbis sed cum tu posito degenerem pudore ostendas mihi coleos patentes cum cunno mihi mentula est vocanda.".format(target)
+        elif lt == 0 and le > 0:
+            msg = "I'd rather die than use obscene and improper words; but when you, as a degenerate, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks."
+        elif lt > 0 and le > 0:
+            msg = "I'd rather die than use obscene and improper words; but when you, {0}, as a degenerate, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks.".format(target)
         else:
             msg = "Obscenis, peream, {0}, si non uti me pudet improbisque verbis sed cum tu posito degenerem pudore ostendas mihi coleos patentes cum cunno mihi mentula est vocanda.".format(target)
         return msg
 
     def priapus1(self):
-        if lt == 0:
+        if lt == 0 and le == 0:
             msg = "Obscenis, peream, si non uti me pudet improbisque verbis sed cum tu posito degenerem pudore ostendas mihi coleos patentes cum cunno mihi mentula est vocanda."
+        elif lt > 0 and le == 0:
+            msg = "Obscenis, peream, {0}, si non uti me pudet improbisque verbis sed cum tu posito degenerem pudore ostendas mihi coleos patentes cum cunno mihi mentula est vocanda.".format(target)
+        elif lt == 0 and le > 0:
+            msg = "I'd rather die than use obscene and improper words; but when you, as a degenerate, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks."
+        elif lt > 0 and le > 0:
+            msg = "I'd rather die than use obscene and improper words; but when you, {0}, as a degenerate, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks.".format(target)
         else:
             msg = "Obscenis, peream, {0}, si non uti me pudet improbisque verbis sed cum tu posito degenerem pudore ostendas mihi coleos patentes cum cunno mihi mentula est vocanda.".format(target)
         return msg
 
     def priapus2(self):
-        if lt == 0:
+        if lt == 0 and le == 0:
+            msg = "Obscenis, peream, si non uti me pudet improbisque verbis sed cum tu posito deterrimum pudore ostendas mihi coleos patentes cum cunno mihi mentula est vocanda."
+        elif lt > 0 and le == 0:
+            msg = "Obscenis, peream, {0}, si non uti me pudet improbisque verbis sed cum tu posito deterrimum pudore ostendas mihi coleos patentes cum cunno mihi mentula est vocanda.".format(target)
+        elif lt == 0 and le > 0:
+            msg = "I'd rather die than use obscene and improper words; but when you, as an inferior, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks."
+        elif lt > 0 and le > 0:
+            msg = "I'd rather die than use obscene and improper words; but when you, {0}, as an inferior, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks.".format(target)
+        else:
+            msg = "Obscenis, peream, {0}, si non uti me pudet improbisque verbis sed cum tu posito deterrimum pudore ostendas mihi coleos patentes cum cunno mihi mentula est vocanda.".format(target)
+        return msg
+
+    def priapus3(self):
+        if lt == 0 and le == 0:
             msg = "Obscenis, peream, si non uti me pudet improbisque verbis sed cum tu posito deus pudore ostendas mihi coleos patentes cum cunno mihi mentula est vocanda."
+        elif lt > 0 and le == 0:
+            msg = "Obscenis, peream, {0}, si non uti me pudet improbisque verbis sed cum tu posito deus pudore ostendas mihi coleos patentes cum cunno mihi mentula est vocanda.".format(target)
+        elif lt == 0 and le > 0:
+            msg = "I'd rather die than use obscene and improper words; but when you, as a god, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks."
+        elif lt > 0 and le > 0:
+            msg = "I'd rather die than use obscene and improper words; but when you, {0}, as a god, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks.".format(target)
         else:
             msg = "Obscenis, peream, {0}, si non uti me pudet improbisque verbis sed cum tu posito deus pudore ostendas mihi coleos patentes cum cunno mihi mentula est vocanda.".format(target)
-        return msg
-
-    def priapus_trans1(self):
-        if lt == 0:
-            msg = "I'd rather die than use obscene and improper words; but when you, as a degenerate, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks."
-        else:
-            msg = "I'd rather die than use obscene and improper words; but when you, {0}, as a degenerate, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks.".format(target)
-        return msg
-
-    def priapus_trans2(self):
-        if lt == 0:
-            msg = "I'd rather die than use obscene and improper words; but when you, as an inferior, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks."
-        else:
-            msg = "I'd rather die than use obscene and improper words; but when you, {0}, as an inferior, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks.".format(target)
-        return msg
-
-    def priapus_trans3a(self):
-        if lt == 0:
-            msg = "I'd rather die than use obscene and improper words; but when you, Priape, as a god, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks."
-        else:
-            msg = "I'd rather die than use obscene and improper words; but when you, {0}, as a god, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks.".format(target)
-        return msg
-
-    def priapus_trans3b(self):
-        if lt == 0:
-            msg = "I'd rather die than use obscene and improper words; but when you, as a god, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks."
-        else:
-            msg = "I'd rather die than use obscene and improper words; but when you, {0}, as a god, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks.".format(target)
         return msg
 
     def problem(self):
