@@ -1046,24 +1046,28 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
             msg = "If I wanted to know your fucking future, I'd read it in your fucking entrails!"
         return msg
 
-    # def fx0(self):  # extra is required
-    #     if lt == 0 and ls == 0 and lr == 0:
-    #         msg = "You fuck{0}!".format(extra)
-    #     elif lt > 0 and ls == 0 and lr == 0:
-    #         msg = "{0}, you fuck{1}!".format(target, extra)
-    #     elif lt == 0 and ls == 0 and lr > 0:
-    #         msg = "You complete and utter fuck{0}!".format(extra)
-    #     elif lt > 0 and ls == 0 and lr > 0:
-    #         msg = "{0}, you complete and utter fuck{1}!".format(target, extra)
-    #     elif lt == 0 and ls > 0 and lr == 0:
-    #         msg = "You {0}{1}!".format(sender, extra)
-    #     elif lt > 0 and ls > 0 and lr == 0:
-    #         msg = "{0}, you {0}{1}!".format(target, sender, extra)
-    #     elif lt == 0 and ls > 0 and lr > 0:
-    #         msg = "You and {0} are {1}{2}!".format(relay, sender, extra)
-    #     elif lt > 0 and ls > 0 and lr > 0:
-    #         msg = "{0}, you and {1} are {2}{3}!".format(target, relay, sender, extra)
-    #     return(msg)
+    def fx0(self):  # extra is required
+        if le == 0:
+            msg = "The extra flag (-e) MUST be used with this option."
+        elif lt == 0 and ls == 0:
+            msg = "You fuck{0}!".format(extra)
+        elif lt > 0 and ls == 0:
+            msg = "{0}, you fuck{1}!".format(target, extra)
+        elif lt == 0 and ls == 0 and lr > 0:
+            msg = "You and {0} are fuck{1}!".format(relay, extra)
+        elif lt > 0 and ls == 0 and lr > 0:
+            msg = "{0}, you and {1} are fuck{2}!".format(target, relay, extra)
+        elif lt == 0 and ls > 0:
+            msg = "You {0}{1}!".format(sender, extra)
+        elif lt > 0 and ls > 0:
+            msg = "{0}, you {1}{2}!".format(target, sender, extra)
+        elif lt == 0 and ls > 0 and lr > 0:
+            msg = "You and {0} are {1}{2}!".format(relay, sender, extra)
+        elif lt > 0 and ls > 0 and lr > 0:
+            msg = "{0}, you and {1} are {2}{3}!".format(target, relay, sender, extra)
+        else:
+            msg = "The extra flag (-e) MUST be used; sender (-s) may be used to replace fuck for alternate compound words."
+        return(msg)
 
     # def fx1(self):  # extra is required
     #     if lt == 0 and ls == 0:
