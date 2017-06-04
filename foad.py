@@ -2405,6 +2405,19 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
             msg = "What the fuck would Jesus do? Jesus would kick you the fuck out of here right now!"
         return msg
 
+    def wtfwjdgtfo2(self):
+        if lt == 0 and le == 0:
+            msg = "What the fuck would Jesus do? Jesus would get the fuck out of here!"
+        elif lt > 0 and le == 0:
+            msg = "What the fuck would Jesus do? Jesus would get {0} the fuck out of here!".format(target)
+        elif lt == 0 and le > 1:
+            msg = "What the fuck would Jesus do? Jesus would get the fuck out of {0}!".format(extra)
+        elif lt > 0 and le > 0:
+            msg = "What the fuck would Jesus do? Jesus would get {0} the fuck out of {1}!".format(target, extra)
+        else:
+            msg = "What the fuck would Jesus do? Jesus would get everyone the fuck out of here!"
+        return msg
+
     def wtfwjdrtfm(self):
         if lt == 0:
             msg = "What the fuck would Jesus do? Jesus would read the fucking manual!"
