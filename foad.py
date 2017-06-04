@@ -14,7 +14,7 @@ from __future__ import division
 #
 # https://github.com/adversary-org/foad
 #
-# Version:  0.8.1.2
+# Version:  0.8.1.3
 #
 # BTC:  1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz
 # Licenses:  GNU Public License version 3 (GPLv3)
@@ -139,7 +139,7 @@ __license1__ = "GNU General Public License version 3 (GPLv3)"
 __license2__ = "Do What The Fuck You Want To, But It's Not My Fault Public License version 1 (WTFNMFPLv1)"
 __license3__ = "New BSD (3 clause) type"
 __license4__ = "Apache 2.0"
-__version__ = "0.8.1.2"
+__version__ = "0.8.1.3"
 __bitcoin__ = "1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz"
 __openpgp__ = "0x321E4E2373590E5D"
 
@@ -2398,11 +2398,24 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
         elif lt > 0 and le == 0:
             msg = "What the fuck would Jesus do? Jesus would kick {0} the fuck out right now!".format(target)
         elif lt == 0 and le > 0:
-            msg = "What the fuck would Jesus do? Jesus would kick the fuck out {0}".format(extra)
+            msg = "What the fuck would Jesus do? Jesus would kick you the fuck out of {0} right now!".format(extra)
         elif lt > 0 and le > 0:
-            msg = "What the fuck would Jesus do? Jesus would kick {0} the fuck out {1}".format(target, extra)
+            msg = "What the fuck would Jesus do? Jesus would kick {0} the fuck out of {1} right now!".format(target, extra)
         else:
             msg = "What the fuck would Jesus do? Jesus would kick you the fuck out of here right now!"
+        return msg
+
+    def wtfwjdgtfo2(self):
+        if lt == 0 and le == 0:
+            msg = "What the fuck would Jesus do? Jesus would get the fuck out of here!"
+        elif lt > 0 and le == 0:
+            msg = "What the fuck would Jesus do? Jesus would get {0} the fuck out of here!".format(target)
+        elif lt == 0 and le > 1:
+            msg = "What the fuck would Jesus do? Jesus would get the fuck out of {0}!".format(extra)
+        elif lt > 0 and le > 0:
+            msg = "What the fuck would Jesus do? Jesus would get {0} the fuck out of {1}!".format(target, extra)
+        else:
+            msg = "What the fuck would Jesus do? Jesus would get everyone the fuck out of here!"
         return msg
 
     def wtfwjdrtfm(self):
