@@ -230,6 +230,8 @@ parser.add_argument("-a", "--append", help="Additional comment to append to outp
 parser.add_argument("-p", "--prepend", help="Additional comment to prepend before the output.  Now works with all options.", action="store", required=False)
 # parser.add_argument("-o", "--output", help="Writes output to the specified file instead of stdout.", action="store", required=False)
 parser.add_argument("-O", "--options", help="Lists the explicit variations (the same as: -f list_options), will accept any argument to activate.", action="store", required=False)
+parser.add_argument("-w", "--wrap", help="Enables the wrap function from the textwrap module, enter the column width to use.", action="store", required=False)
+#parser.add_argument("-W", "--wrapper", help="Enables various functions of the textwrap module.", action="store", required=False)
 parser.add_argument("-V", "--version", help="Print the version number.", action="store", required=False)
 
 # This, in conjunction with lx above is what allows the old style
@@ -292,6 +294,11 @@ if args.options is None:
 else:
     options = args.options
 
+if args.wrap is None:
+    wrap = 0
+else:
+    wrap = int(args.wrap)
+    
 if args.version is None:
     version = ""
 #elif sys.argv[1] == "-V" or "--version" and args.version is None:
@@ -307,6 +314,7 @@ lR = len(relay)  # lr is already used for part of the random calls.
 lA = len(append)  # la is already used for all of sys.argv.
 lP = len(prepend)  # I think lp is used for something else as well.
 lO = len(options)
+#lW = len(wrapper)
 lV = len(version)
 
 class fuck:
@@ -1751,7 +1759,11 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
             msg = "I'd rather die than use obscene and improper words; but when you, {0}, as a degenerate, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks.".format(target)
         else:
             msg = "Obscenis, peream, {0}, si non uti me pudet improbisque verbis sed cum tu posito degenerem pudore ostendas mihi coleos patentes cum cunno mihi mentula est vocanda.".format(target)
-        return msg
+        if wrap == 0:
+            return msg
+        else:
+            for line in textwrap.wrap(msg, width=wrap):
+                print("{0}".format(line))
 
     def priapus1(self):
         if lt == 0 and le == 0:
