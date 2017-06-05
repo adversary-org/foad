@@ -1763,7 +1763,7 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
             return msg
         else:
             for line in textwrap.wrap(msg, width=wrap):
-                print(line)
+                print("{0}".format(line))
 
     def priapus1(self):
         if lt == 0 and le == 0:
