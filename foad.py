@@ -14,7 +14,7 @@ from __future__ import division
 #
 # https://github.com/adversary-org/foad
 #
-# Version:  0.8.1.4
+# Version:  0.8.1.5
 #
 # BTC:  1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz
 # Licenses:  GNU Public License version 3 (GPLv3)
@@ -139,7 +139,7 @@ __license1__ = "GNU General Public License version 3 (GPLv3)"
 __license2__ = "Do What The Fuck You Want To, But It's Not My Fault Public License version 1 (WTFNMFPLv1)"
 __license3__ = "New BSD (3 clause) type"
 __license4__ = "Apache 2.0"
-__version__ = "0.8.1.4"
+__version__ = "0.8.1.5"
 __bitcoin__ = "1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz"
 __openpgp__ = "0x321E4E2373590E5D"
 
@@ -1805,6 +1805,22 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
             msg = "Obscenis, peream, {0}, si non uti me pudet improbisque verbis sed cum tu posito deus pudore ostendas mihi coleos patentes cum cunno mihi mentula est vocanda.".format(target)
         return msg
 
+    # praefecus, praefeci  N (2nd) M     2 1  M   [XXXDX]  
+    # director, president, chief, governor;
+
+    def priapus4(self):
+        if lt == 0 and le == 0:
+            msg = "Obscenis, peream, si non uti me pudet improbisque verbis sed cum tu posito praefecus pudore ostendas mihi coleos patentes cum cunno mihi mentula est vocanda."
+        elif lt > 0 and le == 0:
+            msg = "Obscenis, peream, {0}, si non uti me pudet improbisque verbis sed cum tu posito praefecus pudore ostendas mihi coleos patentes cum cunno mihi mentula est vocanda.".format(target)
+        elif lt == 0 and le > 0:
+            msg = "I'd rather die than use obscene and improper words; but when you, as a president, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks."
+        elif lt > 0 and le > 0:
+            msg = "I'd rather die than use obscene and improper words; but when you, {0}, as a president, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks.".format(target)
+        else:
+            msg = "Obscenis, peream, {0}, si non uti me pudet improbisque verbis sed cum tu posito praefecus pudore ostendas mihi coleos patentes cum cunno mihi mentula est vocanda.".format(target)
+        return msg
+    
     def problem(self):
         if lt == 0 and le == 0 and lR == 0:
             msg = "What is your fucking problem?"
