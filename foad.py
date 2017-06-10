@@ -14,7 +14,7 @@ from __future__ import division
 #
 # https://github.com/adversary-org/foad
 #
-# Version:  0.8.1.5
+# Version:  0.8.1.6
 #
 # BTC:  1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz
 # Licenses:  GNU Public License version 3 (GPLv3)
@@ -139,7 +139,7 @@ __license1__ = "GNU General Public License version 3 (GPLv3)"
 __license2__ = "Do What The Fuck You Want To, But It's Not My Fault Public License version 1 (WTFNMFPLv1)"
 __license3__ = "New BSD (3 clause) type"
 __license4__ = "Apache 2.0"
-__version__ = "0.8.1.5"
+__version__ = "0.8.1.6"
 __bitcoin__ = "1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz"
 __openpgp__ = "0x321E4E2373590E5D"
 
@@ -2514,10 +2514,15 @@ for x in df:
     rf.append(x)
 rf.remove("about")
 rf.remove("acronym")
-rf.remove("miscarried")
 rf.remove("ballmer")
 rf.remove("ballmerc")
 rf.remove("ballmers")
+rf.remove("caniuse")
+rf.remove("fx0")
+rf.remove("fx1")
+rf.remove("fx2")
+rf.remove("miscarried")
+rf.remove("tugwar")
 rf.remove("xyz")
 lr = len(rf)
 
