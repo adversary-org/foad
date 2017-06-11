@@ -14,7 +14,7 @@ from __future__ import division
 #
 # https://github.com/adversary-org/foad
 #
-# Version:  0.8.1.8
+# Version:  0.8.1.9
 #
 # BTC:  1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz
 # Licenses:  GNU Public License version 3 (GPLv3)
@@ -139,7 +139,7 @@ __license1__ = "GNU General Public License version 3 (GPLv3)"
 __license2__ = "Do What The Fuck You Want To, But It's Not My Fault Public License version 1 (WTFNMFPLv1)"
 __license3__ = "New BSD (3 clause) type"
 __license4__ = "Apache 2.0"
-__version__ = "0.8.1.8"
+__version__ = "0.8.1.9"
 __bitcoin__ = "1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz"
 __openpgp__ = "0x321E4E2373590E5D"
 __openpgp_fpr__ = "DB4724E6FA4286C92B4E55C4321E4E2373590E5D"
@@ -955,6 +955,19 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
 """
         return msg
 
+    def forsooth(self):
+        if lt == 0 and le == 0:
+            msg = "Forsooth!  Thou art fucked!"
+        elif lt > 0 and le == 0:
+            msg = "Forsooth!  {0}, thou art fucked!".format(target)
+        elif lt == 0 and le > 0:
+            msg = "Forsooth!  Thou and thine {0} art fucked!".format(extra)
+        elif lt > 0 and le > 0:
+            msg = "Forsooth!  {0}, thou and thine {1} art fucked!".format(target, extra)
+        else:
+            msg = "Forsooth!  Thou and thine art fucked!"
+        return msg
+    
     def froad(self):
         if lt == 0 and le == 0:
             msg = "Fuck off and die!"
