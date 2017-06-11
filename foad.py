@@ -1700,11 +1700,16 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
         return msg
 
     def omnia(self):
-        if lt == 0:
+        if lt == 0 and le == 0:
             msg = "Omnia quia sunt, futūtum sunt."
-            # All things that are, are fucked.
-        else:
+        elif lt > 0 and le == 0:
             msg = "{0}, omnia quia sunt, futūtum sunt.".format(target)
+        elif == 0 and le > 0:
+            msg = "All things that are, are fucked."
+        elif lt > 0 and le > 0:
+            msg = "{0}, all things that are, are fucked.".format(target)
+        else:
+            msg = "Omnia quia sunt, futūtum sunt!"
         return msg
 
     def outside(self):
