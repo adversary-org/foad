@@ -743,11 +743,11 @@ class fuck:
         if lt == 0 and le == 0:
             msg = "Sed quis custodiet ipsos futūtor?"
         elif lt > 0 and le == 0:
-            msg = "{0}, quis custodiet ipsos futūtor?".format(target)
+            msg = "Sed quis custodiet ipsos futūtor, {0}?".format(target)
         elif lt == 0 and le > 0:
-            msg "Who will guard the fuckers?"
+            msg = "Who will guard the fuckers?"
         elif lt > 0 and le > 0:
-            msg "{0}, who will guard the fuckers?".format(target)
+            msg = "Who will guard the fuckers, {0}?".format(target)
         else:
             msg = "Sed quis custodiet ipsos futūtor?!"
         return msg
@@ -1709,7 +1709,7 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
             msg = "Omnia quia sunt, futūtum sunt."
         elif lt > 0 and le == 0:
             msg = "{0}, omnia quia sunt, futūtum sunt.".format(target)
-        elif == 0 and le > 0:
+        elif lt == 0 and le > 0:
             msg = "All things that are, are fucked."
         elif lt > 0 and le > 0:
             msg = "{0}, all things that are, are fucked.".format(target)
@@ -2297,11 +2297,12 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
         elif lt == 0 and le > 0 and ls > 0:
             msg = "{0} we're fucked!".format(extra)
         elif lt > 0 and le > 0 and ls == 0:
-            msg = "{0}, {1} we are fucked!".format(extra, target)
+            msg = "{0}, {1}, we are fucked!".format(extra, target)
         elif lt > 0 and le > 0 and ls > 0:
-            msg = "{0}, {1} we're fucked!".format(extra, target)
+            msg = "{0}, {1}, we're fucked!".format(extra, target)
         else:
-            msg "Now ... we are fucked!"
+            msg = "Now ... we are fucked!"
+        return msg
     
     def when1(self):
         if lt == 0:
