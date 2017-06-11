@@ -57,7 +57,7 @@ deal with it.  Even with HexChat it appears to no longer be necessary
 when changing the version of OS X from 10.5 to 10.9 and changing the
 version of HexChat from 2.10.0 to 2.10.1.  Though it is only a hunch,
 I suspect the fix was in HexChat rather than OS X, but that is simply
-based on the author of HexChat being more approachable than HexChat.
+based on the author of HexChat being more approachable than Apple.
 
 
 SMS

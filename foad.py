@@ -14,7 +14,7 @@ from __future__ import division
 #
 # https://github.com/adversary-org/foad
 #
-# Version:  0.8.1.7
+# Version:  0.8.1.8
 #
 # BTC:  1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz
 # Licenses:  GNU Public License version 3 (GPLv3)
@@ -139,9 +139,11 @@ __license1__ = "GNU General Public License version 3 (GPLv3)"
 __license2__ = "Do What The Fuck You Want To, But It's Not My Fault Public License version 1 (WTFNMFPLv1)"
 __license3__ = "New BSD (3 clause) type"
 __license4__ = "Apache 2.0"
-__version__ = "0.8.1.7"
+__version__ = "0.8.1.8"
 __bitcoin__ = "1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz"
 __openpgp__ = "0x321E4E2373590E5D"
+__openpgp_fpr__ = "DB4724E6FA4286C92B4E55C4321E4E2373590E5D"
+__openpgp_key__ = "0x321E4E2373590E5D"
 
 import argparse
 import locale
@@ -171,7 +173,11 @@ Licenses:  {3}
            {5}
            {6}
 
-For instructions run:  {7} -h
+    For instructions run:  {7} -h
+
+    To list all options run:  {7} -O .
+
+    To display the version and exit run:  {7} -V .
 
 Contact:  {8} {9}
 Bitcoin:  {10}
@@ -230,8 +236,6 @@ parser.add_argument("-a", "--append", help="Additional comment to append to outp
 parser.add_argument("-p", "--prepend", help="Additional comment to prepend before the output.  Now works with all options.", action="store", required=False)
 # parser.add_argument("-o", "--output", help="Writes output to the specified file instead of stdout.", action="store", required=False)
 parser.add_argument("-O", "--options", help="Lists the explicit variations (the same as: -f list_options), will accept any argument to activate.", action="store", required=False)
-#parser.add_argument("-w", "--wrap", help="Enables the wrap function from the textwrap module, enter the column width to use.", action="store", required=False)
-#parser.add_argument("-W", "--wrapper", help="Enables various functions of the textwrap module.", action="store", required=False)
 parser.add_argument("-V", "--version", help="Print the version number.", action="store", required=False)
 
 # This, in conjunction with lx above is what allows the old style
@@ -289,16 +293,11 @@ else:
 
 if args.options is None:
     options = ""
-#elif sys.argv[1] == "-O" or "--options" and args.options is None:
+#elif sys.argv[1] == "\-O" or "\--options" and args.options is None:
 #    options = "opt"
 else:
     options = args.options
 
-# if args.wrap is None:
-#     wrap = 0
-# else:
-#     wrap = int(args.wrap)
-    
 if args.version is None:
     version = ""
 #elif sys.argv[1] == "-V" or "--version" and args.version is None:
@@ -314,7 +313,6 @@ lR = len(relay)  # lr is already used for part of the random calls.
 lA = len(append)  # la is already used for all of sys.argv.
 lP = len(prepend)  # I think lp is used for something else as well.
 lO = len(options)
-#lW = len(wrapper)
 lV = len(version)
 
 class fuck:
@@ -376,7 +374,11 @@ class fuck:
         elif target.lower() == "encryption":
             msg = "My GPG key is included for a reason, we should all be encrypting everything all the time."
         elif target.lower() in "gpg key":
-            msg = __openpgp__
+            msg = __openpgp_key__
+        elif target.lower() in "fpr":
+            msg = __openpgp_fpr__
+        elif target.lower() in "fingerprint":
+            msg = __openpgp_fpr__
         elif target.lower() == "irc":
             msg = "Hasimir on freenode.net"
         elif target.lower() == "options":
@@ -1758,13 +1760,8 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
         elif lt > 0 and le > 0:
             msg = "I'd rather die than use obscene and improper words; but when you, {0}, as a degenerate, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks.".format(target)
         else:
-            msg = "Obscenis, peream, {0}, si non uti me pudet improbisque verbis sed cum tu posito degenerem pudore ostendas mihi coleos patentes cum cunno mihi mentula est vocanda.".format(target)
+            msg = "Obscenis, peream, si non uti me pudet improbisque verbis sed cum tu posito degenerem pudore ostendas mihi coleos patentes cum cunno mihi mentula est vocanda!"
         return msg
-        # if wrap == 0:
-        #     return msg
-        # else:
-        #     for line in textwrap.wrap(msg, width=wrap):
-        #         print("{0}".format(line))
 
     def priapus1(self):
         if lt == 0 and le == 0:
@@ -1776,7 +1773,7 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
         elif lt > 0 and le > 0:
             msg = "I'd rather die than use obscene and improper words; but when you, {0}, as a degenerate, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks.".format(target)
         else:
-            msg = "Obscenis, peream, {0}, si non uti me pudet improbisque verbis sed cum tu posito degenerem pudore ostendas mihi coleos patentes cum cunno mihi mentula est vocanda.".format(target)
+            msg = "Obscenis, peream, si non uti me pudet improbisque verbis sed cum tu posito degenerem pudore ostendas mihi coleos patentes cum cunno mihi mentula est vocanda!"
         return msg
 
     def priapus2(self):
@@ -1789,7 +1786,7 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
         elif lt > 0 and le > 0:
             msg = "I'd rather die than use obscene and improper words; but when you, {0}, as an inferior, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks.".format(target)
         else:
-            msg = "Obscenis, peream, {0}, si non uti me pudet improbisque verbis sed cum tu posito deterrimum pudore ostendas mihi coleos patentes cum cunno mihi mentula est vocanda.".format(target)
+            msg = "Obscenis, peream, si non uti me pudet improbisque verbis sed cum tu posito deterrimum pudore ostendas mihi coleos patentes cum cunno mihi mentula est vocanda!"
         return msg
 
     def priapus3(self):
@@ -1802,23 +1799,78 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
         elif lt > 0 and le > 0:
             msg = "I'd rather die than use obscene and improper words; but when you, {0}, as a god, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks.".format(target)
         else:
-            msg = "Obscenis, peream, {0}, si non uti me pudet improbisque verbis sed cum tu posito deus pudore ostendas mihi coleos patentes cum cunno mihi mentula est vocanda.".format(target)
+            msg = "Obscenis, peream, si non uti me pudet improbisque verbis sed cum tu posito deus pudore ostendas mihi coleos patentes cum cunno mihi mentula est vocanda!"
         return msg
 
-    # praefecus, praefeci  N (2nd) M     2 1  M   [XXXDX]  
-    # director, president, chief, governor;
-
     def priapus4(self):
-        if lt == 0 and le == 0:
+        if lt == 0 and le == 0 and lR == 0:
             msg = "Obscenis, peream, si non uti me pudet improbisque verbis sed cum tu posito praefecus pudore ostendas mihi coleos patentes cum cunno mihi mentula est vocanda."
-        elif lt > 0 and le == 0:
+        elif lt > 0 and le == 0 and lR == 0:
             msg = "Obscenis, peream, {0}, si non uti me pudet improbisque verbis sed cum tu posito praefecus pudore ostendas mihi coleos patentes cum cunno mihi mentula est vocanda.".format(target)
-        elif lt == 0 and le > 0:
+        elif lt == 0 and le > 0 and lR == 0:
             msg = "I'd rather die than use obscene and improper words; but when you, as a president, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks."
-        elif lt > 0 and le > 0:
+        elif lt == 0 and le > 0 and lR > 0 and relay.lower() == "chief":
+            msg = "I'd rather die than use obscene and improper words; but when you, as a chief, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks."
+        elif lt == 0 and le > 0 and lR > 0 and relay.lower() == "dir":
+            msg = "I'd rather die than use obscene and improper words; but when you, as a director, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks."
+        elif lt == 0 and le > 0 and lR > 0 and relay.lower() == "gov":
+            msg = "I'd rather die than use obscene and improper words; but when you, as a governor, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks."
+        elif lt == 0 and le > 0 and lR > 0 and relay.lower() == "help":
+            msg = "Alternative translations available via setting relay flag to: chief, dir or gov for chief, director or governor. Default is president or help to print this message."
+        elif lt == 0 and le > 0 and lR > 0 and relay.lower() != "chief":
+            msg = "I'd rather die than use obscene and improper words; but when you, as a president, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks."
+        elif lt == 0 and le > 0 and lR > 0 and relay.lower() != "dir":
+            msg = "I'd rather die than use obscene and improper words; but when you, as a president, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks."
+        elif lt == 0 and le > 0 and lR > 0 and relay.lower() != "gov":
+            msg = "I'd rather die than use obscene and improper words; but when you, as a president, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks."
+        elif lt == 0 and le > 0 and lR > 0 and relay.lower() != "help":
+            msg = "I'd rather die than use obscene and improper words; but when you, as a president, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks."
+        elif lt > 0 and le > 0 and lR == 0:
+            msg = "I'd rather die than use obscene and improper words; but when you, {0}, as a president, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks.".format(target)
+        elif lt > 0 and le > 0 and lR > 0 and relay.lower() == "chief":
+            msg = "I'd rather die than use obscene and improper words; but when you, {0}, as a chief, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks.".format(target)
+        elif lt > 0 and le > 0 and lR > 0 and relay.lower() == "dir":
+            msg = "I'd rather die than use obscene and improper words; but when you, {0}, as a director, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks.".format(target)
+        elif lt > 0 and le > 0 and lR > 0 and relay.lower() == "gov":
+            msg = "I'd rather die than use obscene and improper words; but when you, {0}, as a governor, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks.".format(target)
+        elif lt > 0 and le > 0 and lR > 0 and relay.lower() == "help":
+            msg = "Alternative translations available via setting relay flag to: chief, dir or gov for chief, director or governor. Default is president or help to print this message.".format(target)
+        elif lt > 0 and le > 0 and lR > 0 and relay.lower() != "chief":
+            msg = "I'd rather die than use obscene and improper words; but when you, {0}, as a president, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks.".format(target)
+        elif lt > 0 and le > 0 and lR > 0 and relay.lower() != "dir":
+            msg = "I'd rather die than use obscene and improper words; but when you, {0}, as a president, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks.".format(target)
+        elif lt > 0 and le > 0 and lR > 0 and relay.lower() != "gov":
+            msg = "I'd rather die than use obscene and improper words; but when you, {0}, as a president, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks.".format(target)
+        elif lt > 0 and le > 0 and lR > 0 and relay.lower() != "help":
             msg = "I'd rather die than use obscene and improper words; but when you, {0}, as a president, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks.".format(target)
         else:
-            msg = "Obscenis, peream, {0}, si non uti me pudet improbisque verbis sed cum tu posito praefecus pudore ostendas mihi coleos patentes cum cunno mihi mentula est vocanda.".format(target)
+            msg = "Obscenis, peream, si non uti me pudet improbisque verbis sed cum tu posito praefecus pudore ostendas mihi coleos patentes cum cunno mihi mentula est vocanda!"
+        return msg
+
+    def priapus5(self):
+        if lt == 0 and le == 0:
+            msg = "Obscenis, peream, si non uti me pudet improbisque verbis sed cum tu posito diabolus pudore ostendas mihi coleos patentes cum cunno mihi mentula est vocanda."
+        elif lt > 0 and le == 0:
+            msg = "Obscenis, peream, {0}, si non uti me pudet improbisque verbis sed cum tu posito diabolus pudore ostendas mihi coleos patentes cum cunno mihi mentula est vocanda.".format(target)
+        elif lt == 0 and le > 0:
+            msg = "I'd rather die than use obscene and improper words; but when you, as a devil, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks."
+        elif lt > 0 and le > 0:
+            msg = "I'd rather die than use obscene and improper words; but when you, {0}, as a devil, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks.".format(target)
+        else:
+            msg = "Obscenis, peream, si non uti me pudet improbisque verbis sed cum tu posito diabolus pudore ostendas mihi coleos patentes cum cunno mihi mentula est vocanda!"
+        return msg
+
+    def priapus6(self):
+        if lt == 0 and le == 0:
+            msg = "Obscenis, peream, si non uti me pudet improbisque verbis sed cum tu posito daemonis pudore ostendas mihi coleos patentes cum cunno mihi mentula est vocanda."
+        elif lt > 0 and le == 0:
+            msg = "Obscenis, peream, {0}, si non uti me pudet improbisque verbis sed cum tu posito daemonis pudore ostendas mihi coleos patentes cum cunno mihi mentula est vocanda.".format(target)
+        elif lt == 0 and le > 0:
+            msg = "I'd rather die than use obscene and improper words; but when you, as a demon, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks."
+        elif lt > 0 and le > 0:
+            msg = "I'd rather die than use obscene and improper words; but when you, {0}, as a demon, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks.".format(target)
+        else:
+            msg = "Obscenis, peream, si non uti me pudet improbisque verbis sed cum tu posito daemonis pudore ostendas mihi coleos patentes cum cunno mihi mentula est vocanda!"
         return msg
     
     def problem(self):
