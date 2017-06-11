@@ -65,14 +65,19 @@ generic catchall can now be used with ``--prepend`` and/or
 Note that though the Latin example abobe and its corresponding
 translated text via the ``--extra`` flag utilise a Twitter-style
 username, that output is actually too long for a tweet.  It would work
-as a DM, though.  Also note that the ``wrap`` command included in two
-of the above examples is part of the `Muttils
+as a DM, though.
+
+Also note that the ``wrap`` command included in two of the above
+examples is part of the `Muttils
 <https://bitbucket.org/blacktrash/muttils>`__ package, which requires
 Python 2.7.  A port of that package which uses Python 3 instead is
 `available here <https://github.com/adversary-org/misc-scripts>`__
 (more specifically `here
 <https://github.com/adversary-org/misc-scripts/tree/master/python3/muttils3>`__),
-but the latter version has not been robustly tested.
+but the latter version has not been robustly tested.  Also note that
+the ``wrap-foad.sh`` script is just a shell script which utilises the
+wrap command with 80 character column widths, while still allowing the
+normal ``foad.py`` flags and arguments to be used.
 
 If you find this script of use or even just amusing, a small Bitcoin
 contribution to ``1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz`` would be
