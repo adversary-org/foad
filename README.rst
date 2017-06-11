@@ -49,7 +49,19 @@ Examples:
     I'd rather die than use obscene and improper words; but when you, Tim Chevalier,
     as a degenerate, appear with your testicles hanging out, it is appropriate for
     me to speak of cunts and cocks.
-    bash$ 
+    bash$
+    
+    bash$ wrap-foad.sh -f priapus4 -n "Donald Trump"
+    Obscenis, peream, Donald Trump, si non uti me pudet improbisque verbis sed cum
+    tu posito praefecus pudore ostendas mihi coleos patentes cum cunno mihi mentula
+    est vocanda.
+    bash$
+
+    bash$ wrap-foad.sh -f priapus4 -n "Donald Trump" -e russia
+    I'd rather die than use obscene and improper words; but when you, Donald Trump,
+    as a president, appear with your testicles hanging out, it is appropriate for me
+    to speak of cunts and cocks.
+    bash$
 
 
 There are currently more than 200 options to use with the ``-f`` flag
@@ -66,6 +78,18 @@ Note that though the Latin example abobe and its corresponding
 translated text via the ``--extra`` flag utilise a Twitter-style
 username, that output is actually too long for a tweet.  It would work
 as a DM, though.
+
+Also note that the ``wrap`` command included in some of the above
+examples is part of the `Muttils
+<https://bitbucket.org/blacktrash/muttils>`__ package, which requires
+Python 2.7.  A port of that package which uses Python 3 instead is
+`available here <https://github.com/adversary-org/misc-scripts>`__
+(more specifically `here
+<https://github.com/adversary-org/misc-scripts/tree/master/python3/muttils3>`__),
+but the latter version has not been robustly tested.  Also note that
+the ``wrap-foad.sh`` script is just a shell script which utilises the
+wrap command with 80 character column widths, while still allowing the
+normal ``foad.py`` flags and arguments to be used.
 
 If you find this script of use or even just amusing, a small Bitcoin
 contribution to ``1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz`` would be
