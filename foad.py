@@ -2283,6 +2283,26 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
             msg = "Why?  Because fuck you {0}, that's why.".format(target)
         return msg
 
+    def we1(self):
+        if lt == 0 and le == 0 and ls == 0:
+            msg = "We are fucked!"
+        elif lt == 0 and le == 0 and ls > 0:
+            msg = "We're fucked!"
+        elif lt > 0 and le == 0 and ls == 0:
+            msg = "{0}, we are fucked!".format(target)
+        elif lt > 0 and le == 0 and ls > 0:
+            msg = "{0}, we're fucked!".format(target)
+        elif lt == 0 and le > 0 and ls == 0:
+            msg = "{0} we are fucked!".format(extra)
+        elif lt == 0 and le > 0 and ls > 0:
+            msg = "{0} we're fucked!".format(extra)
+        elif lt > 0 and le > 0 and ls == 0:
+            msg = "{0}, {1} we are fucked!".format(extra, target)
+        elif lt > 0 and le > 0 and ls > 0:
+            msg = "{0}, {1} we're fucked!".format(extra, target)
+        else:
+            msg "Now ... we are fucked!"
+    
     def when1(self):
         if lt == 0:
             msg = "When the fuck will that happen?"
