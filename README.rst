@@ -49,7 +49,19 @@ Examples:
     I'd rather die than use obscene and improper words; but when you, Tim Chevalier,
     as a degenerate, appear with your testicles hanging out, it is appropriate for
     me to speak of cunts and cocks.
-    bash$ 
+    bash$
+    
+    bash$ wrap-foad.sh -f priapus4 -n "Donald Trump"
+    Obscenis, peream, Donald Trump, si non uti me pudet improbisque verbis sed cum
+    tu posito praefecus pudore ostendas mihi coleos patentes cum cunno mihi mentula
+    est vocanda.
+    bash$
+
+    bash$ wrap-foad.sh -f priapus4 -n "Donald Trump" -e russia
+    I'd rather die than use obscene and improper words; but when you, Donald Trump,
+    as a president, appear with your testicles hanging out, it is appropriate for me
+    to speak of cunts and cocks.
+    bash$
 
 
 There are currently more than 200 options to use with the ``-f`` flag
@@ -67,7 +79,7 @@ translated text via the ``--extra`` flag utilise a Twitter-style
 username, that output is actually too long for a tweet.  It would work
 as a DM, though.
 
-Also note that the ``wrap`` command included in two of the above
+Also note that the ``wrap`` command included in some of the above
 examples is part of the `Muttils
 <https://bitbucket.org/blacktrash/muttils>`__ package, which requires
 Python 2.7.  A port of that package which uses Python 3 instead is
