@@ -14,7 +14,7 @@ from __future__ import division
 #
 # https://github.com/adversary-org/foad
 #
-# Version:  0.8.1.9
+# Version:  0.8.1.10
 #
 # BTC:  1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz
 # Licenses:  GNU Public License version 3 (GPLv3)
@@ -139,7 +139,7 @@ __license1__ = "GNU General Public License version 3 (GPLv3)"
 __license2__ = "Do What The Fuck You Want To, But It's Not My Fault Public License version 1 (WTFNMFPLv1)"
 __license3__ = "New BSD (3 clause) type"
 __license4__ = "Apache 2.0"
-__version__ = "0.8.1.9"
+__version__ = "0.8.1.10"
 __bitcoin__ = "1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz"
 __openpgp__ = "0x321E4E2373590E5D"
 __openpgp_fpr__ = "DB4724E6FA4286C92B4E55C4321E4E2373590E5D"
@@ -740,11 +740,16 @@ class fuck:
         return msg
 
     def custode(self):
-        if lt == 0:
+        if lt == 0 and le == 0:
             msg = "Sed quis custodiet ipsos futūtor?"
-            # But who will guard the fucker(s)?
+        elif lt > 0 and le == 0:
+            msg = "Sed quis custodiet ipsos futūtor, {0}?".format(target)
+        elif lt == 0 and le > 0:
+            msg = "Who will guard the fuckers?"
+        elif lt > 0 and le > 0:
+            msg = "Who will guard the fuckers, {0}?".format(target)
         else:
-            msg = "{0}, quis custodiet ipsos futūtor?".format(target)
+            msg = "Sed quis custodiet ipsos futūtor?!"
         return msg
 
     def damage(self):
@@ -1700,11 +1705,16 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
         return msg
 
     def omnia(self):
-        if lt == 0:
+        if lt == 0 and le == 0:
             msg = "Omnia quia sunt, futūtum sunt."
-            # All things that are, are fucked.
-        else:
+        elif lt > 0 and le == 0:
             msg = "{0}, omnia quia sunt, futūtum sunt.".format(target)
+        elif lt == 0 and le > 0:
+            msg = "All things that are, are fucked."
+        elif lt > 0 and le > 0:
+            msg = "{0}, all things that are, are fucked.".format(target)
+        else:
+            msg = "Omnia quia sunt, futūtum sunt!"
         return msg
 
     def outside(self):
@@ -2273,6 +2283,27 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
             msg = "Why?  Because fuck you {0}, that's why.".format(target)
         return msg
 
+    def we1(self):
+        if lt == 0 and le == 0 and ls == 0:
+            msg = "We are fucked!"
+        elif lt == 0 and le == 0 and ls > 0:
+            msg = "We're fucked!"
+        elif lt > 0 and le == 0 and ls == 0:
+            msg = "{0}, we are fucked!".format(target)
+        elif lt > 0 and le == 0 and ls > 0:
+            msg = "{0}, we're fucked!".format(target)
+        elif lt == 0 and le > 0 and ls == 0:
+            msg = "{0} we are fucked!".format(extra)
+        elif lt == 0 and le > 0 and ls > 0:
+            msg = "{0} we're fucked!".format(extra)
+        elif lt > 0 and le > 0 and ls == 0:
+            msg = "{0}, {1}, we are fucked!".format(extra, target)
+        elif lt > 0 and le > 0 and ls > 0:
+            msg = "{0}, {1}, we're fucked!".format(extra, target)
+        else:
+            msg = "Now ... we are fucked!"
+        return msg
+    
     def when1(self):
         if lt == 0:
             msg = "When the fuck will that happen?"
