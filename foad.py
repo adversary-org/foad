@@ -142,6 +142,8 @@ __license4__ = "Apache 2.0"
 __version__ = "0.8.1.8"
 __bitcoin__ = "1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz"
 __openpgp__ = "0x321E4E2373590E5D"
+__openpgp_fpr__ = "DB4724E6FA4286C92B4E55C4321E4E2373590E5D"
+__openpgp_key__ = "0x321E4E2373590E5D"
 
 import argparse
 import locale
@@ -171,7 +173,11 @@ Licenses:  {3}
            {5}
            {6}
 
-For instructions run:  {7} -h
+    For instructions run:  {7} -h
+
+    To list all options run:  {7} -O .
+
+    To display the version and exit run:  {7} -V .
 
 Contact:  {8} {9}
 Bitcoin:  {10}
@@ -368,7 +374,11 @@ class fuck:
         elif target.lower() == "encryption":
             msg = "My GPG key is included for a reason, we should all be encrypting everything all the time."
         elif target.lower() in "gpg key":
-            msg = __openpgp__
+            msg = __openpgp_key__
+        elif target.lower() in "fpr":
+            msg = __openpgp_fpr__
+        elif target.lower() in "fingerprint":
+            msg = __openpgp_fpr__
         elif target.lower() == "irc":
             msg = "Hasimir on freenode.net"
         elif target.lower() == "options":
