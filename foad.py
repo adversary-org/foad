@@ -740,11 +740,16 @@ class fuck:
         return msg
 
     def custode(self):
-        if lt == 0:
+        if lt == 0 and le == 0:
             msg = "Sed quis custodiet ipsos futūtor?"
-            # But who will guard the fucker(s)?
-        else:
+        elif lt > 0 and le == 0:
             msg = "{0}, quis custodiet ipsos futūtor?".format(target)
+        elif lt == 0 and le > 0:
+            msg "Who will guard the fuckers?"
+        elif lt > 0 and le > 0:
+            msg "{0}, who will guard the fuckers?".format(target)
+        else:
+            msg = "Sed quis custodiet ipsos futūtor?!"
         return msg
 
     def damage(self):
