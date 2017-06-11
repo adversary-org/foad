@@ -35,20 +35,20 @@ Examples:
     Obscenis, peream, @fatneckbeardguy, si non uti me pudet improbisque verbis sed cum tu posito degenerem pudore ostendas mihi coleos patentes cum cunno mihi mentula est vocanda.
     bash$
     
-    bash$ foad -f priapus1 -n @fatneckbeardguy | wrap -w 78
+    bash$ foad -f priapus1 -n @fatneckbeardguy | wrap -w 80
     Obscenis, peream, @fatneckbeardguy, si non uti me pudet improbisque verbis sed
     cum tu posito degenerem pudore ostendas mihi coleos patentes cum cunno mihi
     mentula est vocanda.
     bash$ 
     
-    bash$ foad -f priapus1 -n @fatneckbeardguy -e trans
-    I'd rather die than use obscene and improper words; but when you, @fatneckbeardguy, as a degenerate, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks.
+    bash$ foad -f priapus1 -n "Tim Chevalier" -e trans
+    I'd rather die than use obscene and improper words; but when you, Tim Chevalier, as a degenerate, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks.
     bash$
     
-    bash$ foad -f priapus1 -n @fatneckbeardguy -e trans | wrap -w 78
-    I'd rather die than use obscene and improper words; but when you,
-    @fatneckbeardguy, as a degenerate, appear with your testicles hanging out, it
-    is appropriate for me to speak of cunts and cocks.
+    bash$ foad -f priapus1 -n "Tim Chevalier" -e trans | wrap -w 80
+    I'd rather die than use obscene and improper words; but when you, Tim Chevalier,
+    as a degenerate, appear with your testicles hanging out, it is appropriate for
+    me to speak of cunts and cocks.
     bash$ 
 
 
