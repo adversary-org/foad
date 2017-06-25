@@ -1426,6 +1426,111 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
             msg = "Give a fuck?!"  # should never appear
         return msg
 
+    def idgafd(self):
+        if lt == 0 and ls == 0 and le == 0:
+            msg = "I don't give a fuck what they do!"
+        elif lt == 0 and ls > 0 and le == 0:
+            msg = "I really don't give a fuck what they do!"
+        elif lt > 0 and ls == 0 and le == 0:
+            msg = "{0}, I don't give a fuck what they do!".format(target)
+        elif lt > 0 and ls > 0 and le == 0:
+            msg = "{0}, I really don't give a fuck what they do!".format(target)
+        elif lt == 0 and ls == 0 and le > 0:
+            msg = "I don't give a fuck what you do!"
+        elif lt == 0 and ls > 0 and le > 0:
+            msg = "I really don't give a fuck what you do!"
+        elif lt > 0 and ls == 0 and le > 0:
+            msg = "{0}, I don't give a fuck what you do!".format(target)
+        elif lt > 0 and ls > 0 and le > 0:
+            msg = "{0}, I really don't give a fuck what you do!".format(target)
+        else:
+            msg = "WTF?! (idgafd)"
+        return msg
+
+    def idgafh(self):
+        if lt == 0 and ls == 0 and le == 0:
+            msg = "I don't give a fuck what they hear!"
+        elif lt == 0 and ls > 0 and le == 0:
+            msg = "I really don't give a fuck what they hear!"
+        elif lt > 0 and ls == 0 and le == 0:
+            msg = "{0}, I don't give a fuck what they hear!".format(target)
+        elif lt > 0 and ls > 0 and le == 0:
+            msg = "{0}, I really don't give a fuck what they hear!".format(target)
+        elif lt == 0 and ls == 0 and le > 0:
+            msg = "I don't give a fuck what you hear!"
+        elif lt == 0 and ls > 0 and le > 0:
+            msg = "I really don't give a fuck what you hear!"
+        elif lt > 0 and ls == 0 and le > 0:
+            msg = "{0}, I don't give a fuck what you hear!".format(target)
+        elif lt > 0 and ls > 0 and le > 0:
+            msg = "{0}, I really don't give a fuck what you hear!".format(target)
+        else:
+            msg = "WTF?! (idgafh)"
+        return msg
+
+    def idgafs(self):
+        if lt == 0 and ls == 0 and le == 0:
+            msg = "I don't give a fuck what they say!"
+        elif lt == 0 and ls > 0 and le == 0:
+            msg = "I really don't give a fuck what they say!"
+        elif lt > 0 and ls == 0 and le == 0:
+            msg = "{0}, I don't give a fuck what they say!".format(target)
+        elif lt > 0 and ls > 0 and le == 0:
+            msg = "{0}, I really don't give a fuck what they say!".format(target)
+        elif lt == 0 and ls == 0 and le > 0:
+            msg = "I don't give a fuck what you say!"
+        elif lt == 0 and ls > 0 and le > 0:
+            msg = "I really don't give a fuck what you say!"
+        elif lt > 0 and ls == 0 and le > 0:
+            msg = "{0}, I don't give a fuck what you say!".format(target)
+        elif lt > 0 and ls > 0 and le > 0:
+            msg = "{0}, I really don't give a fuck what you say!".format(target)
+        else:
+            msg = "WTF?! (idgafs)"
+        return msg
+
+    def idgaft(self):
+        if lt == 0 and ls == 0 and le == 0:
+            msg = "I don't give a fuck what they think!"
+        elif lt == 0 and ls > 0 and le == 0:
+            msg = "I really don't give a fuck what they think!"
+        elif lt > 0 and ls == 0 and le == 0:
+            msg = "{0}, I don't give a fuck what they think!".format(target)
+        elif lt > 0 and ls > 0 and le == 0:
+            msg = "{0}, I really don't give a fuck what they think!".format(target)
+        elif lt == 0 and ls == 0 and le > 0:
+            msg = "I don't give a fuck what you think!"
+        elif lt == 0 and ls > 0 and le > 0:
+            msg = "I really don't give a fuck what you think!"
+        elif lt > 0 and ls == 0 and le > 0:
+            msg = "{0}, I don't give a fuck what you think!".format(target)
+        elif lt > 0 and ls > 0 and le > 0:
+            msg = "{0}, I really don't give a fuck what you think!".format(target)
+        else:
+            msg = "WTF?! (idgaft)"
+        return msg
+
+    def idgafw(self):
+        if lt == 0 and ls == 0 and le == 0:
+            msg = "I don't give a fuck who they are!"
+        elif lt == 0 and ls > 0 and le == 0:
+            msg = "I really don't give a fuck who they are!"
+        elif lt > 0 and ls == 0 and le == 0:
+            msg = "{0}, I don't give a fuck who they are!".format(target)
+        elif lt > 0 and ls > 0 and le == 0:
+            msg = "{0}, I really don't give a fuck who they are!".format(target)
+        elif lt == 0 and ls == 0 and le > 0:
+            msg = "I don't give a fuck who you are!"
+        elif lt == 0 and ls > 0 and le > 0:
+            msg = "I really don't give a fuck who you are!"
+        elif lt > 0 and ls == 0 and le > 0:
+            msg = "{0}, I don't give a fuck who you are!".format(target)
+        elif lt > 0 and ls > 0 and le > 0:
+            msg = "{0}, I really don't give a fuck who you are!".format(target)
+        else:
+            msg = "WTF?! (idgafw)"
+        return msg
+
     def incred(self):
         if lt == 0:
             msg = "In-fucking-credible!"
