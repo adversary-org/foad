@@ -14,7 +14,7 @@ from __future__ import division
 #
 # https://github.com/adversary-org/foad
 #
-# Version:  0.8.1.10
+# Version:  0.8.1.11
 #
 # BTC:  1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz
 # Licenses:  GNU Public License version 3 (GPLv3)
@@ -139,7 +139,7 @@ __license1__ = "GNU General Public License version 3 (GPLv3)"
 __license2__ = "Do What The Fuck You Want To, But It's Not My Fault Public License version 1 (WTFNMFPLv1)"
 __license3__ = "New BSD (3 clause) type"
 __license4__ = "Apache 2.0"
-__version__ = "0.8.1.10"
+__version__ = "0.8.1.11"
 __bitcoin__ = "1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz"
 __openpgp__ = "0x321E4E2373590E5D"
 __openpgp_fpr__ = "DB4724E6FA4286C92B4E55C4321E4E2373590E5D"
@@ -1151,45 +1151,121 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
         return msg
 
     def give(self):
-        if lt == 0:
+        if lt == 0 and le == 0:
             msg = "I don't give a fuck."
-        else:
+        elif lt == 0 and le > 0:
+            msg = "I really don't give a fuck."
+        elif lt > 0 and le == 0:
+            msg = "{0}, I don't give a fuck.".format(target)
+        elif lt > 0 and le > 0:
             msg = "{0}, I really don't give a fuck.".format(target)
+        else:
+            msg = "Give a fuck?"  # should never appear
         return msg
 
     def gived(self):
-        if lt == 0:
+        if lt == 0 and ls == 0 and le == 0:
+            msg = "I don't give a fuck what they do."
+        elif lt == 0 and ls > 0 and le == 0:
             msg = "I really don't give a fuck what they do."
-        else:
+        elif lt > 0 and ls == 0 and le == 0:
+            msg = "{0}, I don't give a fuck what they do.".format(target)
+        elif lt > 0 and ls > 0 and le == 0:
+            msg = "{0}, I really don't give a fuck what they do.".format(target)
+        elif lt == 0 and ls == 0 and le > 0:
+            msg = "I don't give a fuck what you do."
+        elif lt == 0 and ls > 0 and le > 0:
+            msg = "I really don't give a fuck what you do."
+        elif lt > 0 and ls == 0 and le > 0:
+            msg = "{0}, I don't give a fuck what you do.".format(target)
+        elif lt > 0 and ls > 0 and le > 0:
             msg = "{0}, I really don't give a fuck what you do.".format(target)
+        else:
+            msg = "WTF?! (gived)"
         return msg
 
     def giveh(self):
-        if lt == 0:
+        if lt == 0 and ls == 0 and le == 0:
+            msg = "I don't give a fuck what they hear."
+        elif lt == 0 and ls > 0 and le == 0:
             msg = "I really don't give a fuck what they hear."
-        else:
+        elif lt > 0 and ls == 0 and le == 0:
+            msg = "{0}, I don't give a fuck what they hear.".format(target)
+        elif lt > 0 and ls > 0 and le == 0:
+            msg = "{0}, I really don't give a fuck what they hear.".format(target)
+        elif lt == 0 and ls == 0 and le > 0:
+            msg = "I don't give a fuck what you hear."
+        elif lt == 0 and ls > 0 and le > 0:
+            msg = "I really don't give a fuck what you hear."
+        elif lt > 0 and ls == 0 and le > 0:
+            msg = "{0}, I don't give a fuck what you hear.".format(target)
+        elif lt > 0 and ls > 0 and le > 0:
             msg = "{0}, I really don't give a fuck what you hear.".format(target)
+        else:
+            msg = "WTF?! (giveh)"
         return msg
 
     def gives(self):
-        if lt == 0:
+        if lt == 0 and ls == 0 and le == 0:
+            msg = "I don't give a fuck what they say."
+        elif lt == 0 and ls > 0 and le == 0:
             msg = "I really don't give a fuck what they say."
-        else:
+        elif lt > 0 and ls == 0 and le == 0:
+            msg = "{0}, I don't give a fuck what they say.".format(target)
+        elif lt > 0 and ls > 0 and le == 0:
+            msg = "{0}, I really don't give a fuck what they say.".format(target)
+        elif lt == 0 and ls == 0 and le > 0:
+            msg = "I don't give a fuck what you say."
+        elif lt == 0 and ls > 0 and le > 0:
+            msg = "I really don't give a fuck what you say."
+        elif lt > 0 and ls == 0 and le > 0:
+            msg = "{0}, I don't give a fuck what you say.".format(target)
+        elif lt > 0 and ls > 0 and le > 0:
             msg = "{0}, I really don't give a fuck what you say.".format(target)
+        else:
+            msg = "WTF?! (gives)"
         return msg
 
     def givet(self):
-        if lt == 0:
+        if lt == 0 and ls == 0 and le == 0:
+            msg = "I don't give a fuck what they think."
+        elif lt == 0 and ls > 0 and le == 0:
             msg = "I really don't give a fuck what they think."
-        else:
+        elif lt > 0 and ls == 0 and le == 0:
+            msg = "{0}, I don't give a fuck what they think.".format(target)
+        elif lt > 0 and ls > 0 and le == 0:
+            msg = "{0}, I really don't give a fuck what they think.".format(target)
+        elif lt == 0 and ls == 0 and le > 0:
+            msg = "I don't give a fuck what you think."
+        elif lt == 0 and ls > 0 and le > 0:
+            msg = "I really don't give a fuck what you think."
+        elif lt > 0 and ls == 0 and le > 0:
+            msg = "{0}, I don't give a fuck what you think.".format(target)
+        elif lt > 0 and ls > 0 and le > 0:
             msg = "{0}, I really don't give a fuck what you think.".format(target)
+        else:
+            msg = "WTF?! (givet)"
         return msg
 
     def givew(self):
-        if lt == 0:
+        if lt == 0 and ls == 0 and le == 0:
+            msg = "I don't give a fuck who they are."
+        elif lt == 0 and ls > 0 and le == 0:
             msg = "I really don't give a fuck who they are."
-        else:
+        elif lt > 0 and ls == 0 and le == 0:
+            msg = "{0}, I don't give a fuck who they are.".format(target)
+        elif lt > 0 and ls > 0 and le == 0:
+            msg = "{0}, I really don't give a fuck who they are.".format(target)
+        elif lt == 0 and ls == 0 and le > 0:
+            msg = "I don't give a fuck who you are."
+        elif lt == 0 and ls > 0 and le > 0:
+            msg = "I really don't give a fuck who you are."
+        elif lt > 0 and ls == 0 and le > 0:
+            msg = "{0}, I don't give a fuck who you are.".format(target)
+        elif lt > 0 and ls > 0 and le > 0:
             msg = "{0}, I really don't give a fuck who you are.".format(target)
+        else:
+            msg = "WTF?! (givew)"
         return msg
 
     def go(self):
@@ -1335,11 +1411,17 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
             msg = "{0}, harden the fuck up!".format(target)
         return msg
 
-    def it(self):
-        if lt == 0:
-            msg = "Fuck it."
+    def idgaf(self):
+        if lt == 0 and le == 0:
+            msg = "I don't give a fuck!"
+        elif lt == 0 and le > 0:
+            msg = "I really don't give a fuck!"
+        elif lt > 0 and le == 0:
+            msg = "{0}, I don't give a fuck!".format(target)
+        elif lt > 0 and le > 0:
+            msg = "{0}, I really don't give a fuck!".format(target)
         else:
-            msg = "{0}, fuck it.".format(target)
+            msg = "Give a fuck?!"  # should never appear
         return msg
 
     def incred(self):
@@ -1347,6 +1429,13 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
             msg = "In-fucking-credible!"
         else:
             msg = "In-fucking-credible {0}!".format(target)
+        return msg
+
+    def it(self):
+        if lt == 0:
+            msg = "Fuck it."
+        else:
+            msg = "{0}, fuck it.".format(target)
         return msg
 
     def jams(self):
