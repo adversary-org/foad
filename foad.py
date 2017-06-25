@@ -1164,9 +1164,13 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
         return msg
 
     def gived(self):
-        if lt == 0:
+        if lt == 0 and le == 0:
+            msg = "I don't give a fuck what they do."
+        elif lt == 0 and le > 0:
             msg = "I really don't give a fuck what they do."
-        else:
+        elif lt > 0 and le == 0:
+            msg = "{0}, I don't give a fuck what you do.".format(target)
+        elif lt > 0 and le > 0:
             msg = "{0}, I really don't give a fuck what you do.".format(target)
         return msg
 
