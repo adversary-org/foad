@@ -1424,18 +1424,18 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
             msg = "Give a fuck?!"  # should never appear
         return msg
 
-    def it(self):
-        if lt == 0:
-            msg = "Fuck it."
-        else:
-            msg = "{0}, fuck it.".format(target)
-        return msg
-
     def incred(self):
         if lt == 0:
             msg = "In-fucking-credible!"
         else:
             msg = "In-fucking-credible {0}!".format(target)
+        return msg
+
+    def it(self):
+        if lt == 0:
+            msg = "Fuck it."
+        else:
+            msg = "{0}, fuck it.".format(target)
         return msg
 
     def jams(self):
