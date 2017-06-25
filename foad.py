@@ -180,10 +180,12 @@ Licenses:  {3}
     To display the version and exit run:  {7} -V .
 
 Contact:  {8} {9}
-Bitcoin:  {10}
-""".format(__title__, __version__, __copyright__, __license1__, __license2__, __license3__, __license4__, sys.argv[0], __author__, __openpgp__, __bitcoin__)
 
-version = "{0} (foad.py) version {1}".format(__stitle__, __version__)
+OpenPGP:  {10}
+Bitcoin:  {11}
+""".format(__title__, __version__, __copyright__, __license1__, __license2__, __license3__, __license4__, sys.argv[0], __author__, __openpgp__, __openpgp_fpr__, __bitcoin__)
+
+version = "{0} ({1}) version {2}".format(__stitle__, sys.argv[0], __version__)
 
 lx = len(sys.argv)
 
