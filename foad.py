@@ -1411,6 +1411,19 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
             msg = "{0}, harden the fuck up!".format(target)
         return msg
 
+    def idgaf(self):
+        if lt == 0 and le == 0:
+            msg = "I don't give a fuck!"
+        elif lt == 0 and le > 0:
+            msg = "I really don't give a fuck!"
+        elif lt > 0 and le == 0:
+            msg = "{0}, I don't give a fuck!".format(target)
+        elif lt > 0 and le > 0:
+            msg = "{0}, I really don't give a fuck!".format(target)
+        else:
+            msg = "Give a fuck?!"  # should never appear
+        return msg
+
     def it(self):
         if lt == 0:
             msg = "Fuck it."
