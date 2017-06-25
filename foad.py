@@ -14,7 +14,7 @@ from __future__ import division
 #
 # https://github.com/adversary-org/foad
 #
-# Version:  0.8.1.11
+# Version:  0.8.1.12
 #
 # BTC:  1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz
 # Licenses:  GNU Public License version 3 (GPLv3)
@@ -139,7 +139,7 @@ __license1__ = "GNU General Public License version 3 (GPLv3)"
 __license2__ = "Do What The Fuck You Want To, But It's Not My Fault Public License version 1 (WTFNMFPLv1)"
 __license3__ = "New BSD (3 clause) type"
 __license4__ = "Apache 2.0"
-__version__ = "0.8.1.11"
+__version__ = "0.8.1.12"
 __bitcoin__ = "1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz"
 __openpgp__ = "0x321E4E2373590E5D"
 __openpgp_fpr__ = "DB4724E6FA4286C92B4E55C4321E4E2373590E5D"
@@ -180,10 +180,12 @@ Licenses:  {3}
     To display the version and exit run:  {7} -V .
 
 Contact:  {8} {9}
-Bitcoin:  {10}
-""".format(__title__, __version__, __copyright__, __license1__, __license2__, __license3__, __license4__, sys.argv[0], __author__, __openpgp__, __bitcoin__)
 
-version = "{0} (foad.py) version {1}".format(__stitle__, __version__)
+OpenPGP:  {10}
+Bitcoin:  {11}
+""".format(__title__, __version__, __copyright__, __license1__, __license2__, __license3__, __license4__, sys.argv[0], __author__, __openpgp__, __openpgp_fpr__, __bitcoin__)
+
+version = "{0} ({1}) version {2}".format(__stitle__, sys.argv[0], __version__)
 
 lx = len(sys.argv)
 
@@ -1422,6 +1424,111 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
             msg = "{0}, I really don't give a fuck!".format(target)
         else:
             msg = "Give a fuck?!"  # should never appear
+        return msg
+
+    def idgafd(self):
+        if lt == 0 and ls == 0 and le == 0:
+            msg = "I don't give a fuck what they do!"
+        elif lt == 0 and ls > 0 and le == 0:
+            msg = "I really don't give a fuck what they do!"
+        elif lt > 0 and ls == 0 and le == 0:
+            msg = "{0}, I don't give a fuck what they do!".format(target)
+        elif lt > 0 and ls > 0 and le == 0:
+            msg = "{0}, I really don't give a fuck what they do!".format(target)
+        elif lt == 0 and ls == 0 and le > 0:
+            msg = "I don't give a fuck what you do!"
+        elif lt == 0 and ls > 0 and le > 0:
+            msg = "I really don't give a fuck what you do!"
+        elif lt > 0 and ls == 0 and le > 0:
+            msg = "{0}, I don't give a fuck what you do!".format(target)
+        elif lt > 0 and ls > 0 and le > 0:
+            msg = "{0}, I really don't give a fuck what you do!".format(target)
+        else:
+            msg = "WTF?! (idgafd)"
+        return msg
+
+    def idgafh(self):
+        if lt == 0 and ls == 0 and le == 0:
+            msg = "I don't give a fuck what they hear!"
+        elif lt == 0 and ls > 0 and le == 0:
+            msg = "I really don't give a fuck what they hear!"
+        elif lt > 0 and ls == 0 and le == 0:
+            msg = "{0}, I don't give a fuck what they hear!".format(target)
+        elif lt > 0 and ls > 0 and le == 0:
+            msg = "{0}, I really don't give a fuck what they hear!".format(target)
+        elif lt == 0 and ls == 0 and le > 0:
+            msg = "I don't give a fuck what you hear!"
+        elif lt == 0 and ls > 0 and le > 0:
+            msg = "I really don't give a fuck what you hear!"
+        elif lt > 0 and ls == 0 and le > 0:
+            msg = "{0}, I don't give a fuck what you hear!".format(target)
+        elif lt > 0 and ls > 0 and le > 0:
+            msg = "{0}, I really don't give a fuck what you hear!".format(target)
+        else:
+            msg = "WTF?! (idgafh)"
+        return msg
+
+    def idgafs(self):
+        if lt == 0 and ls == 0 and le == 0:
+            msg = "I don't give a fuck what they say!"
+        elif lt == 0 and ls > 0 and le == 0:
+            msg = "I really don't give a fuck what they say!"
+        elif lt > 0 and ls == 0 and le == 0:
+            msg = "{0}, I don't give a fuck what they say!".format(target)
+        elif lt > 0 and ls > 0 and le == 0:
+            msg = "{0}, I really don't give a fuck what they say!".format(target)
+        elif lt == 0 and ls == 0 and le > 0:
+            msg = "I don't give a fuck what you say!"
+        elif lt == 0 and ls > 0 and le > 0:
+            msg = "I really don't give a fuck what you say!"
+        elif lt > 0 and ls == 0 and le > 0:
+            msg = "{0}, I don't give a fuck what you say!".format(target)
+        elif lt > 0 and ls > 0 and le > 0:
+            msg = "{0}, I really don't give a fuck what you say!".format(target)
+        else:
+            msg = "WTF?! (idgafs)"
+        return msg
+
+    def idgaft(self):
+        if lt == 0 and ls == 0 and le == 0:
+            msg = "I don't give a fuck what they think!"
+        elif lt == 0 and ls > 0 and le == 0:
+            msg = "I really don't give a fuck what they think!"
+        elif lt > 0 and ls == 0 and le == 0:
+            msg = "{0}, I don't give a fuck what they think!".format(target)
+        elif lt > 0 and ls > 0 and le == 0:
+            msg = "{0}, I really don't give a fuck what they think!".format(target)
+        elif lt == 0 and ls == 0 and le > 0:
+            msg = "I don't give a fuck what you think!"
+        elif lt == 0 and ls > 0 and le > 0:
+            msg = "I really don't give a fuck what you think!"
+        elif lt > 0 and ls == 0 and le > 0:
+            msg = "{0}, I don't give a fuck what you think!".format(target)
+        elif lt > 0 and ls > 0 and le > 0:
+            msg = "{0}, I really don't give a fuck what you think!".format(target)
+        else:
+            msg = "WTF?! (idgaft)"
+        return msg
+
+    def idgafw(self):
+        if lt == 0 and ls == 0 and le == 0:
+            msg = "I don't give a fuck who they are!"
+        elif lt == 0 and ls > 0 and le == 0:
+            msg = "I really don't give a fuck who they are!"
+        elif lt > 0 and ls == 0 and le == 0:
+            msg = "{0}, I don't give a fuck who they are!".format(target)
+        elif lt > 0 and ls > 0 and le == 0:
+            msg = "{0}, I really don't give a fuck who they are!".format(target)
+        elif lt == 0 and ls == 0 and le > 0:
+            msg = "I don't give a fuck who you are!"
+        elif lt == 0 and ls > 0 and le > 0:
+            msg = "I really don't give a fuck who you are!"
+        elif lt > 0 and ls == 0 and le > 0:
+            msg = "{0}, I don't give a fuck who you are!".format(target)
+        elif lt > 0 and ls > 0 and le > 0:
+            msg = "{0}, I really don't give a fuck who you are!".format(target)
+        else:
+            msg = "WTF?! (idgafw)"
         return msg
 
     def incred(self):
