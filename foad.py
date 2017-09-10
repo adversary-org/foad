@@ -14,7 +14,7 @@ from __future__ import division
 #
 # https://github.com/adversary-org/foad
 #
-# Version:  0.8.1.12
+# Version:  0.8.1.13
 #
 # BTC:  1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz
 # Licenses:  GNU Public License version 3 (GPLv3)
@@ -139,7 +139,7 @@ __license1__ = "GNU General Public License version 3 (GPLv3)"
 __license2__ = "Do What The Fuck You Want To, But It's Not My Fault Public License version 1 (WTFNMFPLv1)"
 __license3__ = "New BSD (3 clause) type"
 __license4__ = "Apache 2.0"
-__version__ = "0.8.1.12"
+__version__ = "0.8.1.13"
 __bitcoin__ = "1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz"
 __openpgp__ = "0x321E4E2373590E5D"
 __openpgp_fpr__ = "DB4724E6FA4286C92B4E55C4321E4E2373590E5D"
@@ -1340,6 +1340,13 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
             msg = "{0}, {1} asked me to tell you to get the fuck out of {2} right fucking now!".format(target, sender, extra)
         return msg
 
+    def gtfoh(self):
+        if lt == 0:
+            msg = "Get the fuck outta here!"
+        else:
+            msg = "{0}, get the fuck outta here!".format(target)
+        return msg
+    
     def hell(self):
         if lt == 0:
             msg = "Fucking Hell!"
