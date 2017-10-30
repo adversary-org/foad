@@ -14,7 +14,7 @@ from __future__ import division
 #
 # https://github.com/adversary-org/foad
 #
-# Version:  0.8.1.14
+# Version:  0.8.1.15
 #
 # BTC:  1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz
 # Licenses:  GNU Public License version 3 (GPLv3)
@@ -139,7 +139,7 @@ __license1__ = "GNU General Public License version 3 (GPLv3)"
 __license2__ = "Do What The Fuck You Want To, But It's Not My Fault Public License version 1 (WTFNMFPLv1)"
 __license3__ = "New BSD (3 clause) type"
 __license4__ = "Apache 2.0"
-__version__ = "0.8.1.14"
+__version__ = "0.8.1.15"
 __bitcoin__ = "1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz"
 __openpgp__ = "0x321E4E2373590E5D"
 __openpgp_fpr__ = "DB4724E6FA4286C92B4E55C4321E4E2373590E5D"
@@ -2877,6 +2877,8 @@ if __name__ == "__main__":
         print("")
         print("{0}  {1}".format(__title__, __version__))
         print(__copyright__)
+        print("")
+        print("Number of defined options:  {0}".format(lc))
         print("")
         print("Bitcoin:  {0}".format(__bitcoin__))
         print("")
