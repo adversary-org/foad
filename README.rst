@@ -74,11 +74,6 @@ script will generate most of the possible output. All options and the
 generic catchall can now be used with ``--prepend`` and/or
 ``--append``.
 
-Note that though the Latin example above and its corresponding
-translated text via the ``--extra`` flag utilise a Twitter-style
-username, that output is actually too long for a tweet.  It would work
-as a DM, though.
-
 Also note that the ``wrap`` command included in some of the above
 examples is part of the `Muttils
 <https://bitbucket.org/blacktrash/muttils>`__ package, which requires
