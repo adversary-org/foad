@@ -1953,38 +1953,38 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
         return msg
 
     def outside(self):
-        if lt == 0 and lR == 0 and ls == 0 le == 0:
+        if lt == 0 and lR == 0 and ls == 0 and le == 0:
             msg = "Why don't you go outside and play hide-and-go-fuck-yourself?"
-        elif lt == 0 and lR == 0 and ls > 0 le == 0:
+        elif lt == 0 and lR == 0 and ls > 0 and le == 0:
             msg = "Why don't you go outside and play hide-and-go-fuck-yourself?!"
-        elif lt > 0 and lR == 0 and ls == 0 le == 0:
+        elif lt > 0 and lR == 0 and ls == 0 and le == 0:
             msg = "{0}, why don't you go outside and play hide-and-go-fuck-yourself?".format(target)
-        elif lt > 0 and lR == 0 and ls > 0 le == 0:
+        elif lt > 0 and lR == 0 and ls > 0 and le == 0:
             msg = "{0}, why don't you go outside and play hide-and-go-fuck-yourself?!".format(target)
-        elif lt > 0 and lR > 0 and ls == 0 le == 0:
+        elif lt > 0 and lR > 0 and ls == 0 and le == 0:
             msg = "{0}, tell {1} that he can go outside and play hide-and-go-fuck-himself.".format(relay, target)
-        elif lt > 0 and lR > 0 and ls > 0 le == 0:
+        elif lt > 0 and lR > 0 and ls > 0 and le == 0:
             msg = "{0}, tell {1} that he can go outside and play hide-and-go-fuck-himself!".format(relay, target)
-        elif lt > 0 and lR > 0 and ls == 0 le > 0:
+        elif lt > 0 and lR > 0 and ls == 0 and le > 0:
             msg = "{0}, tell {1} that she can go outside and play hide-and-go-fuck-herself.".format(relay, target)
-        elif lt > 0 and lR > 0 and ls > 0 le > 0:
+        elif lt > 0 and lR > 0 and ls > 0 and le > 0:
             msg = "{0}, tell {1} that she can go outside and play hide-and-go-fuck-herself!".format(relay, target)
         else:
             msg = "{0}, it's time for you to go outside and play hide-and-go-fuck-yourself!".format(target)
         return msg
 
     def outsides(self):
-        if lt == 0 ls == 0:
+        if lt == 0 and ls == 0:
             msg = "Why don't you go outside and play hide-and-go-fuck-yourselves?"
-        elif lt == 0 ls > 0:
+        elif lt == 0 and ls > 0:
             msg = "Why don't you go outside and play hide-and-go-fuck-yourselves?!"
-        elif lt == 0 and lR > 0 ls == 0:
+        elif lt == 0 and lR > 0 and ls == 0:
             msg = "{0}, tell them that they can go outside and play hide-and-go-fuck-themselves.".format(relay)
-        elif lt == 0 and lR > 0 ls > 0:
+        elif lt == 0 and lR > 0 and ls > 0:
             msg = "{0}, tell them that they can go outside and play hide-and-go-fuck-themselves!".format(relay)
-        elif lt > 0 and lR > 0 ls == 0:
+        elif lt > 0 and lR > 0 and ls == 0:
             msg = "{0}, tell {1} that they can go outside and play hide-and-go-fuck-themselves.".format(relay, target)
-        elif lt > 0 and lR > 0 ls > 0:
+        elif lt > 0 and lR > 0 and ls > 0:
             msg = "{0}, tell {1} that they can go outside and play hide-and-go-fuck-themselves!".format(relay, target)
         else:
             msg = "It's time for all of you to go outside and play hide-and-go-fuck-yourselves!"
