@@ -2409,7 +2409,7 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
 
     def tugwar(self):
         if lt == 0 and lR == 0 and ls == 0 and le == 0:
-            msg = "This option requires name, relay and sender to be set, where name and relay are people/entities, while sender is who or what is caught between them.  Extra may be used to specify certain variations."
+            msg = "This option requires name/target, relay and sender to be set, where name and relay are people/entities, while sender is who or what is caught between them.  Extra may be used to specify certain variations."
         elif lt == 0 and lR > 0 and ls > 0 and le == 0:
             msg = "For fuck's sake! Will you and {0} stop using {1} as the rope in your game of tug-of-war?!".format(relay, sender)
         elif lt > 0 and lR > 0 and ls > 0 and le == 0:
@@ -2469,6 +2469,7 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
             msg = "{0}? I hate the word, as I hate {1}, all {2} and {3}!".format(sender, relay, extra, target)
         else:
             msg = "Peace? I hate the word, as I hate hell, all Montagues and thee!"
+        return msg
 
     def ucunt(self):
         if lt == 0:
