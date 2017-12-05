@@ -14,7 +14,7 @@ from __future__ import division
 #
 # https://github.com/adversary-org/foad
 #
-# Version:  0.8.1.16
+# Version:  0.8.1.18
 #
 # BTC:  1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz
 # Licenses:  GNU Public License version 3 (GPLv3)
@@ -139,7 +139,7 @@ __license1__ = "GNU General Public License version 3 (GPLv3)"
 __license2__ = "Do What The Fuck You Want To, But It's Not My Fault Public License version 1 (WTFNMFPLv1)"
 __license3__ = "New BSD (3 clause) type"
 __license4__ = "Apache 2.0"
-__version__ = "0.8.1.16"
+__version__ = "0.8.1.18"
 __bitcoin__ = "1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz"
 __openpgp__ = "0x321E4E2373590E5D"
 __openpgp_fpr__ = "DB4724E6FA4286C92B4E55C4321E4E2373590E5D"
@@ -2351,6 +2351,18 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
         else:
             msg = "{0}, you are a complete and utter fucktard!".format(target)
         return msg
+
+    def talky(self):
+        if lt == 0 and le == 0:
+            msg = "I'm not felling very talky today. Off you fuck."
+        elif lt == 0 and le > 0:
+            msg = "I'm not felling very talky today. Off you fuck!"
+        elif lt > 0 and le == 0:
+            msg = "I'm not felling very talky today, {0}. Off you fuck.".format(target)
+        elif lt > 0 and le > 0:
+            msg = "I'm not felling very talky today, {0}. Off you fuck!".format(target)
+        else:
+            msg = "I'm not felling very talky today. Off you fuck!"
     
     def tfwo(self):
         if lt == 0:
@@ -2397,7 +2409,7 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
 
     def tugwar(self):
         if lt == 0 and lR == 0 and ls == 0 and le == 0:
-            msg = "This option requires name, relay and sender to be set, where name and relay are people/entities, while sender is who or what is caught between them.  Extra may be used to specify certain variations."
+            msg = "This option requires name/target, relay and sender to be set, where name and relay are people/entities, while sender is who or what is caught between them.  Extra may be used to specify certain variations."
         elif lt == 0 and lR > 0 and ls > 0 and le == 0:
             msg = "For fuck's sake! Will you and {0} stop using {1} as the rope in your game of tug-of-war?!".format(relay, sender)
         elif lt > 0 and lR > 0 and ls > 0 and le == 0:
@@ -2430,13 +2442,34 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
     # https://twitter.com/TheTweetOfGod
 
     def twog1(self):
-        if lt == 0:
+        if lt == 0 and le == 0:
             msg = "Seriously, don't dis Me. I am the Lord thy God, King of the Universe. Show some fucking respect."
-        else:
+        elif lt > 0 and le == 0:
             msg = "Seriously, {0}, don't dis Me. I am the Lord thy God, King of the Universe. Show some fucking respect.".format(target)
+        elif lt == 0 and le > 0:
+            msg = "Seriously, don't dis Me. I am the Lord thy God, King of the Universe. Show some fucking respect!"
+        elif lt > 0 and le > 0:
+            msg = "Seriously, {0}, don't dis Me. I am the Lord thy God, King of the Universe. Show some fucking respect!".format(target)
         return msg
 
     # https://twitter.com/TheTweetOfGod/status/528773043666313216
+
+    def tybalt(self):
+        if lt == 0 and le == 0 and ls == 0 and lR == 0:
+            msg = "Peace? I hate the word, as I hate Hell, all Montagues and thee!"
+        elif lt > 0 and le == 0 and ls == 0 and lR == 0:
+            msg = "Peace? I hate the word, as I hate Hell, all Montagues and {0}!".format(target)
+        elif lt == 0 and le > 0 and ls == 0 and lR == 0:
+            msg = "Peace? I hate the word, as I hate Hell, all {0} and thee!".format(extra)
+        elif lt > 0 and le > 0 and ls == 0 and lR == 0:
+           msg = "Peace? I hate the word, as I hate Hell, all {0} and {1}!".format(extra, target) 
+        elif lt > 0 and le > 0 and ls > 0 and lR == 0:
+            msg = "{0}? I hate the word, as I hate Hell, all {1} and {2}!".format(sender, extra, target)
+        elif lt > 0 and le > 0 and ls > 0 and lR > 0:
+            msg = "{0}? I hate the word, as I hate {1}, all {2} and {3}!".format(sender, relay, extra, target)
+        else:
+            msg = "Peace? I hate the word, as I hate hell, all Montagues and thee!"
+        return msg
 
     def ucunt(self):
         if lt == 0:
