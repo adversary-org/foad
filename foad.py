@@ -2442,10 +2442,14 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
     # https://twitter.com/TheTweetOfGod
 
     def twog1(self):
-        if lt == 0:
+        if lt == 0 and le == 0:
             msg = "Seriously, don't dis Me. I am the Lord thy God, King of the Universe. Show some fucking respect."
-        else:
+        elif lt > 0 and le == 0:
             msg = "Seriously, {0}, don't dis Me. I am the Lord thy God, King of the Universe. Show some fucking respect.".format(target)
+        elif lt == 0 and le > 0:
+            msg = "Seriously, don't dis Me. I am the Lord thy God, King of the Universe. Show some fucking respect!"
+        elif lt > 0 and le > 0:
+            msg = "Seriously, {0}, don't dis Me. I am the Lord thy God, King of the Universe. Show some fucking respect!".format(target)
         return msg
 
     # https://twitter.com/TheTweetOfGod/status/528773043666313216
