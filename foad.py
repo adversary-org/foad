@@ -2450,6 +2450,22 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
 
     # https://twitter.com/TheTweetOfGod/status/528773043666313216
 
+    def tybalt(self):
+        if lt == 0 and le == 0 and ls == 0 and lR == 0:
+            msg = "Peace? I hate the word, as I hate Hell, all Montagues and thee!"
+        elif lt > 0 and le == 0 and ls == 0 and lR == 0:
+            msg = "Peace? I hate the word, as I hate Hell, all Montagues and {0}!".format(target)
+        elif lt == 0 and le > 0 and ls == 0 and lR == 0:
+            msg = "Peace? I hate the word, as I hate Hell, all {0} and thee!".format(extra)
+        elif lt > 0 and le > 0 and ls == 0 and lR == 0:
+           msg = "Peace? I hate the word, as I hate Hell, all {0} and {1}!".format(extra, target) 
+        elif lt > 0 and le > 0 and ls > 0 and lR == 0:
+            msg = "{0}? I hate the word, as I hate Hell, all {1} and {2}!".format(sender, extra, target)
+        elif lt > 0 and le > 0 and ls > 0 and lR > 0:
+            msg = "{0}? I hate the word, as I hate {1}, all {2} and {3}!".format(sender, relay, extra, target)
+        else:
+            msg = "Peace? I hate the word, as I hate hell, all Montagues and thee!"
+
     def ucunt(self):
         if lt == 0:
             msg = "You cunt!"
