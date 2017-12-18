@@ -2022,6 +2022,11 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
 
 # See http://theprofoundprogrammer.com/post/25728609992/text-theres-no-fucking-way-i-wrote-this-this
 
+# See also:
+#  https://en.wikipedia.org/wiki/Latin_profanity
+#  https://en.wikipedia.org/wiki/Priapeia
+#  http://www.sacred-texts.com/cla/priap/
+
     def priapus(self):
         if lt == 0 and le == 0:
             msg = "Obscenis, peream, si non uti me pudet improbisque verbis sed cum tu posito degenerem pudore ostendas mihi coleos patentes cum cunno mihi mentula est vocanda."
