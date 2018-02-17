@@ -30,26 +30,25 @@ Examples:
     bash$ foad -f psycho3 -n "Tony Abbott"
     Tony Abbott, you're a fucking megalomaniacal, malignantly narcissistic, psychopath!
     bash$
+
+    bash-4.4$ foad -f priapus1 -n @TurnbullMalcolm
+    Obscenis, peream, @TurnbullMalcolm, si non uti me pudet improbisque verbis sed cum tu posito degenerem pudore ostendas mihi coleos patentes cum cunno mihi mentula est vocanda.
     
-    bash$ foad -f priapus1 -n @fatneckbeardguy
-    Obscenis, peream, @fatneckbeardguy, si non uti me pudet improbisque verbis sed cum tu posito degenerem pudore ostendas mihi coleos patentes cum cunno mihi mentula est vocanda.
-    bash$
-    
-    bash$ foad -f priapus1 -n @fatneckbeardguy | wrap -w 80
-    Obscenis, peream, @fatneckbeardguy, si non uti me pudet improbisque verbis sed
+    bash-4.4$ foad -f priapus1 -n @TurnbullMalcolm | wrap -w 80
+    Obscenis, peream, @TurnbullMalcolm, si non uti me pudet improbisque verbis sed
     cum tu posito degenerem pudore ostendas mihi coleos patentes cum cunno mihi
     mentula est vocanda.
-    bash$ 
+    bash-4.4$ 
     
-    bash$ foad -f priapus1 -n "Tim Chevalier" -e trans
-    I'd rather die than use obscene and improper words; but when you, Tim Chevalier, as a degenerate, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks.
-    bash$
+    bash-4.4$ foad -f priapus1 -n "Barnaby Joyce" -e eng
+    I'd rather die than use obscene and improper words; but when you, Barnaby Joyce, as a degenerate, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks.
+    bash-4.4$ 
     
-    bash$ foad -f priapus1 -n "Tim Chevalier" -e trans | wrap -w 80
-    I'd rather die than use obscene and improper words; but when you, Tim Chevalier,
+    bash-4.4$ foad -f priapus1 -n "Barnaby Joyce" -e eng | wrap -w 80
+    I'd rather die than use obscene and improper words; but when you, Barnaby Joyce,
     as a degenerate, appear with your testicles hanging out, it is appropriate for
     me to speak of cunts and cocks.
-    bash$
+    bash-4.4$ 
     
     bash$ wrap-foad.sh -f priapus4 -n "Donald Trump"
     Obscenis, peream, Donald Trump, si non uti me pudet improbisque verbis sed cum
