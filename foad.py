@@ -158,24 +158,20 @@ about = """
 {0}
 Version {1}
 {2}
-Licenses:  {3}
-           {4}
-           {5}
-           {6}
+License:   {3}
 
-    For instructions run:  {7} -h
+    For instructions run:  {4} -h
 
-    To list all options run:  {7} -O .
+    To list all options run:  {4} -O .
 
-    To display the version and exit run:  {7} -V .
+    To display the version and exit run:  {4} -V .
 
-Contact:  {8} {9}
+Contact:  {5} {6}
 
-OpenPGP:  {10}
-Bitcoin:  {11}
-""".format(__title__, __version__, __copyright__, __license1__, __license2__,
-           __license3__, __license4__, sys.argv[0], __author__, __openpgp__,
-           __openpgp_fpr__, __bitcoin__)
+OpenPGP:  {7}
+Bitcoin:  {8}
+""".format(__title__, __version__, __copyright__, __license__, sys.argv[0],
+           __author__, __openpgp__, __openpgp_fpr__, __bitcoin__)
 
 version = "{0} ({1}) version {2}".format(__stitle__, sys.argv[0], __version__)
 
