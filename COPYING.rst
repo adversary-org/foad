@@ -9,8 +9,10 @@ contributions or other uses are detailed in the docs.
 Original releases (2013-2014) were dual licensed under the GPLv3 and
 the WTFNMFPLv1.  From 2015 onward the software continued to be
 licensed this way, but also licensed under the three clause BSD
-license to account for using it as a library.  The LGPL 2.1 and Apache
-2.0 licenses are also under consideration, but can wait for now.
+license to account for using it as a library.
+
+From August, 2018 onward all the multi-licensing was dropped in favour
+of theApache 2.0 license as it is both GPL compatible and permissive.
 
 Users may accept any one or combination of these licenses, but
 contributors (in the unlikely event that there are any) must
