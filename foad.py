@@ -4,6 +4,12 @@
 from __future__ import unicode_literals
 from __future__ import division
 
+import argparse
+import locale
+import random
+import sys
+import textwrap
+
 ##
 # FOAD: Fucked Off Adversarial Degenerates (Fuck Off And Die)
 #
@@ -14,17 +20,11 @@ from __future__ import division
 #
 # https://github.com/adversary-org/foad
 #
-# Version:  0.8.1.19
+# Version:  0.8.1.20
 #
 # BTC:  1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz
-# Licenses:  GNU Public License version 3 (GPLv3)
-#            Do What The Fuck You Want But It's Not My Fault (WTFNMFv1)
-#            BSD 3-Clause License (BSD)
-#            Apache 2.0
+# Licenses:  Apache 2.0
 #
-# https://www.gnu.org/copyleft/gpl.html
-# https://github.com/adversary-org/wtfnmf
-# 
 #
 # Requirements:
 #
@@ -135,21 +135,12 @@ __copyrightu__ = "Copyright © Benjamin D. McGinnes, 2013-2018"
 __copyrighta__ = "Copyright (C) Benjamin D. McGinnes, 2013-2018"
 __title__ = "FOAD: Fucked Off Adversarial Degenerates (Fuck Off And Die)"
 __stitle__ = "FOAD"
-__license1__ = "GNU General Public License version 3 (GPLv3)"
-__license2__ = "Do What The Fuck You Want To, But It's Not My Fault Public License version 1 (WTFNMFPLv1)"
-__license3__ = "New BSD (3 clause) type"
-__license4__ = "Apache 2.0"
-__version__ = "0.8.1.19"
+__license__ = "Apache 2.0"
+__version__ = "0.8.1.20"
 __bitcoin__ = "1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz"
 __openpgp__ = "0x321E4E2373590E5D"
 __openpgp_fpr__ = "DB4724E6FA4286C92B4E55C4321E4E2373590E5D"
 __openpgp_key__ = "0x321E4E2373590E5D"
-
-import argparse
-import locale
-import random
-import sys
-import textwrap
 
 if locale.getlocale()[1] == "UTF-8":
     __copyright__ = __copyrightu__
@@ -162,7 +153,6 @@ else:
         __copyright__ = __copyrightu__
     except locale.Error:
         __copyright__ = __copyrighta__
-
 
 about = """
 {0}
@@ -183,7 +173,9 @@ Contact:  {8} {9}
 
 OpenPGP:  {10}
 Bitcoin:  {11}
-""".format(__title__, __version__, __copyright__, __license1__, __license2__, __license3__, __license4__, sys.argv[0], __author__, __openpgp__, __openpgp_fpr__, __bitcoin__)
+""".format(__title__, __version__, __copyright__, __license1__, __license2__,
+           __license3__, __license4__, sys.argv[0], __author__, __openpgp__,
+           __openpgp_fpr__, __bitcoin__)
 
 version = "{0} ({1}) version {2}".format(__stitle__, sys.argv[0], __version__)
 
@@ -191,7 +183,8 @@ lx = len(sys.argv)
 
 if lx == 2 and sys.argv[1].startswith("-") is False:
     sys.argv.insert(1, "-f")
-elif lx == 3 and sys.argv[1].startswith("-") is False and sys.argv[2].startswith("-") is False:
+elif lx == 3 and sys.argv[1].startswith(
+        "-") is False and sys.argv[2].startswith("-") is False:
     sax = []
     sax.append(sys.argv[0])
     sax.append("-f")
@@ -199,7 +192,8 @@ elif lx == 3 and sys.argv[1].startswith("-") is False and sys.argv[2].startswith
     sax.append("-n")
     sax.append(sys.argv[2])
     sys.argv = sax
-elif lx >= 4 and sys.argv[1].startswith("-") is False and sys.argv[2].startswith("-") is False:
+elif lx >= 4 and sys.argv[1].startswith(
+        "-") is False and sys.argv[2].startswith("-") is False:
     sax = []
     sax.append(sys.argv[0])
     sax.append("-f")
@@ -211,7 +205,8 @@ elif lx >= 4 and sys.argv[1].startswith("-") is False and sys.argv[2].startswith
 parser = argparse.ArgumentParser(
     prog="foad.py",
     formatter_class=argparse.RawDescriptionHelpFormatter,
-    description=__title__, epilog=textwrap.dedent("""\
+    description=__title__,
+    epilog=textwrap.dedent("""\
         You MUST place any parameter of more than one word in
         quotation marks.
 
@@ -229,16 +224,67 @@ parser = argparse.ArgumentParser(
     {1}
     {2}
     """.format(__bitcoin__, version, __copyright__)))
-parser.add_argument("-f", "--fuck", help="One word, indicates type of fuck to give, run foad.py -f list_options to see possible flags.", action="store", required=False)
-parser.add_argument("-n", "--name", help="Name of target, more than one word must be in quotation marks.", action="store", required=False)
-parser.add_argument("-s", "--sender", help="Used to specify the sender, usually within the context of some particular phrase, more than one word must be in quotation marks.", action="store", required=False)
-parser.add_argument("-r", "--relay", help="Used to specify a third party to whom a message is to be delivered to in order to pass message to the target.", action="store", required=False)
-parser.add_argument("-e", "--extra", help="Additional comment to insert into output, more than one word must be in quotation marks.  Used to enhance an existing response rather than append text (use -a/--append for that).", action="store", required=False)
-parser.add_argument("-a", "--append", help="Additional comment to append to output.  Now works with all options.", action="store", required=False)
-parser.add_argument("-p", "--prepend", help="Additional comment to prepend before the output.  Now works with all options.", action="store", required=False)
+parser.add_argument(
+    "-f",
+    "--fuck",
+    help=
+    "One word, indicates type of fuck to give, run foad.py -f list_options to see possible flags.",
+    action="store",
+    required=False)
+parser.add_argument(
+    "-n",
+    "--name",
+    help="Name of target, more than one word must be in quotation marks.",
+    action="store",
+    required=False)
+parser.add_argument(
+    "-s",
+    "--sender",
+    help=
+    "Used to specify the sender, usually within the context of some particular phrase, more than one word must be in quotation marks.",
+    action="store",
+    required=False)
+parser.add_argument(
+    "-r",
+    "--relay",
+    help=
+    "Used to specify a third party to whom a message is to be delivered to in order to pass message to the target.",
+    action="store",
+    required=False)
+parser.add_argument(
+    "-e",
+    "--extra",
+    help=
+    "Additional comment to insert into output, more than one word must be in quotation marks.  Used to enhance an existing response rather than append text (use -a/--append for that).",
+    action="store",
+    required=False)
+parser.add_argument(
+    "-a",
+    "--append",
+    help="Additional comment to append to output.  Now works with all options.",
+    action="store",
+    required=False)
+parser.add_argument(
+    "-p",
+    "--prepend",
+    help=
+    "Additional comment to prepend before the output.  Now works with all options.",
+    action="store",
+    required=False)
 # parser.add_argument("-o", "--output", help="Writes output to the specified file instead of stdout.", action="store", required=False)
-parser.add_argument("-O", "--options", help="Lists the explicit variations (the same as: -f list_options), will accept any argument to activate.", action="store", required=False)
-parser.add_argument("-V", "--version", help="Print the version number.", action="store", required=False)
+parser.add_argument(
+    "-O",
+    "--options",
+    help=
+    "Lists the explicit variations (the same as: -f list_options), will accept any argument to activate.",
+    action="store",
+    required=False)
+parser.add_argument(
+    "-V",
+    "--version",
+    help="Print the version number.",
+    action="store",
+    required=False)
 
 # This, in conjunction with lx above is what allows the old style
 # usage to continue working:
@@ -307,7 +353,6 @@ if args.version is None:
 else:
     version = args.version
 
-
 lt = len(target)
 ls = len(sender)
 le = len(extra)
@@ -316,6 +361,7 @@ lA = len(append)  # la is already used for all of sys.argv.
 lP = len(prepend)  # I think lp is used for something else as well.
 lO = len(options)
 lV = len(version)
+
 
 class fuck:
     def a(self):
@@ -333,7 +379,8 @@ class fuck:
         elif lt == 0 and le > 0 and ls == 0:
             msg = "{0} should've been aborted!".format(extra)
         elif lt > 0 and le > 0 and ls == 0:
-            msg = "{0}, you and {1} should've been aborted!".format(target, extra)
+            msg = "{0}, you and {1} should've been aborted!".format(
+                target, extra)
         elif lt == 0 and le == 0 and ls > 0 and sender == "retro":
             msg = "You should be retroactively aborted!"
         elif lt > 0 and le == 0 and ls > 0 and sender == "retro":
@@ -341,20 +388,26 @@ class fuck:
         elif lt == 0 and le > 0 and ls > 0 and sender == "retro":
             msg = "{0} should be retroactively aborted!".format(extra)
         elif lt > 1 and le > 0 and ls > 0 and sender == "retro":
-            msg = "{0}, you and {1} should be retroactively aborted!".format(target, extra)
+            msg = "{0}, you and {1} should be retroactively aborted!".format(
+                target, extra)
         elif lt == 0 and le == 0 and ls > 0 and sender == "candid":
             msg = "Not only should you have been aborted, but you're a candidate for retroactive abortion!"
         elif lt > 0 and le == 0 and ls > 0 and sender == "candid":
-            msg = "Not only should you have been aborted, {0}, but you're a candidate for retroactive abortion!".format(target)
+            msg = "Not only should you have been aborted, {0}, but you're a candidate for retroactive abortion!".format(
+                target)
         elif lt == 0 and le > 0 and ls > 0 and sender == "candid":
-            msg = "Not only should {0} have been aborted, but they're a candidate for retroactive abortion!".format(extra)
+            msg = "Not only should {0} have been aborted, but they're a candidate for retroactive abortion!".format(
+                extra)
         elif lt > 0 and le > 0 and ls > 0 and sender == "candid":
-            msg = "{0}, not only should you and {1} have been aborted, you're candidates for retroactive abortion!".format(target, extra)
+            msg = "{0}, not only should you and {1} have been aborted, you're candidates for retroactive abortion!".format(
+                target, extra)
         return msg
 
     def about(self):
         if lt == 0:
-            msg = textwrap.fill("Messages and other information to be displayed interactively.  As with the acronym option, the target parameters are used to call each message.  A non-existent target parameter will produce a list of available options.", 72)
+            msg = textwrap.fill(
+                "Messages and other information to be displayed interactively.  As with the acronym option, the target parameters are used to call each message.  A non-existent target parameter will produce a list of available options.",
+                72)
         elif target.lower() == "adversary":
             msg = "Organised Adversary"
         elif target.lower() == "atitle":
@@ -396,12 +449,16 @@ class fuck:
         elif target.lower() == "website":
             msg = "https://github.com/adversary-org/foad"
         else:
-            msg = textwrap.fill("Target parameters: adversary, atitle, author, bitcoin, contact, copyright, domain, donations, email, encryption, gpg key, irc, options, pirate, twitter, twython, version, website.", 72)
+            msg = textwrap.fill(
+                "Target parameters: adversary, atitle, author, bitcoin, contact, copyright, domain, donations, email, encryption, gpg key, irc, options, pirate, twitter, twython, version, website.",
+                72)
         return msg
 
     def acronym(self):
         if lt == 0:
-            msg = textwrap.fill("Acronyms and backronyms; use the target parameter to choose which one.  To view the target parameters run: foad.py -f acronym -n x", 72)
+            msg = textwrap.fill(
+                "Acronyms and backronyms; use the target parameter to choose which one.  To view the target parameters run: foad.py -f acronym -n x",
+                72)
         elif target.lower() == "fubar":
             msg = "FUBAR: Fucked Up Beyond All Recognition"
         elif target.lower() == "carnal":
@@ -433,7 +490,9 @@ class fuck:
         elif target.lower() == "snafu":
             msg = "SNAFU: Situation Normal: All Fucked Up"
         else:
-            msg = textwrap.fill("Target parameters: bond, carnal, cunt, die, figjam, foaas, fubar, lmfao, right, snafu, snag, title.", 72)
+            msg = textwrap.fill(
+                "Target parameters: bond, carnal, cunt, die, figjam, foaas, fubar, lmfao, right, snafu, snag, title.",
+                72)
         return msg
 
     def agree(self):
@@ -461,11 +520,14 @@ class fuck:
         if lt == 0 and lR == 0:
             msg = "Of all my relations I like sex the best and you the least."
         elif lt > 0 and lR == 0:
-            msg = "Of all my relations I like sex the best and {0} the least.".format(target)
+            msg = "Of all my relations I like sex the best and {0} the least.".format(
+                target)
         elif lt > 0 and lR > 0:
-            msg = "{0}, of all my relations I like sex the best and {1} the least.".format(relay, target)
+            msg = "{0}, of all my relations I like sex the best and {1} the least.".format(
+                relay, target)
         else:
-            msg = "Of all my relations I like sex the best and {0} the least.".format(target)
+            msg = "Of all my relations I like sex the best and {0} the least.".format(
+                target)
         return msg
 
     def amber2(self):
@@ -473,9 +535,11 @@ class fuck:
         if lt == 0 and ls == 0:
             msg = "You're about as intelligent as a freshman in the high school of your choice; sorry, but what I mean is you're loyal, devoted, honest, and too easily screwed over by bastards."
         elif lt > 0 and ls == 0:  # include is/are in target/name.
-            msg = "{0} about as intelligent as a freshman in the high school of your choice; loyal, devoted, honest, and too easily screwed over by bastards.".format(target)
+            msg = "{0} about as intelligent as a freshman in the high school of your choice; loyal, devoted, honest, and too easily screwed over by bastards.".format(
+                target)
         elif lt > 0 and ls > 0:  # include is/are in target/name.
-            msg = "{0} about as intelligent as a freshman in the high school of your choice; loyal, devoted, honest, and too easily screwed over by bastards like {1}.".format(target, sender)
+            msg = "{0} about as intelligent as a freshman in the high school of your choice; loyal, devoted, honest, and too easily screwed over by bastards like {1}.".format(
+                target, sender)
         return msg
 
     def amber3(self):
@@ -486,18 +550,22 @@ class fuck:
         elif lt == 0 and le > 0:
             msg = "Talk is fucking cheap, whiskey costs money."
         elif lt > 0 and le > 0:
-            msg = "Talk is fucking cheap, {0}, whiskey costs money.".format(target)
+            msg = "Talk is fucking cheap, {0}, whiskey costs money.".format(
+                target)
         return msg
 
     def apple(self):
         if lt == 0 and ls == 0:
             msg = "No you fucking can't do it your way!  We don't give a fuck if it's better, you do it our fucking way or you fuck off!"
         elif lt > 0 and ls == 0:
-            msg = "No {0}, you fucking can't do it your way!  We don't give a fuck if it's better, you do it our fucking way or you fuck off!".format(target)
+            msg = "No {0}, you fucking can't do it your way!  We don't give a fuck if it's better, you do it our fucking way or you fuck off!".format(
+                target)
         elif lt > 0 and ls > 0:
-            msg = "No {0}, you fucking can't do it your way!  We don't give a fuck if it's better, you do it our fucking way or you fuck off!  -- {1}".format(target, sender)
+            msg = "No {0}, you fucking can't do it your way!  We don't give a fuck if it's better, you do it our fucking way or you fuck off!  -- {1}".format(
+                target, sender)
         else:
-            msg = "No {0}, you fucking can't do it your way!  We don't give a fuck if it's better, you do it our fucking way or you fuck off!".format(target)
+            msg = "No {0}, you fucking can't do it your way!  We don't give a fuck if it's better, you do it our fucking way or you fuck off!".format(
+                target)
         return msg
 
     # From _Drive Angry_ (2011):
@@ -505,9 +573,11 @@ class fuck:
         if lt == 0 and le == 0:
             msg = "You know what this badge means? Federal Bureau of get the fuck outta my way!"
         if lt > 0 and le == 0:
-            msg = "You know what this badge means, {0}? Federal Bureau of get the fuck outta my way!".format(target)
+            msg = "You know what this badge means, {0}? Federal Bureau of get the fuck outta my way!".format(
+                target)
         if lt > 0 and le > 0:
-            msg = "You know what this badge means, {0}? {1} of get the fuck outta my way!".format(target, extra)
+            msg = "You know what this badge means, {0}? {1} of get the fuck outta my way!".format(
+                target, extra)
         else:
             msg = "You know what this badge means? Federal Bureau of get the fuck outta my way!"
         return msg
@@ -516,39 +586,51 @@ class fuck:
         if lt == 0 and le == 0 and ls == 0:
             msg = "Ballmer Notes: This option requires the first target specified with --name and the second (usually a company or organisation) with --extra (sender optional).  For a gender neutral version use ballmerc on --fuck, for a plural version use ballmers on --fuck."
         elif lt > 0 and le == 0 and ls == 0:
-            msg = "Fucking {0} is a fucking pussy.  I'm going to bury that guy, I have done it before and I will do it again.  I'm going to fucking kill {1}.".format(target, target)
+            msg = "Fucking {0} is a fucking pussy.  I'm going to bury that guy, I have done it before and I will do it again.  I'm going to fucking kill {1}.".format(
+                target, target)
         elif lt > 0 and le > 0 and ls == 0:
-            msg = "Fucking {0} is a fucking pussy.  I'm going to bury that guy, I have done it before and I will do it again.  I'm going to fucking kill {1}.".format(target, extra)
+            msg = "Fucking {0} is a fucking pussy.  I'm going to bury that guy, I have done it before and I will do it again.  I'm going to fucking kill {1}.".format(
+                target, extra)
         elif lt > 0 and le == 0 and ls > 0:
-            msg = "Fucking {0} is a fucking pussy.  I'm going to bury that guy, I have done it before and I will do it again.  I'm going to fucking kill {1}.  -- {2}".format(target, target, sender)
+            msg = "Fucking {0} is a fucking pussy.  I'm going to bury that guy, I have done it before and I will do it again.  I'm going to fucking kill {1}.  -- {2}".format(
+                target, target, sender)
         elif lt > 0 and le > 0 and ls > 0:
-            msg = "Fucking {0} is a fucking pussy.  I'm going to bury that guy, I have done it before and I will do it again.  I'm going to fucking kill {1}.  -- {2}".format(target, extra, sender)
+            msg = "Fucking {0} is a fucking pussy.  I'm going to bury that guy, I have done it before and I will do it again.  I'm going to fucking kill {1}.  -- {2}".format(
+                target, extra, sender)
         return msg
 
     def ballmerc(self):
         if lt == 0 and le == 0 and ls == 0:
             msg = "Ballmer Notes: This option requires the first target specified with --name and the second (usually a company or organisation) with --extra (sender optional).  This is the gender neutral (and harsher) version, for a plural version on --name use ballmers on --fuck."
         elif lt > 0 and le == 0 and ls == 0:
-            msg = "Fucking {0} is a little fucking bitch.  I'm going to bury that cunt, I have done it before and I will do it again.  I'm going to fucking kill {1}.".format(target, target)
+            msg = "Fucking {0} is a little fucking bitch.  I'm going to bury that cunt, I have done it before and I will do it again.  I'm going to fucking kill {1}.".format(
+                target, target)
         elif lt > 0 and le > 0 and ls == 0:
-            msg = "Fucking {0} is a little fucking bitch.  I'm going to bury that cunt, I have done it before and I will do it again.  I'm going to fucking kill {1}.".format(target, extra)
+            msg = "Fucking {0} is a little fucking bitch.  I'm going to bury that cunt, I have done it before and I will do it again.  I'm going to fucking kill {1}.".format(
+                target, extra)
         elif lt > 0 and le == 0 and ls > 0:
-            msg = "Fucking {0} is a little fucking bitch.  I'm going to bury that cunt, I have done it before and I will do it again.  I'm going to fucking kill {1}.  -- {2}".format(target, target, sender)
+            msg = "Fucking {0} is a little fucking bitch.  I'm going to bury that cunt, I have done it before and I will do it again.  I'm going to fucking kill {1}.  -- {2}".format(
+                target, target, sender)
         elif lt > 0 and le > 0 and ls > 0:
-            msg = "Fucking {0} is a little fucking bitch.  I'm going to bury that cunt, I have done it before and I will do it again.  I'm going to fucking kill {1}.  -- {2}".format(target, extra, sender)
+            msg = "Fucking {0} is a little fucking bitch.  I'm going to bury that cunt, I have done it before and I will do it again.  I'm going to fucking kill {1}.  -- {2}".format(
+                target, extra, sender)
         return msg
 
     def ballmers(self):
         if lt == 0 and le == 0 and ls == 0:
             msg = "Plural Ballmer Notes: This option requires the first targets specified with --name in quotation marks (e.g. 'name1 and name2' or 'name1, name2 and name3') and the second (usually a company or organisation) with --extra (sender optional)."
         elif lt > 0 and le == 0 and ls == 0:
-            msg = "Fucking {0} are fucking pussies.  I'm going to bury those guys, I have done it before and I will do it again.  I'm going to fucking kill {1}.".format(target, target)
+            msg = "Fucking {0} are fucking pussies.  I'm going to bury those guys, I have done it before and I will do it again.  I'm going to fucking kill {1}.".format(
+                target, target)
         elif lt > 0 and le > 0 and ls == 0:
-            msg = "Fucking {0} are fucking pussies.  I'm going to bury those guys, I have done it before and I will do it again.  I'm going to fucking kill {1}.".format(target, extra)
+            msg = "Fucking {0} are fucking pussies.  I'm going to bury those guys, I have done it before and I will do it again.  I'm going to fucking kill {1}.".format(
+                target, extra)
         elif lt > 0 and le == 0 and ls > 0:
-            msg = "Fucking {0} are fucking pussies.  I'm going to bury those guys, I have done it before and I will do it again.  I'm going to fucking kill {1}.  -- {2}".format(target, target, sender)
+            msg = "Fucking {0} are fucking pussies.  I'm going to bury those guys, I have done it before and I will do it again.  I'm going to fucking kill {1}.  -- {2}".format(
+                target, target, sender)
         elif lt > 0 and le > 0 and ls > 0:
-            msg = "Fucking {0} are fucking pussies.  I'm going to bury those guys, I have done it before and I will do it again.  I'm going to fucking kill {1}.  -- {2}".format(target, extra, sender)
+            msg = "Fucking {0} are fucking pussies.  I'm going to bury those guys, I have done it before and I will do it again.  I'm going to fucking kill {1}.  -- {2}".format(
+                target, extra, sender)
         return msg
 
     def bbm(self):
@@ -573,7 +655,8 @@ class fuck:
         if lt == 0:
             msg = "Christ on a bendy-bus, don't be such a fucking faff-arse."
         elif lt > 0:
-            msg = "Christ on a bendy-bus, {0}, don't be such a fucking faff-arse.".format(target)
+            msg = "Christ on a bendy-bus, {0}, don't be such a fucking faff-arse.".format(
+                target)
         return msg
 
     def bye(self):
@@ -587,18 +670,22 @@ class fuck:
         if lt == 0 and ls == 0 and le == 0:
             msg = "Can I Use Notes: This option requires the tool/object be specified with --extra and is a two-parter rolled into one command.  Currently requires --name, --extra and --sender."
         elif lt > 0 and ls > 0 and le > 0:
-            msg = """{0}, it's {1} here, can I use {2}?  ...  Can you use {3}?  Fuck no, {4}!  You cannot fucking use {5}!""".format(sender, target, extra, extra, target, extra)
+            msg = """{0}, it's {1} here, can I use {2}?  ...  Can you use {3}?  Fuck no, {4}!  You cannot fucking use {5}!""".format(
+                sender, target, extra, extra, target, extra)
         return msg
 
     def cango1(self):
         if lt == 0 and ls == 0 and lR == 0:
             msg = "They can go and fuck themselves."
         elif lt > 0 and ls > 0 and lR == 0:
-            msg = "Tell {0} that {1} said they can go and fuck themselves.".format(target, sender)
+            msg = "Tell {0} that {1} said they can go and fuck themselves.".format(
+                target, sender)
         elif lt > 0 and ls == 0 and lR > 0:
-            msg = "{0}, tell {1} that they can go and fuck themselves.".format(relay, target)
+            msg = "{0}, tell {1} that they can go and fuck themselves.".format(
+                relay, target)
         elif lt > 0 and ls > 0 and lR > 0:
-            msg = "{0}, tell {1} that {2} said they can go and fuck themselves.".format(relay, target, sender)
+            msg = "{0}, tell {1} that {2} said they can go and fuck themselves.".format(
+                relay, target, sender)
         else:
             msg = "{0} can go and fuck themselves.".format(target)
         return msg
@@ -607,11 +694,14 @@ class fuck:
         if lt == 0 and ls == 0 and lR == 0:
             msg = "He can go and fuck himself."
         elif lt > 0 and ls > 0 and lR == 0:
-            msg = "Tell {0} that {1} said he can go and fuck himself.".format(target, sender)
+            msg = "Tell {0} that {1} said he can go and fuck himself.".format(
+                target, sender)
         elif lt > 0 and ls == 0 and lR > 0:
-            msg = "{0}, tell {1} that he can go and fuck himself.".format(relay, target)
+            msg = "{0}, tell {1} that he can go and fuck himself.".format(
+                relay, target)
         elif lt > 0 and ls > 0 and lR > 0:
-            msg = "{0}, tell {1} that {2} said he can go and fuck himself.".format(relay, target, sender)
+            msg = "{0}, tell {1} that {2} said he can go and fuck himself.".format(
+                relay, target, sender)
         else:
             msg = "{0} can go and fuck himself.".format(target)
         return msg
@@ -620,11 +710,14 @@ class fuck:
         if lt == 0 and ls == 0 and lR == 0:
             msg = "She can go and fuck herself."
         elif lt > 0 and ls > 0 and lR == 0:
-            msg = "Tell {0} that {1} said she can go and fuck herself.".format(target, sender)
+            msg = "Tell {0} that {1} said she can go and fuck herself.".format(
+                target, sender)
         elif lt > 0 and ls == 0 and lR > 0:
-            msg = "{0}, tell {1} that she can go and fuck herself.".format(relay, target)
+            msg = "{0}, tell {1} that she can go and fuck herself.".format(
+                relay, target)
         elif lt > 0 and ls > 0 and lR > 0:
-            msg = "{0}, tell {1} that {2} said she can go and fuck herself.".format(relay, target, sender)
+            msg = "{0}, tell {1} that {2} said she can go and fuck herself.".format(
+                relay, target, sender)
         else:
             msg = "{0} can go and fuck herself.".format(target)
         return msg
@@ -640,14 +733,16 @@ class fuck:
         if lt == 0:
             msg = "Fuck me gently with a chainsaw.  Do I look like Mother Teresa?"
         else:
-            msg = "Fuck me gently with a chainsaw, {0}.  Do I look like Mother Teresa?".format(target)
+            msg = "Fuck me gently with a chainsaw, {0}.  Do I look like Mother Teresa?".format(
+                target)
         return msg
 
     def chainsawe(self):
         if lt == 0:
             msg = "Fuck me gently with a chainsaw!  Do I look like Mother Teresa?!"
         else:
-            msg = "Fuck me gently with a chainsaw, {0}!  Do I look like Mother Teresa?!".format(target)
+            msg = "Fuck me gently with a chainsaw, {0}!  Do I look like Mother Teresa?!".format(
+                target)
         return msg
 
     def chainsaws(self):
@@ -689,11 +784,14 @@ class fuck:
         if lt == 0 and le == 0:
             msg = "I might be a cunt, but I'm not a complete and utter fucking cunt."
         elif lt > 0 and le == 0:
-            msg = "I might be a cunt, {0}, but I'm not a complete and utter fucking cunt.".format(target)
+            msg = "I might be a cunt, {0}, but I'm not a complete and utter fucking cunt.".format(
+                target)
         elif lt == 0 and le > 0:
-            msg = "I might be a {0}, but I'm not a complete and utter fucking {1}!".format(extra, extra)
+            msg = "I might be a {0}, but I'm not a complete and utter fucking {1}!".format(
+                extra, extra)
         elif lt > 0 and le > 0:
-            msg = "I might be a {0}, {1}, but I'm not a complete and utter fucking {2}!".format(extra, target, extra)
+            msg = "I might be a {0}, {1}, but I'm not a complete and utter fucking {2}!".format(
+                extra, target, extra)
         return msg
 
     def cracked(self):
@@ -711,7 +809,8 @@ class fuck:
         elif lt == 0 and le > 0 and extra.lower() == "vote":
             msg = "Vote for Cthulhu! Why vote for the lesser of two evils?"
         elif lt > 0 and le > 0 and extra.lower() == "vote":
-            msg = "Cthulhu for {0}! Why vote for the lesser of two evils?".format(target)
+            msg = "Cthulhu for {0}! Why vote for the lesser of two evils?".format(
+                target)
         else:
             msg = "Ph'nglui mglw'nafh Cthulhu R'lyeh wgah'nagl fhtagn!"
         return msg
@@ -720,25 +819,30 @@ class fuck:
         if lt == 0:
             msg = "Fuck you, you complete and utter fucking cunt!"
         else:
-            msg = "Fuck you {0}, you complete and utter fucking cunt!".format(target)
+            msg = "Fuck you {0}, you complete and utter fucking cunt!".format(
+                target)
         return msg
 
     def cunts(self):
         if lt == 0:
             msg = "Fuck you, you complete and utter fucking cunts!"
         else:
-            msg = "Fuck you {0}, you complete and utter fucking cunts!".format(target)
+            msg = "Fuck you {0}, you complete and utter fucking cunts!".format(
+                target)
         return msg
 
     def cuntz(self):
         if lt == 0 and le == 0:
             msg = "Fuck all those complete and utter fucking cocksuckers and cunts!"
         elif lt == 0 and le > 0:
-          msg = "Fuck them, they're all complete and utter fucking cocksuckers and cunts!".format(target)  
+            msg = "Fuck them, they're all complete and utter fucking cocksuckers and cunts!".format(
+                target)
         elif lt > 0 and le == 0:
-            msg = "Fuck {0}, they're all complete and utter fucking cunts!".format(target)
+            msg = "Fuck {0}, they're all complete and utter fucking cunts!".format(
+                target)
         else:
-            msg = "Fuck {0}, they're all complete and utter fucking cocksuckers and cunts!".format(target)
+            msg = "Fuck {0}, they're all complete and utter fucking cocksuckers and cunts!".format(
+                target)
         return msg
 
     def custode(self):
@@ -764,9 +868,11 @@ class fuck:
         elif lt > 0 and le > 0 and lR == 0:
             msg = "{0}, what is {1} fucking damage?".format(target, extra)
         elif lt > 0 and le == 0 and lR > 0:
-            msg = "{0}, with {1}, what is their fucking damage?".format(relay, target)
+            msg = "{0}, with {1}, what is their fucking damage?".format(
+                relay, target)
         elif lt > 0 and le > 0 and lR > 0:
-            msg = "{0}, with {1}, what is {2} fucking damage?".format(relay, target, extra)
+            msg = "{0}, with {1}, what is {2} fucking damage?".format(
+                relay, target, extra)
         else:
             msg = "What is your fucking damage?"
         return msg
@@ -789,7 +895,8 @@ class fuck:
         if lt == 0:
             msg = "I'd love to stop and chat to you but I'd rather have type 2 diabetes."
         elif lt > 0:
-            msg = "I'd love to stop and chat to you, {0}, but I'd rather have type 2 diabetes.".format(target)
+            msg = "I'd love to stop and chat to you, {0}, but I'd rather have type 2 diabetes.".format(
+                target)
         return msg
 
     def disbelief(self):
@@ -810,7 +917,8 @@ class fuck:
         if lt == 0:
             msg = "Go and take a flying fuck at a rolling donut."
         else:
-            msg = "{0}, go and take a flying fuck at a rolling donut.".format(target)
+            msg = "{0}, go and take a flying fuck at a rolling donut.".format(
+                target)
         return msg
 
     def doodle(self):
@@ -835,7 +943,8 @@ class fuck:
         if lt == 0:
             msg = "English motherfucker!  Do you speak it?!"
         else:
-            msg = "English motherfucker!  Do you speak it, {0}?!".format(target)
+            msg = "English motherfucker!  Do you speak it, {0}?!".format(
+                target)
         return msg
 
     def every1(self):
@@ -863,7 +972,8 @@ class fuck:
         if lt == 0:
             msg = "Fascinating story, in what chapter do you shut the fuck up?"
         else:
-            msg = "Fascinating story, {0}, in what chapter do you shut the fuck up?".format(target)
+            msg = "Fascinating story, {0}, in what chapter do you shut the fuck up?".format(
+                target)
         return msg
 
     def fascist(self):  # sender and relay used in non-standard ways.
@@ -906,11 +1016,14 @@ class fuck:
         if lt == 0 and ls == 0:
             msg = "And I said unto thee, 'Verily, cast thine eyes upon the field in which I grow my fucks,' and thou gave witness unto the field and saw that it was barren."
         elif lt > 0 and ls == 0:
-            msg = "And I said unto {0}, 'Verily, cast thine eyes upon the field in which I grow my fucks,' and {1} gave witness unto the field and saw that it was barren.".format(target, target)
+            msg = "And I said unto {0}, 'Verily, cast thine eyes upon the field in which I grow my fucks,' and {1} gave witness unto the field and saw that it was barren.".format(
+                target, target)
         if lt == 0 and ls > 0:
-            msg = "And {0} said unto thee, 'Verily, cast thine eyes upon the field in which I grow my fucks,' and thou gave witness unto the field and saw that it was barren.".format(sender)
+            msg = "And {0} said unto thee, 'Verily, cast thine eyes upon the field in which I grow my fucks,' and thou gave witness unto the field and saw that it was barren.".format(
+                sender)
         elif lt > 0 and ls > 0:
-            msg = "And {0} said unto {1}, 'Verily, cast thine eyes upon the field in which I grow my fucks,' and {2} gave witness unto the field and saw that it was barren.".format(sender, target, target)
+            msg = "And {0} said unto {1}, 'Verily, cast thine eyes upon the field in which I grow my fucks,' and {2} gave witness unto the field and saw that it was barren.".format(
+                sender, target, target)
         return msg
 
     def figjam(self):
@@ -970,11 +1083,12 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
         elif lt == 0 and le > 0:
             msg = "Forsooth!  Thou and thine {0} art fucked!".format(extra)
         elif lt > 0 and le > 0:
-            msg = "Forsooth!  {0}, thou and thine {1} art fucked!".format(target, extra)
+            msg = "Forsooth!  {0}, thou and thine {1} art fucked!".format(
+                target, extra)
         else:
             msg = "Forsooth!  Thou and thine art fucked!"
         return msg
-    
+
     def froad(self):
         if lt == 0 and le == 0:
             msg = "Fuck off and die!"
@@ -999,7 +1113,8 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
         if lt == 0:
             msg = "You're fucked up beyond all recognition."
         else:
-            msg = "{0}, you're fucked up beyond all recognition.".format(target)
+            msg = "{0}, you're fucked up beyond all recognition.".format(
+                target)
         return msg
 
     def fucker(self):
@@ -1028,19 +1143,25 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
         if lt == 0 and lR == 0 and le == 0 and ls == 0:
             msg = "If I wanted to know your future, I'd read it in your entrails."
         elif lt > 0 and lR == 0 and le == 0 and ls == 0:
-            msg = "If I wanted to know your future, {0}, I'd read it in your entrails.".format(target)
+            msg = "If I wanted to know your future, {0}, I'd read it in your entrails.".format(
+                target)
         elif lt > 0 and lR > 0 and le == 0 and ls == 0:
-            msg = "{0}, tell {1} that if I wanted to know their future, I'd read it in their entrails.".format(relay, target)
+            msg = "{0}, tell {1} that if I wanted to know their future, I'd read it in their entrails.".format(
+                relay, target)
         elif lt > 0 and lR > 0 and le > 0 and ls == 0:
-            msg = "{0}, tell {1} that if I wanted to know {2} future, I'd read it in {3} entrails.".format(relay, target, extra, extra)
+            msg = "{0}, tell {1} that if I wanted to know {2} future, I'd read it in {3} entrails.".format(
+                relay, target, extra, extra)
         elif lt == 0 and lR == 0 and le == 0 and ls > 0:
             msg = "If I wanted to know your future, I'd read it in your entrails!"
         elif lt > 0 and lR == 0 and le == 0 and ls > 0:
-            msg = "If I wanted to know your future, {0}, I'd read it in your entrails!".format(target)
+            msg = "If I wanted to know your future, {0}, I'd read it in your entrails!".format(
+                target)
         elif lt > 0 and lR > 0 and le == 0 and ls > 0:
-            msg = "{0}, tell {1} that if I wanted to know their future, I'd read it in their entrails!".format(relay, target)
+            msg = "{0}, tell {1} that if I wanted to know their future, I'd read it in their entrails!".format(
+                relay, target)
         elif lt > 0 and lR > 0 and le > 0 and ls > 0:
-            msg = "{0}, tell {1} that if I wanted to know {2} future, I'd read it in {3} entrails!".format(relay, target, extra, extra)
+            msg = "{0}, tell {1} that if I wanted to know {2} future, I'd read it in {3} entrails!".format(
+                relay, target, extra, extra)
         else:
             msg = "If I wanted to know your future, I'd read it in your entrails!"
         return msg
@@ -1051,17 +1172,23 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
         elif lt == 0 and lR == 0 and le == 0 and ls > 0:
             msg = "If I wanted to know your future, I'd read it in your fucking entrails!"
         elif lt > 0 and lR == 0 and le == 0 and ls == 0:
-            msg = "If I wanted to know your future, {0}, I'd read it in your fucking entrails.".format(target)
+            msg = "If I wanted to know your future, {0}, I'd read it in your fucking entrails.".format(
+                target)
         elif lt > 0 and lR == 0 and le == 0 and ls > 0:
-            msg = "If I wanted to know your future, {0}, I'd read it in your fucking entrails!".format(target)
+            msg = "If I wanted to know your future, {0}, I'd read it in your fucking entrails!".format(
+                target)
         elif lt > 0 and lR > 0 and le == 0 and ls == 0:
-            msg = "{0}, tell {1} that if I wanted to know their future, I'd read it in their fucking entrails.".format(relay, target)
+            msg = "{0}, tell {1} that if I wanted to know their future, I'd read it in their fucking entrails.".format(
+                relay, target)
         elif lt > 0 and lR > 0 and le == 0 and ls > 0:
-            msg = "{0}, tell {1} that if I wanted to know their future, I'd read it in their fucking entrails!".format(relay, target)
+            msg = "{0}, tell {1} that if I wanted to know their future, I'd read it in their fucking entrails!".format(
+                relay, target)
         elif lt > 0 and lR > 0 and le > 0 and ls == 0:
-            msg = "{0}, tell {1} that if I wanted to know {2} future, I'd read it in {3} fucking entrails.".format(relay, target, extra, extra)
+            msg = "{0}, tell {1} that if I wanted to know {2} future, I'd read it in {3} fucking entrails.".format(
+                relay, target, extra, extra)
         elif lt > 0 and lR > 0 and le > 0 and ls > 0:
-            msg = "{0}, tell {1} that if I wanted to know {2} future, I'd read it in {3} fucking entrails!".format(relay, target, extra, extra)
+            msg = "{0}, tell {1} that if I wanted to know {2} future, I'd read it in {3} fucking entrails!".format(
+                relay, target, extra, extra)
         else:
             msg = "If I wanted to know your future, I'd read it in your fucking entrails!"
         return msg
@@ -1070,19 +1197,25 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
         if lt == 0 and lR == 0 and le == 0 and ls == 0:
             msg = "If I wanted to know your fucking future, I'd read it in your entrails."
         elif lt > 0 and lR == 0 and le == 0 and ls == 0:
-            msg = "If I wanted to know your fucking future, {0}, I'd read it in your entrails.".format(target)
+            msg = "If I wanted to know your fucking future, {0}, I'd read it in your entrails.".format(
+                target)
         elif lt > 0 and lR > 0 and le == 0 and ls == 0:
-            msg = "{0}, tell {1} that if I wanted to know their fucking future, I'd read it in their entrails.".format(relay, target)
+            msg = "{0}, tell {1} that if I wanted to know their fucking future, I'd read it in their entrails.".format(
+                relay, target)
         elif lt > 0 and lR > 0 and le > 0 and ls == 0:
-            msg = "{0}, tell {1} that if I wanted to know {2} fucking future, I'd read it in {3} entrails.".format(relay, target, extra, extra)
+            msg = "{0}, tell {1} that if I wanted to know {2} fucking future, I'd read it in {3} entrails.".format(
+                relay, target, extra, extra)
         elif lt == 0 and lR == 0 and le == 0 and ls > 0:
             msg = "If I wanted to know your fucking future, I'd read it in your entrails!"
         elif lt > 0 and lR == 0 and le == 0 and ls > 0:
-            msg = "If I wanted to know your fucking future, {0}, I'd read it in your entrails!".format(target)
+            msg = "If I wanted to know your fucking future, {0}, I'd read it in your entrails!".format(
+                target)
         elif lt > 0 and lR > 0 and le == 0 and ls > 0:
-            msg = "{0}, tell {1} that if I wanted to know their fucking future, I'd read it in their entrails!".format(relay, target)
+            msg = "{0}, tell {1} that if I wanted to know their fucking future, I'd read it in their entrails!".format(
+                relay, target)
         elif lt > 0 and lR > 0 and le > 0 and ls > 0:
-            msg = "{0}, tell {1} that if I wanted to know {2} fucking future, I'd read it in {3} entrails!".format(relay, target, extra, extra)
+            msg = "{0}, tell {1} that if I wanted to know {2} fucking future, I'd read it in {3} entrails!".format(
+                relay, target, extra, extra)
         else:
             msg = "If I wanted to know your fucking future, I'd read it in your entrails!"
         return msg
@@ -1091,19 +1224,25 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
         if lt == 0 and lR == 0 and le == 0 and ls == 0:
             msg = "If I wanted to know your fucking future, I'd read it in your fucking entrails."
         elif lt > 0 and lR == 0 and le == 0 and ls == 0:
-            msg = "If I wanted to know your fucking future, {0}, I'd read it in your fucking entrails.".format(target)
+            msg = "If I wanted to know your fucking future, {0}, I'd read it in your fucking entrails.".format(
+                target)
         elif lt > 0 and lR > 0 and le == 0 and ls == 0:
-            msg = "{0}, tell {1} that if I wanted to know their fucking future, I'd read it in their fucking entrails.".format(relay, target)
+            msg = "{0}, tell {1} that if I wanted to know their fucking future, I'd read it in their fucking entrails.".format(
+                relay, target)
         elif lt > 0 and lR > 0 and le > 0 and ls == 0:
-            msg = "{0}, tell {1} that if I wanted to know {2} fucking future, I'd read it in {3} fucking entrails.".format(relay, target, extra, extra)
+            msg = "{0}, tell {1} that if I wanted to know {2} fucking future, I'd read it in {3} fucking entrails.".format(
+                relay, target, extra, extra)
         elif lt == 0 and lR == 0 and le == 0 and ls > 0:
             msg = "If I wanted to know your fucking future, I'd read it in your fucking entrails!"
         elif lt > 0 and lR == 0 and le == 0 and ls > 0:
-            msg = "If I wanted to know your fucking future, {0}, I'd read it in your fucking entrails!".format(target)
+            msg = "If I wanted to know your fucking future, {0}, I'd read it in your fucking entrails!".format(
+                target)
         elif lt > 0 and lR > 0 and le == 0 and ls > 0:
-            msg = "{0}, tell {1} that if I wanted to know their fucking future, I'd read it in their fucking entrails!".format(relay, target)
+            msg = "{0}, tell {1} that if I wanted to know their fucking future, I'd read it in their fucking entrails!".format(
+                relay, target)
         elif lt > 0 and lR > 0 and le > 0 and ls > 0:
-            msg = "{0}, tell {1} that if I wanted to know {2} fucking future, I'd read it in {3} fucking entrails!".format(relay, target, extra, extra)
+            msg = "{0}, tell {1} that if I wanted to know {2} fucking future, I'd read it in {3} fucking entrails!".format(
+                relay, target, extra, extra)
         else:
             msg = "If I wanted to know your fucking future, I'd read it in your fucking entrails!"
         return msg
@@ -1126,10 +1265,11 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
         elif lt == 0 and ls > 0 and lR > 0:
             msg = "You and {0} are {1}{2}!".format(relay, sender, extra)
         elif lt > 0 and ls > 0 and lR > 0:
-            msg = "{0}, you and {1} are {2}{3}!".format(target, relay, sender, extra)
+            msg = "{0}, you and {1} are {2}{3}!".format(
+                target, relay, sender, extra)
         else:
             msg = "The extra flag (-e) MUST be used; sender (-s) may be used to replace fuck for alternate compound words."
-        return(msg)
+        return (msg)
 
     def fx1(self):  # extra is required
         if le == 0:
@@ -1141,18 +1281,21 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
         elif lt == 0 and ls == 0 and lR > 0:
             msg = "You and {0} are complete fuck{1}!".format(relay, extra)
         elif lt > 0 and ls == 0 and lR > 0:
-            msg = "{0}, you and {1} are complete fuck{2}!".format(target, relay, extra)
+            msg = "{0}, you and {1} are complete fuck{2}!".format(
+                target, relay, extra)
         elif lt == 0 and ls > 0 and lR == 0:
             msg = "You complete {0}{1}!".format(sender, extra)
         elif lt > 0 and ls > 0 and lR == 0:
             msg = "{0}, you complete {1}{2}!".format(target, sender, extra)
         elif lt == 0 and ls > 0 and lR > 0:
-            msg = "You and {0} are complete {1}{2}!".format(relay, sender, extra)
+            msg = "You and {0} are complete {1}{2}!".format(
+                relay, sender, extra)
         elif lt > 0 and ls > 0 and lR > 0:
-            msg = "{0}, you and {1} are complete {2}{3}!".format(target, relay, sender, extra)
+            msg = "{0}, you and {1} are complete {2}{3}!".format(
+                target, relay, sender, extra)
         else:
             msg = "The extra flag (-e) MUST be used; sender (-s) may be used to replace fuck for alternate compound words."
-        return(msg)
+        return (msg)
 
     def fx2(self):  # extra is required
         if le == 0:
@@ -1162,21 +1305,26 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
         elif lt > 0 and ls == 0 and lR == 0:
             msg = "{0}, you complete and utter fuck{1}!".format(target, extra)
         elif lt == 0 and ls == 0 and lR > 0:
-            msg = "You and {0} are complete and utter fuck{1}!".format(relay, extra)
+            msg = "You and {0} are complete and utter fuck{1}!".format(
+                relay, extra)
         elif lt > 0 and ls == 0 and lR > 0:
-            msg = "{0}, you and {1} are complete and utter fuck{2}!".format(target, relay, extra)
+            msg = "{0}, you and {1} are complete and utter fuck{2}!".format(
+                target, relay, extra)
         elif lt == 0 and ls > 0 and lR == 0:
             msg = "You complete and utter {0}{1}!".format(sender, extra)
         elif lt > 0 and ls > 0 and lR == 0:
-            msg = "{0}, you complete and utter {1}{2}!".format(target, sender, extra)
+            msg = "{0}, you complete and utter {1}{2}!".format(
+                target, sender, extra)
         elif lt == 0 and ls > 0 and lR > 0:
-            msg = "You and {0} are complete and utter {1}{2}!".format(relay, sender, extra)
+            msg = "You and {0} are complete and utter {1}{2}!".format(
+                relay, sender, extra)
         elif lt > 0 and ls > 0 and lR > 0:
-            msg = "{0}, you and {1} are complete and utter {2}{3}!".format(target, relay, sender, extra)
+            msg = "{0}, you and {1} are complete and utter {2}{3}!".format(
+                target, relay, sender, extra)
         else:
             msg = "The extra flag (-e) MUST be used; sender (-s) may be used to replace fuck for alternate compound words."
-        return(msg)
-    
+        return (msg)
+
     def get(self):
         if lt == 0:
             msg = "Get fucked!"
@@ -1205,7 +1353,8 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
         elif lt > 0 and ls == 0 and le == 0:
             msg = "{0}, I don't give a fuck what they do.".format(target)
         elif lt > 0 and ls > 0 and le == 0:
-            msg = "{0}, I really don't give a fuck what they do.".format(target)
+            msg = "{0}, I really don't give a fuck what they do.".format(
+                target)
         elif lt == 0 and ls == 0 and le > 0:
             msg = "I don't give a fuck what you do."
         elif lt == 0 and ls > 0 and le > 0:
@@ -1226,7 +1375,8 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
         elif lt > 0 and ls == 0 and le == 0:
             msg = "{0}, I don't give a fuck what they hear.".format(target)
         elif lt > 0 and ls > 0 and le == 0:
-            msg = "{0}, I really don't give a fuck what they hear.".format(target)
+            msg = "{0}, I really don't give a fuck what they hear.".format(
+                target)
         elif lt == 0 and ls == 0 and le > 0:
             msg = "I don't give a fuck what you hear."
         elif lt == 0 and ls > 0 and le > 0:
@@ -1234,7 +1384,8 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
         elif lt > 0 and ls == 0 and le > 0:
             msg = "{0}, I don't give a fuck what you hear.".format(target)
         elif lt > 0 and ls > 0 and le > 0:
-            msg = "{0}, I really don't give a fuck what you hear.".format(target)
+            msg = "{0}, I really don't give a fuck what you hear.".format(
+                target)
         else:
             msg = "WTF?! (giveh)"
         return msg
@@ -1247,7 +1398,8 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
         elif lt > 0 and ls == 0 and le == 0:
             msg = "{0}, I don't give a fuck what they say.".format(target)
         elif lt > 0 and ls > 0 and le == 0:
-            msg = "{0}, I really don't give a fuck what they say.".format(target)
+            msg = "{0}, I really don't give a fuck what they say.".format(
+                target)
         elif lt == 0 and ls == 0 and le > 0:
             msg = "I don't give a fuck what you say."
         elif lt == 0 and ls > 0 and le > 0:
@@ -1255,7 +1407,8 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
         elif lt > 0 and ls == 0 and le > 0:
             msg = "{0}, I don't give a fuck what you say.".format(target)
         elif lt > 0 and ls > 0 and le > 0:
-            msg = "{0}, I really don't give a fuck what you say.".format(target)
+            msg = "{0}, I really don't give a fuck what you say.".format(
+                target)
         else:
             msg = "WTF?! (gives)"
         return msg
@@ -1268,7 +1421,8 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
         elif lt > 0 and ls == 0 and le == 0:
             msg = "{0}, I don't give a fuck what they think.".format(target)
         elif lt > 0 and ls > 0 and le == 0:
-            msg = "{0}, I really don't give a fuck what they think.".format(target)
+            msg = "{0}, I really don't give a fuck what they think.".format(
+                target)
         elif lt == 0 and ls == 0 and le > 0:
             msg = "I don't give a fuck what you think."
         elif lt == 0 and ls > 0 and le > 0:
@@ -1276,7 +1430,8 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
         elif lt > 0 and ls == 0 and le > 0:
             msg = "{0}, I don't give a fuck what you think.".format(target)
         elif lt > 0 and ls > 0 and le > 0:
-            msg = "{0}, I really don't give a fuck what you think.".format(target)
+            msg = "{0}, I really don't give a fuck what you think.".format(
+                target)
         else:
             msg = "WTF?! (givet)"
         return msg
@@ -1289,7 +1444,8 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
         elif lt > 0 and ls == 0 and le == 0:
             msg = "{0}, I don't give a fuck who they are.".format(target)
         elif lt > 0 and ls > 0 and le == 0:
-            msg = "{0}, I really don't give a fuck who they are.".format(target)
+            msg = "{0}, I really don't give a fuck who they are.".format(
+                target)
         elif lt == 0 and ls == 0 and le > 0:
             msg = "I don't give a fuck who you are."
         elif lt == 0 and ls > 0 and le > 0:
@@ -1331,11 +1487,14 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
         elif lt > 0 and le == 0 and lR > 0 and ls == 0:
             msg = "{0}, tell {1} to get the fuck out!".format(relay, target)
         elif lt > 0 and le > 0 and lR > 0 and ls == 0:
-            msg = "{0}, tell {1} to get the fuck out of {2}!".format(relay, target, extra)
+            msg = "{0}, tell {1} to get the fuck out of {2}!".format(
+                relay, target, extra)
         elif lt > 0 and le == 0 and lR == 0 and ls > 0:
-            msg = "{0}, {1} asked me to tell you to get the fuck out!".format(target, sender)
+            msg = "{0}, {1} asked me to tell you to get the fuck out!".format(
+                target, sender)
         elif lt > 0 and le > 0 and lR == 0 and ls > 0:
-            msg = "{0}, {1} asked me to tell you to get the fuck out of {2}!".format(target, sender, extra)
+            msg = "{0}, {1} asked me to tell you to get the fuck out of {2}!".format(
+                target, sender, extra)
         return msg
 
     def gtfo3(self):
@@ -1344,15 +1503,20 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
         elif lt > 0 and le == 0 and lR == 0 and ls == 0:
             msg = "{0}, get the fuck out right now!".format(target)
         elif lt > 0 and le > 0 and lR == 0 and ls == 0:
-            msg = "{0}, get the fuck out of {1} right now!".format(target, extra)
+            msg = "{0}, get the fuck out of {1} right now!".format(
+                target, extra)
         elif lt > 0 and le == 0 and lR > 0 and ls == 0:
-            msg = "{0}, tell {1} to get the fuck out right now!".format(relay, target)
+            msg = "{0}, tell {1} to get the fuck out right now!".format(
+                relay, target)
         elif lt > 0 and le > 0 and lR > 0 and ls == 0:
-            msg = "{0}, tell {1} to get the fuck out of {2} right now!".format(relay, target, extra)
+            msg = "{0}, tell {1} to get the fuck out of {2} right now!".format(
+                relay, target, extra)
         elif lt > 0 and le == 0 and lR == 0 and ls > 0:
-            msg = "{0}, {1} asked me to tell you to get the fuck out right now!".format(target, sender)
+            msg = "{0}, {1} asked me to tell you to get the fuck out right now!".format(
+                target, sender)
         elif lt > 0 and le > 0 and lR == 0 and ls > 0:
-            msg = "{0}, {1} asked me to tell you to get the fuck out of {2} right now!".format(target, sender, extra)
+            msg = "{0}, {1} asked me to tell you to get the fuck out of {2} right now!".format(
+                target, sender, extra)
         return msg
 
     def gtfo4(self):
@@ -1361,15 +1525,20 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
         elif lt > 0 and le == 0 and lR == 0 and ls == 0:
             msg = "{0}, get the fuck out right fucking now!".format(target)
         elif lt > 0 and le > 0 and lR == 0 and ls == 0:
-            msg = "{0}, get the fuck out of {1} right fucking now!".format(target, extra)
+            msg = "{0}, get the fuck out of {1} right fucking now!".format(
+                target, extra)
         elif lt > 0 and le == 0 and lR > 0 and ls == 0:
-            msg = "{0}, tell {1} to get the fuck out right fucking now!".format(relay, target)
+            msg = "{0}, tell {1} to get the fuck out right fucking now!".format(
+                relay, target)
         elif lt > 0 and le > 0 and lR > 0 and ls == 0:
-            msg = "{0}, tell {1} to get the fuck out of {2} right fucking now!".format(relay, target, extra)
+            msg = "{0}, tell {1} to get the fuck out of {2} right fucking now!".format(
+                relay, target, extra)
         elif lt > 0 and le == 0 and lR == 0 and ls > 0:
-            msg = "{0}, {1} asked me to tell you to get the fuck out right fucking now!".format(target, sender)
+            msg = "{0}, {1} asked me to tell you to get the fuck out right fucking now!".format(
+                target, sender)
         elif lt > 0 and le > 0 and lR == 0 and ls > 0:
-            msg = "{0}, {1} asked me to tell you to get the fuck out of {2} right fucking now!".format(target, sender, extra)
+            msg = "{0}, {1} asked me to tell you to get the fuck out of {2} right fucking now!".format(
+                target, sender, extra)
         return msg
 
     def gtfoh(self):
@@ -1378,7 +1547,7 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
         else:
             msg = "{0}, get the fuck outta here!".format(target)
         return msg
-    
+
     def hell(self):
         if lt == 0:
             msg = "Fucking Hell!"
@@ -1417,13 +1586,15 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
         elif lt == 0 and le == 0 and ls > 0:
             msg = "Fuck you and the horse you rode in {0}!".format(sender)
         elif lt > 0 and le > 0 and ls == 0:
-            msg = "Fuck you {0} and the {1} you rode in on!".format(target, extra)
+            msg = "Fuck you {0} and the {1} you rode in on!".format(
+                target, extra)
         elif lt > 0 and le > 0 and ls > 0:
-            msg = "Fuck you {0} and the {1} you rode in {2}!".format(target, extra, sender)
+            msg = "Fuck you {0} and the {1} you rode in {2}!".format(
+                target, extra, sender)
         else:
             msg = "Fuck you and the horse you rode in on!"
         return msg
-    
+
     def holy(self):
         if lt == 0:
             msg = "Holy fucking shit!"
@@ -1473,7 +1644,8 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
         elif lt > 0 and ls == 0 and le == 0:
             msg = "{0}, I don't give a fuck what they do!".format(target)
         elif lt > 0 and ls > 0 and le == 0:
-            msg = "{0}, I really don't give a fuck what they do!".format(target)
+            msg = "{0}, I really don't give a fuck what they do!".format(
+                target)
         elif lt == 0 and ls == 0 and le > 0:
             msg = "I don't give a fuck what you do!"
         elif lt == 0 and ls > 0 and le > 0:
@@ -1494,7 +1666,8 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
         elif lt > 0 and ls == 0 and le == 0:
             msg = "{0}, I don't give a fuck what they hear!".format(target)
         elif lt > 0 and ls > 0 and le == 0:
-            msg = "{0}, I really don't give a fuck what they hear!".format(target)
+            msg = "{0}, I really don't give a fuck what they hear!".format(
+                target)
         elif lt == 0 and ls == 0 and le > 0:
             msg = "I don't give a fuck what you hear!"
         elif lt == 0 and ls > 0 and le > 0:
@@ -1502,7 +1675,8 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
         elif lt > 0 and ls == 0 and le > 0:
             msg = "{0}, I don't give a fuck what you hear!".format(target)
         elif lt > 0 and ls > 0 and le > 0:
-            msg = "{0}, I really don't give a fuck what you hear!".format(target)
+            msg = "{0}, I really don't give a fuck what you hear!".format(
+                target)
         else:
             msg = "WTF?! (idgafh)"
         return msg
@@ -1515,7 +1689,8 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
         elif lt > 0 and ls == 0 and le == 0:
             msg = "{0}, I don't give a fuck what they say!".format(target)
         elif lt > 0 and ls > 0 and le == 0:
-            msg = "{0}, I really don't give a fuck what they say!".format(target)
+            msg = "{0}, I really don't give a fuck what they say!".format(
+                target)
         elif lt == 0 and ls == 0 and le > 0:
             msg = "I don't give a fuck what you say!"
         elif lt == 0 and ls > 0 and le > 0:
@@ -1523,7 +1698,8 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
         elif lt > 0 and ls == 0 and le > 0:
             msg = "{0}, I don't give a fuck what you say!".format(target)
         elif lt > 0 and ls > 0 and le > 0:
-            msg = "{0}, I really don't give a fuck what you say!".format(target)
+            msg = "{0}, I really don't give a fuck what you say!".format(
+                target)
         else:
             msg = "WTF?! (idgafs)"
         return msg
@@ -1536,7 +1712,8 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
         elif lt > 0 and ls == 0 and le == 0:
             msg = "{0}, I don't give a fuck what they think!".format(target)
         elif lt > 0 and ls > 0 and le == 0:
-            msg = "{0}, I really don't give a fuck what they think!".format(target)
+            msg = "{0}, I really don't give a fuck what they think!".format(
+                target)
         elif lt == 0 and ls == 0 and le > 0:
             msg = "I don't give a fuck what you think!"
         elif lt == 0 and ls > 0 and le > 0:
@@ -1544,7 +1721,8 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
         elif lt > 0 and ls == 0 and le > 0:
             msg = "{0}, I don't give a fuck what you think!".format(target)
         elif lt > 0 and ls > 0 and le > 0:
-            msg = "{0}, I really don't give a fuck what you think!".format(target)
+            msg = "{0}, I really don't give a fuck what you think!".format(
+                target)
         else:
             msg = "WTF?! (idgaft)"
         return msg
@@ -1557,7 +1735,8 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
         elif lt > 0 and ls == 0 and le == 0:
             msg = "{0}, I don't give a fuck who they are!".format(target)
         elif lt > 0 and ls > 0 and le == 0:
-            msg = "{0}, I really don't give a fuck who they are!".format(target)
+            msg = "{0}, I really don't give a fuck who they are!".format(
+                target)
         elif lt == 0 and ls == 0 and le > 0:
             msg = "I don't give a fuck who you are!"
         elif lt == 0 and ls > 0 and le > 0:
@@ -1621,7 +1800,8 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
         if lt == 0:
             msg = "Thou art a knave; a rascal; an eater of broken meats; a base, proud, shallow, beggarly, three-suited, hundred-pound, filthy, worsted-stocking knave; a lily-liver'd, action-taking, whoreson, glass-gazing, superserviceable, finical rogue; one-trunk-inheriting slave; one that wouldst be a bawd inway of good service, and art nothing but the composition of a knave, beggar, coward, pander, and the son and heir of a mongrel bitch; one whom I will beat into clamorous whining, if thou deny the least syllable of thy addition."
         elif lt > 0:
-            msg = "{0}, thou art a knave; a rascal; an eater of broken meats; a base, proud, shallow, beggarly, three-suited, hundred-pound, filthy, worsted-stocking knave; a lily-liver'd, action-taking, whoreson, glass-gazing, superserviceable, finical rogue; one-trunk-inheriting slave; one that wouldst be a bawd inway of good service, and art nothing but the composition of a knave, beggar, coward, pander, and the son and heir of a mongrel bitch; one whom I will beat into clamorous whining, if thou deny the least syllable of thy addition.".format(target)
+            msg = "{0}, thou art a knave; a rascal; an eater of broken meats; a base, proud, shallow, beggarly, three-suited, hundred-pound, filthy, worsted-stocking knave; a lily-liver'd, action-taking, whoreson, glass-gazing, superserviceable, finical rogue; one-trunk-inheriting slave; one that wouldst be a bawd inway of good service, and art nothing but the composition of a knave, beggar, coward, pander, and the son and heir of a mongrel bitch; one whom I will beat into clamorous whining, if thou deny the least syllable of thy addition.".format(
+                target)
         return msg
 
     def kidding(self):
@@ -1635,22 +1815,28 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
         if lt == 0:
             msg = "Oh fuck off, just really fuck off you total dickface.  Christ you are fucking thick!"
         else:
-            msg = "Oh fuck off, just really fuck off you total dickface.  Christ {0}, you are fucking thick!".format(target)
+            msg = "Oh fuck off, just really fuck off you total dickface.  Christ {0}, you are fucking thick!".format(
+                target)
         return msg
 
     def kirsan(self):
         if lt == 0 and lR == 0 and le == 0:
             msg = "You are as corrupt, delusional, megalomaniacal, vindictive and just as fucking crazy as that fucktard Kirsan Ilyumzhinov!"
         elif lt > 0 and lR == 0 and le == 0:
-            msg = "{0}, you are as corrupt, delusional, megalomaniacal, vindictive and just as fucking crazy as that fucktard Kirsan Ilyumzhinov!".format(target)
+            msg = "{0}, you are as corrupt, delusional, megalomaniacal, vindictive and just as fucking crazy as that fucktard Kirsan Ilyumzhinov!".format(
+                target)
         elif lt == 0 and lR > 0 and le == 0:
-            msg = "{0}, tell them they're as corrupt, delusional, megalomaniacal, vindictive and just as fucking crazy as that fucktard Kirsan Ilyumzhinov!".format(relay)
+            msg = "{0}, tell them they're as corrupt, delusional, megalomaniacal, vindictive and just as fucking crazy as that fucktard Kirsan Ilyumzhinov!".format(
+                relay)
         elif lR > 0 and lt > 0 and le == 0:
-            msg = "{0}, tell {1} that they're as corrupt, delusional, megalomaniacal, vindictive and just as fucking crazy as that fucktard Kirsan Ilyumzhinov!".format(relay, target)
+            msg = "{0}, tell {1} that they're as corrupt, delusional, megalomaniacal, vindictive and just as fucking crazy as that fucktard Kirsan Ilyumzhinov!".format(
+                relay, target)
         elif lR > 0 and lt > 0 and le > 0:
-            msg = "{0}, tell {1} that {2} is as corrupt, delusional, megalomaniacal, vindictive and just as fucking crazy as that fucktard Kirsan Ilyumzhinov!".format(relay, target, extra)
+            msg = "{0}, tell {1} that {2} is as corrupt, delusional, megalomaniacal, vindictive and just as fucking crazy as that fucktard Kirsan Ilyumzhinov!".format(
+                relay, target, extra)
         else:
-            msg = "{0}, you are as corrupt, delusional, megalomaniacal, vindictive and just as fucking crazy as that fucktard Kirsan Ilyumzhinov!".format(target)
+            msg = "{0}, you are as corrupt, delusional, megalomaniacal, vindictive and just as fucking crazy as that fucktard Kirsan Ilyumzhinov!".format(
+                target)
         return msg
 
     def know(self):
@@ -1671,7 +1857,8 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
         if lt == 0:
             msg = "You're such a fucking liar, just so full of shit!"
         else:
-            msg = "You're such a fucking liar, {0}, just so full of shit!".format(target)
+            msg = "You're such a fucking liar, {0}, just so full of shit!".format(
+                target)
         return msg
 
     def life(self):
@@ -1682,7 +1869,8 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
         if lt == 0:
             msg = "There aren't enough swear-words in the English language, so now I'll have to call you perkeleen vittupää just to express my disgust and frustration with this crap."
         else:
-            msg = "{0}, there aren't enough swear-words in the English language, so now I'll have to call you perkeleen vittupää just to express my disgust and frustration with this crap.".format(target)
+            msg = "{0}, there aren't enough swear-words in the English language, so now I'll have to call you perkeleen vittupää just to express my disgust and frustration with this crap.".format(
+                target)
         return msg
 
     def lmfao(self):
@@ -1696,7 +1884,8 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
         if lt == 0:
             msg = "What you've just said is one of the most insanely idiotic things I have ever heard.  At no point in your rambling, incoherent response were you even close to anything that could be considered a rational thought.  Everyone in this room is now dumber for having listened to it.  I award you no points."
         else:
-            msg = "What you've just said is one of the most insanely idiotic things I have ever heard, {0}.  At no point in your rambling, incoherent response were you even close to anything that could be considered a rational thought.  Everyone in this room is now dumber for having listened to it.  I award you no points {1}, and may God have mercy on your soul because no one here will.".format(target, target)
+            msg = "What you've just said is one of the most insanely idiotic things I have ever heard, {0}.  At no point in your rambling, incoherent response were you even close to anything that could be considered a rational thought.  Everyone in this room is now dumber for having listened to it.  I award you no points {1}, and may God have mercy on your soul because no one here will.".format(
+                target, target)
         return msg
 
     def me(self):
@@ -1733,9 +1922,11 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
         if lt == 0 and le == 0 and ls == 0:
             msg = "Uses target/name, extra and sender in non-standard ways."
         elif lt > 0 and le > 0 and ls > 0:
-            msg = "It's like someone forced {0} and {1} to fuck and {2} is what they miscarried.".format(target, sender, extra)
+            msg = "It's like someone forced {0} and {1} to fuck and {2} is what they miscarried.".format(
+                target, sender, extra)
         else:
-            msg = "It's like someone forced {0} and {1} to fuck and this is what they miscarried.".format(target, sender)
+            msg = "It's like someone forced {0} and {1} to fuck and this is what they miscarried.".format(
+                target, sender)
         return msg
 
     def mofo(self):
@@ -1819,7 +2010,8 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
         if lt == 0:
             msg = "Fuck you. No really, I mean it, go fuck yourselves."
         else:
-            msg = "Fuck you {0}. No really, I mean it most sincerely, please go and fuck yourselves.".format(target)
+            msg = "Fuck you {0}. No really, I mean it most sincerely, please go and fuck yourselves.".format(
+                target)
             return msg
 
     def noshit(self):
@@ -1861,35 +2053,40 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
         if lt == 0:
             msg = "Not a snowflake's fucking chance in Hell!"
         else:
-            msg = "{0}, there's not a snowflake's fucking chance in Hell!".format(target)
+            msg = "{0}, there's not a snowflake's fucking chance in Hell!".format(
+                target)
         return msg
 
     def nsfcht(self):
         if lt == 0:
             msg = "There's not a snowflake's fucking chance in Hell of that!"
         else:
-            msg = "{0}, there's not a snowflake's fucking chance in Hell of that!".format(target)
+            msg = "{0}, there's not a snowflake's fucking chance in Hell of that!".format(
+                target)
         return msg
 
     def nsfh(self):
         if lt == 0:
             msg = "Not a snowflake's chance in Hell!"
         else:
-            msg = "{0}, there's not a snowflake's chance in Hell!".format(target)
+            msg = "{0}, there's not a snowflake's chance in Hell!".format(
+                target)
         return msg
 
     def nsfw(self):
         if lt == 0:
             msg = "Not safe for work?  Of course it's not fucking safe for work!"
         else:
-            msg = "Not safe for work?  {0}, of course it's not fucking safe for work!".format(target)
+            msg = "Not safe for work?  {0}, of course it's not fucking safe for work!".format(
+                target)
         return msg
 
     def nugget(self):
         if lt == 0:
             msg = "Well, aren't you a shining example of a rancid fuck-nugget."
         elif lt > 0:
-            msg = "Well {0}, aren't you a shining example of a rancid fuck-nugget.".format(target)
+            msg = "Well {0}, aren't you a shining example of a rancid fuck-nugget.".format(
+                target)
         return msg
 
     def nunnery(self):
@@ -1958,19 +2155,26 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
         elif lt == 0 and lR == 0 and ls > 0 and le == 0:
             msg = "Why don't you go outside and play hide-and-go-fuck-yourself?!"
         elif lt > 0 and lR == 0 and ls == 0 and le == 0:
-            msg = "{0}, why don't you go outside and play hide-and-go-fuck-yourself?".format(target)
+            msg = "{0}, why don't you go outside and play hide-and-go-fuck-yourself?".format(
+                target)
         elif lt > 0 and lR == 0 and ls > 0 and le == 0:
-            msg = "{0}, why don't you go outside and play hide-and-go-fuck-yourself?!".format(target)
+            msg = "{0}, why don't you go outside and play hide-and-go-fuck-yourself?!".format(
+                target)
         elif lt > 0 and lR > 0 and ls == 0 and le == 0:
-            msg = "{0}, tell {1} that he can go outside and play hide-and-go-fuck-himself.".format(relay, target)
+            msg = "{0}, tell {1} that he can go outside and play hide-and-go-fuck-himself.".format(
+                relay, target)
         elif lt > 0 and lR > 0 and ls > 0 and le == 0:
-            msg = "{0}, tell {1} that he can go outside and play hide-and-go-fuck-himself!".format(relay, target)
+            msg = "{0}, tell {1} that he can go outside and play hide-and-go-fuck-himself!".format(
+                relay, target)
         elif lt > 0 and lR > 0 and ls == 0 and le > 0:
-            msg = "{0}, tell {1} that she can go outside and play hide-and-go-fuck-herself.".format(relay, target)
+            msg = "{0}, tell {1} that she can go outside and play hide-and-go-fuck-herself.".format(
+                relay, target)
         elif lt > 0 and lR > 0 and ls > 0 and le > 0:
-            msg = "{0}, tell {1} that she can go outside and play hide-and-go-fuck-herself!".format(relay, target)
+            msg = "{0}, tell {1} that she can go outside and play hide-and-go-fuck-herself!".format(
+                relay, target)
         else:
-            msg = "{0}, it's time for you to go outside and play hide-and-go-fuck-yourself!".format(target)
+            msg = "{0}, it's time for you to go outside and play hide-and-go-fuck-yourself!".format(
+                target)
         return msg
 
     def outsides(self):
@@ -1979,13 +2183,17 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
         elif lt == 0 and ls > 0:
             msg = "Why don't you go outside and play hide-and-go-fuck-yourselves?!"
         elif lt == 0 and lR > 0 and ls == 0:
-            msg = "{0}, tell them that they can go outside and play hide-and-go-fuck-themselves.".format(relay)
+            msg = "{0}, tell them that they can go outside and play hide-and-go-fuck-themselves.".format(
+                relay)
         elif lt == 0 and lR > 0 and ls > 0:
-            msg = "{0}, tell them that they can go outside and play hide-and-go-fuck-themselves!".format(relay)
+            msg = "{0}, tell them that they can go outside and play hide-and-go-fuck-themselves!".format(
+                relay)
         elif lt > 0 and lR > 0 and ls == 0:
-            msg = "{0}, tell {1} that they can go outside and play hide-and-go-fuck-themselves.".format(relay, target)
+            msg = "{0}, tell {1} that they can go outside and play hide-and-go-fuck-themselves.".format(
+                relay, target)
         elif lt > 0 and lR > 0 and ls > 0:
-            msg = "{0}, tell {1} that they can go outside and play hide-and-go-fuck-themselves!".format(relay, target)
+            msg = "{0}, tell {1} that they can go outside and play hide-and-go-fuck-themselves!".format(
+                relay, target)
         else:
             msg = "It's time for all of you to go outside and play hide-and-go-fuck-yourselves!"
         return msg
@@ -2004,11 +2212,14 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
         if lt == 0 and le == 0:
             msg = "What the fuck kind of variable name is \"data\"?!  You should be incarcerated."
         elif lt > 0 and le == 0:
-            msg = "What the fuck kind of variable name is \"data\"?!  You should be incarcerated, {0}.".format(target)
+            msg = "What the fuck kind of variable name is \"data\"?!  You should be incarcerated, {0}.".format(
+                target)
         elif lt == 0 and le > 0:
-            msg = "What the fuck kind of variable name is \"{0}\"?!  You should be incarcerated.".format(extra)
+            msg = "What the fuck kind of variable name is \"{0}\"?!  You should be incarcerated.".format(
+                extra)
         elif lt > 0 and le > 0:
-            msg = "What the fuck kind of variable name is \"{0}\"?!  You should be incarcerated, {1}.".format(extra, target)
+            msg = "What the fuck kind of variable name is \"{0}\"?!  You should be incarcerated, {1}.".format(
+                extra, target)
         return msg
 
 # See http://theprofoundprogrammer.com/post/25728479232/text-what-the-fuck-kind-of-variable-name-is
@@ -2017,8 +2228,10 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
         if lt == 0:
             msg = "There's no fucking way I wrote this.  This is awful ... what the fuck does this even do?!"
         elif lt > 0:
-            msg = "There's no fucking way I wrote this, {0}.  This is awful ... what the fuck does this even do?!".format(target)
+            msg = "There's no fucking way I wrote this, {0}.  This is awful ... what the fuck does this even do?!".format(
+                target)
         return msg
+
 
 # See http://theprofoundprogrammer.com/post/25728609992/text-theres-no-fucking-way-i-wrote-this-this
 
@@ -2031,11 +2244,13 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
         if lt == 0 and le == 0:
             msg = "Obscenis, peream, si non uti me pudet improbisque verbis sed cum tu posito degenerem pudore ostendas mihi coleos patentes cum cunno mihi mentula est vocanda."
         elif lt > 0 and le == 0:
-            msg = "Obscenis, peream, {0}, si non uti me pudet improbisque verbis sed cum tu posito degenerem pudore ostendas mihi coleos patentes cum cunno mihi mentula est vocanda.".format(target)
+            msg = "Obscenis, peream, {0}, si non uti me pudet improbisque verbis sed cum tu posito degenerem pudore ostendas mihi coleos patentes cum cunno mihi mentula est vocanda.".format(
+                target)
         elif lt == 0 and le > 0:
             msg = "I'd rather die than use obscene and improper words; but when you, as a degenerate, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks."
         elif lt > 0 and le > 0:
-            msg = "I'd rather die than use obscene and improper words; but when you, {0}, as a degenerate, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks.".format(target)
+            msg = "I'd rather die than use obscene and improper words; but when you, {0}, as a degenerate, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks.".format(
+                target)
         else:
             msg = "Obscenis, peream, si non uti me pudet improbisque verbis sed cum tu posito degenerem pudore ostendas mihi coleos patentes cum cunno mihi mentula est vocanda!"
         return msg
@@ -2044,11 +2259,13 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
         if lt == 0 and le == 0:
             msg = "Obscenis, peream, si non uti me pudet improbisque verbis sed cum tu posito degenerem pudore ostendas mihi coleos patentes cum cunno mihi mentula est vocanda."
         elif lt > 0 and le == 0:
-            msg = "Obscenis, peream, {0}, si non uti me pudet improbisque verbis sed cum tu posito degenerem pudore ostendas mihi coleos patentes cum cunno mihi mentula est vocanda.".format(target)
+            msg = "Obscenis, peream, {0}, si non uti me pudet improbisque verbis sed cum tu posito degenerem pudore ostendas mihi coleos patentes cum cunno mihi mentula est vocanda.".format(
+                target)
         elif lt == 0 and le > 0:
             msg = "I'd rather die than use obscene and improper words; but when you, as a degenerate, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks."
         elif lt > 0 and le > 0:
-            msg = "I'd rather die than use obscene and improper words; but when you, {0}, as a degenerate, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks.".format(target)
+            msg = "I'd rather die than use obscene and improper words; but when you, {0}, as a degenerate, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks.".format(
+                target)
         else:
             msg = "Obscenis, peream, si non uti me pudet improbisque verbis sed cum tu posito degenerem pudore ostendas mihi coleos patentes cum cunno mihi mentula est vocanda!"
         return msg
@@ -2057,11 +2274,13 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
         if lt == 0 and le == 0:
             msg = "Obscenis, peream, si non uti me pudet improbisque verbis sed cum tu posito deterrimum pudore ostendas mihi coleos patentes cum cunno mihi mentula est vocanda."
         elif lt > 0 and le == 0:
-            msg = "Obscenis, peream, {0}, si non uti me pudet improbisque verbis sed cum tu posito deterrimum pudore ostendas mihi coleos patentes cum cunno mihi mentula est vocanda.".format(target)
+            msg = "Obscenis, peream, {0}, si non uti me pudet improbisque verbis sed cum tu posito deterrimum pudore ostendas mihi coleos patentes cum cunno mihi mentula est vocanda.".format(
+                target)
         elif lt == 0 and le > 0:
             msg = "I'd rather die than use obscene and improper words; but when you, as an inferior, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks."
         elif lt > 0 and le > 0:
-            msg = "I'd rather die than use obscene and improper words; but when you, {0}, as an inferior, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks.".format(target)
+            msg = "I'd rather die than use obscene and improper words; but when you, {0}, as an inferior, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks.".format(
+                target)
         else:
             msg = "Obscenis, peream, si non uti me pudet improbisque verbis sed cum tu posito deterrimum pudore ostendas mihi coleos patentes cum cunno mihi mentula est vocanda!"
         return msg
@@ -2070,11 +2289,13 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
         if lt == 0 and le == 0:
             msg = "Obscenis, peream, si non uti me pudet improbisque verbis sed cum tu posito deus pudore ostendas mihi coleos patentes cum cunno mihi mentula est vocanda."
         elif lt > 0 and le == 0:
-            msg = "Obscenis, peream, {0}, si non uti me pudet improbisque verbis sed cum tu posito deus pudore ostendas mihi coleos patentes cum cunno mihi mentula est vocanda.".format(target)
+            msg = "Obscenis, peream, {0}, si non uti me pudet improbisque verbis sed cum tu posito deus pudore ostendas mihi coleos patentes cum cunno mihi mentula est vocanda.".format(
+                target)
         elif lt == 0 and le > 0:
             msg = "I'd rather die than use obscene and improper words; but when you, as a god, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks."
         elif lt > 0 and le > 0:
-            msg = "I'd rather die than use obscene and improper words; but when you, {0}, as a god, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks.".format(target)
+            msg = "I'd rather die than use obscene and improper words; but when you, {0}, as a god, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks.".format(
+                target)
         else:
             msg = "Obscenis, peream, si non uti me pudet improbisque verbis sed cum tu posito deus pudore ostendas mihi coleos patentes cum cunno mihi mentula est vocanda!"
         return msg
@@ -2083,7 +2304,8 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
         if lt == 0 and le == 0 and lR == 0:
             msg = "Obscenis, peream, si non uti me pudet improbisque verbis sed cum tu posito praefecus pudore ostendas mihi coleos patentes cum cunno mihi mentula est vocanda."
         elif lt > 0 and le == 0 and lR == 0:
-            msg = "Obscenis, peream, {0}, si non uti me pudet improbisque verbis sed cum tu posito praefecus pudore ostendas mihi coleos patentes cum cunno mihi mentula est vocanda.".format(target)
+            msg = "Obscenis, peream, {0}, si non uti me pudet improbisque verbis sed cum tu posito praefecus pudore ostendas mihi coleos patentes cum cunno mihi mentula est vocanda.".format(
+                target)
         elif lt == 0 and le > 0 and lR == 0:
             msg = "I'd rather die than use obscene and improper words; but when you, as a president, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks."
         elif lt == 0 and le > 0 and lR > 0 and relay.lower() == "chief":
@@ -2103,23 +2325,32 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
         elif lt == 0 and le > 0 and lR > 0 and relay.lower() != "help":
             msg = "I'd rather die than use obscene and improper words; but when you, as a president, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks."
         elif lt > 0 and le > 0 and lR == 0:
-            msg = "I'd rather die than use obscene and improper words; but when you, {0}, as a president, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks.".format(target)
+            msg = "I'd rather die than use obscene and improper words; but when you, {0}, as a president, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks.".format(
+                target)
         elif lt > 0 and le > 0 and lR > 0 and relay.lower() == "chief":
-            msg = "I'd rather die than use obscene and improper words; but when you, {0}, as a chief, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks.".format(target)
+            msg = "I'd rather die than use obscene and improper words; but when you, {0}, as a chief, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks.".format(
+                target)
         elif lt > 0 and le > 0 and lR > 0 and relay.lower() == "dir":
-            msg = "I'd rather die than use obscene and improper words; but when you, {0}, as a director, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks.".format(target)
+            msg = "I'd rather die than use obscene and improper words; but when you, {0}, as a director, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks.".format(
+                target)
         elif lt > 0 and le > 0 and lR > 0 and relay.lower() == "gov":
-            msg = "I'd rather die than use obscene and improper words; but when you, {0}, as a governor, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks.".format(target)
+            msg = "I'd rather die than use obscene and improper words; but when you, {0}, as a governor, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks.".format(
+                target)
         elif lt > 0 and le > 0 and lR > 0 and relay.lower() == "help":
-            msg = "Alternative translations available via setting relay flag to: chief, dir or gov for chief, director or governor. Default is president or help to print this message.".format(target)
+            msg = "Alternative translations available via setting relay flag to: chief, dir or gov for chief, director or governor. Default is president or help to print this message.".format(
+                target)
         elif lt > 0 and le > 0 and lR > 0 and relay.lower() != "chief":
-            msg = "I'd rather die than use obscene and improper words; but when you, {0}, as a president, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks.".format(target)
+            msg = "I'd rather die than use obscene and improper words; but when you, {0}, as a president, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks.".format(
+                target)
         elif lt > 0 and le > 0 and lR > 0 and relay.lower() != "dir":
-            msg = "I'd rather die than use obscene and improper words; but when you, {0}, as a president, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks.".format(target)
+            msg = "I'd rather die than use obscene and improper words; but when you, {0}, as a president, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks.".format(
+                target)
         elif lt > 0 and le > 0 and lR > 0 and relay.lower() != "gov":
-            msg = "I'd rather die than use obscene and improper words; but when you, {0}, as a president, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks.".format(target)
+            msg = "I'd rather die than use obscene and improper words; but when you, {0}, as a president, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks.".format(
+                target)
         elif lt > 0 and le > 0 and lR > 0 and relay.lower() != "help":
-            msg = "I'd rather die than use obscene and improper words; but when you, {0}, as a president, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks.".format(target)
+            msg = "I'd rather die than use obscene and improper words; but when you, {0}, as a president, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks.".format(
+                target)
         else:
             msg = "Obscenis, peream, si non uti me pudet improbisque verbis sed cum tu posito praefecus pudore ostendas mihi coleos patentes cum cunno mihi mentula est vocanda!"
         return msg
@@ -2128,11 +2359,13 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
         if lt == 0 and le == 0:
             msg = "Obscenis, peream, si non uti me pudet improbisque verbis sed cum tu posito diabolus pudore ostendas mihi coleos patentes cum cunno mihi mentula est vocanda."
         elif lt > 0 and le == 0:
-            msg = "Obscenis, peream, {0}, si non uti me pudet improbisque verbis sed cum tu posito diabolus pudore ostendas mihi coleos patentes cum cunno mihi mentula est vocanda.".format(target)
+            msg = "Obscenis, peream, {0}, si non uti me pudet improbisque verbis sed cum tu posito diabolus pudore ostendas mihi coleos patentes cum cunno mihi mentula est vocanda.".format(
+                target)
         elif lt == 0 and le > 0:
             msg = "I'd rather die than use obscene and improper words; but when you, as a devil, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks."
         elif lt > 0 and le > 0:
-            msg = "I'd rather die than use obscene and improper words; but when you, {0}, as a devil, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks.".format(target)
+            msg = "I'd rather die than use obscene and improper words; but when you, {0}, as a devil, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks.".format(
+                target)
         else:
             msg = "Obscenis, peream, si non uti me pudet improbisque verbis sed cum tu posito diabolus pudore ostendas mihi coleos patentes cum cunno mihi mentula est vocanda!"
         return msg
@@ -2141,15 +2374,17 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
         if lt == 0 and le == 0:
             msg = "Obscenis, peream, si non uti me pudet improbisque verbis sed cum tu posito daemonis pudore ostendas mihi coleos patentes cum cunno mihi mentula est vocanda."
         elif lt > 0 and le == 0:
-            msg = "Obscenis, peream, {0}, si non uti me pudet improbisque verbis sed cum tu posito daemonis pudore ostendas mihi coleos patentes cum cunno mihi mentula est vocanda.".format(target)
+            msg = "Obscenis, peream, {0}, si non uti me pudet improbisque verbis sed cum tu posito daemonis pudore ostendas mihi coleos patentes cum cunno mihi mentula est vocanda.".format(
+                target)
         elif lt == 0 and le > 0:
             msg = "I'd rather die than use obscene and improper words; but when you, as a demon, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks."
         elif lt > 0 and le > 0:
-            msg = "I'd rather die than use obscene and improper words; but when you, {0}, as a demon, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks.".format(target)
+            msg = "I'd rather die than use obscene and improper words; but when you, {0}, as a demon, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks.".format(
+                target)
         else:
             msg = "Obscenis, peream, si non uti me pudet improbisque verbis sed cum tu posito daemonis pudore ostendas mihi coleos patentes cum cunno mihi mentula est vocanda!"
         return msg
-    
+
     def problem(self):
         if lt == 0 and le == 0 and lR == 0:
             msg = "What is your fucking problem?"
@@ -2160,9 +2395,11 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
         elif lt > 0 and le > 0 and lR == 0:
             msg = "{0}, what is {1} fucking problem?".format(target, extra)
         elif lt > 0 and le == 0 and lR > 0:
-            msg = "{0}, with {1}, what is their fucking problem?".format(relay, target)
+            msg = "{0}, with {1}, what is their fucking problem?".format(
+                relay, target)
         elif lt > 0 and le > 0 and lR > 0:
-            msg = "{0}, with {1}, what is {2} fucking problem?".format(relay, target, extra)
+            msg = "{0}, with {1}, what is {2} fucking problem?".format(
+                relay, target, extra)
         else:
             msg = "What is the fucking problem?"
         return msg
@@ -2171,42 +2408,48 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
         if lt == 0:
             msg = "You fucking megalomaniacal, malignantly narcissistic, psychopath!"
         else:
-            msg = "{0}, you fucking megalomaniacal, malignantly narcissistic, psychopath!".format(target)
+            msg = "{0}, you fucking megalomaniacal, malignantly narcissistic, psychopath!".format(
+                target)
         return msg
 
     def psycho2(self):
         if lt == 0:
             msg = "You fucking megalomaniacal, malignantly narcissistic, sociopath!"
         else:
-            msg = "{0}, you fucking megalomaniacal, malignantly narcissistic, sociopath!".format(target)
+            msg = "{0}, you fucking megalomaniacal, malignantly narcissistic, sociopath!".format(
+                target)
         return msg
 
     def psycho3(self):
         if lt == 0:
             msg = "You're a fucking megalomaniacal, malignantly narcissistic, psychopath!"
         else:
-            msg = "{0}, you're a fucking megalomaniacal, malignantly narcissistic, psychopath!".format(target)
+            msg = "{0}, you're a fucking megalomaniacal, malignantly narcissistic, psychopath!".format(
+                target)
         return msg
 
     def psycho4(self):
         if lt == 0:
             msg = "You're a fucking megalomaniacal, malignantly narcissistic, sociopath!"
         else:
-            msg = "{0}, you're a fucking megalomaniacal, malignantly narcissistic, sociopath!".format(target)
+            msg = "{0}, you're a fucking megalomaniacal, malignantly narcissistic, sociopath!".format(
+                target)
         return msg
 
     def psycho5(self):
         if lt == 0:
             msg = "You're a fucking megalomaniacal, malignantly narcissistic, psychopathic cunt!"
         else:
-            msg = "{0}, you're a fucking megalomaniacal, malignantly narcissistic, psychopathic cunt!".format(target)
+            msg = "{0}, you're a fucking megalomaniacal, malignantly narcissistic, psychopathic cunt!".format(
+                target)
         return msg
 
     def psycho6(self):
         if lt == 0:
             msg = "You're a fucking megalomaniacal, malignantly narcissistic, sociopathic cunt!"
         else:
-            msg = "{0}, you're a fucking megalomaniacal, malignantly narcissistic, sociopathic cunt!".format(target)
+            msg = "{0}, you're a fucking megalomaniacal, malignantly narcissistic, sociopathic cunt!".format(
+                target)
         return msg
 
     def ratm(self):
@@ -2262,7 +2505,8 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
         if lt == 0:
             msg = "Is this a script?  Of course it's a fucking script!"
         else:
-            msg = "Is this a script?  Yes {0}, of course it's a fucking script!".format(target)
+            msg = "Is this a script?  Yes {0}, of course it's a fucking script!".format(
+                target)
         return msg
 
     def sfa(self):
@@ -2276,14 +2520,16 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
         if lt == 0:
             msg = "The chances of that are about three fifths of sweet fuck all."
         else:
-            msg = "{0}, the chances of that are about three fifths of sweet fuck all.".format(target)
+            msg = "{0}, the chances of that are about three fifths of sweet fuck all.".format(
+                target)
         return msg
 
     def shakespeare(self):
         if lt == 0:
             msg = "Thou clay-brained guts, thou knotty-pated fool, thou whoreson obscene greasy tallow-catch!"
         else:
-            msg = "{0}, thou clay-brained guts, thou knotty-pated fool, thou whoreson obscene greasy tallow-catch!".format(target)
+            msg = "{0}, thou clay-brained guts, thou knotty-pated fool, thou whoreson obscene greasy tallow-catch!".format(
+                target)
         return msg
 
     def sherlock(self):
@@ -2324,7 +2570,8 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
         if lt == 0:
             msg = "Fuck the Church!  Fuck the State!  Fuck you!  Fuck me!  Fuck all these arseholes!"
         else:
-            msg = "Fuck {0}!  Fuck the Church!  Fuck the State!  Fuck you!  Fuck me!  Fuck all these arseholes!".format(target)
+            msg = "Fuck {0}!  Fuck the Church!  Fuck the State!  Fuck you!  Fuck me!  Fuck all these arseholes!".format(
+                target)
         return msg
 
     def stolen(self):
@@ -2338,7 +2585,8 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
         if lt == 0 and ls == 0 and le == 0:
             msg = "Fuck you with the fury of a thousand suns."
         elif lt > 0 and ls == 0 and le == 0:
-            msg = "{0}, fuck you with the fury of a thousand suns.".format(target)
+            msg = "{0}, fuck you with the fury of a thousand suns.".format(
+                target)
         else:
             msg = "Fuck you with the fury of a thousand suns!"
         return msg
@@ -2363,12 +2611,14 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
         elif lt == 0 and le > 0:
             msg = "I'm not felling very talky today. Off you fuck!"
         elif lt > 0 and le == 0:
-            msg = "I'm not felling very talky today, {0}. Off you fuck.".format(target)
+            msg = "I'm not felling very talky today, {0}. Off you fuck.".format(
+                target)
         elif lt > 0 and le > 0:
-            msg = "I'm not felling very talky today, {0}. Off you fuck!".format(target)
+            msg = "I'm not felling very talky today, {0}. Off you fuck!".format(
+                target)
         else:
             msg = "I'm not felling very talky today. Off you fuck!"
-    
+
     def tfwo(self):
         if lt == 0:
             msg = "I'm totally fucking weirded out by that."
@@ -2387,11 +2637,14 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
         if lt == 0 and le == 0:
             msg = "I might be a cunt, but I'm not a fucking cunt."
         elif lt > 0 and le == 0:
-            msg = "I might be a cunt, {0}, but I'm not a fucking cunt.".format(target)
+            msg = "I might be a cunt, {0}, but I'm not a fucking cunt.".format(
+                target)
         elif lt == 0 and le > 0:
-            msg = "I might be a {0}, but I'm not a fucking {1}.".format(extra, extra)
+            msg = "I might be a {0}, but I'm not a fucking {1}.".format(
+                extra, extra)
         elif lt > 0 and le > 0:
-            msg = "I might be a {0}, {1}, but I'm not a fucking {2}.".format(extra, target, extra)
+            msg = "I might be a {0}, {1}, but I'm not a fucking {2}.".format(
+                extra, target, extra)
         return msg
 
     def totgaf(self):
@@ -2405,9 +2658,11 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
         if lt == 0 and le == 0:
             msg = "You are as malignantly narcissistic, irrevocably misogynistic, thoroughly corrupt and utterly treasonous as Donald Trump."
         elif lt > 0 and le == 0:
-            msg = "{0}, you are as malignantly narcissistic, irrevocably misogynistic, thoroughly corrupt and utterly treasonous as Donald Trump.".format(target)
+            msg = "{0}, you are as malignantly narcissistic, irrevocably misogynistic, thoroughly corrupt and utterly treasonous as Donald Trump.".format(
+                target)
         elif lt > 0 and le > 0:
-            msg = "{0}, you are as malignantly narcissistic, irrevocably misogynistic, thoroughly corrupt and utterly treasonous as Donald Trump!".format(target)
+            msg = "{0}, you are as malignantly narcissistic, irrevocably misogynistic, thoroughly corrupt and utterly treasonous as Donald Trump!".format(
+                target)
         else:
             msg = "You are as malignantly narcissistic, irrevocably misogynistic, thoroughly corrupt and utterly treasonous as Donald Trump!"
         return msg
@@ -2416,29 +2671,41 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
         if lt == 0 and lR == 0 and ls == 0 and le == 0:
             msg = "This option requires name/target, relay and sender to be set, where name and relay are people/entities, while sender is who or what is caught between them.  Extra may be used to specify certain variations."
         elif lt == 0 and lR > 0 and ls > 0 and le == 0:
-            msg = "For fuck's sake! Will you and {0} stop using {1} as the rope in your game of tug-of-war?!".format(relay, sender)
+            msg = "For fuck's sake! Will you and {0} stop using {1} as the rope in your game of tug-of-war?!".format(
+                relay, sender)
         elif lt > 0 and lR > 0 and ls > 0 and le == 0:
-            msg = "For fuck's sake! Will {0} and {1} stop using {2} as the rope in their fucking game of tug-of-war?!".format(target, relay, sender)
+            msg = "For fuck's sake! Will {0} and {1} stop using {2} as the rope in their fucking game of tug-of-war?!".format(
+                target, relay, sender)
         elif lt == 0 and lR > 0 and ls > 0 and le > 0 and extra == "when":
-            msg = "For fuck's sake! When will you and {0} stop using {1} as the rope in your fucking game of tug-of-war?!".format(relay, sender)
+            msg = "For fuck's sake! When will you and {0} stop using {1} as the rope in your fucking game of tug-of-war?!".format(
+                relay, sender)
         elif lt > 0 and lR > 0 and ls > 0 and le > 0 and extra == "when":
-            msg = "For fuck's sake! When will {0} and {1} stop using {2} as the rope in their fucking game of tug-of-war?!".format(target, relay, sender)
+            msg = "For fuck's sake! When will {0} and {1} stop using {2} as the rope in their fucking game of tug-of-war?!".format(
+                target, relay, sender)
         elif lt == 0 and lR > 0 and ls > 0 and le > 0 and extra == "need":
-            msg = "For fuck's sake! You and {0} need to stop using {1} as the rope in your fucking game of tug-of-war! Right fucking now!".format(relay, sender)
+            msg = "For fuck's sake! You and {0} need to stop using {1} as the rope in your fucking game of tug-of-war! Right fucking now!".format(
+                relay, sender)
         elif lt > 0 and lR > 0 and ls > 0 and le > 0 and extra == "need":
-            msg = "For fuck's sake! Fucking {0} and {1} need to stop using {2} as the rope in their fucking game of tug-of-war! Right fucking now!".format(target, relay, sender)
+            msg = "For fuck's sake! Fucking {0} and {1} need to stop using {2} as the rope in their fucking game of tug-of-war! Right fucking now!".format(
+                target, relay, sender)
         elif lt > 0 and lR > 0 and ls > 0 and le > 0 and extra == "needthe":
-            msg = "For fuck's sake! The fucking {0} and {1} need to stop using {2} as the rope in their fucking game of tug-of-war! Right fucking now!".format(target, relay, sender)
+            msg = "For fuck's sake! The fucking {0} and {1} need to stop using {2} as the rope in their fucking game of tug-of-war! Right fucking now!".format(
+                target, relay, sender)
         elif lt > 0 and lR > 0 and ls > 0 and le > 0 and extra == "needthat":
-            msg = "For fuck's sake! That fucking {0} and {1} need to stop using {2} as the rope in their fucking game of tug-of-war! Right fucking now!".format(target, relay, sender)
+            msg = "For fuck's sake! That fucking {0} and {1} need to stop using {2} as the rope in their fucking game of tug-of-war! Right fucking now!".format(
+                target, relay, sender)
         elif lt > 0 and lR > 0 and ls > 0 and le > 0 and extra == "needthose":
-            msg = "For fuck's sake! Those fucking {0} and {1} need to stop using {2} as the rope in their fucking game of tug-of-war! Right fucking now!".format(target, relay, sender)
+            msg = "For fuck's sake! Those fucking {0} and {1} need to stop using {2} as the rope in their fucking game of tug-of-war! Right fucking now!".format(
+                target, relay, sender)
         elif lt == 0 and lR > 0 and ls > 0 and le > 0 and extra == "fstop":
-            msg = "For fuck's sake! You and fucking {0} need to fucking stop using {1} as the fucking rope in your fucking game of tug-of-fucking-war! Right fucking now!".format(relay, sender)
+            msg = "For fuck's sake! You and fucking {0} need to fucking stop using {1} as the fucking rope in your fucking game of tug-of-fucking-war! Right fucking now!".format(
+                relay, sender)
         elif lt > 0 and lR > 0 and ls > 0 and le > 0 and extra == "fstop":
-            msg = "For fuck's sake! Fucking {0} and fucking {1} need to fucking stop using {2} as the fucking rope in their fucking game of tug-of-fucking-war! Right fucking now!".format(target, relay, sender)
+            msg = "For fuck's sake! Fucking {0} and fucking {1} need to fucking stop using {2} as the fucking rope in their fucking game of tug-of-fucking-war! Right fucking now!".format(
+                target, relay, sender)
         elif lt > 0 and lR > 0 and ls > 0 and le > 0 and extra == "thefstop":
-            msg = "For fuck's sake! The fucking {0} and the fucking {1} need to fucking stop using {2} as the fucking rope in their fucking game of tug-of-fucking-war! Right fucking now!".format(target, relay, sender)
+            msg = "For fuck's sake! The fucking {0} and the fucking {1} need to fucking stop using {2} as the fucking rope in their fucking game of tug-of-fucking-war! Right fucking now!".format(
+                target, relay, sender)
         else:
             msg = "Optional extras: when, need, needthe, needthat, needthose, fstop, thefstop."
         return msg
@@ -2450,11 +2717,13 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
         if lt == 0 and le == 0:
             msg = "Seriously, don't dis Me. I am the Lord thy God, King of the Universe. Show some fucking respect."
         elif lt > 0 and le == 0:
-            msg = "Seriously, {0}, don't dis Me. I am the Lord thy God, King of the Universe. Show some fucking respect.".format(target)
+            msg = "Seriously, {0}, don't dis Me. I am the Lord thy God, King of the Universe. Show some fucking respect.".format(
+                target)
         elif lt == 0 and le > 0:
             msg = "Seriously, don't dis Me. I am the Lord thy God, King of the Universe. Show some fucking respect!"
         elif lt > 0 and le > 0:
-            msg = "Seriously, {0}, don't dis Me. I am the Lord thy God, King of the Universe. Show some fucking respect!".format(target)
+            msg = "Seriously, {0}, don't dis Me. I am the Lord thy God, King of the Universe. Show some fucking respect!".format(
+                target)
         return msg
 
     # https://twitter.com/TheTweetOfGod/status/528773043666313216
@@ -2463,15 +2732,20 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
         if lt == 0 and le == 0 and ls == 0 and lR == 0:
             msg = "Peace? I hate the word, as I hate Hell, all Montagues and thee!"
         elif lt > 0 and le == 0 and ls == 0 and lR == 0:
-            msg = "Peace? I hate the word, as I hate Hell, all Montagues and {0}!".format(target)
+            msg = "Peace? I hate the word, as I hate Hell, all Montagues and {0}!".format(
+                target)
         elif lt == 0 and le > 0 and ls == 0 and lR == 0:
-            msg = "Peace? I hate the word, as I hate Hell, all {0} and thee!".format(extra)
+            msg = "Peace? I hate the word, as I hate Hell, all {0} and thee!".format(
+                extra)
         elif lt > 0 and le > 0 and ls == 0 and lR == 0:
-           msg = "Peace? I hate the word, as I hate Hell, all {0} and {1}!".format(extra, target) 
+            msg = "Peace? I hate the word, as I hate Hell, all {0} and {1}!".format(
+                extra, target)
         elif lt > 0 and le > 0 and ls > 0 and lR == 0:
-            msg = "{0}? I hate the word, as I hate Hell, all {1} and {2}!".format(sender, extra, target)
+            msg = "{0}? I hate the word, as I hate Hell, all {1} and {2}!".format(
+                sender, extra, target)
         elif lt > 0 and le > 0 and ls > 0 and lR > 0:
-            msg = "{0}? I hate the word, as I hate {1}, all {2} and {3}!".format(sender, relay, extra, target)
+            msg = "{0}? I hate the word, as I hate {1}, all {2} and {3}!".format(
+                sender, relay, extra, target)
         else:
             msg = "Peace? I hate the word, as I hate hell, all Montagues and thee!"
         return msg
@@ -2533,7 +2807,8 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
         elif lt == 0 and le > 0 and extra == "yeah":
             msg = "You are so fucked, so fucking fucked! Yeah, yeah, yeah!"
         elif lt > 0 and le > 0 and extra == "yeah":
-            msg = "You are so fucked, {0}, so fucking fucked! Yeah, yeah, yeah!".format(target)
+            msg = "You are so fucked, {0}, so fucking fucked! Yeah, yeah, yeah!".format(
+                target)
         else:
             msg = "You are so fucked, {0}, so fucking fucked!".format(target)
         return msg
@@ -2549,7 +2824,8 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
         if lt == 0:
             msg = "Yea, though I walk through the shadow of the Valley of Death I shall fear no evil ... for I am the meanest motherfucker in all the land!"
         else:
-            msg = "Yea, {0}, though I walk through the shadow of the Valley of Death I shall fear no evil ... for I am the meanest motherfucker in all the land!".format(target)
+            msg = "Yea, {0}, though I walk through the shadow of the Valley of Death I shall fear no evil ... for I am the meanest motherfucker in all the land!".format(
+                target)
         return msg
 
     def vvv(self):
@@ -2590,7 +2866,7 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
         else:
             msg = "Now ... we are fucked!"
         return msg
-    
+
     def when1(self):
         if lt == 0:
             msg = "When the fuck will that happen?"
@@ -2678,7 +2954,7 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
         else:
             msg = "{0}, who the fuck cares?".format(target)
         return msg
-    
+
     def why(self):
         if lt == 0:
             msg = "Why the fuck should I?"
@@ -2715,20 +2991,25 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
         elif lt == 0 and le > 0:
             msg = "{0} is a waste of fucking time and money.".format(extra)
         elif lt > 0 and le > 0:
-            msg = "{0}, {1} is a waste of fucking time and money.".format(target, extra)
+            msg = "{0}, {1} is a waste of fucking time and money.".format(
+                target, extra)
         return msg
 
     def wsb1(self):
         if lt == 0 and le == 0 and lR == 0:
             msg = "Do not offer sympathy to the mentally ill, tell them firmly: I am not paid to listen to this drivel, you are a terminal fool."
         elif lt == 0 and le == 0 and lR > 0:
-            msg = "{0}, do not offer sympathy to the mentally ill, tell them firmly: I am not paid to listen to this drivel, you are a terminal fool.".format(relay)
+            msg = "{0}, do not offer sympathy to the mentally ill, tell them firmly: I am not paid to listen to this drivel, you are a terminal fool.".format(
+                relay)
         elif lt > 0 and le == 0 and lR == 0:
-            msg = "{0}, I do not offer sympathy to the mentally ill, I tell them firmly: I am not paid to listen to this drivel, {1}, you are a terminal fool.".format(target, target)
+            msg = "{0}, I do not offer sympathy to the mentally ill, I tell them firmly: I am not paid to listen to this drivel, {1}, you are a terminal fool.".format(
+                target, target)
         elif lt > 0 and le == 0 and lR > 0:
-            msg = "{0}, do not offer sympathy to the mentally ill, tell {1} firmly: I am not paid to listen to this drivel, you are a terminal fool.".format(relay, target)
+            msg = "{0}, do not offer sympathy to the mentally ill, tell {1} firmly: I am not paid to listen to this drivel, you are a terminal fool.".format(
+                relay, target)
         elif lt > 0 and le > 0 and lR == 0:
-            msg = "I am not paid to listen to this drivel, {0}, you are a terminal fool.".format(target)
+            msg = "I am not paid to listen to this drivel, {0}, you are a terminal fool.".format(
+                target)
         else:
             msg = "I am not paid to listen to this drivel, you are a terminal fool."
 
@@ -2815,11 +3096,14 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
         if lt == 0 and le == 0:
             msg = "What the fuck would Jesus do? Jesus would kick you the fuck out right now!"
         elif lt > 0 and le == 0:
-            msg = "What the fuck would Jesus do? Jesus would kick {0} the fuck out right now!".format(target)
+            msg = "What the fuck would Jesus do? Jesus would kick {0} the fuck out right now!".format(
+                target)
         elif lt == 0 and le > 0:
-            msg = "What the fuck would Jesus do? Jesus would kick you the fuck out of {0} right now!".format(extra)
+            msg = "What the fuck would Jesus do? Jesus would kick you the fuck out of {0} right now!".format(
+                extra)
         elif lt > 0 and le > 0:
-            msg = "What the fuck would Jesus do? Jesus would kick {0} the fuck out of {1} right now!".format(target, extra)
+            msg = "What the fuck would Jesus do? Jesus would kick {0} the fuck out of {1} right now!".format(
+                target, extra)
         else:
             msg = "What the fuck would Jesus do? Jesus would kick you the fuck out of here right now!"
         return msg
@@ -2828,11 +3112,14 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
         if lt == 0 and le == 0:
             msg = "What the fuck would Jesus do? Jesus would get the fuck out of here!"
         elif lt > 0 and le == 0:
-            msg = "What the fuck would Jesus do? Jesus would get {0} the fuck out of here!".format(target)
+            msg = "What the fuck would Jesus do? Jesus would get {0} the fuck out of here!".format(
+                target)
         elif lt == 0 and le > 1:
-            msg = "What the fuck would Jesus do? Jesus would get the fuck out of {0}!".format(extra)
+            msg = "What the fuck would Jesus do? Jesus would get the fuck out of {0}!".format(
+                extra)
         elif lt > 0 and le > 0:
-            msg = "What the fuck would Jesus do? Jesus would get {0} the fuck out of {1}!".format(target, extra)
+            msg = "What the fuck would Jesus do? Jesus would get {0} the fuck out of {1}!".format(
+                target, extra)
         else:
             msg = "What the fuck would Jesus do? Jesus would get everyone the fuck out of here!"
         return msg
@@ -2841,16 +3128,19 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
         if lt == 0:
             msg = "What the fuck would Jesus do? Jesus would read the fucking manual!"
         else:
-            msg = "So {0}, what the fuck would Jesus do? Jesus would read the fucking manual!".format(target)
+            msg = "So {0}, what the fuck would Jesus do? Jesus would read the fucking manual!".format(
+                target)
         return msg
 
     def xyz(self):
         if lt == 0 and le == 0 and ls == 0 and lR == 0:
             msg = "XYZ usage: uses cadence for fuck this [name], fuck that [extra] and fuck the other [sender]. The name is normally the first and the target, but sometimes the real target is set by relay, will oftem be similar to the you options.  The latter variation can readily be used with prepend for preceding greetings like Hey [relay] or whatever."
         elif lt > 0 and le > 0 and ls > 0 and lR == 0:
-            msg = "Fuck {0}, fuck {1} and fuck {2}!".format(target, extra, sender)
+            msg = "Fuck {0}, fuck {1} and fuck {2}!".format(
+                target, extra, sender)
         elif lt > 0 and le > 0 and ls > 0 and lR > 0:
-            msg = "{0}, fuck {1}, fuck {2} and fuck {3}!".format(relay, target, extra, sender)
+            msg = "{0}, fuck {1}, fuck {2} and fuck {3}!".format(
+                relay, target, extra, sender)
         else:
             msg = "Invoke without options to see usage format. Must use --name, --extra and --sender. Optional use of --relay and/or --prepend."
         return msg
@@ -2878,24 +3168,26 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
         elif lt == 0 and le > 0 and ls > 0 and lR == 0:
             msg = "Fuck you, fuck {0} and fuck {1}!".format(sender, extra)
         elif lt == 0 and le > 0 and ls > 0 and lR > 0:
-            msg = "{0}, tell them: fuck you, fuck {1} and fuck {2}!".format(relay, sender, extra)
+            msg = "{0}, tell them: fuck you, fuck {1} and fuck {2}!".format(
+                relay, sender, extra)
         elif lt > 0 and le > 0 and ls > 0 and lR == 0:
-            msg = "Fuck you {0}, fuck {1} and fuck {2}!".format(target, sender, extra)
+            msg = "Fuck you {0}, fuck {1} and fuck {2}!".format(
+                target, sender, extra)
         elif lt > 0 and le > 0 and ls > 0 and lR > 0:
-            msg = "{0}, tell {1}: fuck you {2}, fuck {3} and fuck {4}!".format(relay, target, target, sender, extra)
+            msg = "{0}, tell {1}: fuck you {2}, fuck {3} and fuck {4}!".format(
+                relay, target, target, sender, extra)
         return msg
 
 fucked = fuck()
 fucker = fuck()
-
 
 df0 = dir(fuck)
 df = []
 for x in df0:
     if "__" not in x:
         df.append(x)
-del(df0)
-del(x)
+del (df0)
+del (x)
 df.remove("foad")
 lc = len(df)
 
@@ -2956,30 +3248,39 @@ if __name__ == "__main__":
         print("")
         print("Bitcoin:  {0}".format(__bitcoin__))
         print("")
-    elif l >= 3 and wtf == "sherlock" and target.lower()[0:8] == "sherlock" and lP == 0 and lA == 0:
+    elif l >= 3 and wtf == "sherlock" and target.lower(
+    )[0:8] == "sherlock" and lP == 0 and lA == 0:
         print("No shit, Sherlock!")
-    elif l >= 3 and wtf == "sherlock" and target.lower()[0:8] == "sherlock" and lP > 0 and lA == 0:
+    elif l >= 3 and wtf == "sherlock" and target.lower(
+    )[0:8] == "sherlock" and lP > 0 and lA == 0:
         print("{0} no shit, Sherlock!".format(prepend))
-    elif l >= 3 and wtf == "sherlock" and target.lower()[0:8] == "sherlock" and lP == 0 and lA > 0:
+    elif l >= 3 and wtf == "sherlock" and target.lower(
+    )[0:8] == "sherlock" and lP == 0 and lA > 0:
         print("No shit, Sherlock! {0}".format(append))
-    elif l >= 3 and wtf == "sherlock" and target.lower()[0:8] == "sherlock" and lP > 0 and lA > 0:
+    elif l >= 3 and wtf == "sherlock" and target.lower(
+    )[0:8] == "sherlock" and lP > 0 and lA > 0:
         print("{0} no shit, Sherlock! {1}".format(prepend, append))
-    elif l >= 3 and wtf == "random" and rc == "sherlock" and target.lower()[0:8] == "sherlock" and lP == 0 and lA == 0:
+    elif l >= 3 and wtf == "random" and rc == "sherlock" and target.lower(
+    )[0:8] == "sherlock" and lP == 0 and lA == 0:
         print("No shit, Sherlock!")
-    elif l >= 3 and wtf == "random" and rc == "sherlock" and target.lower()[0:8] == "sherlock" and lP > 0 and lA == 0:
+    elif l >= 3 and wtf == "random" and rc == "sherlock" and target.lower(
+    )[0:8] == "sherlock" and lP > 0 and lA == 0:
         print("{0} no shit, Sherlock!".format(prepend))
-    elif l >= 3 and wtf == "random" and rc == "sherlock" and target.lower()[0:8] == "sherlock" and lP == 0 and lA > 0:
+    elif l >= 3 and wtf == "random" and rc == "sherlock" and target.lower(
+    )[0:8] == "sherlock" and lP == 0 and lA > 0:
         print("No shit, Sherlock! {0}".format(append))
-    elif l >= 3 and wtf == "random" and rc == "sherlock" and target.lower()[0:8] == "sherlock" and lP > 0 and lA > 0:
+    elif l >= 3 and wtf == "random" and rc == "sherlock" and target.lower(
+    )[0:8] == "sherlock" and lP > 0 and lA > 0:
         print("{0} no shit, Sherlock! {1}".format(prepend, append))
     elif l == 2 and wtf == "unittest":
         print(about)
         print("")
         for i in range(lc):
-            print("Command:  {0} -f {1} [-n {2} -e {3} -s {4}]".format(sa[0], df[i], "<target>", "<extra>", "<sender>"))
+            print("Command:  {0} -f {1} [-n {2} -e {3} -s {4}]".format(
+                sa[0], df[i], "<target>", "<extra>", "<sender>"))
             try:
                 exec("fucker.{0}()".format(df[i]))
-            except(AttributeError, NameError):
+            except (AttributeError, NameError):
                 print("Fuck testing!")
             print("")
     elif l >= 3 and wtf == "unittest":
@@ -3052,51 +3353,63 @@ if __name__ == "__main__":
             exec("fucker.about()")
             print("")
         elif target.lower() == "carnal":
-            print("Command:  {0} -f acronym -n {1}".format(sa[0], target.lower))
+            print("Command:  {0} -f acronym -n {1}".format(
+                sa[0], target.lower))
             exec("fucker.acronym()")
             print("")
         elif target.lower() == "bond":
-            print("Command:  {0} -f acronym -n {1}".format(sa[0], target.lower))
+            print("Command:  {0} -f acronym -n {1}".format(
+                sa[0], target.lower))
             exec("fucker.acronym()")
             print("")
         elif target.lower() == "die":
-            print("Command:  {0} -f acronym -n {1}".format(sa[0], target.lower))
+            print("Command:  {0} -f acronym -n {1}".format(
+                sa[0], target.lower))
             exec("fucker.acronym()")
             print("")
         elif target.lower() == "right":
-            print("Command:  {0} -f acronym -n {1}".format(sa[0], target.lower))
+            print("Command:  {0} -f acronym -n {1}".format(
+                sa[0], target.lower))
             exec("fucker.acronym()")
             print("")
         elif target.lower() == "title":
-            print("Command:  {0} -f acronym -n {1}".format(sa[0], target.lower))
+            print("Command:  {0} -f acronym -n {1}".format(
+                sa[0], target.lower))
             exec("fucker.acronym()")
             print("")
         elif target.lower() == "cunt":
-            print("Command:  {0} -f acronym -n {1}".format(sa[0], target.lower))
+            print("Command:  {0} -f acronym -n {1}".format(
+                sa[0], target.lower))
             exec("fucker.acronym()")
             print("")
         elif target.lower() == "foaas":
-            print("Command:  {0} -f acronym -n {1}".format(sa[0], target.lower))
+            print("Command:  {0} -f acronym -n {1}".format(
+                sa[0], target.lower))
             exec("fucker.acronym()")
             print("")
         elif target.lower() == "snag":
-            print("Command:  {0} -f acronym -n {1}".format(sa[0], target.lower))
+            print("Command:  {0} -f acronym -n {1}".format(
+                sa[0], target.lower))
             exec("fucker.acronym()")
             print("")
         elif target.lower() == "snafu":
-            print("Command:  {0} -f acronym -n {1}".format(sa[0], target.lower))
+            print("Command:  {0} -f acronym -n {1}".format(
+                sa[0], target.lower))
             exec("fucker.acronym()")
             print("")
         elif target.lower() == "fubar":
-            print("Command:  {0} -f acronym -n {1}".format(sa[0], target.lower))
+            print("Command:  {0} -f acronym -n {1}".format(
+                sa[0], target.lower))
             exec("fucker.acronym()")
             print("")
         elif target.lower() == "lmfao":
-            print("Command:  {0} -f acronym -n {1}".format(sa[0], target.lower))
+            print("Command:  {0} -f acronym -n {1}".format(
+                sa[0], target.lower))
             exec("fucker.acronym()")
             print("")
         elif target.lower() == "figjam":
-            print("Command:  {0} -f acronym -n {1}".format(sa[0], target.lower))
+            print("Command:  {0} -f acronym -n {1}".format(
+                sa[0], target.lower))
             exec("fucker.acronym()")
             print("")
         else:
@@ -3107,35 +3420,40 @@ if __name__ == "__main__":
                     print("Command:  {0} -f {1}".format(sa[0], df[i]))
                     try:
                         exec("fucker.{0}()".format(df[i]))
-                    except(AttributeError, NameError):
+                    except (AttributeError, NameError):
                         print("Fuck testing!")
                     print("")
                 elif lt > 0 and le == 0 and ls == 0:
-                    print("Command:  {0} -f {1} -n \"{2}\"".format(sa[0], df[i], target))
+                    print("Command:  {0} -f {1} -n \"{2}\"".format(
+                        sa[0], df[i], target))
                     try:
                         exec("fucker.{0}()".format(df[i]))
-                    except(AttributeError, NameError):
+                    except (AttributeError, NameError):
                         print("Fuck testing!")
                     print("")
                 elif lt > 0 and le > 0 and ls == 0:
-                    print("Command:  {0} -f {1} -n \"{2}\" -e \"{3}\"".format(sa[0], df[i], target, extra))
+                    print("Command:  {0} -f {1} -n \"{2}\" -e \"{3}\"".format(
+                        sa[0], df[i], target, extra))
                     try:
                         exec("fucker.{0}()".format(df[i]))
-                    except(AttributeError, NameError):
+                    except (AttributeError, NameError):
                         print("Fuck testing!")
                     print("")
                 elif lt > 0 and le == 0 and ls > 0:
-                    print("Command:  {0} -f {1} -n \"{2}\" -s \"{3}\"".format(sa[0], df[i], target, sender))
+                    print("Command:  {0} -f {1} -n \"{2}\" -s \"{3}\"".format(
+                        sa[0], df[i], target, sender))
                     try:
                         exec("fucker.{0}()".format(df[i]))
-                    except(AttributeError, NameError):
+                    except (AttributeError, NameError):
                         print("Fuck testing!")
                     print("")
                 elif lt > 0 and le > 0 and ls > 0:
-                    print("Command:  {0} -f {1} -n \"{2}\" -e \"{3}\" -s \"{4}\"".format(sa[0], df[i], target, extra, sender))
+                    print(
+                        "Command:  {0} -f {1} -n \"{2}\" -e \"{3}\" -s \"{4}\"".
+                        format(sa[0], df[i], target, extra, sender))
                     try:
                         exec("fucker.{0}()".format(df[i]))
-                    except(AttributeError, NameError):
+                    except (AttributeError, NameError):
                         print("Fuck testing!")
                     print("")
     elif l >= 2 and wtf == "random":
@@ -3168,7 +3486,8 @@ if __name__ == "__main__":
                     print("Fuck {0}! {1}".format(wtfz, append))
             elif lP > 0 and lA > 0:
                 if wtf in dir(fucker):
-                    print("{0} {1} {2}".format(prepend, getattr(fucker, wtf)(), append))
+                    print("{0} {1} {2}".format(prepend,
+                                               getattr(fucker, wtf)(), append))
                 else:
                     print("{0} Fuck {1}! {2}".format(prepend, wtfz, append))
             else:
@@ -3194,7 +3513,9 @@ if __name__ == "__main__":
                     print("Fuck {0}! {1}".format(target, append))
             elif lP > 0 and lA > 0:
                 if target in dir(fucker):
-                    print("{0} {1} {2}".format(prepend, getattr(fucker, target)(), append))
+                    print("{0} {1} {2}".format(prepend,
+                                               getattr(fucker, target)(),
+                                               append))
                 else:
                     print("{0} Fuck {1}! {2}".format(prepend, target, append))
             else:
@@ -3221,7 +3542,8 @@ if __name__ == "__main__":
                     print("Fuck {0}! {1}".format(wtfz, append))
             elif lP > 0 and lA > 0:
                 if wtf in dir(fucker):
-                    print("{0} {1} {2}".format(prepend, getattr(fucker, wtf)(), append))
+                    print("{0} {1} {2}".format(prepend,
+                                               getattr(fucker, wtf)(), append))
                 else:
                     print("{0} Fuck {1}! {2}".format(prepend, wtfz, append))
             else:
@@ -3251,7 +3573,9 @@ if __name__ == "__main__":
                     print("Fuck {0}! {1}".format(target, append))
             elif lP > 0 and lA > 0:
                 if target in dir(fucker):
-                    print("{0} {1} {2}".format(prepend, getattr(fucker, target)(), append))
+                    print("{0} {1} {2}".format(prepend,
+                                               getattr(fucker, target)(),
+                                               append))
                 else:
                     print("{0} Fuck {1}! {2}".format(prepend, target, append))
             else:
@@ -3282,7 +3606,8 @@ if __name__ == "__main__":
                     print("Fuck {0}! {1}".format(wtfz, append))
             elif lP > 0 and lA > 0:
                 if wtf in dir(fucker):
-                    print("{0} {1} {2}".format(prepend, getattr(fucker, wtf)(), append))
+                    print("{0} {1} {2}".format(prepend,
+                                               getattr(fucker, wtf)(), append))
                 else:
                     print("{0} Fuck {1}! {2}".format(prepend, wtfz, append))
             else:
@@ -3312,7 +3637,8 @@ if __name__ == "__main__":
                     print("Fuck {0}! {1}".format(wtfz, append))
             elif lP > 0 and lA > 0:
                 if wtf in dir(fucker):
-                    print("{0} {1} {2}".format(prepend, getattr(fucker, wtf)(), append))
+                    print("{0} {1} {2}".format(prepend,
+                                               getattr(fucker, wtf)(), append))
                 else:
                     print("{0} Fuck {1}! {2}".format(prepend, wtfz, append))
             else:
@@ -3342,7 +3668,9 @@ if __name__ == "__main__":
                     print("Fuck {0}! {1}".format(target, append))
             elif lP > 0 and lA > 0:
                 if target in dir(fucker):
-                    print("{0} {1} {2}".format(prepend, getattr(fucker, target)(), append))
+                    print("{0} {1} {2}".format(prepend,
+                                               getattr(fucker, target)(),
+                                               append))
                 else:
                     print("{0} Fuck {1}! {2}".format(prepend, target, append))
             else:
@@ -3372,7 +3700,8 @@ if __name__ == "__main__":
                     print("Fuck {0}! {1}".format(wtfz, append))
             elif lP > 0 and lA > 0:
                 if wtf in dir(fucker):
-                    print("{0} {1} {2}".format(prepend, getattr(fucker, wtf)(), append))
+                    print("{0} {1} {2}".format(prepend,
+                                               getattr(fucker, wtf)(), append))
                 else:
                     print("{0} Fuck {1}! {2}".format(prepend, wtfz, append))
             else:
