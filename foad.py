@@ -1,14 +1,15 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-from __future__ import unicode_literals
-from __future__ import division
+from __future__ import unicode_literals, division, print_function
 
 import argparse
 import locale
 import random
 import sys
 import textwrap
+
+del unicode_literals, division, print_function
 
 ##
 # FOAD: Fucked Off Adversarial Degenerates (Fuck Off And Die)
