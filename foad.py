@@ -651,14 +651,15 @@ class fuck:
     def boomer(self):
         if lt == 0 and ls == 0:
             msg = "Shut the fuck up, boomer!"
-        elif lt > 1 and ls == 0:
-            msg = "Shut the fuck up {0}, boomer!".format(target)
+        elif lt > 0 and ls == 0:
+            msg = "{0}, shut the fuck up boomer!".format(target)
         elif lt == 0 and ls > 0:
             msg = "Shut the fuck up, you fucking boomer!"
         elif lt > 0 and ls > 0:
             msg = "Shut the fuck up {0}, you fucking boomer!".format(target)
         else:
             msg = "Shut the fuck up, you fucking boomer!"
+        return msg
 
     def bus(self):
         if lt == 0:
