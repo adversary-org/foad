@@ -14,14 +14,14 @@ del unicode_literals, division, print_function
 ##
 # FOAD: Fucked Off Adversarial Degenerates (Fuck Off And Die)
 #
-# Copyright © Benjamin D. McGinnes, 2013-2018
-# Copyright (C) Ben McGinnes, 2013-2018
+# Copyright © Benjamin D. McGinnes, 2013-2019
+# Copyright (C) Ben McGinnes, 2013-2019
 # ben@adversary.org
 # OpenPGP/GPG key:  0x321E4E2373590E5D
 #
 # https://github.com/adversary-org/foad
 #
-# Version:  0.8.1.20
+# Version:  0.8.1.21
 #
 # BTC:  1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz
 # Licenses:  Apache 2.0
@@ -132,12 +132,12 @@ del unicode_literals, division, print_function
 ##
 
 __author__ = "Ben McGinnes <ben@adversary.org>"
-__copyrightu__ = "Copyright © Benjamin D. McGinnes, 2013-2018"
-__copyrighta__ = "Copyright (C) Benjamin D. McGinnes, 2013-2018"
+__copyrightu__ = "Copyright © Benjamin D. McGinnes, 2013-2019"
+__copyrighta__ = "Copyright (C) Benjamin D. McGinnes, 2013-2019"
 __title__ = "FOAD: Fucked Off Adversarial Degenerates (Fuck Off And Die)"
 __stitle__ = "FOAD"
 __license__ = "Apache 2.0"
-__version__ = "0.8.1.20"
+__version__ = "0.8.1.21"
 __bitcoin__ = "1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz"
 __openpgp__ = "0x321E4E2373590E5D"
 __openpgp_fpr__ = "DB4724E6FA4286C92B4E55C4321E4E2373590E5D"
@@ -647,6 +647,18 @@ class fuck:
         elif lt > 0:
             msg = "Because fuck you, {0}, that's why!".format(target)
         return msg
+
+    def boomer(self):
+        if lt == 0 and ls == 0:
+            msg = "Shut the fuck up, boomer!"
+        elif lt > 1 and ls == 0:
+            msg = "Shut the fuck up {0}, boomer!".format(target)
+        elif lt == 0 and ls > 0:
+            msg = "Shut the fuck up, you fucking boomer!"
+        elif lt > 0 and ls > 0:
+            msg = "Shut the fuck up {0}, you fucking boomer!".format(target)
+        else:
+            msg = "Shut the fuck up, you fucking boomer!"
 
     def bus(self):
         if lt == 0:
