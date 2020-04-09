@@ -14,14 +14,14 @@ del unicode_literals, division, print_function
 ##
 # FOAD: Fucked Off Adversarial Degenerates (Fuck Off And Die)
 #
-# Copyright © Benjamin D. McGinnes, 2013-2019
-# Copyright (C) Ben McGinnes, 2013-2019
+# Copyright © Benjamin D. McGinnes, 2013-2020
+# Copyright (C) Ben McGinnes, 2013-2020
 # ben@adversary.org
 # OpenPGP/GPG key:  0x321E4E2373590E5D
 #
 # https://github.com/adversary-org/foad
 #
-# Version:  0.8.1.21
+# Version:  0.8.1.22
 #
 # BTC:  1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz
 # Licenses:  Apache 2.0
@@ -44,7 +44,7 @@ del unicode_literals, division, print_function
 #
 # Previous versions might have worked with Python 3.0 and 3.1 (I don't
 # know for sure, I never checked), but with the inclusion of the
-# argparse module this is now lo longer possible (if it ever was).
+# argparse module this is now no longer possible (if it ever was).
 #
 # If there is any future conflict between the Python 3 requirements
 # and Python 2, the development will *always* favour Python 3.
@@ -132,12 +132,12 @@ del unicode_literals, division, print_function
 ##
 
 __author__ = "Ben McGinnes <ben@adversary.org>"
-__copyrightu__ = "Copyright © Benjamin D. McGinnes, 2013-2019"
-__copyrighta__ = "Copyright (C) Benjamin D. McGinnes, 2013-2019"
+__copyrightu__ = "Copyright © Benjamin D. McGinnes, 2013-2020"
+__copyrighta__ = "Copyright (C) Benjamin D. McGinnes, 2013-2020"
 __title__ = "FOAD: Fucked Off Adversarial Degenerates (Fuck Off And Die)"
 __stitle__ = "FOAD"
 __license__ = "Apache 2.0"
-__version__ = "0.8.1.21"
+__version__ = "0.8.1.22"
 __bitcoin__ = "1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz"
 __openpgp__ = "0x321E4E2373590E5D"
 __openpgp_fpr__ = "DB4724E6FA4286C92B4E55C4321E4E2373590E5D"
@@ -2252,9 +2252,9 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
 
     def priapus(self):
         if lt == 0 and le == 0:
-            msg = "Obscenis, peream, si non uti me pudet improbisque verbis sed cum tu posito degenerem pudore ostendas mihi coleos patentes cum cunno mihi mentula est vocanda."
+            msg = "Obscēnis, peream, sī nōn ūtī mē pudet improbīsque verbīs sed cum tū positō degenerem pudōre ostendās mihi cōleōs patentēs cum cunnō mihi mentula est vocanda."
         elif lt > 0 and le == 0:
-            msg = "Obscenis, peream, {0}, si non uti me pudet improbisque verbis sed cum tu posito degenerem pudore ostendas mihi coleos patentes cum cunno mihi mentula est vocanda.".format(
+            msg = "Obscēnis, peream, {0}, sī nōn ūtī mē pudet improbīsque verbīs sed cum tū positō degenerem pudōre ostendās mihi cōleōs patentēs cum cunnō mihi mentula est vocanda.".format(
                 target)
         elif lt == 0 and le > 0:
             msg = "I'd rather die than use obscene and improper words; but when you, as a degenerate, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks."
@@ -2262,14 +2262,14 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
             msg = "I'd rather die than use obscene and improper words; but when you, {0}, as a degenerate, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks.".format(
                 target)
         else:
-            msg = "Obscenis, peream, si non uti me pudet improbisque verbis sed cum tu posito degenerem pudore ostendas mihi coleos patentes cum cunno mihi mentula est vocanda!"
+            msg = "Obscēnis, peream, sī nōn ūtī mē pudet improbīsque verbīs sed cum tū positō degenerem pudōre ostendās mihi cōleōs patentēs cum cunnō mihi mentula est vocanda!"
         return msg
 
     def priapus1(self):
         if lt == 0 and le == 0:
-            msg = "Obscenis, peream, si non uti me pudet improbisque verbis sed cum tu posito degenerem pudore ostendas mihi coleos patentes cum cunno mihi mentula est vocanda."
+            msg = "Obscēnis, peream, sī nōn ūtī mē pudet improbīsque verbīs sed cum tū positō degenerem pudōre ostendās mihi cōleōs patentēs cum cunnō mihi mentula est vocanda."
         elif lt > 0 and le == 0:
-            msg = "Obscenis, peream, {0}, si non uti me pudet improbisque verbis sed cum tu posito degenerem pudore ostendas mihi coleos patentes cum cunno mihi mentula est vocanda.".format(
+            msg = "Obscēnis, peream, {0}, sī nōn ūtī mē pudet improbīsque verbīs sed cum tū positō degenerem pudōre ostendās mihi cōleōs patentēs cum cunnō mihi mentula est vocanda.".format(
                 target)
         elif lt == 0 and le > 0:
             msg = "I'd rather die than use obscene and improper words; but when you, as a degenerate, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks."
@@ -2277,14 +2277,14 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
             msg = "I'd rather die than use obscene and improper words; but when you, {0}, as a degenerate, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks.".format(
                 target)
         else:
-            msg = "Obscenis, peream, si non uti me pudet improbisque verbis sed cum tu posito degenerem pudore ostendas mihi coleos patentes cum cunno mihi mentula est vocanda!"
+            msg = "Obscēnis, peream, sī nōn ūtī mē pudet improbīsque verbīs sed cum tū positō degenerem pudōre ostendās mihi cōleōs patentēs cum cunnō mihi mentula est vocanda!"
         return msg
 
     def priapus2(self):
         if lt == 0 and le == 0:
-            msg = "Obscenis, peream, si non uti me pudet improbisque verbis sed cum tu posito deterrimum pudore ostendas mihi coleos patentes cum cunno mihi mentula est vocanda."
+            msg = "Obscēnis, peream, sī nōn ūtī mē pudet improbīsque verbīs sed cum tū positō deterrimum pudōre ostendās mihi cōleōs patentēs cum cunnō mihi mentula est vocanda."
         elif lt > 0 and le == 0:
-            msg = "Obscenis, peream, {0}, si non uti me pudet improbisque verbis sed cum tu posito deterrimum pudore ostendas mihi coleos patentes cum cunno mihi mentula est vocanda.".format(
+            msg = "Obscēnis, peream, {0}, sī nōn ūtī mē pudet improbīsque verbīs sed cum tū positō deterrimum pudōre ostendās mihi cōleōs patentēs cum cunnō mihi mentula est vocanda.".format(
                 target)
         elif lt == 0 and le > 0:
             msg = "I'd rather die than use obscene and improper words; but when you, as an inferior, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks."
@@ -2292,14 +2292,14 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
             msg = "I'd rather die than use obscene and improper words; but when you, {0}, as an inferior, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks.".format(
                 target)
         else:
-            msg = "Obscenis, peream, si non uti me pudet improbisque verbis sed cum tu posito deterrimum pudore ostendas mihi coleos patentes cum cunno mihi mentula est vocanda!"
+            msg = "Obscēnis, peream, sī nōn ūtī mē pudet improbīsque verbīs sed cum tū positō deterrimum pudōre ostendās mihi cōleōs patentēs cum cunnō mihi mentula est vocanda!"
         return msg
 
     def priapus3(self):
         if lt == 0 and le == 0:
-            msg = "Obscenis, peream, si non uti me pudet improbisque verbis sed cum tu posito deus pudore ostendas mihi coleos patentes cum cunno mihi mentula est vocanda."
+            msg = "Obscēnis, peream, sī nōn ūtī mē pudet improbīsque verbīs sed cum tū positō deus pudōre ostendās mihi cōleōs patentēs cum cunnō mihi mentula est vocanda."
         elif lt > 0 and le == 0:
-            msg = "Obscenis, peream, {0}, si non uti me pudet improbisque verbis sed cum tu posito deus pudore ostendas mihi coleos patentes cum cunno mihi mentula est vocanda.".format(
+            msg = "Obscēnis, peream, {0}, sī nōn ūtī mē pudet improbīsque verbīs sed cum tū positō deus pudōre ostendās mihi cōleōs patentēs cum cunnō mihi mentula est vocanda.".format(
                 target)
         elif lt == 0 and le > 0:
             msg = "I'd rather die than use obscene and improper words; but when you, as a god, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks."
@@ -2307,14 +2307,14 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
             msg = "I'd rather die than use obscene and improper words; but when you, {0}, as a god, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks.".format(
                 target)
         else:
-            msg = "Obscenis, peream, si non uti me pudet improbisque verbis sed cum tu posito deus pudore ostendas mihi coleos patentes cum cunno mihi mentula est vocanda!"
+            msg = "Obscēnis, peream, sī nōn ūtī mē pudet improbīsque verbīs sed cum tū positō deus pudōre ostendās mihi cōleōs patentēs cum cunnō mihi mentula est vocanda!"
         return msg
 
     def priapus4(self):
         if lt == 0 and le == 0 and lR == 0:
-            msg = "Obscenis, peream, si non uti me pudet improbisque verbis sed cum tu posito praefecus pudore ostendas mihi coleos patentes cum cunno mihi mentula est vocanda."
+            msg = "Obscēnis, peream, sī nōn ūtī mē pudet improbīsque verbīs sed cum tū positō praefecus pudōre ostendās mihi cōleōs patentēs cum cunnō mihi mentula est vocanda."
         elif lt > 0 and le == 0 and lR == 0:
-            msg = "Obscenis, peream, {0}, si non uti me pudet improbisque verbis sed cum tu posito praefecus pudore ostendas mihi coleos patentes cum cunno mihi mentula est vocanda.".format(
+            msg = "Obscēnis, peream, {0}, sī nōn ūtī mē pudet improbīsque verbīs sed cum tū positō praefecus pudōre ostendās mihi cōleōs patentēs cum cunnō mihi mentula est vocanda.".format(
                 target)
         elif lt == 0 and le > 0 and lR == 0:
             msg = "I'd rather die than use obscene and improper words; but when you, as a president, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks."
@@ -2362,14 +2362,14 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
             msg = "I'd rather die than use obscene and improper words; but when you, {0}, as a president, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks.".format(
                 target)
         else:
-            msg = "Obscenis, peream, si non uti me pudet improbisque verbis sed cum tu posito praefecus pudore ostendas mihi coleos patentes cum cunno mihi mentula est vocanda!"
+            msg = "Obscēnis, peream, sī nōn ūtī mē pudet improbīsque verbīs sed cum tū positō praefecus pudōre ostendās mihi cōleōs patentēs cum cunnō mihi mentula est vocanda!"
         return msg
 
     def priapus5(self):
         if lt == 0 and le == 0:
-            msg = "Obscenis, peream, si non uti me pudet improbisque verbis sed cum tu posito diabolus pudore ostendas mihi coleos patentes cum cunno mihi mentula est vocanda."
+            msg = "Obscēnis, peream, sī nōn ūtī mē pudet improbīsque verbīs sed cum tū positō diabolus pudōre ostendās mihi cōleōs patentēs cum cunnō mihi mentula est vocanda."
         elif lt > 0 and le == 0:
-            msg = "Obscenis, peream, {0}, si non uti me pudet improbisque verbis sed cum tu posito diabolus pudore ostendas mihi coleos patentes cum cunno mihi mentula est vocanda.".format(
+            msg = "Obscēnis, peream, {0}, sī nōn ūtī mē pudet improbīsque verbīs sed cum tū positō diabolus pudōre ostendās mihi cōleōs patentēs cum cunnō mihi mentula est vocanda.".format(
                 target)
         elif lt == 0 and le > 0:
             msg = "I'd rather die than use obscene and improper words; but when you, as a devil, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks."
@@ -2377,14 +2377,14 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
             msg = "I'd rather die than use obscene and improper words; but when you, {0}, as a devil, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks.".format(
                 target)
         else:
-            msg = "Obscenis, peream, si non uti me pudet improbisque verbis sed cum tu posito diabolus pudore ostendas mihi coleos patentes cum cunno mihi mentula est vocanda!"
+            msg = "Obscēnis, peream, sī nōn ūtī mē pudet improbīsque verbīs sed cum tū positō diabolus pudōre ostendās mihi cōleōs patentēs cum cunnō mihi mentula est vocanda!"
         return msg
 
     def priapus6(self):
         if lt == 0 and le == 0:
-            msg = "Obscenis, peream, si non uti me pudet improbisque verbis sed cum tu posito daemonis pudore ostendas mihi coleos patentes cum cunno mihi mentula est vocanda."
+            msg = "Obscēnis, peream, sī nōn ūtī mē pudet improbīsque verbīs sed cum tū positō daemonis pudōre ostendās mihi cōleōs patentēs cum cunnō mihi mentula est vocanda."
         elif lt > 0 and le == 0:
-            msg = "Obscenis, peream, {0}, si non uti me pudet improbisque verbis sed cum tu posito daemonis pudore ostendas mihi coleos patentes cum cunno mihi mentula est vocanda.".format(
+            msg = "Obscēnis, peream, {0}, sī nōn ūtī mē pudet improbīsque verbīs sed cum tū positō daemonis pudōre ostendās mihi cōleōs patentēs cum cunnō mihi mentula est vocanda.".format(
                 target)
         elif lt == 0 and le > 0:
             msg = "I'd rather die than use obscene and improper words; but when you, as a demon, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks."
@@ -2392,7 +2392,7 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
             msg = "I'd rather die than use obscene and improper words; but when you, {0}, as a demon, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks.".format(
                 target)
         else:
-            msg = "Obscenis, peream, si non uti me pudet improbisque verbis sed cum tu posito daemonis pudore ostendas mihi coleos patentes cum cunno mihi mentula est vocanda!"
+            msg = "Obscēnis, peream, sī nōn ūtī mē pudet improbīsque verbīs sed cum tū positō daemonis pudōre ostendās mihi cōleōs patentēs cum cunnō mihi mentula est vocanda!"
         return msg
 
     def problem(self):
