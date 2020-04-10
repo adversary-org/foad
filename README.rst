@@ -31,11 +31,11 @@ Examples:
     Tony Abbott, you're a fucking megalomaniacal, malignantly narcissistic, psychopath!
     bash$
 
-    bash-4.4$ foad -f priapus1 -n @TurnbullMalcolm
-    Obscenis, peream, @TurnbullMalcolm, si non uti me pudet improbisque verbis sed cum tu posito degenerem pudore ostendas mihi coleos patentes cum cunno mihi mentula est vocanda.
+    bash-4.4$ foad -f priapus1 -n @zaelefty
+    Obscēnis, peream, @zaelefty, sī nōn ūtī mē pudet improbīsque verbīs sed cum tū positō degenerem pudōre ostendās mihi cōleōs patentēs cum cunnō mihi mentula est vocanda.
     
-    bash-4.4$ foad -f priapus1 -n @TurnbullMalcolm | wrap -w 80
-    Obscenis, peream, @TurnbullMalcolm, si non uti me pudet improbisque verbis sed
+    bash-4.4$ foad -f priapus1 -n @zaelefty | wrap -w 80
+    Obscenis, peream, @zaelefty, si non uti me pudet improbisque verbis sed
     cum tu posito degenerem pudore ostendas mihi coleos patentes cum cunno mihi
     mentula est vocanda.
     bash-4.4$ 
@@ -44,26 +44,29 @@ Examples:
     I'd rather die than use obscene and improper words; but when you, Barnaby Joyce, as a degenerate, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks.
     bash-4.4$ 
     
-    bash-4.4$ foad -f priapus1 -n "Barnaby Joyce" -e eng | wrap -w 80
-    I'd rather die than use obscene and improper words; but when you, Barnaby Joyce,
-    as a degenerate, appear with your testicles hanging out, it is appropriate for
-    me to speak of cunts and cocks.
+    bash-4.4$ foad -f priapus1 -n "Barnaby Joyce" -e eng | wrap -w 72
+    I'd rather die than use obscene and improper words; but when you,
+    Barnaby Joyce, as a degenerate, appear with your testicles hanging out,
+    it is appropriate for me to speak of cunts and cocks.
+
     bash-4.4$ 
     
     bash$ wrap-foad.sh -f priapus4 -n "Donald Trump"
-    Obscenis, peream, Donald Trump, si non uti me pudet improbisque verbis sed cum
-    tu posito praefecus pudore ostendas mihi coleos patentes cum cunno mihi mentula
+    Obscēnis, peream, Donald Trump, sī nōn ūtī mē pudet improbīsque verbīs sed cum
+    tū positō praefecus pudōre ostendās mihi cōleōs patentēs cum cunnō mihi mentula
     est vocanda.
+
     bash$
 
     bash$ wrap-foad.sh -f priapus4 -n "Donald Trump" -e russia
     I'd rather die than use obscene and improper words; but when you, Donald Trump,
     as a president, appear with your testicles hanging out, it is appropriate for me
     to speak of cunts and cocks.
+
     bash$
 
 
-There are currently more than 200 options to use with the ``-f`` flag
+There are currently more than 250 options to use with the ``-f`` flag
 and the majority of those have two or more forms, one for naming a
 subject, a more general one and occasionally a sender or extra text or
 other parameter included. As well as a couple of special options which
@@ -125,3 +128,6 @@ Optional Python 2.7 Support
   3, any changes made will favour Python 3.  If it is necessary to
   disable this (by removing the ``from __future__`` import) then that
   will be done.
+- Though leaving this as is, from 2020 all Python 2.x support is
+  deprecated and will be largely ignored.
+  

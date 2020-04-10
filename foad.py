@@ -21,7 +21,7 @@ del unicode_literals, division, print_function
 #
 # https://github.com/adversary-org/foad
 #
-# Version:  0.8.1.22
+# Version:  0.8.1.23
 #
 # BTC:  1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz
 # Licenses:  Apache 2.0
@@ -137,7 +137,7 @@ __copyrighta__ = "Copyright (C) Benjamin D. McGinnes, 2013-2020"
 __title__ = "FOAD: Fucked Off Adversarial Degenerates (Fuck Off And Die)"
 __stitle__ = "FOAD"
 __license__ = "Apache 2.0"
-__version__ = "0.8.1.22"
+__version__ = "0.8.1.23"
 __bitcoin__ = "1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz"
 __openpgp__ = "0x321E4E2373590E5D"
 __openpgp_fpr__ = "DB4724E6FA4286C92B4E55C4321E4E2373590E5D"
@@ -2393,6 +2393,21 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
                 target)
         else:
             msg = "Obscēnis, peream, sī nōn ūtī mē pudet improbīsque verbīs sed cum tū positō daemonis pudōre ostendās mihi cōleōs patentēs cum cunnō mihi mentula est vocanda!"
+        return msg
+
+    def priapus7(self):
+        if lt == 0 and le == 0:
+            msg = "Obscēnis, peream, sī nōn ūtī mē pudet improbīsque verbīs sed cum tū positō homo pudōre ostendās mihi cōleōs patentēs cum cunnō mihi mentula est vocanda."
+        elif lt > 0 and le == 0:
+            msg = "Obscēnis, peream, {0}, sī nōn ūtī mē pudet improbīsque verbīs sed cum tū positō homo pudōre ostendās mihi cōleōs patentēs cum cunnō mihi mentula est vocanda.".format(
+                target)
+        elif lt == 0 and le > 0:
+            msg = "I'd rather die than use obscene and improper words; but when you, as a man, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks."
+        elif lt > 0 and le > 0:
+            msg = "I'd rather die than use obscene and improper words; but when you, {0}, as a man, appear with your testicles hanging out, it is appropriate for me to speak of cunts and cocks.".format(
+                target)
+        else:
+            msg = "Obscēnis, peream, sī nōn ūtī mē pudet improbīsque verbīs sed cum tū positō homo pudōre ostendās mihi cōleōs patentēs cum cunnō mihi mentula est vocanda!"
         return msg
 
     def problem(self):
