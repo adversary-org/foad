@@ -21,7 +21,7 @@ del unicode_literals, division, print_function
 #
 # https://github.com/adversary-org/foad
 #
-# Version:  0.8.1.23
+# Version:  0.8.1.24
 #
 # BTC:  1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz
 # Licenses:  Apache 2.0
@@ -137,7 +137,7 @@ __copyrighta__ = "Copyright (C) Benjamin D. McGinnes, 2013-2020"
 __title__ = "FOAD: Fucked Off Adversarial Degenerates (Fuck Off And Die)"
 __stitle__ = "FOAD"
 __license__ = "Apache 2.0"
-__version__ = "0.8.1.23"
+__version__ = "0.8.1.24"
 __bitcoin__ = "1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz"
 __openpgp__ = "0x321E4E2373590E5D"
 __openpgp_fpr__ = "DB4724E6FA4286C92B4E55C4321E4E2373590E5D"
@@ -2643,6 +2643,7 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
                 target)
         else:
             msg = "I'm not felling very talky today. Off you fuck!"
+        return msg
 
     def tfwo(self):
         if lt == 0:
