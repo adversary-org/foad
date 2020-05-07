@@ -21,7 +21,7 @@ del unicode_literals, division, print_function
 #
 # https://github.com/adversary-org/foad
 #
-# Version:  0.8.1.24
+# Version:  0.8.1.25
 #
 # BTC:  1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz
 # Licenses:  Apache 2.0
@@ -137,7 +137,7 @@ __copyrighta__ = "Copyright (C) Benjamin D. McGinnes, 2013-2020"
 __title__ = "FOAD: Fucked Off Adversarial Degenerates (Fuck Off And Die)"
 __stitle__ = "FOAD"
 __license__ = "Apache 2.0"
-__version__ = "0.8.1.24"
+__version__ = "0.8.1.25"
 __bitcoin__ = "1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz"
 __openpgp__ = "0x321E4E2373590E5D"
 __openpgp_fpr__ = "DB4724E6FA4286C92B4E55C4321E4E2373590E5D"
@@ -1556,6 +1556,19 @@ Alternatively run the help guide for foad.py (pydoc3 foad).
             msg = "Get the fuck outta here!"
         else:
             msg = "{0}, get the fuck outta here!".format(target)
+        return msg
+
+    def gtfoi(self):
+        if lt == 0 and le == 0:
+            msg = "Get the fuck over it!"
+        elif lt > 0 and le == 0:
+            msg = "Get the fuck over it, {0}!".format(target)
+        elif lt == 0 and le > 0:
+            msg = "{0}, get the fuck over it!".format(extra)
+        elif lt > 0 and le > 0:
+            msg = "Fucking hell, {0}, get the fuck over it!".format(target)
+        else:
+            msg = "Fucking hell, {0}, get the fuck over it!".format(target)
         return msg
 
     def hell(self):
