@@ -21,7 +21,7 @@ del unicode_literals, division, print_function
 #
 # https://github.com/adversary-org/foad
 #
-# Version:  0.8.1.25
+# Version:  0.8.1.26
 #
 # BTC:  1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz
 # Licenses:  Apache 2.0
@@ -137,7 +137,7 @@ __copyrighta__ = "Copyright (C) Benjamin D. McGinnes, 2013-2020"
 __title__ = "FOAD: Fucked Off Adversarial Degenerates (Fuck Off And Die)"
 __stitle__ = "FOAD"
 __license__ = "Apache 2.0"
-__version__ = "0.8.1.25"
+__version__ = "0.8.1.26"
 __bitcoin__ = "1NpzDJg2pXjSqCL3XHTcyYaehiBN3kG3Lz"
 __openpgp__ = "0x321E4E2373590E5D"
 __openpgp_fpr__ = "DB4724E6FA4286C92B4E55C4321E4E2373590E5D"
@@ -390,21 +390,16 @@ class fuck:
         elif lt == 0 and le == 0 and ls > 0 and sender == "candid":
             msg = "Not only should you have been aborted, but you're a candidate for retroactive abortion!"
         elif lt > 0 and le == 0 and ls > 0 and sender == "candid":
-            msg = "Not only should you have been aborted, {0}, but you're a candidate for retroactive abortion!".format(
-                target)
+            msg = "Not only should you have been aborted, {0}, but you're a candidate for retroactive abortion!".format(target)
         elif lt == 0 and le > 0 and ls > 0 and sender == "candid":
-            msg = "Not only should {0} have been aborted, but they're a candidate for retroactive abortion!".format(
-                extra)
+            msg = "Not only should {0} have been aborted, but they're a candidate for retroactive abortion!".format(extra)
         elif lt > 0 and le > 0 and ls > 0 and sender == "candid":
-            msg = "{0}, not only should you and {1} have been aborted, you're candidates for retroactive abortion!".format(
-                target, extra)
+            msg = "{0}, not only should you and {1} have been aborted, you're candidates for retroactive abortion!".format(target, extra)
         return msg
 
     def about(self):
         if lt == 0:
-            msg = textwrap.fill(
-                "Messages and other information to be displayed interactively.  As with the acronym option, the target parameters are used to call each message.  A non-existent target parameter will produce a list of available options.",
-                72)
+            msg = textwrap.fill("Messages and other information to be displayed interactively.  As with the acronym option, the target parameters are used to call each message.  A non-existent target parameter will produce a list of available options.", 72)
         elif target.lower() == "adversary":
             msg = "Organised Adversary"
         elif target.lower() == "atitle":
@@ -446,9 +441,7 @@ class fuck:
         elif target.lower() == "website":
             msg = "https://github.com/adversary-org/foad"
         else:
-            msg = textwrap.fill(
-                "Target parameters: adversary, atitle, author, bitcoin, contact, copyright, domain, donations, email, encryption, gpg key, irc, options, pirate, twitter, twython, version, website.",
-                72)
+            msg = textwrap.fill("Target parameters: adversary, atitle, author, bitcoin, contact, copyright, domain, donations, email, encryption, gpg key, irc, options, pirate, twitter, twython, version, website.", 72)
         return msg
 
     def acronym(self):
@@ -487,9 +480,7 @@ class fuck:
         elif target.lower() == "snafu":
             msg = "SNAFU: Situation Normal: All Fucked Up"
         else:
-            msg = textwrap.fill(
-                "Target parameters: bond, carnal, cunt, die, figjam, foaas, fubar, lmfao, right, snafu, snag, title.",
-                72)
+            msg = textwrap.fill("Target parameters: bond, carnal, cunt, die, figjam, foaas, fubar, lmfao, right, snafu, snag, title.", 72)
         return msg
 
     def agree(self):
@@ -517,14 +508,11 @@ class fuck:
         if lt == 0 and lR == 0:
             msg = "Of all my relations I like sex the best and you the least."
         elif lt > 0 and lR == 0:
-            msg = "Of all my relations I like sex the best and {0} the least.".format(
-                target)
+            msg = "Of all my relations I like sex the best and {0} the least.".format(target)
         elif lt > 0 and lR > 0:
-            msg = "{0}, of all my relations I like sex the best and {1} the least.".format(
-                relay, target)
+            msg = "{0}, of all my relations I like sex the best and {1} the least.".format(relay, target)
         else:
-            msg = "Of all my relations I like sex the best and {0} the least.".format(
-                target)
+            msg = "Of all my relations I like sex the best and {0} the least.".format(target)
         return msg
 
     def amber2(self):
@@ -532,11 +520,9 @@ class fuck:
         if lt == 0 and ls == 0:
             msg = "You're about as intelligent as a freshman in the high school of your choice; sorry, but what I mean is you're loyal, devoted, honest, and too easily screwed over by bastards."
         elif lt > 0 and ls == 0:  # include is/are in target/name.
-            msg = "{0} about as intelligent as a freshman in the high school of your choice; loyal, devoted, honest, and too easily screwed over by bastards.".format(
-                target)
+            msg = "{0} about as intelligent as a freshman in the high school of your choice; loyal, devoted, honest, and too easily screwed over by bastards.".format(target)
         elif lt > 0 and ls > 0:  # include is/are in target/name.
-            msg = "{0} about as intelligent as a freshman in the high school of your choice; loyal, devoted, honest, and too easily screwed over by bastards like {1}.".format(
-                target, sender)
+            msg = "{0} about as intelligent as a freshman in the high school of your choice; loyal, devoted, honest, and too easily screwed over by bastards like {1}.".format(target, sender)
         return msg
 
     def amber3(self):
@@ -909,6 +895,19 @@ class fuck:
                 target)
         return msg
 
+    def dilligaf(self):
+        if lt == 0 and le == 0:
+            msg = "Do I look like I give a fuck?"
+        elif lt > 0 and le == 0:
+            msg = "Do I look like I give a fuck, {0}?".format(target)
+        elif lt == 0 and le > 0:
+            msg = "Do I look like I give a fuck?!"
+        elif lt > 0 and le > 0:
+            msg = "Do I look like I give a fuck, {0}?!".format(target)
+        else:
+            msg = "Do I look like I give a fuck?!"
+        return msg
+
     def disbelief(self):
         if lt == 0:
             msg = "Un-fucking-believable!"
@@ -917,10 +916,16 @@ class fuck:
         return msg
 
     def does(self):
-        if lt == 0:
+        if lt == 0 and le == 0:
             msg = "Does it look like I give a fuck?"
-        else:
+        elif lt > 0 and le ==0:
             msg = "{0}, does it look like I give a fuck?".format(target)
+        elif lt == 0 and le > 0:
+            msg = "Does it look like I give a fuck?!"
+        elif lt > 0 and le > 0:
+            msg = "{0}, does it look like I give a fuck?!".format(target)
+        else:
+            msg = "Does it look like I give a fuck?!"
         return msg
 
     def donut(self):
